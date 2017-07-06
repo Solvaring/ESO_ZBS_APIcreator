@@ -5,10 +5,12 @@ local working1 = io.open("esoapidef.lua", "w+")
 
 esouidoc:seek("set")
 
-working1:write("return { \n")
+working1:write("return {\n")
 local _f = '"function"'
-local stringtowriteline1='%s = {type = %s\ndescription = ""\n args = "%s"\n'
-local stringtowriteline2='returns = "(%s)"\nvaluetype = "%s"}\n\n'
+local stringtowriteline1='%s = {type = %s\ndescription = ""\nargs = "%s"'
+local stringtowriteline2='\nreturns = "(%s)"\nvaluetype = "%s"},\n\n'
+local returntype = nil
+local valuetype = nil
 
 for line in esouidoc:lines() do
     local throwaway = line:match("%* ([%a_]+)")
@@ -16,19 +18,28 @@ for line in esouidoc:lines() do
         break
     end
     if throwaway then
-        working1:write(throwaway .. ' = { \n\t type = "value", \n},\n\n')
+        working1:write(throwaway .. ' = {\n\t type = "value",},\n\n')
     end
 end
 
 for line in esouidoc:lines() do
     if line:find("%*%*") then
-        local returntype = line:match("%*([%a]+)%*")
-        local valuetype = line:match("_([%a]+)_")
-        if returntype and valuetype ~=nil then
-            working1:write(stringtowriteline2:format(returntype, valuetype))
+        local returntypestring = ""
+        local valuetypestring = ""
+        for returntype in line:gmatch("%*([%a]+)%*") do
+            returntypestring = returntype .. "," .. returntypestring
+        end
+        for valuetype in line:gmatch("_([%a]+)_") do
+            valuetypestring = valuetype .. "," .. valuetypestring
+        end
+        if returntypestring and valuetypestring ~="" then
+            working1:write(stringtowriteline2:format(returntypestring, valuetypestring))
         end
     end
-    local funcname =line:match("%* ([%a]+)")
+    if not returntype then
+            working1:write("},\n\n")
+    end
+    local funcname =line:match("%* ([%a_]+)")
     local funcargs = line:match("%b()")
     if line:find("h2. Object API",1,true) then
         break
