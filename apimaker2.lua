@@ -11,6 +11,7 @@ local stringtowriteline1='%s = {type = %s,\ndescription = "",\nargs = "%s",'
 local stringtowriteline2='\nreturns = "(%s)",\nvaluetype = "%s",},\n\n'
 local returntype = nil
 local valuetype = nil
+local formateventstring = ' = {\n\t type = "value", valuetype = "event", args = "%s"},\n\n'
 
 for line in esouidoc:lines() do
     local throwaway = line:match("%* ([%a_]+)")
@@ -51,10 +52,13 @@ end
 
 for line in esouidoc:lines() do
     local throwaway2 = line:match("%* ([%u_]+)")
+    local throwaway3 = line:match("%b()")
     if line:find("h2. UI XML Layout",1,true) then
         break
     end
-    if throwaway2 then
+    if throwaway2 and throwaway3 then
+        working1:write(throwaway2 .. formateventstring:format(throwaway3))
+    elseif throwaway2 then
         working1:write(throwaway2 .. ' = {\n\t type = "value", valuetype = "event",},\n\n')
     end
 end
