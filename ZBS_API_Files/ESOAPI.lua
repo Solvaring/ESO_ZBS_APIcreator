@@ -1,4 +1,9 @@
 return {
+EVENT_MANAGER = {type="class", childs = {
+RegisterForEvent = {type="method", args="(*string* _YourAddonName_, *integer* _event_, *function* _callback_)", returns="(bool:success,)", valuetype="bool,"},
+UnregisterForEvent = {type="method", args="(*string* _YourAddonName_, *integer* _event_)", returns="(bool:success,)", valuetype="bool,"},
+AddFilterForEvent = {type="method", args="(*string* eventNamespace, *number* eventId[, RegisterForEventFilterType filterType, *varying* parameter])", returns="(bool:success,)", valuetype="bool,"}
+}},
 ABILITY_TOOLTIP_TEXT_COLOR_ABILITY_INFO = {
 	 type = "value",},
 
