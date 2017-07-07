@@ -8,10 +8,10 @@ esouidoc:seek("set")
 working1:write("return {\n")
 local _f = '"function"'
 local stringtowriteline1='%s = {type = %s,\ndescription = "",\nargs = "%s",'
-local stringtowriteline2='\nreturns = "(%s)",\nvaluetype = "%s",},\n\n'
+local stringtowriteline2='\nreturns = "(%s)",\nvaluetype = "%s",'
 local returntype = nil
 local valuetype = nil
-local formateventstring = ' = {\n\t type = "value", valuetype = "event", args = "%s"},\n\n'
+local formateventstring = ' = {\n\t type = "value", valuetype = "event", description = "%s"},\n\n'
 
 for line in esouidoc:lines() do
     local throwaway = line:match("%* ([%a_]+)")
@@ -36,9 +36,8 @@ for line in esouidoc:lines() do
         if returntypestring and valuetypestring ~="" then
             working1:write(stringtowriteline2:format(returntypestring, valuetypestring))
         end
-    end
-    if not returntype then
-            working1:write("},\n\n")
+    elseif line:find(" ") then
+        working1:write("},\n\n")
     end
     local funcname =line:match("%* ([%a_]+)")
     local funcargs = line:match("%b()")
