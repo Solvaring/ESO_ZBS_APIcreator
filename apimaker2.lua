@@ -29,10 +29,10 @@ for line in esouidoc:lines() do
     if line:find("%*%*") then
         local returntypestring = ""
         local valuetypestring = ""
-        for returntype in line:gmatch("%*([%a%d]+)%*") do
-            returntypestring = returntype .. "," .. returntypestring
+        for returntype, returntype2 in line:gmatch("%*([%a%d]+)%* _([%a%d]+)_") do
+            returntypestring = returntype .. ":" .. returntype2 .."," .. returntypestring
         end
-        for valuetype in line:gmatch("_([%a%d]+)_") do
+        for valuetype in line:gmatch("%*([%a%d]+)%*") do
             valuetypestring = valuetype .. "," .. valuetypestring
         end
         if returntypestring and valuetypestring ~="" then
