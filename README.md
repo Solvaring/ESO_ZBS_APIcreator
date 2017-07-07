@@ -1,6 +1,8 @@
 # ESO_ZBS_APIcreator and finished ZBS API Definition files
 Script to build an api definition file from the dump file provided at esoui in the format specified by Zerobrane Studio to provide autocomplete functionality and tooltips for the ESO Api in ZBS
 
+The two main files you will need for this script to build an autocomplete for the lua api are **apimaker2.lua** and **ESOUIDocumentation.txt**. To build an autocomplete definition for the xml keywords you will need **esouixml.txt** and **xmlapicreator2.lua". Please note that as of this release, the xml portion is not finished yet but is coming soon.
+
 If you want to use this to add autocomplete functionality to your Zerobrane Studio just drop ESOAPI.lua and ESOXML.lua into /api/lua of your ZBS directory and then use the normal linking procedure through ZBS user.config or modification of an interpreter file. The final versions of these files ready to be dropped into your api directory are located in ZBS_API_Files
 
 Updated API maker but the regex is sloppy and the file produced has some errant brackets and commas floating around. I cleaned it up with find and replace in notepad plus plus and am committing the cleaned up and working api definition file as ESOAPI.lua
