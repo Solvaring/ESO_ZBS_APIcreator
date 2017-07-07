@@ -1,0 +1,1039 @@
+h2. UI XML Layout
+h4. Attributes:
+* addressMode *[TextureAddressMode|#TextureAddressMode]*
+* allowBringToTop *bool*
+* alpha *number*
+* anchorIndex *integer*
+* autoAdjustTextureCoords *bool*
+* barAlignment *[BarAlignment|#BarAlignment]*
+* blendMode *[TextureBlendMode|#TextureBlendMode]*
+* cellsHigh *integer*
+* cellsWide *integer*
+* centerColor *string*
+* clampedToScreen *bool*
+* clickSound *string*
+* color *string*
+* delay *integer*
+* deltaX *number*
+* deltaXFromEnd *number*
+* deltaY *number*
+* deltaYFromEnd *number*
+* deltaZ *number*
+* deltaZFromEnd *number*
+* disabled *string*
+* disabledColor *string*
+* disabledPressed *string*
+* disabledPressedColor *string*
+* dragFromThumb *bool*
+* drawLastEntryIfOutOfRoom *bool*
+* duration *integer*
+* edgeColor *string*
+* editEnabled *bool*
+* enableFadeOut *bool*
+* endAlpha *number*
+* endCapWidth *integer*
+* endColor *string*
+* endHeight *number*
+* endPitch *number*
+* endRoll *number*
+* endRotation *number*
+* endScale *number*
+* endWidth *number*
+* endX *number*
+* endY *number*
+* endYaw *number*
+* endZ *number*
+* excludeFromResizeToFitExtents *bool*
+* fadeOutGainColor *string*
+* fadeOutLossColor *string*
+* fadeOutTextureFile *string*
+* fillColor *string*
+* font *string*
+* framerate *number*
+* headerRowSpacing *number*
+* headerVerticalOffset *number*
+* hidden *bool*
+* horizontalAlignment *[TextAlignment|#TextAlignment]*
+* id *integer*
+* inheritAlpha *bool*
+* inheritScale *bool*
+* inherits *string*
+* integralWrapping *bool*
+* keyboardEnabled *bool*
+* layer *string*
+* leadingEdgeTexture *string*
+* level *integer*
+* lineSpacing *integer*
+* linkEnabled *bool*
+* loopCount *string*
+* maxHistoryLines *integer*
+* maxInputCharacters *integer*
+* maxLineCount *integer*
+* mirrorAlongX *bool*
+* mirrorAlongY *bool*
+* modifyTextType *[ModifyTextType|#ModifyTextType]*
+* mouseEnabled *bool*
+* mouseOver *string*
+* mouseOverBlendMode *[TextureBlendMode|#TextureBlendMode]*
+* mouseOverColor *string*
+* movable *bool*
+* multiLine *bool*
+* newLineEnabled *bool*
+* newLineIndent *number*
+* normal *string*
+* normalColor *string*
+* orientation *[ControlOrientation|#ControlOrientation]*
+* pinFont *string*
+* pixelRoundingEnabled *bool*
+* playbackType *[AnimationPlayback|#AnimationPlayback]*
+* pressed *string*
+* pressedColor *string*
+* pressedMouseOver *string*
+* radialCooldownClockwise *bool*
+* radialCooldownOriginAngle *number*
+* resizeHandleSize *number*
+* resizeToFitDescendents *bool*
+* resizeToFitFile *bool*
+* scale *number*
+* selectionColor *string*
+* shape *[ShapeType|#ShapeType]*
+* splitLongMessages *bool*
+* startAlpha *number*
+* startColor *string*
+* startHeight *number*
+* startPitch *number*
+* startRoll *number*
+* startRotation *number*
+* startScale *number*
+* startWidth *number*
+* startX *number*
+* startY *number*
+* startYaw *number*
+* startZ *number*
+* step *number*
+* styleColor *string*
+* text *string*
+* textType *string*
+* textureCoordsRotation *number*
+* textureFile *string*
+* textureFileReleaseOption *[ReleaseReferenceOptions|#ReleaseReferenceOptions]*
+* thickness *number*
+* tier *string*
+* topmost *bool*
+* verticalAlignment *[TextAlignment|#TextAlignment]*
+* wrapMode *[TextWrapMode|#TextWrapMode]*
+
+h5. AlphaAnimation
+* [Inherits: AnimationBase|#AnimationBase]
+* [Child: endAlpha|#Attributes]
+* [Child: startAlpha|#Attributes]
+
+h5. Anchor
+* _attribute:_ *[AnchorPosition|#AnchorPosition]* _point_
+* _attribute:_ *[AnchorPosition|#AnchorPosition]* _relativePoint_
+* _attribute:_ *string* _relativeTo_
+* _attribute:_ *number* _offsetX_
+* _attribute:_ *number* _offsetY_
+* _attribute:_ *[AnchorConstrains|#AnchorConstrains]* _constrains_
+
+h5. AnchorFill
+
+h5. AnchorToBaseline
+* _attribute:_ *string* _relativeToLabel_
+* _attribute:_ *number* _offsetX_
+* _attribute:_ *[AnchorPosition|#AnchorPosition]* _side_
+
+h5. AnimationBase
+* _attribute:_ *string* _name_
+* [Child: EasingFunction|#EasingFunction]
+* [Child: OnPlay_Animation|#OnPlay_Animation]
+* [Child: OnStop_Animation|#OnStop_Animation]
+* [Child: delay|#Attributes]
+* [Child: duration|#Attributes]
+* [Child: inherits|#Attributes]
+
+h5. AnimationTimeline
+* _attribute:_ *string* _name_
+* [Child: Animations|#Animations]
+* [Child: Callbacks|#Callbacks]
+* [Child: OnDurationChanged|#OnDurationChanged]
+* [Child: OnPlay|#OnPlay]
+* [Child: OnStop|#OnStop]
+* [Child: delay|#Attributes]
+* [Child: inherits|#Attributes]
+* [Child: loopCount|#Attributes]
+* [Child: playbackType|#Attributes]
+
+h5. Animations
+* [Child: AlphaAnimation|#AlphaAnimation]
+* [Child: AnimationTimeline|#AnimationTimeline]
+* [Child: ColorAnimation|#ColorAnimation]
+* [Child: CustomAnimation|#CustomAnimation]
+* [Child: Rotate3DAnimation|#Rotate3DAnimation]
+* [Child: ScaleAnimation|#ScaleAnimation]
+* [Child: SizeAnimation|#SizeAnimation]
+* [Child: TextureAnimation|#TextureAnimation]
+* [Child: TextureRotateAnimation|#TextureRotateAnimation]
+* [Child: Translate3DAnimation|#Translate3DAnimation]
+* [Child: TranslateAnimation|#TranslateAnimation]
+
+h5. Backdrop
+* [Inherits: Control|#Control]
+* [Child: Center|#Center]
+* [Child: Edge|#Edge]
+* [Child: Insets|#Insets]
+* [Child: blendMode|#Attributes]
+* [Child: centerColor|#Attributes]
+* [Child: edgeColor|#Attributes]
+* [Child: integralWrapping|#Attributes]
+* [Child: pixelRoundingEnabled|#Attributes]
+* [Child: textureFileReleaseOption|#Attributes]
+
+h5. BackgroundBottom
+* _attribute:_ *string* _textureFile_
+* _attribute:_ *number* _left_
+* _attribute:_ *number* _top_
+* _attribute:_ *number* _bottom_
+* _attribute:_ *number* _right_
+
+h5. BackgroundMiddle
+* _attribute:_ *string* _textureFile_
+* _attribute:_ *number* _left_
+* _attribute:_ *number* _top_
+* _attribute:_ *number* _bottom_
+* _attribute:_ *number* _right_
+
+h5. BackgroundTop
+* _attribute:_ *string* _textureFile_
+* _attribute:_ *number* _left_
+* _attribute:_ *number* _top_
+* _attribute:_ *number* _bottom_
+* _attribute:_ *number* _right_
+
+h5. Browser
+* [Inherits: Control|#Control]
+* [Child: OnLoadFinished|#OnLoadFinished]
+* [Child: OnLoadStart|#OnLoadStart]
+* [Child: OnRequestClose|#OnRequestClose]
+
+h5. Button
+* [Inherits: Control|#Control]
+* [Child: ButtonState|#ButtonState]
+* [Child: FontColors|#FontColors]
+* [Child: MouseButton|#MouseButton]
+* [Child: NormalOffset|#NormalOffset]
+* [Child: OnClicked|#OnClicked]
+* [Child: PressedOffset|#PressedOffset]
+* [Child: TextureCoords|#TextureCoords]
+* [Child: Textures|#Textures]
+* [Child: clickSound|#Attributes]
+* [Child: endCapWidth|#Attributes]
+* [Child: font|#Attributes]
+* [Child: horizontalAlignment|#Attributes]
+* [Child: modifyTextType|#Attributes]
+* [Child: mouseOverBlendMode|#Attributes]
+* [Child: pixelRoundingEnabled|#Attributes]
+* [Child: text|#Attributes]
+* [Child: textureFileReleaseOption|#Attributes]
+* [Child: verticalAlignment|#Attributes]
+
+h5. ButtonState
+* _attribute:_ *[ButtonState|#ButtonState]* _state_
+* _attribute:_ *bool* _locked_
+
+h5. Callback
+* [Inherits: OnInsertAnimationTimelineCallback|#OnInsertAnimationTimelineCallback]
+* ScriptArguments: local self, time = ...
+
+h5. Callbacks
+* [Child: Callback|#Callback]
+
+h5. Center
+* _attribute:_ *string* _file_
+* _attribute:_ *bool* _tiled_
+* _attribute:_ *integer* _tileSize_
+
+h5. ClampedToScreenInsets
+* _attribute:_ *number* _left_
+* _attribute:_ *number* _top_
+* _attribute:_ *number* _right_
+* _attribute:_ *number* _bottom_
+
+h5. ClearAnchors
+
+h5. ColorAnimation
+* [Inherits: AnimationBase|#AnimationBase]
+* [Child: endColor|#Attributes]
+* [Child: startColor|#Attributes]
+
+h5. ColorSelect
+* [Inherits: Control|#Control]
+* [Child: OnColorSelected|#OnColorSelected]
+
+h5. Compass
+* [Inherits: Control|#Control]
+* [Child: CompassPinType|#CompassPinType]
+
+h5. CompassPinType
+* _attribute:_ *[MapDisplayPinType|#MapDisplayPinType]* _name_
+* _attribute:_ *number* _pinSize_
+* _attribute:_ *string* _pinTexture_
+* _attribute:_ *string* _areaTexture_
+* _attribute:_ *string* _aboveTexture_
+* _attribute:_ *string* _belowTexture_
+* _attribute:_ *string* _linkTexture_
+* _attribute:_ *bool* _clamped_
+* _attribute:_ *bool* _allowUpdatesWhenAnimating_
+* _attribute:_ *number* _minScale_
+* _attribute:_ *number* _maxScale_
+* _attribute:_ *number* _minVisibleScale_
+* _attribute:_ *number* _minAlpha_
+* _attribute:_ *number* _maxAlpha_
+* _attribute:_ *number* _minVisibleAlpha_
+* _attribute:_ *number* _maxVisibleNormalizedDistance_
+* _attribute:_ *number* _leadingScaleCoefficient_
+* _attribute:_ *number* _scaleCoefficient_
+* _attribute:_ *number* _scaleConstant_
+* _attribute:_ *number* _leadingAlphaCoefficient_
+* _attribute:_ *number* _alphaCoefficient_
+* _attribute:_ *number* _alphaConstant_
+* _attribute:_ *string* _animation_
+* _attribute:_ *string* _addedAnimation_
+* _attribute:_ *string* _removedAnimation_
+* _attribute:_ *[DrawLayer|#DrawLayer]* _layer_
+* _attribute:_ *integer* _drawLevelOffsetBase_
+
+h5. Control
+* _attribute:_ *string* _name_
+* _attribute:_ *bool* _virtual_
+* _attribute:_ *bool* _override_
+* _attribute:_ *[ControlAccessControl|#ControlAccessControl]* _accessControl_
+* [Child: Anchor|#Anchor]
+* [Child: AnchorFill|#AnchorFill]
+* [Child: ClampedToScreenInsets|#ClampedToScreenInsets]
+* [Child: ClearAnchors|#ClearAnchors]
+* [Child: Controls|#Controls]
+* [Child: DimensionConstraints|#DimensionConstraints]
+* [Child: Dimensions|#Dimensions]
+* [Child: HitInsets|#HitInsets]
+* [Child: OnChar|#OnChar]
+* [Child: OnDragStart|#OnDragStart]
+* [Child: OnEffectivelyHidden|#OnEffectivelyHidden]
+* [Child: OnEffectivelyShown|#OnEffectivelyShown]
+* [Child: OnHide|#OnHide]
+* [Child: OnInitialized|#OnInitialized]
+* [Child: OnKeyDown|#OnKeyDown]
+* [Child: OnKeyUp|#OnKeyUp]
+* [Child: OnMouseDoubleClick|#OnMouseDoubleClick]
+* [Child: OnMouseDown|#OnMouseDown]
+* [Child: OnMouseEnter|#OnMouseEnter]
+* [Child: OnMouseExit|#OnMouseExit]
+* [Child: OnMouseUp|#OnMouseUp]
+* [Child: OnMouseWheel|#OnMouseWheel]
+* [Child: OnMoveStart|#OnMoveStart]
+* [Child: OnMoveStop|#OnMoveStop]
+* [Child: OnReceiveDrag|#OnReceiveDrag]
+* [Child: OnResizeStart|#OnResizeStart]
+* [Child: OnResizeStop|#OnResizeStop]
+* [Child: OnResizedToFit|#OnResizedToFit]
+* [Child: OnShow|#OnShow]
+* [Child: OnUpdate|#OnUpdate]
+* [Child: ResizeToFitPadding|#ResizeToFitPadding]
+* [Child: alpha|#Attributes]
+* [Child: clampedToScreen|#Attributes]
+* [Child: excludeFromResizeToFitExtents|#Attributes]
+* [Child: hidden|#Attributes]
+* [Child: id|#Attributes]
+* [Child: inheritAlpha|#Attributes]
+* [Child: inheritScale|#Attributes]
+* [Child: inherits|#Attributes]
+* [Child: keyboardEnabled|#Attributes]
+* [Child: layer|#Attributes]
+* [Child: level|#Attributes]
+* [Child: mouseEnabled|#Attributes]
+* [Child: movable|#Attributes]
+* [Child: resizeHandleSize|#Attributes]
+* [Child: resizeToFitDescendents|#Attributes]
+* [Child: scale|#Attributes]
+* [Child: tier|#Attributes]
+
+h5. Controls
+* [Child: Backdrop|#Backdrop]
+* [Child: Browser|#Browser]
+* [Child: Button|#Button]
+* [Child: ColorSelect|#ColorSelect]
+* [Child: Compass|#Compass]
+* [Child: Control|#Control]
+* [Child: Cooldown|#Cooldown]
+* [Child: DebugText|#DebugText]
+* [Child: EditBox|#EditBox]
+* [Child: Label|#Label]
+* [Child: Line|#Line]
+* [Child: MapDisplay|#MapDisplay]
+* [Child: Scroll|#Scroll]
+* [Child: Slider|#Slider]
+* [Child: StatusBar|#StatusBar]
+* [Child: TextBuffer|#TextBuffer]
+* [Child: Texture|#Texture]
+* [Child: TextureComposite|#TextureComposite]
+* [Child: Tooltip|#Tooltip]
+* [Child: TopLevelControl|#TopLevelControl]
+
+h5. Cooldown
+* [Inherits: Control|#Control]
+* [Child: RadialCooldownGradient|#RadialCooldownGradient]
+* [Child: blendMode|#Attributes]
+* [Child: fillColor|#Attributes]
+* [Child: leadingEdgeTexture|#Attributes]
+* [Child: radialCooldownClockwise|#Attributes]
+* [Child: radialCooldownOriginAngle|#Attributes]
+* [Child: textureFile|#Attributes]
+* [Child: textureFileReleaseOption|#Attributes]
+
+h5. CustomAnimation
+* [Inherits: AnimationBase|#AnimationBase]
+* [Child: UpdateFunction|#UpdateFunction]
+
+h5. DebugText
+* [Inherits: Control|#Control]
+* [Child: font|#Attributes]
+
+h5. DimensionConstraints
+* _attribute:_ *number* _minX_
+* _attribute:_ *number* _minY_
+* _attribute:_ *number* _maxX_
+* _attribute:_ *number* _maxY_
+
+h5. Dimensions
+* _attribute:_ *number* _x_
+* _attribute:_ *number* _y_
+
+h5. EasingFunction
+* [Inherits: OnSetAnimationEaseFunction|#OnSetAnimationEaseFunction]
+* ScriptArguments: local progress = ...
+
+h5. Edge
+* _attribute:_ *string* _file_
+* _attribute:_ *integer* _edgeFileWidth_
+* _attribute:_ *integer* _edgeFileHeight_
+* _attribute:_ *integer* _edgeSize_
+* _attribute:_ *integer* _edgeFilePadding_
+
+h5. EditBox
+* [Inherits: Control|#Control]
+* [Child: OnBackspace|#OnBackspace]
+* [Child: OnDownArrow|#OnDownArrow]
+* [Child: OnEnter|#OnEnter]
+* [Child: OnEscape|#OnEscape]
+* [Child: OnFocusGained|#OnFocusGained]
+* [Child: OnFocusLost|#OnFocusLost]
+* [Child: OnIMEBeginComposition|#OnIMEBeginComposition]
+* [Child: OnIMEEndComposition|#OnIMEEndComposition]
+* [Child: OnPageDown|#OnPageDown]
+* [Child: OnPageUp|#OnPageUp]
+* [Child: OnSpace|#OnSpace]
+* [Child: OnTab|#OnTab]
+* [Child: OnTextChanged|#OnTextChanged]
+* [Child: OnUpArrow|#OnUpArrow]
+* [Child: color|#Attributes]
+* [Child: editEnabled|#Attributes]
+* [Child: font|#Attributes]
+* [Child: maxInputCharacters|#Attributes]
+* [Child: multiLine|#Attributes]
+* [Child: newLineEnabled|#Attributes]
+* [Child: selectionColor|#Attributes]
+* [Child: textType|#Attributes]
+
+h5. FadeGradient
+* _attribute:_ *number* _x1_
+* _attribute:_ *number* _y1_
+* _attribute:_ *number* _size1_
+* _attribute:_ *number* _x2_
+* _attribute:_ *number* _y2_
+* _attribute:_ *number* _size2_
+
+h5. Font
+* _attribute:_ *string* _name_
+* _attribute:_ *bool* _virtual_
+* [Child: sentinel_element|#sentinel_element]
+* [Child: font|#Attributes]
+* [Child: inherits|#Attributes]
+
+h5. FontColors
+* [Child: disabledColor|#Attributes]
+* [Child: disabledPressedColor|#Attributes]
+* [Child: mouseOverColor|#Attributes]
+* [Child: normalColor|#Attributes]
+* [Child: pressedColor|#Attributes]
+
+h5. GuiXml
+* [Child: Animations|#Animations]
+* [Child: Controls|#Controls]
+* [Child: Font|#Font]
+* [Child: String|#String]
+
+h5. HitInsets
+* _attribute:_ *number* _left_
+* _attribute:_ *number* _top_
+* _attribute:_ *number* _right_
+* _attribute:_ *number* _bottom_
+
+h5. Insets
+* _attribute:_ *number* _left_
+* _attribute:_ *number* _top_
+* _attribute:_ *number* _right_
+* _attribute:_ *number* _bottom_
+
+h5. Label
+* [Inherits: Control|#Control]
+* [Child: AnchorToBaseline|#AnchorToBaseline]
+* [Child: OnLinkClicked|#OnLinkClicked]
+* [Child: OnLinkMouseUp|#OnLinkMouseUp]
+* [Child: OnTextChanged|#OnTextChanged]
+* [Child: OnUserAreaCreated|#OnUserAreaCreated]
+* [Child: color|#Attributes]
+* [Child: font|#Attributes]
+* [Child: horizontalAlignment|#Attributes]
+* [Child: lineSpacing|#Attributes]
+* [Child: linkEnabled|#Attributes]
+* [Child: maxLineCount|#Attributes]
+* [Child: modifyTextType|#Attributes]
+* [Child: newLineIndent|#Attributes]
+* [Child: pixelRoundingEnabled|#Attributes]
+* [Child: styleColor|#Attributes]
+* [Child: text|#Attributes]
+* [Child: verticalAlignment|#Attributes]
+* [Child: wrapMode|#Attributes]
+
+h5. LeadingEdge
+* _attribute:_ *string* _textureFile_
+* _attribute:_ *number* _width_
+* _attribute:_ *number* _height_
+
+h5. LeadingEdgeTextureCoords
+* _attribute:_ *number* _left_
+* _attribute:_ *number* _right_
+* _attribute:_ *number* _top_
+* _attribute:_ *number* _bottom_
+
+h5. Limits
+* _attribute:_ *number* _min_
+* _attribute:_ *number* _max_
+
+h5. Line
+* [Inherits: Control|#Control]
+* [Child: TextureCoords|#TextureCoords]
+* [Child: blendMode|#Attributes]
+* [Child: color|#Attributes]
+* [Child: pixelRoundingEnabled|#Attributes]
+* [Child: textureFile|#Attributes]
+* [Child: thickness|#Attributes]
+
+h5. LineFade
+* _attribute:_ *number* _fadeBegin_
+* _attribute:_ *number* _fadeDuration_
+
+h5. LocalDimensions3D
+* _attribute:_ *number* _x_
+* _attribute:_ *number* _y_
+
+h5. MapDisplay
+* [Inherits: Control|#Control]
+* [Child: MapGutter|#MapGutter]
+* [Child: MapPinType|#MapPinType]
+* [Child: OnVisibleRadiusChanged|#OnVisibleRadiusChanged]
+* [Child: pinFont|#Attributes]
+* [Child: shape|#Attributes]
+
+h5. MapGutter
+* _attribute:_ *number* _offset_
+* _attribute:_ *number* _size_
+
+h5. MapPinType
+* _attribute:_ *[MapDisplayPinType|#MapDisplayPinType]* _name_
+* _attribute:_ *[MapArrowType|#MapArrowType]* _arrowType_
+* _attribute:_ *number* _pinSize_
+* _attribute:_ *number* _pinXInset_
+* _attribute:_ *number* _pinYInset_
+* _attribute:_ *number* _arrowSize_
+* _attribute:_ *string* _pinTexture_
+* _attribute:_ *string* _arrowTexture_
+* _attribute:_ *string* _areaTexture_
+* _attribute:_ *string* _aboveTexture_
+* _attribute:_ *string* _belowTexture_
+* _attribute:_ *string* _linkTexture_
+* _attribute:_ *string* _animation_
+* _attribute:_ *string* _addedAnimation_
+* _attribute:_ *string* _removedAnimation_
+* _attribute:_ *[MapPinAnimationTarget|#MapPinAnimationTarget]* _animationTarget_
+
+h5. MouseButton
+* _attribute:_ *integer* _button_
+* _attribute:_ *bool* _enabled_
+
+h5. NormalOffset
+* _attribute:_ *number* _x_
+* _attribute:_ *number* _y_
+
+h5. OnAddGameData
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnBackspace
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnChar
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, key = ...
+
+h5. OnCleared
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnClicked
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, button = ...
+
+h5. OnColorSelected
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, r, g, b = ...
+
+h5. OnDownArrow
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnDragStart
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, button = ...
+
+h5. OnDurationChanged
+* [Inherits: OnSetAnimationTimelineEventHandler|#OnSetAnimationTimelineEventHandler]
+* ScriptArguments: local self, duration = ...
+
+h5. OnEffectivelyHidden
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, hidden = ...
+
+h5. OnEffectivelyShown
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, hidden = ...
+
+h5. OnEnabledStateChanged
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, enabled = ...
+
+h5. OnEnter
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnEscape
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnFocusGained
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnFocusLost
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnHide
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, hidden = ...
+
+h5. OnIMEBeginComposition
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnIMEEndComposition
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnInitialized
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnInsertAnimationTimelineCallback
+* _attribute:_ *integer* _delay_
+
+h5. OnKeyDown
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, key, ctrl, alt, shift, command = ...
+
+h5. OnKeyUp
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, key, ctrl, alt, shift, command = ...
+
+h5. OnLinkClicked
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, linkData, linkText, button, ctrl, alt, shift, command = ...
+
+h5. OnLinkMouseUp
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, linkData, linkText, button, ctrl, alt, shift, command = ...
+
+h5. OnLoadFinished
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnLoadStart
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnMinMaxValueChanged
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, min, max = ...
+
+h5. OnMouseDoubleClick
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, button, ctrl, alt, shift, command = ...
+
+h5. OnMouseDown
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, button, ctrl, alt, shift, command = ...
+
+h5. OnMouseEnter
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnMouseExit
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnMouseUp
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, button, upInside, ctrl, alt, shift, command = ...
+
+h5. OnMouseWheel
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, delta, ctrl, alt, shift, command = ...
+
+h5. OnMoveStart
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnMoveStop
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnPageDown
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnPageUp
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnPlay
+* [Inherits: OnSetAnimationTimelineEventHandler|#OnSetAnimationTimelineEventHandler]
+* ScriptArguments: local self, completedPlaying = ...
+
+h5. OnPlay_Animation
+* [Inherits: OnSetAnimationEventHandler|#OnSetAnimationEventHandler]
+* ScriptArguments: local self, animatingControl, completedPlaying = ...
+
+h5. OnReceiveDrag
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, button = ...
+
+h5. OnRequestClose
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnResizeStart
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnResizeStop
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnResizedToFit
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, desiredWidth, desiredHeight = ...
+
+h5. OnScrollExtentsChanged
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, horizontal, vertical = ...
+
+h5. OnScrollOffsetChanged
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, horizontal, vertical = ...
+
+h5. OnSetAnimationEaseFunction
+
+h5. OnSetAnimationEventHandler
+
+h5. OnSetAnimationTimelineEventHandler
+
+h5. OnSetControlEventHandler
+
+h5. OnSetUpdateFunction
+
+h5. OnShow
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, hidden = ...
+
+h5. OnSliderReleased
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, value = ...
+
+h5. OnSpace
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnStop
+* [Inherits: OnSetAnimationTimelineEventHandler|#OnSetAnimationTimelineEventHandler]
+* ScriptArguments: local self, completedPlaying = ...
+
+h5. OnStop_Animation
+* [Inherits: OnSetAnimationEventHandler|#OnSetAnimationEventHandler]
+* ScriptArguments: local self, animatingControl, completedPlaying = ...
+
+h5. OnTab
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnTextChanged
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnTextureLoaded
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnUpArrow
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self = ...
+
+h5. OnUpdate
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, time = ...
+
+h5. OnUserAreaCreated
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, areaData, areaText, left, right, top, bottom, continuation = ...
+
+h5. OnValueChanged
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, value, eventReason = ...
+
+h5. OnVisibleRadiusChanged
+* [Inherits: OnSetControlEventHandler|#OnSetControlEventHandler]
+* ScriptArguments: local self, radius = ...
+
+h5. PressedOffset
+* _attribute:_ *number* _x_
+* _attribute:_ *number* _y_
+
+h5. RadialCooldownGradient
+* _attribute:_ *number* _startAlpha_
+* _attribute:_ *number* _angularDistance_
+
+h5. ResizeToFitPadding
+* _attribute:_ *number* _width_
+* _attribute:_ *number* _height_
+
+h5. Rotate3DAnimation
+* [Inherits: AnimationBase|#AnimationBase]
+* [Child: endPitch|#Attributes]
+* [Child: endRoll|#Attributes]
+* [Child: endYaw|#Attributes]
+* [Child: startPitch|#Attributes]
+* [Child: startRoll|#Attributes]
+* [Child: startYaw|#Attributes]
+
+h5. ScaleAnimation
+* [Inherits: AnimationBase|#AnimationBase]
+* [Child: endScale|#Attributes]
+* [Child: startScale|#Attributes]
+
+h5. Scroll
+* [Inherits: Control|#Control]
+* [Child: FadeGradient|#FadeGradient]
+* [Child: OnScrollExtentsChanged|#OnScrollExtentsChanged]
+* [Child: OnScrollOffsetChanged|#OnScrollOffsetChanged]
+
+h5. ScrollingOverlay
+* _attribute:_ *string* _textureFile_
+* _attribute:_ *number* _width_
+* _attribute:_ *number* _height_
+* _attribute:_ *integer* _duration_
+
+h5. SizeAnimation
+* [Inherits: AnimationBase|#AnimationBase]
+* [Child: endHeight|#Attributes]
+* [Child: endWidth|#Attributes]
+* [Child: startHeight|#Attributes]
+* [Child: startWidth|#Attributes]
+
+h5. Slider
+* [Inherits: Control|#Control]
+* [Child: BackgroundBottom|#BackgroundBottom]
+* [Child: BackgroundMiddle|#BackgroundMiddle]
+* [Child: BackgroundTop|#BackgroundTop]
+* [Child: Limits|#Limits]
+* [Child: OnEnabledStateChanged|#OnEnabledStateChanged]
+* [Child: OnSliderReleased|#OnSliderReleased]
+* [Child: OnValueChanged|#OnValueChanged]
+* [Child: ThumbTexture|#ThumbTexture]
+* [Child: dragFromThumb|#Attributes]
+* [Child: orientation|#Attributes]
+* [Child: step|#Attributes]
+
+h5. StatusBar
+* [Inherits: Control|#Control]
+* [Child: LeadingEdge|#LeadingEdge]
+* [Child: LeadingEdgeTextureCoords|#LeadingEdgeTextureCoords]
+* [Child: Limits|#Limits]
+* [Child: OnMinMaxValueChanged|#OnMinMaxValueChanged]
+* [Child: OnValueChanged|#OnValueChanged]
+* [Child: ScrollingOverlay|#ScrollingOverlay]
+* [Child: TextureCoords|#TextureCoords]
+* [Child: barAlignment|#Attributes]
+* [Child: color|#Attributes]
+* [Child: enableFadeOut|#Attributes]
+* [Child: fadeOutGainColor|#Attributes]
+* [Child: fadeOutLossColor|#Attributes]
+* [Child: fadeOutTextureFile|#Attributes]
+* [Child: orientation|#Attributes]
+* [Child: textureFile|#Attributes]
+
+h5. String
+* _attribute:_ *string* _name_
+* _attribute:_ *string* _value_
+
+h5. Surface
+* _attribute:_ *number* _texCoordLeft_
+* _attribute:_ *number* _texCoordRight_
+* _attribute:_ *number* _texCoordTop_
+* _attribute:_ *number* _texCoordBottom_
+* _attribute:_ *number* _insetLeft_
+* _attribute:_ *number* _insetRight_
+* _attribute:_ *number* _insetTop_
+* _attribute:_ *number* _insetBottom_
+* _attribute:_ *string* _color_
+
+h5. TextBuffer
+* [Inherits: Control|#Control]
+* [Child: LineFade|#LineFade]
+* [Child: OnLinkClicked|#OnLinkClicked]
+* [Child: OnLinkMouseUp|#OnLinkMouseUp]
+* [Child: color|#Attributes]
+* [Child: drawLastEntryIfOutOfRoom|#Attributes]
+* [Child: font|#Attributes]
+* [Child: horizontalAlignment|#Attributes]
+* [Child: linkEnabled|#Attributes]
+* [Child: maxHistoryLines|#Attributes]
+* [Child: splitLongMessages|#Attributes]
+
+h5. Texture
+* [Inherits: Control|#Control]
+* [Child: LocalDimensions3D|#LocalDimensions3D]
+* [Child: OnTextureLoaded|#OnTextureLoaded]
+* [Child: TextureCoords|#TextureCoords]
+* [Child: addressMode|#Attributes]
+* [Child: autoAdjustTextureCoords|#Attributes]
+* [Child: blendMode|#Attributes]
+* [Child: color|#Attributes]
+* [Child: pixelRoundingEnabled|#Attributes]
+* [Child: resizeToFitFile|#Attributes]
+* [Child: textureCoordsRotation|#Attributes]
+* [Child: textureFile|#Attributes]
+* [Child: textureFileReleaseOption|#Attributes]
+
+h5. TextureAnimation
+* [Inherits: AnimationBase|#AnimationBase]
+* [Child: cellsHigh|#Attributes]
+* [Child: cellsWide|#Attributes]
+* [Child: framerate|#Attributes]
+* [Child: mirrorAlongX|#Attributes]
+* [Child: mirrorAlongY|#Attributes]
+
+h5. TextureComposite
+* [Inherits: Control|#Control]
+* [Child: Surface|#Surface]
+* [Child: blendMode|#Attributes]
+* [Child: pixelRoundingEnabled|#Attributes]
+* [Child: textureFile|#Attributes]
+* [Child: textureFileReleaseOption|#Attributes]
+
+h5. TextureCoords
+* _attribute:_ *number* _left_
+* _attribute:_ *number* _right_
+* _attribute:_ *number* _top_
+* _attribute:_ *number* _bottom_
+
+h5. TextureRotateAnimation
+* [Inherits: AnimationBase|#AnimationBase]
+* [Child: endRotation|#Attributes]
+* [Child: startRotation|#Attributes]
+
+h5. Textures
+* [Child: disabled|#Attributes]
+* [Child: disabledPressed|#Attributes]
+* [Child: mouseOver|#Attributes]
+* [Child: normal|#Attributes]
+* [Child: pressed|#Attributes]
+* [Child: pressedMouseOver|#Attributes]
+
+h5. ThumbTexture
+* _attribute:_ *string* _textureFile_
+* _attribute:_ *string* _disabledTextureFile_
+* _attribute:_ *string* _highlightedTextureFile_
+* _attribute:_ *number* _thumbWidth_
+* _attribute:_ *number* _thumbHeight_
+* _attribute:_ *number* _left_
+* _attribute:_ *number* _top_
+* _attribute:_ *number* _bottom_
+* _attribute:_ *number* _right_
+* _attribute:_ *bool* _flushWithSliderExtents_
+
+h5. Tooltip
+* [Inherits: Control|#Control]
+* [Child: OnAddGameData|#OnAddGameData]
+* [Child: OnCleared|#OnCleared]
+* [Child: font|#Attributes]
+* [Child: headerRowSpacing|#Attributes]
+* [Child: headerVerticalOffset|#Attributes]
+
+h5. TopLevelControl
+* [Inherits: Control|#Control]
+* [Child: allowBringToTop|#Attributes]
+* [Child: topmost|#Attributes]
+
+h5. Translate3DAnimation
+* [Inherits: AnimationBase|#AnimationBase]
+* [Child: deltaX|#Attributes]
+* [Child: deltaXFromEnd|#Attributes]
+* [Child: deltaY|#Attributes]
+* [Child: deltaYFromEnd|#Attributes]
+* [Child: deltaZ|#Attributes]
+* [Child: deltaZFromEnd|#Attributes]
+* [Child: endX|#Attributes]
+* [Child: endY|#Attributes]
+* [Child: endZ|#Attributes]
+* [Child: startX|#Attributes]
+* [Child: startY|#Attributes]
+* [Child: startZ|#Attributes]
+
+h5. TranslateAnimation
+* [Inherits: AnimationBase|#AnimationBase]
+* [Child: anchorIndex|#Attributes]
+* [Child: deltaX|#Attributes]
+* [Child: deltaXFromEnd|#Attributes]
+* [Child: deltaY|#Attributes]
+* [Child: deltaYFromEnd|#Attributes]
+* [Child: endX|#Attributes]
+* [Child: endY|#Attributes]
+* [Child: startX|#Attributes]
+* [Child: startY|#Attributes]
+
+h5. UpdateFunction
+* [Inherits: OnSetUpdateFunction|#OnSetUpdateFunction]
+* ScriptArguments: local self, progress = ...
+
+h5. sentinel_element
+
