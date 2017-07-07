@@ -38,7 +38,7 @@ for line in esouidoc:lines() do
         if returntypestring and valuetypestring ~="" then
             working1:write(stringtowriteline2:format(returntypestring, valuetypestring))
         end
-    elseif line:find(" ") then
+    elseif line:find("%b()") then
         working1:write("},\n\n")
     end
     local funcname =line:match("%* ([%a%d_]+)")
