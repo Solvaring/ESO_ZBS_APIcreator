@@ -7,8 +7,8 @@ esouidoc:seek("set")
 
 working1:write("return {\n")
 local _f = '"function"'
-local stringtowriteline1='%s = {type = %s\ndescription = ""\nargs = "%s"'
-local stringtowriteline2='\nreturns = "(%s)"\nvaluetype = "%s"},\n\n'
+local stringtowriteline1='%s = {type = %s,\ndescription = "",\nargs = "%s",'
+local stringtowriteline2='\nreturns = "(%s)",\nvaluetype = "%s",},\n\n'
 local returntype = nil
 local valuetype = nil
 
