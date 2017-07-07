@@ -1,7 +1,7 @@
 --local _G = _G
 local esouidoc = io.open("ESOUIDocumentation.txt", "r")
 local esouidocstring = esouidoc:read("*a")
-local working1 = io.open("esoapidef.lua", "w+")
+local working1 = io.open("ESOAPI.lua", "w+")
 
 esouidoc:seek("set")
 
