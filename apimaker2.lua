@@ -29,10 +29,10 @@ for line in esouidoc:lines() do
     if line:find("%*%*") then
         local returntypestring = ""
         local valuetypestring = ""
-        for returntype in line:gmatch("%*([%a]+)%*") do
+        for returntype in line:gmatch("%*([%a%d]+)%*") do
             returntypestring = returntype .. "," .. returntypestring
         end
-        for valuetype in line:gmatch("_([%a]+)_") do
+        for valuetype in line:gmatch("_([%a%d]+)_") do
             valuetypestring = valuetype .. "," .. valuetypestring
         end
         if returntypestring and valuetypestring ~="" then
@@ -41,7 +41,7 @@ for line in esouidoc:lines() do
     elseif line:find(" ") then
         working1:write("},\n\n")
     end
-    local funcname =line:match("%* ([%a_]+)")
+    local funcname =line:match("%* ([%a%d_]+)")
     local funcargs = line:match("%b()")
     if line:find("h2. Events",1,true) then
         break
