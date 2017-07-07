@@ -41,10 +41,20 @@ for line in esouidoc:lines() do
     end
     local funcname =line:match("%* ([%a_]+)")
     local funcargs = line:match("%b()")
-    if line:find("h2. Object API",1,true) then
+    if line:find("h2. Events",1,true) then
         break
     end
     if funcname and funcargs ~= nil then
         working1:write(stringtowriteline1:format(funcname, _f, funcargs))
+    end
+end
+
+for line in esouidoc:lines() do
+    local throwaway2 = line:match("%* ([%u_]+)")
+    if line:find("h2. UI XML Layout",1,true) then
+        break
+    end
+    if throwaway2 then
+        working1:write(throwaway2 .. ' = {\n\t type = "value", valuetype = "event",},\n\n')
     end
 end
