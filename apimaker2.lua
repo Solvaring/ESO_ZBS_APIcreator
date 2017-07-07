@@ -13,6 +13,7 @@ local returntype = nil
 local valuetype = nil
 local formateventstring = ' = {\n\t type = "value", valuetype = "event", description = "%s"},\n\n'
 
+-- map global constants
 for line in esouidoc:lines() do
     local throwaway = line:match("%* ([%a_]+)")
     if line:find("h2. Game API",1,true) then
@@ -23,6 +24,7 @@ for line in esouidoc:lines() do
     end
 end
 
+-- Map game and object API
 for line in esouidoc:lines() do
     if line:find("%*%*") then
         local returntypestring = ""
@@ -49,6 +51,7 @@ for line in esouidoc:lines() do
     end
 end
 
+-- Map events
 for line in esouidoc:lines() do
     local throwaway2 = line:match("%* ([%u_]+)")
     local throwaway3 = line:match("%b()")
