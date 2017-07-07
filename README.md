@@ -8,3 +8,5 @@ Updated API maker but the regex is sloppy and the file produced has some errant 
 There is a second branch called 'closingbrace' after running that branch's code for apimaker there will be only one '},' that needs to be moved to the very end of the file. However after I experimented with this method, the lua interpreter kept nagging me with an error that it was missing a closing curly brace at the end of the file. Putting an extra left facing curly braced fixed the problem, however that tells me that somewhere in the 30k+ lines of code generated from this script that a table was opened and not properly closed, so I've opted for the text editor find/replace method to clean up the file which is actually quite quick and painless.
 
 Just open the resulting file this script creates esoapidef.lua in notepad++, go to the find/replace tool and find all curly braces and commas at the beginning of a line with this regex "^\\}," then leave the replace field blank and 'replace all'
+
+After performing the instruction in the previous paragraph, go to the last line of the file and add a single closing curly brace '}'
