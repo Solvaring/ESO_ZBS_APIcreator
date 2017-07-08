@@ -10,7 +10,7 @@ If you want to use this to add autocomplete functionality to your Zerobrane Stud
 Updated API maker but the regex is sloppy and the file produced has some errant brackets and commas floating around. I cleaned it up with find and replace in notepad plus plus and am committing the cleaned up and working api definition file as ESOAPI.lua
 
 
-Just open the resulting file this script creates esoapidef.lua in notepad++, go to the find/replace tool and find all curly braces and commas at the beginning of a line with this regex "^\\}," then leave the replace field blank and 'replace all'
+Just open the resulting file this script creates ESOAPI.lua in notepad++, go to the find/replace tool and find all curly braces and commas at the beginning of a line with this regex "^\\}," then leave the replace field blank and 'replace all'
 
 After performing the instruction in the previous paragraph, go to the last line of the file and add a single closing curly brace '}'
 
