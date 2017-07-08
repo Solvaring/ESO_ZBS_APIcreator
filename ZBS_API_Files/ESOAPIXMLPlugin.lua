@@ -1,4 +1,4 @@
-api = {
+local api = {
 EVENT_MANAGER = {type="class", childs = {
 RegisterForEvent = {type="method", args="(*string* _YourAddonName_, *integer* _event_, *function* _callback_)", returns="(bool:success,)", valuetype="bool,"},
 UnregisterForEvent = {type="method", args="(*string* _YourAddonName_, *integer* _event_)", returns="(bool:success,)", valuetype="bool,"},
@@ -33132,7 +33132,7 @@ local spec = {
 }
 
 return {
-  name = "ESOAddonDev",
+  name = "ESOAPIXMLPlugin",
   description = "Elder Scrolls Autocomplete Plugin",
   author = "@Farangkao with update script for api and keywords by @Solvaring",
   -- api = { }, -- "ESOAddonDev","baselib"
