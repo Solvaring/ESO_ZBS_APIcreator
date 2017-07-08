@@ -1,4 +1,11 @@
 # ESO_ZBS_APIcreator and finished ZBS API Definition files
+I have wrapped this whole project into a plugin for ZBS, you can simply take ZBS_API_FILES/ESOXMLPlugin.lua and drop it into your packages directory of ZBS. If you ever need to update the api and I'm away from the game for a while, use the scripts described below to help you build a new api definition from the dump file. You can drop the lua api file into your api directory and link through user.lua config file, but if you want to update xml keywords and attributes as well, the process is still fairly simple and straightforward.
+
+Generate the lua api with the script, open the resulting file and change the line that has ` return { ` to 
+` local api = { ` open up your plugin file and copy paste it right over the old api block, make sure the entire old api block is wiped out first. Then use the xmlapicreator2.lua to generate a list of xml keywords. Scroll down in your plugin file to the onRegister function. Copy and paste all the keywords from the file that xmlapicreator2 created over the old block of keywords, you can't miss it. The line says ` local keywords = self:GetConfig().keywords or [[ huge block of keywords here ]] `
+
+That's all there is to it, just generate lua api file, xml keywords, make an edit to the generated lua api file and then copy paste it all over the parts in the plugin that need replacing. Happy developing everyone!!!
+
 Script to build an api definition file from the dump file provided at esoui in the format specified by Zerobrane Studio to provide autocomplete functionality and tooltips for the ESO Api in ZBS
 
 **There is a second branch called 'closingbrace' after running that branch's code for apimaker there will be only one '},' that needs to be moved to the very end of the file. There are now updated instructions if you switch to that branch, I found the bug and give instruction on how to fix the line that didn't properly close a table. I do believe that this is now a quicker and easier way to generate a lua api definition file. Go check it out!**
