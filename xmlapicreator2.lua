@@ -1,6 +1,6 @@
 local esouixml = io.open('esouixml.txt', 'r')
 local xmlstring = esouixml:read("*a")
-local working2 = io.open("ESOXMLKeywordList.lua", "w+")
+local working2 = io.open("ESOXMLKeywordList.txt", "w+")
 
 esouixml:seek('set')
 
