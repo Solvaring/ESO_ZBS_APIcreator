@@ -1,4 +1,4 @@
-# ESO_ZBS_APIcreator and finished ZBS API Definition files
+# ESO_ZBS_APIcreator and finished ZBS API Definition files Currently made for API Version 100019
 I have wrapped this whole project into a plugin for ZBS, you can simply take ZBS_API_FILES/ESOXMLPlugin.lua and drop it into your packages directory of ZBS. If you ever need to update the api and I'm away from the game for a while, use the scripts described below to help you build a new api definition from the dump file. You can drop the lua api file into your api directory and link through user.lua config file, but if you want to update xml keywords and attributes as well, the process is still fairly simple and straightforward.
 
 **NOTE: You may still need to link the api in your user.lua, i'm running into some unexpected behavior. add the line in user.lua 'api = {"esoapi"}'**
@@ -23,7 +23,7 @@ Just open the resulting file this script creates ESOAPI.lua in notepad++, go to 
 
 After performing the instruction in the previous paragraph, go to the last line of the file and add a single closing curly brace '}'
 
-xmlapicreator2 operates over esouixml.txt and xmlapicreator operates over ESOXMLKeywordlist which you can then copy and paste onto the bottom of the api table of the plugin.
+xmlapicreator2 operates over esouixml.txt which is the xml section of ESOUIDocumentation and xmlapicreator operates over ESOXMLKeywordlist which is created by xmlapicreator2, you can then copy and paste the content of ESOXMLAPI onto the bottom of the api table of the plugin.
 
 ### Final notes:
 
