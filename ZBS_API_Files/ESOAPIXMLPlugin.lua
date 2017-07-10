@@ -1,3 +1,4 @@
+-- Currently Made for API Version 100019
 local api = {
 EVENT_MANAGER = {type="class", childs = {
 RegisterForEvent = {type="method", args="(*string* _YourAddonName_, *integer* _event_, *function* _callback_)", returns="(bool:success,)",},
