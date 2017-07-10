@@ -1,6 +1,8 @@
 # ESO_ZBS_APIcreator and finished ZBS API Definition files
 I have wrapped this whole project into a plugin for ZBS, you can simply take ZBS_API_FILES/ESOXMLPlugin.lua and drop it into your packages directory of ZBS. If you ever need to update the api and I'm away from the game for a while, use the scripts described below to help you build a new api definition from the dump file. You can drop the lua api file into your api directory and link through user.lua config file, but if you want to update xml keywords and attributes as well, the process is still fairly simple and straightforward.
 
+**NOTE: You may still need to link the api in your user.lua, i'm running into some unexpected behavior. add the line in user.lua 'api = {"esoapi"}'**
+
 Generate the lua api with the script, open the resulting file and change the line that has ` return { ` to 
 ` local api = { ` open up your plugin file (ESOAPIXMLPlugin.lua) and copy paste it right over the old api block, make sure the entire old api block is wiped out first. Then use the xmlapicreator2.lua to generate a list of xml keywords. Scroll down in your plugin file to the onRegister function. Copy and paste all the keywords from the file that xmlapicreator2 created over the old block of keywords, you can't miss it. The line says ` local keywords = self:GetConfig().keywords or [[ huge block of keywords here ]] `
 
@@ -20,6 +22,8 @@ Updated API maker but the regex is sloppy and the file produced has some errant 
 Just open the resulting file this script creates ESOAPI.lua in notepad++, go to the find/replace tool and find all curly braces and commas at the beginning of a line with this regex "^\\}," then leave the replace field blank and 'replace all'
 
 After performing the instruction in the previous paragraph, go to the last line of the file and add a single closing curly brace '}'
+
+xmlapicreator2 operates over esouixml.txt and xmlapicreator operates over ESOXMLKeywordlist which you can then copy and paste onto the bottom of the api table of the plugin.
 
 ### Final notes:
 
