@@ -33352,9 +33352,9 @@ ThumbTexture = {type = "keyword"},
 Tooltip = {type = "keyword"},
 TopLevelControl = {type = "keyword"},
 Translate3DAnimation = {type = "keyword"},
-TranslateAnimation = {type = "keyword"},
-UpdateFunction = {type = "keyword"},
-sentinel = {type = "keyword"},
+TranslateAnimation = {type = "keyword",},
+UpdateFunction = {type = "keyword",},
+sentinel = {type = "keyword",},
 
 
 }
@@ -33396,7 +33396,7 @@ local spec = {
   keywords = {
   },
 }
-
+local name = "ESOAPI"
 return {
   name = "ESOAPIXMLPlugin",
   description = "Elder Scrolls Autocomplete Plugin",
@@ -33413,8 +33413,8 @@ return {
 	end,
 
   onRegister = function(self)
-    io.write("ESO Registered")
-	ide:AddAPI("lua","ESOAPI", api)
+    table.insert(ide:GetConfig().api, name)
+	ide:AddAPI("lua", name, api)
     local keywords = self:GetConfig().keywords or
 [[ addressMode allowBringToTop alpha anchorIndex autoAdjustTextureCoords barAlignment blendMode cellsHigh cellsWide centerColor clampedToScreen clickSound color delay deltaX deltaXFromEnd deltaY deltaYFromEnd deltaZ deltaZFromEnd disabled disabledColor disabledPressed disabledPressedColor dragFromThumb drawLastEntryIfOutOfRoom duration edgeColor editEnabled enableFadeOut endAlpha endCapWidth endColor endHeight endPitch endRoll endRotation endScale endWidth endX endY endYaw endZ excludeFromResizeToFitExtents fadeOutGainColor fadeOutLossColor fadeOutTextureFile fillColor font framerate headerRowSpacing headerVerticalOffset hidden horizontalAlignment id inheritAlpha inheritScale inherits integralWrapping keyboardEnabled layer leadingEdgeTexture level lineSpacing linkEnabled loopCount maxHistoryLines maxInputCharacters maxLineCount mirrorAlongX mirrorAlongY modifyTextType mouseEnabled mouseOver mouseOverBlendMode mouseOverColor movable multiLine newLineEnabled newLineIndent normal normalColor orientation pinFont pixelRoundingEnabled playbackType pressed pressedColor pressedMouseOver radialCooldownClockwise radialCooldownOriginAngle resizeHandleSize resizeToFitDescendents resizeToFitFile scale selectionColor shape splitLongMessages startAlpha startColor startHeight startPitch startRoll startRotation startScale startWidth startX startY startYaw startZ step styleColor text textType textureCoordsRotation textureFile textureFileReleaseOption thickness tier topmost verticalAlignment wrapMode Anchor AnchorFill AnchorToBaseline AnimationBase AnimationTimeline Animations Backdrop BackgroundBottom BackgroundMiddle BackgroundTop Browser Button ButtonState Callback Callbacks Center ClampedToScreenInsets ClearAnchors ColorAnimation ColorSelect Compass CompassPinType Control Controls Cooldown CustomAnimation DebugText DimensionConstraints Dimensions EasingFunction Edge EditBox FadeGradient Font FontColors GuiXml HitInsets Insets Label LeadingEdge LeadingEdgeTextureCoords Limits Line LineFade LocalDimensions3D MapDisplay MapGutter MapPinType MouseButton NormalOffset OnAddGameData OnBackspace OnChar OnCleared OnClicked OnColorSelected OnDownArrow OnDragStart OnDurationChanged OnEffectivelyHidden OnEffectivelyShown OnEnabledStateChanged OnEnter OnEscape OnFocusGained OnFocusLost OnHide OnIMEBeginComposition OnIMEEndComposition OnInitialized OnInsertAnimationTimelineCallback OnKeyDown OnKeyUp OnLinkClicked OnLinkMouseUp OnLoadFinished OnLoadStart OnMinMaxValueChanged OnMouseDoubleClick OnMouseDown OnMouseEnter OnMouseExit OnMouseUp OnMouseWheel OnMoveStart OnMoveStop OnPageDown OnPageUp OnPlay OnPlay OnReceiveDrag OnRequestClose OnResizeStart OnResizeStop OnResizedToFit OnScrollExtentsChanged OnScrollOffsetChanged OnSetAnimationEaseFunction OnSetAnimationEventHandler OnSetAnimationTimelineEventHandler OnSetControlEventHandler OnSetUpdateFunction OnShow OnSliderReleased OnSpace OnStop OnStop OnTab OnTextChanged OnTextureLoaded OnUpArrow OnUpdate OnUserAreaCreated OnValueChanged OnVisibleRadiusChanged PressedOffset RadialCooldownGradient ResizeToFitPadding Rotate3DAnimation ScaleAnimation Scroll ScrollingOverlay SizeAnimation Slider StatusBar String Surface TextBuffer Texture TextureAnimation TextureComposite TextureCoords TextureRotateAnimation Textures ThumbTexture Tooltip TopLevelControl Translate3DAnimation TranslateAnimation UpdateFunction sentinel ]]
 
@@ -33423,7 +33423,7 @@ return {
   end,
 
   onUnRegister = function(self)
-	ide:RemoveAPI("lua","ESOAPI")
+	ide:RemoveAPI("lua", name)
 	ide:RemoveSpec("ESOxml")
     end,
 }
