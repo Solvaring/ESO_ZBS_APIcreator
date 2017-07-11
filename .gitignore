@@ -1,2 +1,4 @@
 esoapidef.lua
 pluginesoapi.lua
+*.zip
+.gitignore
