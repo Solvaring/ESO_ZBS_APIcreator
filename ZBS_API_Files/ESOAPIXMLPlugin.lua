@@ -3,8 +3,17 @@ local api = {
 EVENT_MANAGER = {type="class", childs = {
 RegisterForEvent = {type="method", args="(*string* _YourAddonName_, *integer* _event_, *function* _callback_)", returns="(bool:success,)",},
 UnregisterForEvent = {type="method", args="(*string* _YourAddonName_, *integer* _event_)", returns="(bool:success,)",},
-AddFilterForEvent = {type="method", args="(*string* eventNamespace, *number* eventId[, RegisterForEventFilterType filterType, *varying* parameter])", returns="(bool:success,)",}
+AddFilterForEvent = {type="method", args="(*string* eventNamespace, *number* eventId[, RegisterForEventFilterType filterType, *varying* parameter])", returns="(bool:success,)",},
 }},
+ZO_SavedVars = {type="class", childs={
+New = {type="method", args="(savedVariableTable, version, namespace, defaults, profile, displayName, characterName, characterId, characterKeyType)"},
+NewCharacterNameSettings = {type="method", args="(savedVariableTable, version, namespace, defaults, profile)"},
+NewCharacterIdSettings = {type="method", args="(savedVariableTable, version, namespace, defaults, profile)"},
+NewAccountWide = {type="method", args="(savedVariableTable, version, namespace, defaults, profile, displayName)"},
+}},
+
+GetNewSavedVars = {type="function", args="(savedVariableTable, version, namespace, defaults, profile, displayName, characterName, characterId, characterKeyType)"},
+
 ABILITY_TOOLTIP_TEXT_COLOR_ABILITY_INFO = {
 	 type = "value",},
 
