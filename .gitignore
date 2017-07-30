@@ -2,3 +2,5 @@ esoapidef.lua
 pluginesoapi.lua
 *.zip
 README_old.md
+ESOAPI.lua
+apispectointerinstructions.txt

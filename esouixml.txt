@@ -1036,4 +1036,3 @@ h5. UpdateFunction
 * ScriptArguments: local self, progress = ...
 
 h5. sentinel_element
-
