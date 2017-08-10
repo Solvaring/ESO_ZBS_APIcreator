@@ -1,4 +1,4 @@
--- Currently Made for API Version 100019
+-- Currently Made for API Version 100020
 local api = {
 EVENT_MANAGER = {type="class", childs = {
 RegisterForEvent = {type="method", args="([*string* _YourAddonName_,] *integer* _event_, *function* _callback_)", returns="(bool:success,)",},
@@ -12,7 +12,7 @@ NewCharacterIdSettings = {type="method", args="(savedVariableTable, version, nam
 NewAccountWide = {type="method", args="(savedVariableTable, version, namespace, defaults, profile, displayName)"},
 }},
 ZO_Object = {type="class", childs={
-New = {type="method", args="(template)", returns="(Table:newObject,)"},
+New = {type="function", args="(template)", returns="(Table:newObject,)"},
 Subclass = {type="method", args="()", returns="(setmetatable({},{__index=self}))"},
 MultiSubclass = {type="function", args="(...)", returns="(Table:parentClassTable)", description="See libraries/utility/baseobject.lua"},
 }},
@@ -26,345 +26,6 @@ zo_callLater = {type="function", args="(function, ms)"},
 SLASH_COMMANDS = {type="value", },
 
 StartChatInput = {type="function", args="(text, channel, [,target])",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_ABILITY_INFO = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_BODY = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_BRONZE_ABILITY = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_DEFAULT = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_FAILED_REQUIREMENT = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_GOLD_ABILITY = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_NAME = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_NEW_EFFECT = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_SILVER_ABILITY = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_SPECIAL_HEADER = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_UPGRADES = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_UPGRADE_TO_ABILITY = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_USE_INFO_TYPE = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_USE_INFO_TYPE = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_USE_INFO_TYPE = {
-	 type = "value",},
-
-ABILITY_TOOLTIP_TEXT_COLOR_VALID_REQUIREMENT = {
-	 type = "value",},
-
-ABILITY_TYPE_ACTIONLIST = {
-	 type = "value",},
-
-ABILITY_TYPE_AREAEFFECT = {
-	 type = "value",},
-
-ABILITY_TYPE_AREATELEPORT = {
-	 type = "value",},
-
-ABILITY_TYPE_ATTACKERINTERCEPT = {
-	 type = "value",},
-
-ABILITY_TYPE_ATTACKERREFLECT = {
-	 type = "value",},
-
-ABILITY_TYPE_AVOIDDEATH = {
-	 type = "value",},
-
-ABILITY_TYPE_BASIC = {
-	 type = "value",},
-
-ABILITY_TYPE_BLADETURN = {
-	 type = "value",},
-
-ABILITY_TYPE_BLINK = {
-	 type = "value",},
-
-ABILITY_TYPE_BLOCK = {
-	 type = "value",},
-
-ABILITY_TYPE_BONUS = {
-	 type = "value",},
-
-ABILITY_TYPE_CHANGEAPPEARANCE = {
-	 type = "value",},
-
-ABILITY_TYPE_CHARGE = {
-	 type = "value",},
-
-ABILITY_TYPE_CHARM = {
-	 type = "value",},
-
-ABILITY_TYPE_CLAIRVOYANCE = {
-	 type = "value",},
-
-ABILITY_TYPE_CLIENTFX = {
-	 type = "value",},
-
-ABILITY_TYPE_COMBATRESOURCE = {
-	 type = "value",},
-
-ABILITY_TYPE_CREATEINTERACTABLE = {
-	 type = "value",},
-
-ABILITY_TYPE_CREATEINVENTORYITEM = {
-	 type = "value",},
-
-ABILITY_TYPE_DAMAGE = {
-	 type = "value",},
-
-ABILITY_TYPE_DAMAGELIMIT = {
-	 type = "value",},
-
-ABILITY_TYPE_DAMAGESHIELD = {
-	 type = "value",},
-
-ABILITY_TYPE_DEFEND = {
-	 type = "value",},
-
-ABILITY_TYPE_DESPAWNOVERRIDE = {
-	 type = "value",},
-
-ABILITY_TYPE_DISARM = {
-	 type = "value",},
-
-ABILITY_TYPE_DISORIENT = {
-	 type = "value",},
-
-ABILITY_TYPE_DISPEL = {
-	 type = "value",},
-
-ABILITY_TYPE_DODGE = {
-	 type = "value",},
-
-ABILITY_TYPE_DOUBLEFIRE = {
-	 type = "value",},
-
-ABILITY_TYPE_EXHAUSTED = {
-	 type = "value",},
-
-ABILITY_TYPE_FEAR = {
-	 type = "value",},
-
-ABILITY_TYPE_FILLSOULGEM = {
-	 type = "value",},
-
-ABILITY_TYPE_FIREPROC = {
-	 type = "value",},
-
-ABILITY_TYPE_FLIGHT = {
-	 type = "value",},
-
-ABILITY_TYPE_FREECAST = {
-	 type = "value",},
-
-ABILITY_TYPE_FREEINTERACT = {
-	 type = "value",},
-
-ABILITY_TYPE_GRANTABILITY = {
-	 type = "value",},
-
-ABILITY_TYPE_HEAL = {
-	 type = "value",},
-
-ABILITY_TYPE_HIDE = {
-	 type = "value",},
-
-ABILITY_TYPE_IMMUNITY = {
-	 type = "value",},
-
-ABILITY_TYPE_INTERCEPT = {
-	 type = "value",},
-
-ABILITY_TYPE_INTERRUPT = {
-	 type = "value",},
-
-ABILITY_TYPE_JUMP = {
-	 type = "value",},
-
-ABILITY_TYPE_KNOCKBACK = {
-	 type = "value",},
-
-ABILITY_TYPE_LEAP = {
-	 type = "value",},
-
-ABILITY_TYPE_LEVITATE = {
-	 type = "value",},
-
-ABILITY_TYPE_MISDIRECT = {
-	 type = "value",},
-
-ABILITY_TYPE_MODIFYCOOLDOWN = {
-	 type = "value",},
-
-ABILITY_TYPE_MODIFYDURATION = {
-	 type = "value",},
-
-ABILITY_TYPE_MODIFYSPECIALSTAT = {
-	 type = "value",},
-
-ABILITY_TYPE_MOUNT = {
-	 type = "value",},
-
-ABILITY_TYPE_MOVEPOSITION = {
-	 type = "value",},
-
-ABILITY_TYPE_NOAGGRO = {
-	 type = "value",},
-
-ABILITY_TYPE_NOKILL = {
-	 type = "value",},
-
-ABILITY_TYPE_NOLOCKPICK = {
-	 type = "value",},
-
-ABILITY_TYPE_NOSEETARGET = {
-	 type = "value",},
-
-ABILITY_TYPE_NONCOMBATBONUS = {
-	 type = "value",},
-
-ABILITY_TYPE_NONEXISTENT = {
-	 type = "value",},
-
-ABILITY_TYPE_NONE = {
-	 type = "value",},
-
-ABILITY_TYPE_OFFBALANCE = {
-	 type = "value",},
-
-ABILITY_TYPE_PACIFY = {
-	 type = "value",},
-
-ABILITY_TYPE_PARRY = {
-	 type = "value",},
-
-ABILITY_TYPE_PATHLINE = {
-	 type = "value",},
-
-ABILITY_TYPE_RECALL = {
-	 type = "value",},
-
-ABILITY_TYPE_REFLECTION = {
-	 type = "value",},
-
-ABILITY_TYPE_REGISTERTRIGGER = {
-	 type = "value",},
-
-ABILITY_TYPE_REMOVETYPE = {
-	 type = "value",},
-
-ABILITY_TYPE_RESURRECT = {
-	 type = "value",},
-
-ABILITY_TYPE_REVEAL = {
-	 type = "value",},
-
-ABILITY_TYPE_SEESTEALTH = {
-	 type = "value",},
-
-ABILITY_TYPE_SETCOOLDOWN = {
-	 type = "value",},
-
-ABILITY_TYPE_SETHOTBAR = {
-	 type = "value",},
-
-ABILITY_TYPE_SETPERSONALITY = {
-	 type = "value",},
-
-ABILITY_TYPE_SETTARGET = {
-	 type = "value",},
-
-ABILITY_TYPE_SHOWNON = {
-	 type = "value",},
-
-ABILITY_TYPE_SIEGEAREAEFFECT = {
-	 type = "value",},
-
-ABILITY_TYPE_SIEGECREATE = {
-	 type = "value",},
-
-ABILITY_TYPE_SIEGEPACKUP = {
-	 type = "value",},
-
-ABILITY_TYPE_SILENCE = {
-	 type = "value",},
-
-ABILITY_TYPE_SLOWFALL = {
-	 type = "value",},
-
-ABILITY_TYPE_SNARE = {
-	 type = "value",},
-
-ABILITY_TYPE_SOULGEMRESURRECT = {
-	 type = "value",},
-
-ABILITY_TYPE_SPELLSTEAL = {
-	 type = "value",},
-
-ABILITY_TYPE_STAGGER = {
-	 type = "value",},
-
-ABILITY_TYPE_STEALTH = {
-	 type = "value",},
-
-ABILITY_TYPE_STUN = {
-	 type = "value",},
-
-ABILITY_TYPE_SUMMON = {
-	 type = "value",},
-
-ABILITY_TYPE_THREAT = {
-	 type = "value",},
-
-ABILITY_TYPE_TRAUMA = {
-	 type = "value",},
-
-ABILITY_TYPE_UPDATEDEATHDIALOG = {
-	 type = "value",},
-
-ABILITY_TYPE_VAMPIRE = {
-	 type = "value",},
-
-ABILITY_TYPE_WIND = {
-	 type = "value",},
-
-ACHIEVEMENT_POINT_HIGH = {
-	 type = "value",},
-
-ACHIEVEMENT_POINT_LEGENDARY_DEED = {
-	 type = "value",},
-
-ACHIEVEMENT_POINT_LOW = {
-	 type = "value",},
-
-ACHIEVEMENT_POINT_MEDIUM = {
-	 type = "value",},
-
-ACHIEVEMENT_POINT_VERY_HIGH = {
-	 type = "value",},
 
 ACHIEVEMENT_REWARD_TYPE_DYE = {
 	 type = "value",},
@@ -381,16 +42,127 @@ ACHIEVEMENT_REWARD_TYPE_POINTS = {
 ACHIEVEMENT_REWARD_TYPE_TITLE = {
 	 type = "value",},
 
-ACTION_BAR_SETTING_LOCK_ACTION_BARS = {
+ARMORDAMAGESTYLE_FABRIC = {
 	 type = "value",},
 
-ACTION_BAR_SETTING_CHOICE_AUTOMATIC = {
+ARMORDAMAGESTYLE_GENERIC = {
 	 type = "value",},
 
-ACTION_BAR_SETTING_CHOICE_OFF = {
+ARMORDAMAGESTYLE_METAL = {
 	 type = "value",},
 
-ACTION_BAR_SETTING_CHOICE_ON = {
+BROWSER_TYPE_AGENT_CHAT = {
+	 type = "value",},
+
+BROWSER_TYPE_BUG = {
+	 type = "value",},
+
+BROWSER_TYPE_QA_BUG = {
+	 type = "value",},
+
+BROWSER_TYPE_USER_CHAT = {
+	 type = "value",},
+
+BROWSER_TYPE_USER_FEEDBACK = {
+	 type = "value",},
+
+BROWSER_TYPE_USER_HELP = {
+	 type = "value",},
+
+BROWSER_TYPE_USER_ITEM_BUG = {
+	 type = "value",},
+
+BROWSER_TYPE_USER_QUEST_HELP = {
+	 type = "value",},
+
+BROWSER_TYPE_USER_REPORT = {
+	 type = "value",},
+
+BROWSER_OPEN_TYPE_BUG = {
+	 type = "value",},
+
+BROWSER_OPEN_TYPE_FEEDBACK = {
+	 type = "value",},
+
+BROWSER_OPEN_TYPE_LOGOUT = {
+	 type = "value",},
+
+ENCHANTMENT_CATEGORY_ARMOR = {
+	 type = "value",},
+
+ENCHANTMENT_CATEGORY_JEWELRY = {
+	 type = "value",},
+
+ENCHANTMENT_CATEGORY_NONE = {
+	 type = "value",},
+
+ENCHANTMENT_CATEGORY_WEAPON = {
+	 type = "value",},
+
+INSTANCE_QUEUE_REQUEST_SIZE_GROUP = {
+	 type = "value",},
+
+INSTANCE_QUEUE_REQUEST_SIZE_SOLO = {
+	 type = "value",},
+
+INSTANCE_QUEUE_TYPE_BATTLEGROUND = {
+	 type = "value",},
+
+INSTANCE_QUEUE_TYPE_GROUP = {
+	 type = "value",},
+
+INSTANCE_QUEUE_TYPE_RAID = {
+	 type = "value",},
+
+RESOURCE_PROVIDER_FARM = {
+	 type = "value",},
+
+RESOURCE_PROVIDER_LUMBERMILL = {
+	 type = "value",},
+
+RESOURCE_PROVIDER_MINE = {
+	 type = "value",},
+
+RESOURCE_PROVIDER_NONE = {
+	 type = "value",},
+
+SPECIAL_STAT_TYPE_DISABLE_XP = {
+	 type = "value",},
+
+SPECIAL_STAT_TYPE_NONE = {
+	 type = "value",},
+
+TOOLTIP_SETTING_QUEST_PANEL_CATEGORY = {
+	 type = "value",},
+
+TOOLTIP_SETTING_UNIT_FRAMES_CATEGORY = {
+	 type = "value",},
+
+CRAFTING_ADVANCE_MODE_DELEVEL = {
+	 type = "value",},
+
+CRAFTING_ADVANCE_MODE_FREEZE = {
+	 type = "value",},
+
+CRAFTING_ADVANCE_MODE_LEVEL = {
+	 type = "value",},
+
+CRAFTING_ADVANCE_MODE_LOCKED = {
+	 type = "value",},
+
+ACHIEVEMENT_POINT_HIGH = {
+	 type = "value",},
+
+ACHIEVEMENT_POINT_LEGENDARY_DEED = {
+	 type = "value",},
+
+ACHIEVEMENT_POINT_LOW = {
+	 type = "value",},
+
+ACHIEVEMENT_POINT_MEDIUM = {
+	 type = "value",},
+
+ACHIEVEMENT_POINT_VERY_HIGH = {
 	 type = "value",},
 
 ACTION_TYPE_ABILITY = {
@@ -435,15 +207,6 @@ ACTION_SLOT_TYPE_ULTIMATE = {
 ACTION_SLOT_TYPE_WEAPON_ATTACK = {
 	 type = "value",},
 
-ACTIVE_COMBAT_TIP_COLOR_FAILURE = {
-	 type = "value",},
-
-ACTIVE_COMBAT_TIP_COLOR_NORMAL = {
-	 type = "value",},
-
-ACTIVE_COMBAT_TIP_COLOR_SUCCESS = {
-	 type = "value",},
-
 ACTIVE_COMBAT_TIP_RESULT_FAILURE = {
 	 type = "value",},
 
@@ -460,102 +223,6 @@ ACT_SETTING_AUTO = {
 	 type = "value",},
 
 ACT_SETTING_OFF = {
-	 type = "value",},
-
-ACTIVE_WEAPON_PAIR_BACKUP = {
-	 type = "value",},
-
-ACTIVE_WEAPON_PAIR_MAIN = {
-	 type = "value",},
-
-ACTIVE_WEAPON_PAIR_NONE = {
-	 type = "value",},
-
-ACTIVITY_FINDER_STATUS_COMPLETE = {
-	 type = "value",},
-
-ACTIVITY_FINDER_STATUS_FORMING_GROUP = {
-	 type = "value",},
-
-ACTIVITY_FINDER_STATUS_IN_PROGRESS = {
-	 type = "value",},
-
-ACTIVITY_FINDER_STATUS_NONE = {
-	 type = "value",},
-
-ACTIVITY_FINDER_STATUS_QUEUED = {
-	 type = "value",},
-
-ACTIVITY_FINDER_STATUS_READY_CHECK = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_CAMPAIGN_MISMATCH = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_CANNOT_QUEUE_IN_BATTLEGROUND = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_DESTINATION_NO_LONGER_VALID = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_DLC_LOCKED = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_GROUP_STRUCTURE_CHANGED = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_GROUP_TOO_LARGE = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_INCOMPATIBLE_GROUP = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_INCOMPATIBLE_REGION = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_INVALID_LEVEL = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_LOCATION_RESTRICTION = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_MEMBERS_OFFLINE = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_MEMEBER_CANCELED_READY_CHECK = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_MEMEBR_LOCATION_NOT_VALID = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_NEW_SEARCH_INITIATED = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_NOT_GROUP_LEADER = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_NOT_IMPLEMENTED = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_NO_ACTIVITIES_SELECTED = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_NO_GROUP = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_NO_ROLES_SELECTED = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_ON_QUEUE_COOLDOWN = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_QUEUE_TTL_EXPIRED = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_SUCCESS = {
-	 type = "value",},
-
-ACTIVITY_QUEUE_RESULT_UNSPECIFIED_INTERNAL_ERROR = {
 	 type = "value",},
 
 ALLIANCE_ALDMERI_DOMINION = {
@@ -591,36 +258,6 @@ APPROVED_URL_ESO_HELP = {
 APPROVED_URL_ESO_HOMEPAGE = {
 	 type = "value",},
 
-ARMORDAMAGESTYLE_FABRIC = {
-	 type = "value",},
-
-ARMORDAMAGESTYLE_GENERIC = {
-	 type = "value",},
-
-ARMORDAMAGESTYLE_METAL = {
-	 type = "value",},
-
-ARMORTYPE_HEAVY = {
-	 type = "value",},
-
-ARMORTYPE_LIGHT = {
-	 type = "value",},
-
-ARMORTYPE_MEDIUM = {
-	 type = "value",},
-
-ARMORTYPE_NONE = {
-	 type = "value",},
-
-ATTRIBUTE_TOOLTIP_COLOR_CURRENT_VALUE = {
-	 type = "value",},
-
-ATTRIBUTE_TOOLTIP_COLOR_EFFECT = {
-	 type = "value",},
-
-ATTRIBUTE_TOOLTIP_COLOR_NAME = {
-	 type = "value",},
-
 ATTRIBUTE_HEALTH = {
 	 type = "value",},
 
@@ -631,60 +268,6 @@ ATTRIBUTE_NONE = {
 	 type = "value",},
 
 ATTRIBUTE_STAMINA = {
-	 type = "value",},
-
-AUDIO_SETTING_AMBIENT_ENABLED = {
-	 type = "value",},
-
-AUDIO_SETTING_AMBIENT_VOLUME = {
-	 type = "value",},
-
-AUDIO_SETTING_AUDIO_ENABLED = {
-	 type = "value",},
-
-AUDIO_SETTING_AUDIO_VOLUME = {
-	 type = "value",},
-
-AUDIO_SETTING_BACKGROUND_AUDIO = {
-	 type = "value",},
-
-AUDIO_SETTING_FOOTSTEPS_ENABLED = {
-	 type = "value",},
-
-AUDIO_SETTING_FOOTSTEPS_VOLUME = {
-	 type = "value",},
-
-AUDIO_SETTING_MUSIC_ENABLED = {
-	 type = "value",},
-
-AUDIO_SETTING_MUSIC_VOLUME = {
-	 type = "value",},
-
-AUDIO_SETTING_SFX_ENABLED = {
-	 type = "value",},
-
-AUDIO_SETTING_SFX_VOLUME = {
-	 type = "value",},
-
-AUDIO_SETTING_SOUND_ENABLED = {
-	 type = "value",},
-
-AUDIO_SETTING_SPEAKER_SETUP = {
-	 type = "value",},
-
-AUDIO_SETTING_UI_ENABLED = {
-	 type = "value",},
-
-AUDIO_SETTING_UI_VOLUME = {
-	 type = "value",},
-
-AUDIO_SETTING_VOICE_CHAT_VOLUME = {
-	 type = "value",},
-
-AUDIO_SETTING_VO_ENABLED = {
-	 type = "value",},
-
-AUDIO_SETTING_VO_VOLUME = {
 	 type = "value",},
 
 AUDIO_SPEAKER_CONFIG_FIVE_POINT_ONE = {
@@ -714,15 +297,6 @@ AUDIO_SPEAKER_CONFIG_TWO_POINT_ONE = {
 AUDIO_SPEAKER_CONFIG_USE_WINDOWS_SETTING = {
 	 type = "value",},
 
-AXIS_TYPE_X = {
-	 type = "value",},
-
-AXIS_TYPE_Y = {
-	 type = "value",},
-
-AXIS_TYPE_Z = {
-	 type = "value",},
-
 BACKGROUND_LIST_FILTER_TARGET_BAG_SLOT = {
 	 type = "value",},
 
@@ -745,27 +319,6 @@ BACKGROUND_LIST_FILTER_TYPE_NAME = {
 	 type = "value",},
 
 BACKGROUND_LIST_FILTER_TYPE_SEARCH_KEYWORDS = {
-	 type = "value",},
-
-BAG_BACKPACK = {
-	 type = "value",},
-
-BAG_BANK = {
-	 type = "value",},
-
-BAG_BUYBACK = {
-	 type = "value",},
-
-BAG_GUILDBANK = {
-	 type = "value",},
-
-BAG_SUBSCRIBER_BANK = {
-	 type = "value",},
-
-BAG_VIRTUAL = {
-	 type = "value",},
-
-BAG_WORN = {
 	 type = "value",},
 
 BATTLEGROUND_ALLIANCE_FIRE_DRAKES = {
@@ -828,37 +381,13 @@ BATTLEGROUND_LEADERBOARD_TYPE_LAND_GRAB = {
 BATTLEGROUND_LEADERBOARD_TYPE_NONE = {
 	 type = "value",},
 
-BGQUERY_ASSIGNED_AND_LOCAL = {
-	 type = "value",},
-
-BGQUERY_ASSIGNED_CAMPAIGN = {
-	 type = "value",},
-
-BGQUERY_LOCAL = {
-	 type = "value",},
-
-BGQUERY_UNKNOWN = {
-	 type = "value",},
-
-BIND_TYPE_NONE = {
-	 type = "value",},
-
-BIND_TYPE_ON_EQUIP = {
-	 type = "value",},
-
-BIND_TYPE_ON_PICKUP = {
-	 type = "value",},
-
-BIND_TYPE_ON_PICKUP_BACKPACK = {
-	 type = "value",},
-
-BIND_TYPE_UNSET = {
-	 type = "value",},
-
 BOOK_MEDIUM_ANIMAL_SKIN = {
 	 type = "value",},
 
 BOOK_MEDIUM_LETTER = {
+	 type = "value",},
+
+BOOK_MEDIUM_NONE = {
 	 type = "value",},
 
 BOOK_MEDIUM_NOTE = {
@@ -898,51 +427,6 @@ BOSS_RANK_THREE = {
 	 type = "value",},
 
 BOSS_RANK_TWO = {
-	 type = "value",},
-
-BROWSER_TYPE_AGENT_CHAT = {
-	 type = "value",},
-
-BROWSER_TYPE_BUG = {
-	 type = "value",},
-
-BROWSER_TYPE_QA_BUG = {
-	 type = "value",},
-
-BROWSER_TYPE_USER_CHAT = {
-	 type = "value",},
-
-BROWSER_TYPE_USER_FEEDBACK = {
-	 type = "value",},
-
-BROWSER_TYPE_USER_HELP = {
-	 type = "value",},
-
-BROWSER_TYPE_USER_ITEM_BUG = {
-	 type = "value",},
-
-BROWSER_TYPE_USER_QUEST_HELP = {
-	 type = "value",},
-
-BROWSER_TYPE_USER_REPORT = {
-	 type = "value",},
-
-BROWSER_OPEN_TYPE_BUG = {
-	 type = "value",},
-
-BROWSER_OPEN_TYPE_FEEDBACK = {
-	 type = "value",},
-
-BROWSER_OPEN_TYPE_LOGOUT = {
-	 type = "value",},
-
-BUFF_DEBUFF_ENABLED_CHOICE_ALWAYS_SHOW = {
-	 type = "value",},
-
-BUFF_DEBUFF_ENABLED_CHOICE_AUTOMATIC = {
-	 type = "value",},
-
-BUFF_DEBUFF_ENABLED_CHOICE_DONT_SHOW = {
 	 type = "value",},
 
 BUFF_EFFECT_TYPE_BUFF = {
@@ -1098,42 +582,6 @@ BUFF_TYPE_MINOR_WARD = {
 BUFF_TYPE_NONE = {
 	 type = "value",},
 
-BUFF_TYPE_COLOR_BUFF = {
-	 type = "value",},
-
-BUFF_TYPE_COLOR_DEBUFF = {
-	 type = "value",},
-
-BUFFS_SETTING_ALL_ENABLED = {
-	 type = "value",},
-
-BUFFS_SETTING_BUFFS_ENABLED = {
-	 type = "value",},
-
-BUFFS_SETTING_BUFFS_ENABLED_FOR_SELF = {
-	 type = "value",},
-
-BUFFS_SETTING_BUFFS_ENABLED_FOR_TARGET = {
-	 type = "value",},
-
-BUFFS_SETTING_DEBUFFS_ENABLED = {
-	 type = "value",},
-
-BUFFS_SETTING_DEBUFFS_ENABLED_FOR_SELF = {
-	 type = "value",},
-
-BUFFS_SETTING_DEBUFFS_ENABLED_FOR_TARGET = {
-	 type = "value",},
-
-BUFFS_SETTING_DEBUFFS_ENABLED_FOR_TARGET_FROM_OTHERS = {
-	 type = "value",},
-
-BUFFS_SETTING_LONG_EFFECTS = {
-	 type = "value",},
-
-BUFFS_SETTING_PERMANENT_EFFECTS = {
-	 type = "value",},
-
 CADWELL_PROGRESSION_LEVEL_BRONZE = {
 	 type = "value",},
 
@@ -1141,144 +589,6 @@ CADWELL_PROGRESSION_LEVEL_GOLD = {
 	 type = "value",},
 
 CADWELL_PROGRESSION_LEVEL_SILVER = {
-	 type = "value",},
-
-CAMERA_OPTIONS_PREVIEW_FORCE_FIRST_PERSON = {
-	 type = "value",},
-
-CAMERA_OPTIONS_PREVIEW_FORCE_THIRD_PERSON = {
-	 type = "value",},
-
-CAMERA_OPTIONS_PREVIEW_NONE = {
-	 type = "value",},
-
-CAMERA_SETTING_ASSASSINATION_CAMERA = {
-	 type = "value",},
-
-CAMERA_SETTING_DISTANCE = {
-	 type = "value",},
-
-CAMERA_SETTING_DISTANCE_SYNCED = {
-	 type = "value",},
-
-CAMERA_SETTING_DISTANCE_UNSHEATHED = {
-	 type = "value",},
-
-CAMERA_SETTING_FIRST_PERSON_FIELD_OF_VIEW = {
-	 type = "value",},
-
-CAMERA_SETTING_FIRST_PERSON_HEAD_BOB = {
-	 type = "value",},
-
-CAMERA_SETTING_FOV_CHANGES_ALLOWED = {
-	 type = "value",},
-
-CAMERA_SETTING_INVERT_Y = {
-	 type = "value",},
-
-CAMERA_SETTING_SENSITIVITY_FIRST_PERSON = {
-	 type = "value",},
-
-CAMERA_SETTING_SENSITIVITY_THIRD_PERSON = {
-	 type = "value",},
-
-CAMERA_SETTING_SMOOTHING = {
-	 type = "value",},
-
-CAMERA_SETTING_THIRD_PERSON_FIELD_OF_VIEW = {
-	 type = "value",},
-
-CAMERA_SETTING_THIRD_PERSON_HORIZONTAL_OFFSET = {
-	 type = "value",},
-
-CAMERA_SETTING_THIRD_PERSON_HORIZONTAL_POSITION_MULTIPLIER = {
-	 type = "value",},
-
-CAMERA_SETTING_THIRD_PERSON_SIEGE_WEAPONRY = {
-	 type = "value",},
-
-CAMERA_SETTING_THIRD_PERSON_VERTICAL_OFFSET = {
-	 type = "value",},
-
-CAMPAIGNBUFF_DEFENSIVE_ARTIFACT = {
-	 type = "value",},
-
-CAMPAIGNBUFF_EMPEROR = {
-	 type = "value",},
-
-CAMPAIGNBUFF_KEEP = {
-	 type = "value",},
-
-CAMPAIGNBUFF_OFFENSIVE_ARTIFACT = {
-	 type = "value",},
-
-HOLDINGTYPE_DEFENSIVE_ARTIFACT = {
-	 type = "value",},
-
-HOLDINGTYPE_KEEP = {
-	 type = "value",},
-
-HOLDINGTYPE_OFFENSIVE_ARTIFACT = {
-	 type = "value",},
-
-HOLDINGTYPE_OUTPOST = {
-	 type = "value",},
-
-HOLDINGTYPE_RESOURCE = {
-	 type = "value",},
-
-CAMPAIGN_LEVEL_REQ_TYPE_CHAMPION_RANK = {
-	 type = "value",},
-
-CAMPAIGN_LEVEL_REQ_TYPE_NONE = {
-	 type = "value",},
-
-CAMPAIGN_LEVEL_REQ_TYPE_PLAYER_LEVEL = {
-	 type = "value",},
-
-CAMPAIGN_POP_FULL = {
-	 type = "value",},
-
-CAMPAIGN_POP_HIGH = {
-	 type = "value",},
-
-CAMPAIGN_POP_LOW = {
-	 type = "value",},
-
-CAMPAIGN_POP_MEDIUM = {
-	 type = "value",},
-
-CAMP_PREF_ASSIGNED = {
-	 type = "value",},
-
-CAMP_PREF_GUEST = {
-	 type = "value",},
-
-CAMPAIGN_REASSIGN_TYPE_GUEST = {
-	 type = "value",},
-
-CAMPAIGN_REASSIGN_TYPE_IMMEDIATE = {
-	 type = "value",},
-
-CAMPAIGN_REASSIGN_TYPE_ON_END = {
-	 type = "value",},
-
-CAMPAIGN_RULESET_TYPE_HARDCORE = {
-	 type = "value",},
-
-CAMPAIGN_RULESET_TYPE_NORMAL = {
-	 type = "value",},
-
-CAMPAIGN_RULESET_TYPE_SPECIAL = {
-	 type = "value",},
-
-CAMPAIGN_UNASSIGN_TYPE_GUEST = {
-	 type = "value",},
-
-CAMPAIGN_UNASSIGN_TYPE_HOME_USE_ALLIANCE_POINTS = {
-	 type = "value",},
-
-CAMPAIGN_UNASSIGN_TYPE_HOME_USE_GOLD = {
 	 type = "value",},
 
 CENTER_SCREEN_ANNOUNCE_TYPE_ABILITY_PROGRESSION_RANK_MORPH = {
@@ -1524,18 +834,6 @@ CHARACTER_CREATE_OPTION_RESTRICTION_REASON_REQUIRES_COLLECTIBLE = {
 CHARACTER_CREATE_OPTION_RESTRICTION_REASON_REQUIRES_MORROWIND = {
 	 type = "value",},
 
-CHAT_BUBBLE_SETTING_ENABLED = {
-	 type = "value",},
-
-CHAT_BUBBLE_SETTING_ENABLED_FOR_LOCAL_PLAYER = {
-	 type = "value",},
-
-CHAT_BUBBLE_SETTING_ENABLED_ONLY_FROM_CONTACTS = {
-	 type = "value",},
-
-CHAT_BUBBLE_SETTING_SPEED_MODIFIER = {
-	 type = "value",},
-
 CHAT_CATEGORY_COMBAT_ALLIANCE_POINTS = {
 	 type = "value",},
 
@@ -1672,6 +970,4788 @@ CHAT_CATEGORY_HEADER_COMBAT = {
 	 type = "value",},
 
 CHAT_CATEGORY_HEADER_GUILDS = {
+	 type = "value",},
+
+CONSOLE_SERVER_EUROPE = {
+	 type = "value",},
+
+CONSOLE_SERVER_NORTH_AMERICA = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_ABILITY_UPGRADE_PURCHASE = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_ACHIEVEMENT = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_ACTION = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_BAGSPACE = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_BANKSPACE = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_BANK_DEPOSIT = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_BANK_FEE = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_BANK_WITHDRAWAL = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_BATTLEGROUND = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_BOUNTY_CONFISCATED = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_BOUNTY_PAID_FENCE = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_BOUNTY_PAID_GUARD = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_BUYBACK = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_CASH_ON_DELIVERY = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_COMMAND = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_CONSUME_FOOD_DRINK = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_CONSUME_POTION = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_CONVERSATION = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_CRAFT = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_DEATH = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_DECONSTRUCT = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_EDIT_GUILD_HERALDRY = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_FEED_MOUNT = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_GUILD_BANK_DEPOSIT = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_GUILD_BANK_WITHDRAWAL = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_GUILD_FORWARD_CAMP = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_GUILD_STANDARD = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_GUILD_TABARD = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_HARVEST_REAGENT = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_HOOKPOINT_STORE = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_JUMP_FAILURE_REFUND = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_KEEP_REPAIR = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_KEEP_REWARD = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_KEEP_UPGRADE = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_KILL = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_LOOT = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_LOOT_STOLEN = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_MAIL = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_MEDAL = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_PICKPOCKET = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_PLAYER_INIT = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_PVP_KILL_TRANSFER = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_PVP_RESURRECT = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_QUESTREWARD = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_RECIPE = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_REFORGE = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_RESEARCH_TRAIT = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_RESPEC_ATTRIBUTES = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_RESPEC_CHAMPION = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_RESPEC_MORPHS = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_RESPEC_SKILLS = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_REWARD = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_SELL_STOLEN = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_SOULWEARY = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_SOUL_HEAL = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_STABLESPACE = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_STUCK = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_TRADE = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_TRADINGHOUSE_LISTING = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_TRADINGHOUSE_PURCHASE = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_TRADINGHOUSE_REFUND = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_TRAIT_REVEAL = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_TRAVEL_GRAVEYARD = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_VENDOR = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_VENDOR_LAUNDER = {
+	 type = "value",},
+
+CURRENCY_CHANGE_REASON_VENDOR_REPAIR = {
+	 type = "value",},
+
+CURT_ALLIANCE_POINTS = {
+	 type = "value",},
+
+CURT_HIDDEN_THING = {
+	 type = "value",},
+
+CURT_MONEY = {
+	 type = "value",},
+
+CURT_NONE = {
+	 type = "value",},
+
+CURT_TELVAR_STONES = {
+	 type = "value",},
+
+CURT_WRIT_VOUCHERS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_ASK_FOR_HELP_CATEGORY_CHARACTER_ISSUE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_ASK_FOR_HELP_CATEGORY_NONE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_ASK_FOR_HELP_CATEGORY_REPORT_PLAYER = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_ASK_FOR_HELP_REPORT_PLAYER_SUBCATEGORY_CHEATING = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_ASK_FOR_HELP_REPORT_PLAYER_SUBCATEGORY_HARASSMENT = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_ASK_FOR_HELP_REPORT_PLAYER_SUBCATEGORY_INAPPROPRIATE_NAME = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_ASK_FOR_HELP_REPORT_PLAYER_SUBCATEGORY_NONE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_ASK_FOR_HELP_REPORT_PLAYER_SUBCATEGORY_OTHER = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_ITEM_ASSISTANCE_CATEGORY_CANT_ACQUIRE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_ITEM_ASSISTANCE_CATEGORY_DEPRECATED = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_ITEM_ASSISTANCE_CATEGORY_FROM_CROWN_STORE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_ITEM_ASSISTANCE_CATEGORY_LOST = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_ITEM_ASSISTANCE_CATEGORY_MISSING_CROWNS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_ITEM_ASSISTANCE_CATEGORY_NONE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_QUEST_ASSISTANCE_CATEGORY_ITEM_MISSING = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_QUEST_ASSISTANCE_CATEGORY_NONE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_QUEST_ASSISTANCE_CATEGORY_NPC_MOBS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_ALLIANCE_WAR = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_AUDIO = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_CHARACTERS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_COMBAT = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_GAME_SYSTEM = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_GRAPHICS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_ITEMS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_NONE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_QUESTS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_TEXT = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_AWESOME = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_COSMETIC = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_CRASH = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_DELAYS_PROGRESS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_EXPLOIT = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_IMPAIR = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_NONE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_SURPRISE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ALLIANCE_WAR_GRAVEYARD = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ALLIANCE_WAR_OBJECTIVE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ALLIANCE_WAR_RANKING = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ALLIANCE_WAR_SIEGE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_AUDIO_MUSIC = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_AUDIO_OTHER = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_AUDIO_SFX = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_AUDIO_VOICEOVER = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_ABILITIES = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_ACHIEVEMENTS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_ART_ANIMATION = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_CAMERA = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_CREATION_LOGIN_SELECTION = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_DEATH_RESURRECTION = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_EMOTES = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_FRIENDS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_MAIL = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_MOVEMENT = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_SKILLS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_TARGETING = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_COMBAT_ABILITY = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_COMBAT_AI = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_COMBAT_ART = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_COMBAT_LOOT = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_COMBAT_NPC = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_CHAT = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_CRAFTING = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_FRAMERATE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_GROUPING = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_GUILDS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_INTERACTABLES_LOCKPICKING = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_LATENCY = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_MOUNTS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_TRADE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_VENDOR = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_ART_ANIMATION = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_CHARACTER = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_CHAT = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_COLLISION_FIXTURES = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_COLLISION_LANDSCAPE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_CURRENCY = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_INVENTORY = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_KEYBINDS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_MAPS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_SETTINGS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_TOOLTIPS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_WEATHER = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ITEMS_ARMOR = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ITEMS_ART = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ITEMS_CONSUMABLES = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ITEMS_GATHERING = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ITEMS_LOOT = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ITEMS_SOUL_GEMS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ITEMS_WEAPONS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_NONE = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_QUESTS_DIALOG_GRAMMAR = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_QUESTS_DIALOG_VOICEOVER = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_QUESTS_NPC_MONSTERS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_QUESTS_OBJECTIVES = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_QUESTS_REWARDS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_TEXT_BOOKS = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_TEXT_DIALOG_VOICEOVER = {
+	 type = "value",},
+
+CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_TEXT_LOCALIZATION = {
+	 type = "value",},
+
+DEATH_RECAP_HINT_IMPORTANCE_ALWAYS_INCLUDE = {
+	 type = "value",},
+
+DEATH_RECAP_HINT_IMPORTANCE_EXCLUSIVE = {
+	 type = "value",},
+
+DEATH_RECAP_HINT_IMPORTANCE_NORMAL = {
+	 type = "value",},
+
+STAT_ARMOR_RATING = {
+	 type = "value",},
+
+STAT_ATTACK_POWER = {
+	 type = "value",},
+
+STAT_BLOCK = {
+	 type = "value",},
+
+STAT_CRITICAL_RESISTANCE = {
+	 type = "value",},
+
+STAT_CRITICAL_STRIKE = {
+	 type = "value",},
+
+STAT_DAMAGE_RESIST_COLD = {
+	 type = "value",},
+
+STAT_DAMAGE_RESIST_DISEASE = {
+	 type = "value",},
+
+STAT_DAMAGE_RESIST_DROWN = {
+	 type = "value",},
+
+STAT_DAMAGE_RESIST_EARTH = {
+	 type = "value",},
+
+STAT_DAMAGE_RESIST_FIRE = {
+	 type = "value",},
+
+STAT_DAMAGE_RESIST_GENERIC = {
+	 type = "value",},
+
+STAT_DAMAGE_RESIST_MAGIC = {
+	 type = "value",},
+
+STAT_DAMAGE_RESIST_OBLIVION = {
+	 type = "value",},
+
+STAT_DAMAGE_RESIST_PHYSICAL = {
+	 type = "value",},
+
+STAT_DAMAGE_RESIST_POISON = {
+	 type = "value",},
+
+STAT_DAMAGE_RESIST_SHOCK = {
+	 type = "value",},
+
+STAT_DAMAGE_RESIST_START = {
+	 type = "value",},
+
+STAT_DODGE = {
+	 type = "value",},
+
+STAT_HEALING_DONE = {
+	 type = "value",},
+
+STAT_HEALING_TAKEN = {
+	 type = "value",},
+
+STAT_HEALTH_MAX = {
+	 type = "value",},
+
+STAT_HEALTH_REGEN_COMBAT = {
+	 type = "value",},
+
+STAT_HEALTH_REGEN_IDLE = {
+	 type = "value",},
+
+STAT_MAGICKA_MAX = {
+	 type = "value",},
+
+STAT_MAGICKA_REGEN_COMBAT = {
+	 type = "value",},
+
+STAT_MAGICKA_REGEN_IDLE = {
+	 type = "value",},
+
+STAT_MISS = {
+	 type = "value",},
+
+STAT_MITIGATION = {
+	 type = "value",},
+
+STAT_MOUNT_STAMINA_MAX = {
+	 type = "value",},
+
+STAT_MOUNT_STAMINA_REGEN_COMBAT = {
+	 type = "value",},
+
+STAT_MOUNT_STAMINA_REGEN_MOVING = {
+	 type = "value",},
+
+STAT_NONE = {
+	 type = "value",},
+
+STAT_PHYSICAL_PENETRATION = {
+	 type = "value",},
+
+STAT_PHYSICAL_RESIST = {
+	 type = "value",},
+
+STAT_POWER = {
+	 type = "value",},
+
+STAT_SPELL_CRITICAL = {
+	 type = "value",},
+
+STAT_SPELL_MITIGATION = {
+	 type = "value",},
+
+STAT_SPELL_PENETRATION = {
+	 type = "value",},
+
+STAT_SPELL_POWER = {
+	 type = "value",},
+
+STAT_SPELL_RESIST = {
+	 type = "value",},
+
+STAT_STAMINA_MAX = {
+	 type = "value",},
+
+STAT_STAMINA_REGEN_COMBAT = {
+	 type = "value",},
+
+STAT_STAMINA_REGEN_IDLE = {
+	 type = "value",},
+
+STAT_WEAPON_AND_SPELL_DAMAGE = {
+	 type = "value",},
+
+CON_APPROPRIATE = {
+	 type = "value",},
+
+CON_DIFFICULT = {
+	 type = "value",},
+
+CON_EASY = {
+	 type = "value",},
+
+CON_IMPOSSIBLE = {
+	 type = "value",},
+
+CON_TRIVIAL = {
+	 type = "value",},
+
+DUEL_RESULT_FORFEIT = {
+	 type = "value",},
+
+DUEL_RESULT_WON = {
+	 type = "value",},
+
+DUEL_STATE_DUELING = {
+	 type = "value",},
+
+DUEL_STATE_DUEL_PENDING = {
+	 type = "value",},
+
+DUEL_STATE_DUEL_TERMINATING = {
+	 type = "value",},
+
+DUEL_STATE_IDLE = {
+	 type = "value",},
+
+DUEL_STATE_INVITE_CONSIDERING = {
+	 type = "value",},
+
+DUEL_STATE_INVITE_REQUESTING = {
+	 type = "value",},
+
+DUNGEON_DIFFICULTY_NONE = {
+	 type = "value",},
+
+DUNGEON_DIFFICULTY_NORMAL = {
+	 type = "value",},
+
+DUNGEON_DIFFICULTY_VETERAN = {
+	 type = "value",},
+
+EULA_TYPE_ADDON_EULA = {
+	 type = "value",},
+
+EULA_TYPE_CODE_OF_CONDUCT = {
+	 type = "value",},
+
+EULA_TYPE_NON_DISCLOSURE_AGREEMENT = {
+	 type = "value",},
+
+EULA_TYPE_PREGAME_EULA = {
+	 type = "value",},
+
+EULA_TYPE_PRIVACY_POLICY = {
+	 type = "value",},
+
+EULA_TYPE_TERMS_OF_SERVICE = {
+	 type = "value",},
+
+EMOTE_CATEGORY_CEREMONIAL = {
+	 type = "value",},
+
+EMOTE_CATEGORY_CHEERS_AND_JEERS = {
+	 type = "value",},
+
+EMOTE_CATEGORY_COLLECTED = {
+	 type = "value",},
+
+EMOTE_CATEGORY_DEPRECATED = {
+	 type = "value",},
+
+EMOTE_CATEGORY_EMOTION = {
+	 type = "value",},
+
+EMOTE_CATEGORY_ENTERTAINMENT = {
+	 type = "value",},
+
+EMOTE_CATEGORY_FOOD_AND_DRINK = {
+	 type = "value",},
+
+EMOTE_CATEGORY_GIVE_DIRECTIONS = {
+	 type = "value",},
+
+EMOTE_CATEGORY_INVALID = {
+	 type = "value",},
+
+EMOTE_CATEGORY_PERPETUAL = {
+	 type = "value",},
+
+EMOTE_CATEGORY_PERSONALITY_OVERRIDE = {
+	 type = "value",},
+
+EMOTE_CATEGORY_PHYSICAL = {
+	 type = "value",},
+
+EMOTE_CATEGORY_POSES_AND_FIDGETS = {
+	 type = "value",},
+
+EMOTE_CATEGORY_PROP = {
+	 type = "value",},
+
+EMOTE_CATEGORY_SOCIAL = {
+	 type = "value",},
+
+FAST_TRAVEL_LINK_ACTIVE = {
+	 type = "value",},
+
+FAST_TRAVEL_LINK_INACTIVE = {
+	 type = "value",},
+
+FAST_TRAVEL_LINK_IN_COMBAT = {
+	 type = "value",},
+
+FULLSCREEN_EFFECT_CHARACTER_FRAMING_BLUR = {
+	 type = "value",},
+
+FULLSCREEN_EFFECT_NONE = {
+	 type = "value",},
+
+FULLSCREEN_EFFECT_UNIFORM_BLUR = {
+	 type = "value",},
+
+ADDITIONAL_INTERACT_INFO_EMPTY = {
+	 type = "value",},
+
+ADDITIONAL_INTERACT_INFO_FISHING_NODE = {
+	 type = "value",},
+
+ADDITIONAL_INTERACT_INFO_INSTANCE_TYPE = {
+	 type = "value",},
+
+ADDITIONAL_INTERACT_INFO_IN_HIDEYHOLE = {
+	 type = "value",},
+
+ADDITIONAL_INTERACT_INFO_LOCKED = {
+	 type = "value",},
+
+ADDITIONAL_INTERACT_INFO_NONE = {
+	 type = "value",},
+
+ADDITIONAL_INTERACT_INFO_PICKPOCKET_CHANCE = {
+	 type = "value",},
+
+ADDITIONAL_INTERACT_INFO_REQUIRES_KEY = {
+	 type = "value",},
+
+ADDITIONAL_INTERACT_INFO_WEREWOLF_ACTIVE_WHILE_ATTEMPTING_TO_CRAFT = {
+	 type = "value",},
+
+FRAMING_SCREEN_AVA = {
+	 type = "value",},
+
+FRAMING_SCREEN_CHAMPION = {
+	 type = "value",},
+
+FRAMING_SCREEN_CROWN_CRATES = {
+	 type = "value",},
+
+FRAMING_SCREEN_CROWN_STORE = {
+	 type = "value",},
+
+FRAMING_SCREEN_DEFAULT = {
+	 type = "value",},
+
+FRAMING_SCREEN_INVENTORY = {
+	 type = "value",},
+
+FRAMING_SCREEN_JOURNAL = {
+	 type = "value",},
+
+FRAMING_SCREEN_LOOT = {
+	 type = "value",},
+
+FRAMING_SCREEN_MAP = {
+	 type = "value",},
+
+FRAMING_SCREEN_SKILLS = {
+	 type = "value",},
+
+FRAMING_SCREEN_SOCIAL = {
+	 type = "value",},
+
+FRAMING_SCREEN_SYSTEM = {
+	 type = "value",},
+
+GAME_CREDITS_ENTRY_TYPE_BACKGROUND_SWITCH = {
+	 type = "value",},
+
+GAME_CREDITS_ENTRY_TYPE_COMPANY_LOGO = {
+	 type = "value",},
+
+GAME_CREDITS_ENTRY_TYPE_DEPARTMENT_HEADER = {
+	 type = "value",},
+
+GAME_CREDITS_ENTRY_TYPE_PADDING_SECTION = {
+	 type = "value",},
+
+GAME_CREDITS_ENTRY_TYPE_SECTION_HEADER = {
+	 type = "value",},
+
+GAME_CREDITS_ENTRY_TYPE_SECTION_TEXT = {
+	 type = "value",},
+
+GAME_CREDITS_ENTRY_TYPE_SECTION_TEXT_BLOCK = {
+	 type = "value",},
+
+GAMEPAD_TEMPLATE_ABILITY_MODIFIERS = {
+	 type = "value",},
+
+GAMEPAD_TEMPLATE_ALTERNATE_INTERACT = {
+	 type = "value",},
+
+GAMEPAD_TEMPLATE_DEFAULT = {
+	 type = "value",},
+
+GAMEPAD_TEMPLATE_MODIFIERS_VARIANT = {
+	 type = "value",},
+
+GAMEPAD_TEMPLATE_REUSE_ME = {
+	 type = "value",},
+
+GAMEPAD_TEMPLATE_REUSE_ME = {
+	 type = "value",},
+
+GAMEPAD_TEMPLATE_SOUTHPAW = {
+	 type = "value",},
+
+GAMEPAD_TEMPLATE_WEAPON_TRICKS = {
+	 type = "value",},
+
+GAMEPAD_TYPE_NONE = {
+	 type = "value",},
+
+GAMEPAD_TYPE_PS = {
+	 type = "value",},
+
+GAMEPAD_TYPE_XBOX = {
+	 type = "value",},
+
+GAMEPAD_VIBRATION_TRIGGER_DIED = {
+	 type = "value",},
+
+GAMEPAD_VIBRATION_TRIGGER_FALL_DAMAGE_HIGH = {
+	 type = "value",},
+
+GAMEPAD_VIBRATION_TRIGGER_FALL_DAMAGE_LOW = {
+	 type = "value",},
+
+GAMEPAD_VIBRATION_TRIGGER_KILLED = {
+	 type = "value",},
+
+GAMEPAD_VIBRATION_TRIGGER_KNOCKED_BACK = {
+	 type = "value",},
+
+GAMEPAD_VIBRATION_TRIGGER_STAGGERED = {
+	 type = "value",},
+
+GAMEPAD_VIBRATION_TRIGGER_STUNNED = {
+	 type = "value",},
+
+GROUP_DIFFICULTY_CHANGE_REASON_IN_DUNGEON = {
+	 type = "value",},
+
+GROUP_DIFFICULTY_CHANGE_REASON_IN_LFG_GROUP = {
+	 type = "value",},
+
+GROUP_DIFFICULTY_CHANGE_REASON_NOT_GROUP_LEADER = {
+	 type = "value",},
+
+GROUP_DIFFICULTY_CHANGE_REASON_NOT_UNLOCKED = {
+	 type = "value",},
+
+GROUP_DIFFICULTY_CHANGE_REASON_NO_UNIT = {
+	 type = "value",},
+
+GROUP_DIFFICULTY_CHANGE_REASON_SUCCESS = {
+	 type = "value",},
+
+GROUP_ELECTION_FAILURE_ALREADY_VOTED = {
+	 type = "value",},
+
+GROUP_ELECTION_FAILURE_ANOTHER_IN_PROGRESS = {
+	 type = "value",},
+
+GROUP_ELECTION_FAILURE_INITIATOR_CANNOT_VOTE = {
+	 type = "value",},
+
+GROUP_ELECTION_FAILURE_INITIATOR_NOT_FOUND = {
+	 type = "value",},
+
+GROUP_ELECTION_FAILURE_IN_BATTLEGROUND = {
+	 type = "value",},
+
+GROUP_ELECTION_FAILURE_NONE = {
+	 type = "value",},
+
+GROUP_ELECTION_FAILURE_NOT_GROUPED = {
+	 type = "value",},
+
+GROUP_ELECTION_FAILURE_NO_CURRENT_ELECTION = {
+	 type = "value",},
+
+GROUP_ELECTION_FAILURE_SAME_INITIATOR_AND_TARGET = {
+	 type = "value",},
+
+GROUP_ELECTION_FAILURE_SERVER_ERROR = {
+	 type = "value",},
+
+GROUP_ELECTION_FAILURE_TARGET_NOT_FOUND = {
+	 type = "value",},
+
+GROUP_ELECTION_FAILURE_TOO_FEW_MEMBERS = {
+	 type = "value",},
+
+GROUP_ELECTION_FAILURE_TOO_SOON = {
+	 type = "value",},
+
+GROUP_ELECTION_FAILURE_UNKNOWN_CHOICE = {
+	 type = "value",},
+
+GROUP_ELECTION_RESULT_ABANDONED = {
+	 type = "value",},
+
+GROUP_ELECTION_RESULT_ELECTION_LOST = {
+	 type = "value",},
+
+GROUP_ELECTION_RESULT_ELECTION_WON = {
+	 type = "value",},
+
+GROUP_ELECTION_RESULT_IN_PROGRESS = {
+	 type = "value",},
+
+GROUP_ELECTION_RESULT_NOT_APPLICABLE = {
+	 type = "value",},
+
+GROUP_ELECTION_RESULT_TIED = {
+	 type = "value",},
+
+GROUP_ELECTION_RESULT_TIMED_OUT = {
+	 type = "value",},
+
+GROUP_ELECTION_TYPE_GENERIC_SIMPLEMAJORITY = {
+	 type = "value",},
+
+GROUP_ELECTION_TYPE_GENERIC_SUPERMAJORITY = {
+	 type = "value",},
+
+GROUP_ELECTION_TYPE_GENERIC_UNANIMOUS = {
+	 type = "value",},
+
+GROUP_ELECTION_TYPE_KICK_MEMBER = {
+	 type = "value",},
+
+GROUP_ELECTION_TYPE_NEW_LEADER = {
+	 type = "value",},
+
+GROUP_LEAVE_REASON_DESTROYED = {
+	 type = "value",},
+
+GROUP_LEAVE_REASON_DISBAND = {
+	 type = "value",},
+
+GROUP_LEAVE_REASON_KICKED = {
+	 type = "value",},
+
+GROUP_LEAVE_REASON_LEFT_BATTLEGROUND = {
+	 type = "value",},
+
+GROUP_LEAVE_REASON_VOLUNTARY = {
+	 type = "value",},
+
+GROUP_MSG_CANT_KICK_YOURSELF = {
+	 type = "value",},
+
+GROUP_MSG_CANT_PROMOTE_YOURSELF = {
+	 type = "value",},
+
+GROUP_MSG_INVALID_MEMBER = {
+	 type = "value",},
+
+GROUP_MSG_YOU_ARE_NOT_IN_A_GROUP = {
+	 type = "value",},
+
+GROUP_MSG_YOU_ARE_NOT_THE_LEADER = {
+	 type = "value",},
+
+GROUP_VOTE_CHOICE_ABSTAIN = {
+	 type = "value",},
+
+GROUP_VOTE_CHOICE_AGAINST = {
+	 type = "value",},
+
+GROUP_VOTE_CHOICE_FOR = {
+	 type = "value",},
+
+HEALTH_WARNING_FLASH_ = {
+	 type = "value",},
+
+HEALTH_WARNING_FLASH_ = {
+	 type = "value",},
+
+HEALTH_WARNING_NONE = {
+	 type = "value",},
+
+HEALTH_WARNING_STAGE_ = {
+	 type = "value",},
+
+HEALTH_WARNING_STAGE_ = {
+	 type = "value",},
+
+HEALTH_WARNING_STAGE_ = {
+	 type = "value",},
+
+HELP_SHOW_OPTIONS_ALL = {
+	 type = "value",},
+
+HELP_SHOW_OPTIONS_CONSOLE_AND_PC_GAMEPAD = {
+	 type = "value",},
+
+HELP_SHOW_OPTIONS_CONSOLE_GAMEPAD = {
+	 type = "value",},
+
+HELP_SHOW_OPTIONS_KEYBOARD = {
+	 type = "value",},
+
+HELP_SHOW_OPTIONS_KEYBOARD_AND_CONSOLE_GAMEPAD = {
+	 type = "value",},
+
+HELP_SHOW_OPTIONS_KEYBOARD_AND_PC_GAMEPAD = {
+	 type = "value",},
+
+HELP_SHOW_OPTIONS_PC_GAMEPAD = {
+	 type = "value",},
+
+HIDDEN_ITEM_HELM = {
+	 type = "value",},
+
+HIDDEN_ITEM_LOIN_CLOTH = {
+	 type = "value",},
+
+HIDDEN_ITEM_MOUNT_INVENTORY_UPGRADE = {
+	 type = "value",},
+
+HIDDEN_ITEM_MOUNT_SPEED_UPGRADE = {
+	 type = "value",},
+
+HIDDEN_ITEM_MOUNT_STAMINA_UPGRADE = {
+	 type = "value",},
+
+HIDDEN_ITEM_TASSETS = {
+	 type = "value",},
+
+INFAMY_THRESHOLD_DISREPUTABLE = {
+	 type = "value",},
+
+INFAMY_THRESHOLD_FUGITIVE = {
+	 type = "value",},
+
+INFAMY_THRESHOLD_NOTORIOUS = {
+	 type = "value",},
+
+INFAMY_THRESHOLD_UPSTANDING = {
+	 type = "value",},
+
+INSTANCE_DISPLAY_TYPE_BATTLEGROUND = {
+	 type = "value",},
+
+INSTANCE_DISPLAY_TYPE_DELVE = {
+	 type = "value",},
+
+INSTANCE_DISPLAY_TYPE_DUNGEON = {
+	 type = "value",},
+
+INSTANCE_DISPLAY_TYPE_GROUP_AREA = {
+	 type = "value",},
+
+INSTANCE_DISPLAY_TYPE_GROUP_DELVE = {
+	 type = "value",},
+
+INSTANCE_DISPLAY_TYPE_HOUSING = {
+	 type = "value",},
+
+INSTANCE_DISPLAY_TYPE_NONE = {
+	 type = "value",},
+
+INSTANCE_DISPLAY_TYPE_PUBLIC_DUNGEON = {
+	 type = "value",},
+
+INSTANCE_DISPLAY_TYPE_RAID = {
+	 type = "value",},
+
+INSTANCE_DISPLAY_TYPE_SOLO = {
+	 type = "value",},
+
+INSTANCE_TYPE_BATTLEGROUND = {
+	 type = "value",},
+
+INSTANCE_TYPE_GRADUATION_MOMENT = {
+	 type = "value",},
+
+INSTANCE_TYPE_GROUP = {
+	 type = "value",},
+
+INSTANCE_TYPE_HOUSING = {
+	 type = "value",},
+
+INSTANCE_TYPE_NONE = {
+	 type = "value",},
+
+INSTANCE_TYPE_PUBLIC_DUNGEON = {
+	 type = "value",},
+
+INSTANCE_TYPE_RAID = {
+	 type = "value",},
+
+INSTANCE_TYPE_SOLO = {
+	 type = "value",},
+
+INTERACTION_AVA_HOOK_POINT = {
+	 type = "value",},
+
+INTERACTION_BANK = {
+	 type = "value",},
+
+INTERACTION_BOOK = {
+	 type = "value",},
+
+INTERACTION_BUY_BAG_SPACE = {
+	 type = "value",},
+
+INTERACTION_CONVERSATION = {
+	 type = "value",},
+
+INTERACTION_CRAFT = {
+	 type = "value",},
+
+INTERACTION_DYE_STATION = {
+	 type = "value",},
+
+INTERACTION_FAST_TRAVEL = {
+	 type = "value",},
+
+INTERACTION_FAST_TRAVEL_KEEP = {
+	 type = "value",},
+
+INTERACTION_FISH = {
+	 type = "value",},
+
+INTERACTION_FURNITURE = {
+	 type = "value",},
+
+INTERACTION_GUILDBANK = {
+	 type = "value",},
+
+INTERACTION_GUILDKIOSK_BID = {
+	 type = "value",},
+
+INTERACTION_GUILDKIOSK_PURCHASE = {
+	 type = "value",},
+
+INTERACTION_HARVEST = {
+	 type = "value",},
+
+INTERACTION_HIDDEN_THING = {
+	 type = "value",},
+
+INTERACTION_HIDEYHOLE = {
+	 type = "value",},
+
+INTERACTION_KEEP_GUILD_CLAIM = {
+	 type = "value",},
+
+INTERACTION_KEEP_GUILD_RELEASE = {
+	 type = "value",},
+
+INTERACTION_KEEP_INSPECT = {
+	 type = "value",},
+
+INTERACTION_KEEP_PIECE = {
+	 type = "value",},
+
+INTERACTION_LOCKPICK = {
+	 type = "value",},
+
+INTERACTION_LOOT = {
+	 type = "value",},
+
+INTERACTION_MAIL = {
+	 type = "value",},
+
+INTERACTION_NONE = {
+	 type = "value",},
+
+INTERACTION_PAY_BOUNTY = {
+	 type = "value",},
+
+INTERACTION_PICKPOCKET = {
+	 type = "value",},
+
+INTERACTION_QUEST = {
+	 type = "value",},
+
+INTERACTION_SIEGE = {
+	 type = "value",},
+
+INTERACTION_STABLE = {
+	 type = "value",},
+
+INTERACTION_STONE_MASON = {
+	 type = "value",},
+
+INTERACTION_STORE = {
+	 type = "value",},
+
+INTERACTION_TRADINGHOUSE = {
+	 type = "value",},
+
+INTERACTION_VENDOR = {
+	 type = "value",},
+
+ITEMVISUALDAMAGE_BROKEN = {
+	 type = "value",},
+
+ITEMVISUALDAMAGE_DAMAGED = {
+	 type = "value",},
+
+ITEMVISUALDAMAGE_NONE = {
+	 type = "value",},
+
+JUMP_TO_PLAYER_RESULT_CROSS_ALLIANCE_LOCKED = {
+	 type = "value",},
+
+JUMP_TO_PLAYER_RESULT_GENERIC_FAILURE = {
+	 type = "value",},
+
+JUMP_TO_PLAYER_RESULT_PLAYER_DIFFICULTY_LOCKED = {
+	 type = "value",},
+
+JUMP_TO_PLAYER_RESULT_PLAYER_OFFLINE = {
+	 type = "value",},
+
+JUMP_TO_PLAYER_RESULT_SOLO_ZONE = {
+	 type = "value",},
+
+JUMP_TO_PLAYER_RESULT_SUCCESS = {
+	 type = "value",},
+
+JUMP_TO_PLAYER_RESULT_ZONE_COLLECTIBLE_LOCKED = {
+	 type = "value",},
+
+JUSTICE_CRIMINAL = {
+	 type = "value",},
+
+JUSTICE_ENFORCER = {
+	 type = "value",},
+
+JUSTICE_NONE = {
+	 type = "value",},
+
+JUSTICE_SKILL_FENCE = {
+	 type = "value",},
+
+JUSTICE_SKILL_LOCKPICK = {
+	 type = "value",},
+
+JUSTICE_SKILL_NONE = {
+	 type = "value",},
+
+JUSTICE_SKILL_PICKPOCKET = {
+	 type = "value",},
+
+LEADERBOARD_TYPE_ALLIANCE = {
+	 type = "value",},
+
+LEADERBOARD_TYPE_BATTLEGROUND = {
+	 type = "value",},
+
+LEADERBOARD_TYPE_CLASS = {
+	 type = "value",},
+
+LEADERBOARD_TYPE_HOUSE = {
+	 type = "value",},
+
+LEADERBOARD_TYPE_OVERALL = {
+	 type = "value",},
+
+LINK_STYLE_BRACKETS = {
+	 type = "value",},
+
+LINK_STYLE_DEFAULT = {
+	 type = "value",},
+
+LINK_TYPE_ACHIEVEMENT = {
+	 type = "value",},
+
+LINK_TYPE_BOOK = {
+	 type = "value",},
+
+LINK_TYPE_COLLECTIBLE = {
+	 type = "value",},
+
+LINK_TYPE_INVALID = {
+	 type = "value",},
+
+LINK_TYPE_ITEM = {
+	 type = "value",},
+
+LINK_TYPE_QUEST_ITEM = {
+	 type = "value",},
+
+REGION_AFRICA = {
+	 type = "value",},
+
+REGION_ASIA = {
+	 type = "value",},
+
+REGION_EUROPE = {
+	 type = "value",},
+
+REGION_NONE = {
+	 type = "value",},
+
+REGION_NORTH_AMERICA = {
+	 type = "value",},
+
+REGION_OCEANIA = {
+	 type = "value",},
+
+REGION_SOUTH_AMERICA = {
+	 type = "value",},
+
+LOCK_QUALITY_ADVANCED = {
+	 type = "value",},
+
+LOCK_QUALITY_IMPOSSIBLE = {
+	 type = "value",},
+
+LOCK_QUALITY_INTERMEDIATE = {
+	 type = "value",},
+
+LOCK_QUALITY_MASTER = {
+	 type = "value",},
+
+LOCK_QUALITY_NONE = {
+	 type = "value",},
+
+LOCK_QUALITY_PRACTICE = {
+	 type = "value",},
+
+LOCK_QUALITY_SIMPLE = {
+	 type = "value",},
+
+LOCK_QUALITY_TRIVIAL = {
+	 type = "value",},
+
+LOOT_TYPE_ANY = {
+	 type = "value",},
+
+LOOT_TYPE_COLLECTIBLE = {
+	 type = "value",},
+
+LOOT_TYPE_ITEM = {
+	 type = "value",},
+
+LOOT_TYPE_MONEY = {
+	 type = "value",},
+
+LOOT_TYPE_QUEST_ITEM = {
+	 type = "value",},
+
+LOOT_TYPE_TELVAR_STONES = {
+	 type = "value",},
+
+LOOT_TYPE_WRIT_VOUCHERS = {
+	 type = "value",},
+
+MAIL_ATTACHMENT_RESULT_ALREADY_ATTACHED = {
+	 type = "value",},
+
+MAIL_ATTACHMENT_RESULT_BOUND = {
+	 type = "value",},
+
+MAIL_ATTACHMENT_RESULT_ITEM_NOT_FOUND = {
+	 type = "value",},
+
+MAIL_ATTACHMENT_RESULT_LOCKED = {
+	 type = "value",},
+
+MAIL_ATTACHMENT_RESULT_PLAYER_LOCKED = {
+	 type = "value",},
+
+MAIL_ATTACHMENT_RESULT_STOLEN = {
+	 type = "value",},
+
+MAIL_ATTACHMENT_RESULT_SUCCESS = {
+	 type = "value",},
+
+MAP_CONTENT_AVA = {
+	 type = "value",},
+
+MAP_CONTENT_BATTLEGROUND = {
+	 type = "value",},
+
+MAP_CONTENT_DUNGEON = {
+	 type = "value",},
+
+MAP_CONTENT_NONE = {
+	 type = "value",},
+
+MAP_FILTER_AVA_GRAVEYARDS = {
+	 type = "value",},
+
+MAP_FILTER_AVA_GRAVEYARD_AREAS = {
+	 type = "value",},
+
+MAP_FILTER_AVA_OBJECTIVES = {
+	 type = "value",},
+
+MAP_FILTER_GROUP_MEMBERS = {
+	 type = "value",},
+
+MAP_FILTER_IMPERIAL_CITY_ENTRANCES = {
+	 type = "value",},
+
+MAP_FILTER_KILL_LOCATIONS = {
+	 type = "value",},
+
+MAP_FILTER_OBJECTIVES = {
+	 type = "value",},
+
+MAP_FILTER_QUESTS = {
+	 type = "value",},
+
+MAP_FILTER_RESOURCE_KEEPS = {
+	 type = "value",},
+
+MAP_FILTER_TRANSIT_LINES = {
+	 type = "value",},
+
+MAP_FILTER_TRANSIT_LINES_ALLIANCE = {
+	 type = "value",},
+
+MAP_FILTER_WAYSHRINES = {
+	 type = "value",},
+
+MAP_FILTER_TYPE_AVA_CYRODIIL = {
+	 type = "value",},
+
+MAP_FILTER_TYPE_AVA_IMPERIAL = {
+	 type = "value",},
+
+MAP_FILTER_TYPE_BATTLEGROUND = {
+	 type = "value",},
+
+MAP_FILTER_TYPE_STANDARD = {
+	 type = "value",},
+
+PING_EVENT_ADDED = {
+	 type = "value",},
+
+PING_EVENT_REMOVED = {
+	 type = "value",},
+
+MAP_TRANSIT_LINE_ALLIANCE_ALL = {
+	 type = "value",},
+
+MAP_TRANSIT_LINE_ALLIANCE_MINE = {
+	 type = "value",},
+
+MKCT_CROWNS = {
+	 type = "value",},
+
+MKCT_CROWN_GEMS = {
+	 type = "value",},
+
+MKCT_NONE = {
+	 type = "value",},
+
+MARKET_DISPLAY_GROUP_CROWN_STORE = {
+	 type = "value",},
+
+MARKET_DISPLAY_GROUP_HOUSE_EDITOR = {
+	 type = "value",},
+
+MARKET_DISPLAY_GROUP_HOUSE_PREVIEW = {
+	 type = "value",},
+
+MARKET_FILTER_VIEW_ALL = {
+	 type = "value",},
+
+MARKET_FILTER_VIEW_NOT_PURCHASED = {
+	 type = "value",},
+
+MARKET_FILTER_VIEW_PURCHASED = {
+	 type = "value",},
+
+MARKET_INSTANT_UNLOCK_APPEARANCE_CHANGE_TOKEN = {
+	 type = "value",},
+
+MARKET_INSTANT_UNLOCK_BITE_CURE = {
+	 type = "value",},
+
+MARKET_INSTANT_UNLOCK_CHARACTER_SLOT = {
+	 type = "value",},
+
+MARKET_INSTANT_UNLOCK_ESO_PLUS = {
+	 type = "value",},
+
+MARKET_INSTANT_UNLOCK_NONE = {
+	 type = "value",},
+
+MARKET_INSTANT_UNLOCK_PLAYER_BACKPACK = {
+	 type = "value",},
+
+MARKET_INSTANT_UNLOCK_PLAYER_BANK = {
+	 type = "value",},
+
+MARKET_INSTANT_UNLOCK_RACE_CHANGE_TOKEN = {
+	 type = "value",},
+
+MARKET_INSTANT_UNLOCK_RENAME_TOKEN = {
+	 type = "value",},
+
+MARKET_INSTANT_UNLOCK_VAMPIRE_BITE = {
+	 type = "value",},
+
+MARKET_INSTANT_UNLOCK_WEREWOLF_BITE = {
+	 type = "value",},
+
+MARKET_PRODUCT_PURCHASE_STATE_INSTANT_UNLOCK_COMPLETE = {
+	 type = "value",},
+
+MARKET_PRODUCT_PURCHASE_STATE_INSTANT_UNLOCK_INELIGIBLE = {
+	 type = "value",},
+
+MARKET_PRODUCT_PURCHASE_STATE_NOT_PURCHASED = {
+	 type = "value",},
+
+MARKET_PRODUCT_PURCHASE_STATE_PURCHASED = {
+	 type = "value",},
+
+MARKET_PRODUCT_TYPE_BUNDLE = {
+	 type = "value",},
+
+MARKET_PRODUCT_TYPE_COLLECTIBLE = {
+	 type = "value",},
+
+MARKET_PRODUCT_TYPE_CROWN_CRATE = {
+	 type = "value",},
+
+MARKET_PRODUCT_TYPE_HOUSING = {
+	 type = "value",},
+
+MARKET_PRODUCT_TYPE_INSTANT_UNLOCK = {
+	 type = "value",},
+
+MARKET_PRODUCT_TYPE_ITEM = {
+	 type = "value",},
+
+MARKET_PRODUCT_TYPE_NONE = {
+	 type = "value",},
+
+MARKET_PRODUCT_TYPE_PROMO = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_ALREADY_COMPLETED_INSTANT_UNLOCK = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_COLLECTIBLE_ALREADY = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_COLLECTIONS_DISABLED = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_COMING_SOON = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_FAIL_INSTANT_UNLOCK_REQ_LIST = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_HOUSING_ALREADY_OWNED = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_INVALID_MARKET_COLLECTIBLE = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_INVALID_MARKET_HOUSING = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_INVALID_MARKET_ITEM = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_INVALID_STACK_SIZE = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_MARKET_LOCKED = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_NOT_ENOUGH_CROWN_GEMS = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_NOT_ENOUGH_ROOM = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_NOT_ENOUGH_VC = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_SUCCESS = {
+	 type = "value",},
+
+MARKET_PURCHASE_RESULT_UNIQUE_ITEM_ALREADY = {
+	 type = "value",},
+
+MARKET_STATE_LOCKED = {
+	 type = "value",},
+
+MARKET_STATE_OPEN = {
+	 type = "value",},
+
+MARKET_STATE_UNKNOWN = {
+	 type = "value",},
+
+MARKET_STATE_UPDATING = {
+	 type = "value",},
+
+MEGASERVER_EU = {
+	 type = "value",},
+
+MEGASERVER_NA = {
+	 type = "value",},
+
+MEGASERVER_NONE = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_ALCHEMIST = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_ARTISAN = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_ASSASSIN = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_BARD = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_BEGGAR = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_CHEF = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_CIVIL_SERVANT = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_CLOTHIER = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_COMMONER = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_CRAFTER = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_CULTIST = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_DRUNKARD = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_FARMER = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_FIGHTER = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_FISHER = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_GATHERER = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_GHOST = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_GUARD = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_HEALER = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_HUNTER = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_LABORER = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_MAGE = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_MERCHANT = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_NOBLE = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_NOT_APPLICABLE = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_NUDE = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_ORDINATOR = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_OUTLAW = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_PILGRIM = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_PRIEST = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_PRISONER = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_PROVISIONER = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_SAILOR = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_SCHOLAR = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_SERVANT = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_SKELETON = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_SLAVE = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_SMITH = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_SOLDIER = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_STUDENT = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_THIEF = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_UNDEFINED = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_VAMPIRE = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_WARRIOR = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_WATCHMEN = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_WEREWOLF = {
+	 type = "value",},
+
+MONSTER_SOCIAL_CLASS_WOODWORKER = {
+	 type = "value",},
+
+MOUSE_CONTENT_ACTION = {
+	 type = "value",},
+
+MOUSE_CONTENT_COLLECTIBLE = {
+	 type = "value",},
+
+MOUSE_CONTENT_EMPTY = {
+	 type = "value",},
+
+MOUSE_CONTENT_EQUIPPED_ITEM = {
+	 type = "value",},
+
+MOUSE_CONTENT_INVENTORY_ITEM = {
+	 type = "value",},
+
+MOUSE_CONTENT_QUEST_ITEM = {
+	 type = "value",},
+
+MOUSE_CONTENT_STORE_BUYBACK_ITEM = {
+	 type = "value",},
+
+MOUSE_CONTENT_STORE_ITEM = {
+	 type = "value",},
+
+MOUSE_CONTENT_TRADE_ITEM = {
+	 type = "value",},
+
+MOUSE_DESTROY_ITEM_FAIL_REASON_CRAFTING = {
+	 type = "value",},
+
+MOUSE_DESTROY_ITEM_FAIL_REASON_NONE = {
+	 type = "value",},
+
+MOUSE_DESTROY_ITEM_FAIL_REASON_PLAYER_LOCKED = {
+	 type = "value",},
+
+MLET_EXP_VAL_MULTI_LOC = {
+	 type = "value",},
+
+MLET_EXP_VAL_NO_LOC = {
+	 type = "value",},
+
+MLET_EXP_VAL_STD_LOC = {
+	 type = "value",},
+
+MLET_IMP_VAL_MULTI_LOC = {
+	 type = "value",},
+
+MLET_IMP_VAL_STD_LOC = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ALCHEMY_CREATE_EXTRA = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ALCHEMY_CREATE_PERCENT_DISCOUNT = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ALCHEMY_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ALCHEMY_NEGATIVE_DURATION = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ALCHEMY_POTION_DURATION = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ALCHEMY_SHOW_NODES = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ALCHEMY_THIRD_SLOT = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ARMOR_KNOWLEDGE = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ASSAULT_BOUNTY_REDUCTION = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_AVOID_BLADE_OF_WOE_WITNESS_CHANCE = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_BLACKSMITHING_BOOSTER_BONUS = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_BLACKSMITHING_CRAFT_PERCENT_DISCOUNT = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_BLACKSMITHING_EXTRACT_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_BLACKSMITHING_HIRELING_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_BLACKSMITHING_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_BLACKSMITHING_RESEARCH_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_BLACKSMITHING_SHOW_NODES = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_BOUNTY_DECAY = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_CLEMENCY = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_CLEMENCY_ARREST_IMMUNITY = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_CLOTHIER_BOOSTER_BONUS = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_CLOTHIER_CRAFT_PERCENT_DISCOUNT = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_CLOTHIER_EXTRACT_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_CLOTHIER_HIRELING_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_CLOTHIER_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_CLOTHIER_RESEARCH_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_CLOTHIER_SHOW_NODES = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ENCHANTING_CRAFT_PERCENT_DISCOUNT = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ENCHANTING_DECONSTRUCTION_UPGRADE = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ENCHANTING_HIRELING_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ENCHANTING_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ENCHANTING_RARITY_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ENCHANTING_SHOW_NODES = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ENCHANTING_SLOT_IMPROVEMENT = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_ENLIGHTENED = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_EXTRACTION = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_FENCE_SALESMAN = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_FORTUNE_SEEKER = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_GROOM = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_GUARD_KILL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_GUARD_PURSUIT_DISTANCE_REDUCTION = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_HAGGLING = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_HEAT_DECAY = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_IMPATIENCE = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_INVALID = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_MASTER_GATHERER = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_MOUNTED_AGGRO_RADIUS_REDUCTION = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_MURDER_BOUNTY_REDUCTION = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_PICKPOCKET_CHANCE = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_PROVISIONING_CREATE_EXTRA_DRINK = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_PROVISIONING_CREATE_EXTRA_FOOD = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_PROVISIONING_DRINK_DURATION = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_PROVISIONING_FOOD_DURATION = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_PROVISIONING_HIRELING_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_PROVISIONING_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_PROVISIONING_RARITY_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_PROVISIONING_SHOW_NODES = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_SECONDARY_WITNESS_RANGE_REDUCTION = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_SHADOWY_CONNECTIONS = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_SLY = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_SPELLCRAFTING_ABILITIES_LEARNED = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_SPELLCRAFTING_FOCUS_AREA = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_SPELLCRAFTING_FOCUS_CAST_TIME = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_SPELLCRAFTING_FOCUS_CHEAPER = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_SPELLCRAFTING_FOCUS_DURATION = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_SPELLCRAFTING_FOCUS_ULTIMATE = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_SPELLCRAFTING_TABLET_CREATION_TIME = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_SPELLCRAFTING_TABLET_QUALITY = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_TELVAR_MULTIPLIER = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_TIMELY_ESCAPE = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_TRAIT_IDENTIFIER = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_UNUSED = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_WITNESS_RANGE_REDUCTION = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_WOODWORKING_BOOSTER_BONUS = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_WOODWORKING_CRAFT_PERCENT_DISCOUNT = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_WOODWORKING_EXTRACT_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_WOODWORKING_HIRELING_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_WOODWORKING_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_WOODWORKING_RESEARCH_LEVEL = {
+	 type = "value",},
+
+NON_COMBAT_BONUS_WOODWORKING_SHOW_NODES = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_CAMPAIGN_QUEUE = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_COLLECTIONS = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_CRAFT_BAG_AUTO_TRANSFER = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_CUSTOMER_SERVICE = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_DUEL = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_ESO_PLUS_SUBSCRIPTION = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_FRIEND = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_GROUP = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_GROUP_ELECTION = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_GUILD = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_GUILD_MOTD = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_LEADERBOARD = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_LFG = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_PLEDGE_OF_MARA = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_POINTS_RESET = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_QUEST_SHARE = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_RESURRECT = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_SCRIPTED_WORLD_EVENT = {
+	 type = "value",},
+
+NOTIFICATION_TYPE_TRADE = {
+	 type = "value",},
+
+NUMBER_ABBREVIATION_PRECISION_HUNDREDTHS = {
+	 type = "value",},
+
+NUMBER_ABBREVIATION_PRECISION_LARGEST_UNIT = {
+	 type = "value",},
+
+NUMBER_ABBREVIATION_PRECISION_TENTHS = {
+	 type = "value",},
+
+OBJECTIVE_DESIGNATION_A = {
+	 type = "value",},
+
+OBJECTIVE_DESIGNATION_B = {
+	 type = "value",},
+
+OBJECTIVE_DESIGNATION_C = {
+	 type = "value",},
+
+OBJECTIVE_DESIGNATION_D = {
+	 type = "value",},
+
+OBJECTIVE_DESIGNATION_NONE = {
+	 type = "value",},
+
+OBJECTIVE_PIN_TIER_PRIMARY = {
+	 type = "value",},
+
+OBJECTIVE_PIN_TIER_RETURN = {
+	 type = "value",},
+
+OBJECTIVE_PIN_TIER_SPAWN = {
+	 type = "value",},
+
+OBJECTIVE_ARTIFACT_DEFENSIVE = {
+	 type = "value",},
+
+OBJECTIVE_ARTIFACT_OFFENSIVE = {
+	 type = "value",},
+
+OBJECTIVE_ARTIFACT_RETURN = {
+	 type = "value",},
+
+OBJECTIVE_ASSAULT = {
+	 type = "value",},
+
+OBJECTIVE_BALL = {
+	 type = "value",},
+
+OBJECTIVE_CAPTURE_AREA = {
+	 type = "value",},
+
+OBJECTIVE_CAPTURE_POINT = {
+	 type = "value",},
+
+OBJECTIVE_FLAG_CAPTURE = {
+	 type = "value",},
+
+OBJECTIVE_NONE = {
+	 type = "value",},
+
+OBJECTIVE_RETURN = {
+	 type = "value",},
+
+OPEN_MARKET_BEHAVIOR_NAVIGATE_TO_OTHER_PRODUCT = {
+	 type = "value",},
+
+OPEN_MARKET_BEHAVIOR_NAVIGATE_TO_PRODUCT = {
+	 type = "value",},
+
+OPEN_MARKET_BEHAVIOR_SHOW_ESO_PLUS_CATEGORY = {
+	 type = "value",},
+
+OPEN_MARKET_BEHAVIOR_SHOW_FEATURED_CATEGORY = {
+	 type = "value",},
+
+OWNERSHIP_STATUS_ANY = {
+	 type = "value",},
+
+OWNERSHIP_STATUS_NOT_STOLEN = {
+	 type = "value",},
+
+OWNERSHIP_STATUS_STOLEN = {
+	 type = "value",},
+
+FEEDBACK_TYPE_INVALID = {
+	 type = "value",},
+
+FEEDBACK_TYPE_QUEST = {
+	 type = "value",},
+
+PICKPOCKET_DIFFICULTY_EASY = {
+	 type = "value",},
+
+PICKPOCKET_DIFFICULTY_HARD = {
+	 type = "value",},
+
+PICKPOCKET_DIFFICULTY_INVALID = {
+	 type = "value",},
+
+PICKPOCKET_DIFFICULTY_MEDIUM = {
+	 type = "value",},
+
+ACCOUNT_LABEL_PC = {
+	 type = "value",},
+
+ACCOUNT_LABEL_PS = {
+	 type = "value",},
+
+ACCOUNT_LABEL_XBOX = {
+	 type = "value",},
+
+PLATFORM_SERVICE_TYPE_DMM = {
+	 type = "value",},
+
+PLATFORM_SERVICE_TYPE_PSN = {
+	 type = "value",},
+
+PLATFORM_SERVICE_TYPE_STEAM = {
+	 type = "value",},
+
+PLATFORM_SERVICE_TYPE_XBL = {
+	 type = "value",},
+
+PLATFORM_SERVICE_TYPE_ZOS = {
+	 type = "value",},
+
+PLATFORM_STORE_LABEL_DMM = {
+	 type = "value",},
+
+PLATFORM_STORE_LABEL_PSN = {
+	 type = "value",},
+
+PLATFORM_STORE_LABEL_STEAM = {
+	 type = "value",},
+
+PLATFORM_STORE_LABEL_XBL = {
+	 type = "value",},
+
+PLATFORM_STORE_LABEL_ZOS = {
+	 type = "value",},
+
+PLAYER_EMOTE_PLAY_FAILURE_GENERIC = {
+	 type = "value",},
+
+PLAYER_EMOTE_PLAY_FAILURE_LOCKED = {
+	 type = "value",},
+
+PLAYER_STATUS_AWAY = {
+	 type = "value",},
+
+PLAYER_STATUS_DO_NOT_DISTURB = {
+	 type = "value",},
+
+PLAYER_STATUS_OFFLINE = {
+	 type = "value",},
+
+PLAYER_STATUS_ONLINE = {
+	 type = "value",},
+
+PLEDGE_OF_MARA_RESPONSE_ACCEPT = {
+	 type = "value",},
+
+PLEDGE_OF_MARA_RESPONSE_DECLINE = {
+	 type = "value",},
+
+POI_TYPE_ACHIEVEMENT = {
+	 type = "value",},
+
+POI_TYPE_ACHIEVEMENT_COMPONENT = {
+	 type = "value",},
+
+POI_TYPE_GROUP_DUNGEON = {
+	 type = "value",},
+
+POI_TYPE_HOUSE = {
+	 type = "value",},
+
+POI_TYPE_OBJECTIVE = {
+	 type = "value",},
+
+POI_TYPE_PUBLIC_DUNGEON = {
+	 type = "value",},
+
+POI_TYPE_STANDARD = {
+	 type = "value",},
+
+POI_TYPE_WAYSHRINE = {
+	 type = "value",},
+
+PROSPECTIVE_PICKPOCKET_RESULT_CAN_ATTEMPT = {
+	 type = "value",},
+
+PROSPECTIVE_PICKPOCKET_RESULT_COOLDOWN = {
+	 type = "value",},
+
+PROSPECTIVE_PICKPOCKET_RESULT_INVENTORY_FULL = {
+	 type = "value",},
+
+PROSPECTIVE_PICKPOCKET_RESULT_OUT_OF_POSITION = {
+	 type = "value",},
+
+PROSPECTIVE_PICKPOCKET_RESULT_OUT_OF_RANGE = {
+	 type = "value",},
+
+PROVISIONER_SPECIAL_INGREDIENT_TYPE_FLAVORING = {
+	 type = "value",},
+
+PROVISIONER_SPECIAL_INGREDIENT_TYPE_FURNISHING = {
+	 type = "value",},
+
+PROVISIONER_SPECIAL_INGREDIENT_TYPE_NONE = {
+	 type = "value",},
+
+PROVISIONER_SPECIAL_INGREDIENT_TYPE_SPICES = {
+	 type = "value",},
+
+PVP_SYSTEM_CYRODIIL = {
+	 type = "value",},
+
+PVP_SYSTEM_INHERIT_FROM_KEEP = {
+	 type = "value",},
+
+PVP_SYSTEM_NONE = {
+	 type = "value",},
+
+RAID_CATEGORY_CHALLENGE = {
+	 type = "value",},
+
+RAID_CATEGORY_TRIAL = {
+	 type = "value",},
+
+RAID_POINT_REASON_BONUS_ACTIVITY_HIGH = {
+	 type = "value",},
+
+RAID_POINT_REASON_BONUS_ACTIVITY_LOW = {
+	 type = "value",},
+
+RAID_POINT_REASON_BONUS_ACTIVITY_MEDIUM = {
+	 type = "value",},
+
+RAID_POINT_REASON_BONUS_POINT_ONE = {
+	 type = "value",},
+
+RAID_POINT_REASON_BONUS_POINT_THREE = {
+	 type = "value",},
+
+RAID_POINT_REASON_BONUS_POINT_TWO = {
+	 type = "value",},
+
+RAID_POINT_REASON_KILL_BANNERMEN = {
+	 type = "value",},
+
+RAID_POINT_REASON_KILL_BOSS = {
+	 type = "value",},
+
+RAID_POINT_REASON_KILL_CHAMPION = {
+	 type = "value",},
+
+RAID_POINT_REASON_KILL_MINIBOSS = {
+	 type = "value",},
+
+RAID_POINT_REASON_KILL_NORMAL_MONSTER = {
+	 type = "value",},
+
+RAID_POINT_REASON_KILL_NOXP_MONSTER = {
+	 type = "value",},
+
+RAID_POINT_REASON_LIFE_REMAINING = {
+	 type = "value",},
+
+RAID_POINT_REASON_SOLO_ARENA_COMPLETE = {
+	 type = "value",},
+
+RAID_POINT_REASON_SOLO_ARENA_PICKUP_FOUR = {
+	 type = "value",},
+
+RAID_POINT_REASON_SOLO_ARENA_PICKUP_ONE = {
+	 type = "value",},
+
+RAID_POINT_REASON_SOLO_ARENA_PICKUP_THREE = {
+	 type = "value",},
+
+RAID_POINT_REASON_SOLO_ARENA_PICKUP_TWO = {
+	 type = "value",},
+
+RATINGS_BOARD_BR = {
+	 type = "value",},
+
+RATINGS_BOARD_ESRB = {
+	 type = "value",},
+
+RATINGS_BOARD_FPB = {
+	 type = "value",},
+
+RATINGS_BOARD_NONE = {
+	 type = "value",},
+
+RATINGS_BOARD_OFLC = {
+	 type = "value",},
+
+RATINGS_BOARD_PEGI = {
+	 type = "value",},
+
+RATINGS_BOARD_RR = {
+	 type = "value",},
+
+RATINGS_BOARD_USK = {
+	 type = "value",},
+
+RECIPE_CRAFTING_SYSTEM_ALCHEMY_FORMULAE = {
+	 type = "value",},
+
+RECIPE_CRAFTING_SYSTEM_BLACKSMITHING_DIAGRAMS = {
+	 type = "value",},
+
+RECIPE_CRAFTING_SYSTEM_CLOTHIER_PATTERNS = {
+	 type = "value",},
+
+RECIPE_CRAFTING_SYSTEM_ENCHANTING_SCHEMATICS = {
+	 type = "value",},
+
+RECIPE_CRAFTING_SYSTEM_INVALID = {
+	 type = "value",},
+
+RECIPE_CRAFTING_SYSTEM_PROVISIONING_DESIGNS = {
+	 type = "value",},
+
+RECIPE_CRAFTING_SYSTEM_WOODWORKING_BLUEPRINTS = {
+	 type = "value",},
+
+REGISTER_FILTER_ABILITY_ID = {
+	 type = "value",},
+
+REGISTER_FILTER_BAG_ID = {
+	 type = "value",},
+
+REGISTER_FILTER_COMBAT_RESULT = {
+	 type = "value",},
+
+REGISTER_FILTER_INVALID = {
+	 type = "value",},
+
+REGISTER_FILTER_INVENTORY_UPDATE_REASON = {
+	 type = "value",},
+
+REGISTER_FILTER_IS_ERROR = {
+	 type = "value",},
+
+REGISTER_FILTER_IS_IN_GAMEPAD_PREFERRED_MODE = {
+	 type = "value",},
+
+REGISTER_FILTER_IS_NEW_ITEM = {
+	 type = "value",},
+
+REGISTER_FILTER_POWER_TYPE = {
+	 type = "value",},
+
+REGISTER_FILTER_SETTING_SYSTEM_TYPE = {
+	 type = "value",},
+
+REGISTER_FILTER_SOURCE_COMBAT_UNIT_TYPE = {
+	 type = "value",},
+
+REGISTER_FILTER_TARGET_COMBAT_UNIT_TYPE = {
+	 type = "value",},
+
+REGISTER_FILTER_UNIT_TAG = {
+	 type = "value",},
+
+REGISTER_FILTER_UNIT_TAG_PREFIX = {
+	 type = "value",},
+
+REGISTER_FILTER_VIBRATION_FILTER = {
+	 type = "value",},
+
+REMOTE_SCENE_STATE_CHANGE_ORIGIN_INGAME = {
+	 type = "value",},
+
+REMOTE_SCENE_STATE_CHANGE_ORIGIN_INTERNAL = {
+	 type = "value",},
+
+REMOTE_SCENE_STATE_CHANGE_ORIGIN_PREGAME = {
+	 type = "value",},
+
+REMOTE_SCENE_STATE_CHANGE_TYPE_HIDE = {
+	 type = "value",},
+
+REMOTE_SCENE_STATE_CHANGE_TYPE_POP = {
+	 type = "value",},
+
+REMOTE_SCENE_STATE_CHANGE_TYPE_PUSH = {
+	 type = "value",},
+
+REMOTE_SCENE_STATE_CHANGE_TYPE_SHOW = {
+	 type = "value",},
+
+REMOTE_SCENE_STATE_CHANGE_TYPE_SWAP = {
+	 type = "value",},
+
+REPORT_PLAYER_REASON_BEHAVIOR = {
+	 type = "value",},
+
+REPORT_PLAYER_REASON_BOTTING = {
+	 type = "value",},
+
+REPORT_PLAYER_REASON_CHAT_SPAM = {
+	 type = "value",},
+
+REPORT_PLAYER_REASON_FRIEND_REQUEST_SPAM = {
+	 type = "value",},
+
+REPORT_PLAYER_REASON_GUILD_REQUEST_SPAM = {
+	 type = "value",},
+
+REPORT_PLAYER_REASON_MAIL_SPAM = {
+	 type = "value",},
+
+REQUEST_READ_MAIL_RESULT_ALREADY_REQUESTED = {
+	 type = "value",},
+
+REQUEST_READ_MAIL_RESULT_NOT_IN_MAIL_INTERACTION = {
+	 type = "value",},
+
+REQUEST_READ_MAIL_RESULT_NO_SUCH_MAIL = {
+	 type = "value",},
+
+REQUEST_READ_MAIL_RESULT_SUCCESS_CACHED = {
+	 type = "value",},
+
+REQUEST_READ_MAIL_RESULT_SUCCESS_SERVER_REQUESTED = {
+	 type = "value",},
+
+REWARD_ITEM_TYPE_COLLECTIBLE = {
+	 type = "value",},
+
+REWARD_ITEM_TYPE_ITEM = {
+	 type = "value",},
+
+REWARD_TYPE_ALLIANCE_POINTS = {
+	 type = "value",},
+
+REWARD_TYPE_AUTO_ITEM = {
+	 type = "value",},
+
+REWARD_TYPE_INSPIRATION = {
+	 type = "value",},
+
+REWARD_TYPE_MONEY = {
+	 type = "value",},
+
+REWARD_TYPE_NONE = {
+	 type = "value",},
+
+REWARD_TYPE_PARTIAL_SKILL_POINTS = {
+	 type = "value",},
+
+REWARD_TYPE_SKILL_LINE = {
+	 type = "value",},
+
+REWARD_TYPE_TELVAR_STONES = {
+	 type = "value",},
+
+REWARD_TYPE_UNUSED = {
+	 type = "value",},
+
+REWARD_TYPE_WRIT_VOUCHERS = {
+	 type = "value",},
+
+RIDING_TRAIN_SOURCE_INITIALIZE = {
+	 type = "value",},
+
+RIDING_TRAIN_SOURCE_ITEM = {
+	 type = "value",},
+
+RIDING_TRAIN_SOURCE_STABLES = {
+	 type = "value",},
+
+RIDING_TRAIN_CARRYING_CAPACITY = {
+	 type = "value",},
+
+RIDING_TRAIN_INVALID = {
+	 type = "value",},
+
+RIDING_TRAIN_SPEED = {
+	 type = "value",},
+
+RIDING_TRAIN_STAMINA = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_ABSORBED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_ALLIANCE_POINTS = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_BLADETURN = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_BLOCKED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_BLOCKED_DAMAGE = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_DAMAGE = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_DAMAGE_CRIT = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_DAMAGE_IMMUNE = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_DAMAGE_SHIELDED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_DEBUG_MESSAGE = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_DEFENDED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_DISARMED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_DISORIENTED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_DODGED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_DOT_IMMUNE = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_DOT_TICK = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_DOT_TICK_CRIT = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_EXPERIENCE_POINTS = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_FALL_DAMAGE = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_FEARED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_HEAL = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_HEAL_CRIT = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_HOT_TICK = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_HOT_TICK_CRIT = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_IMMUNE = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_INTERCEPTED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_INTERRUPT = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_KNOCKBACK = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_LEVITATED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_MISS = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_NONE = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_OFFBALANCE = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_PACIFIED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_PARRIED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_PARTIAL_RESIST = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_REFLECTED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_RESIST = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_ROOTED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_SILENCED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_SNARED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_SPEED_BOOST = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_SST_COMBAT = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_SST_MOVEMENT = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_SST_STATE = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_STAGGERED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_STUNNED = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_WEAPONSWAP = {
+	 type = "value",},
+
+SCT_EVENT_TYPE_WRONG_WEAPON = {
+	 type = "value",},
+
+SLD_ANSWER_NO = {
+	 type = "value",},
+
+SLD_ANSWER_YES = {
+	 type = "value",},
+
+SLD_ERROR_ALLOW_OVERWRITE = {
+	 type = "value",},
+
+SLD_ERROR_FAILED_LOAD = {
+	 type = "value",},
+
+SLD_ERROR_FAILED_SAVE = {
+	 type = "value",},
+
+SLD_ERROR_FILE_CORRUPT = {
+	 type = "value",},
+
+SLD_ERROR_NO_SAVE_CREATED = {
+	 type = "value",},
+
+SLD_ERROR_NO_SAVE_DEVICE_SELECTED = {
+	 type = "value",},
+
+SLD_ERROR_OUT_OF_SPACE = {
+	 type = "value",},
+
+SLD_ERROR_SAVE_DEST_REMOVED = {
+	 type = "value",},
+
+SCALE_LEVEL_CONSTRAINT_CHAMPION_RANK_MIN_CHAMPION_RANK_MAX = {
+	 type = "value",},
+
+SCALE_LEVEL_CONSTRAINT_NORMAL_MIN_CHAMPION_RANK_MAX = {
+	 type = "value",},
+
+SCALE_LEVEL_CONSTRAINT_NORMAL_MIN_NORMAL_MAX = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_ASSISTS = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_CAPTURE_DEFENSE_POINTS = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_CAPTURE_KILLED_ATTACKER = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_CAPTURE_KILLED_DEFENDER = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_DAMAGED_FLAG_CARRIER = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_DAMAGE_DONE = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_DAMAGE_TAKEN = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_DEATH = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_FLAG_CAPTURED = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_FLAG_CARRIED_TIME = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_HEALED_FLAG_CARRIER = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_HEALING_DEFENDERS = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_HEALING_DONE = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_KILL = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_KILLED_FLAG_CARRIER = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_KILL_STREAK = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_NONE = {
+	 type = "value",},
+
+SCORE_TRACKER_TYPE_SCORE = {
+	 type = "value",},
+
+SERVICE_TOKEN_APPEARANCE_CHANGE = {
+	 type = "value",},
+
+SERVICE_TOKEN_NAME_CHANGE = {
+	 type = "value",},
+
+SERVICE_TOKEN_NONE = {
+	 type = "value",},
+
+SERVICE_TOKEN_RACE_CHANGE = {
+	 type = "value",},
+
+SKILL_GROWTH_TYPE_AP = {
+	 type = "value",},
+
+SKILL_GROWTH_TYPE_EXP = {
+	 type = "value",},
+
+SKILL_GROWTH_TYPE_INSPIRATION = {
+	 type = "value",},
+
+SKILL_GROWTH_TYPE_JUSTICE_THIEF = {
+	 type = "value",},
+
+SKILL_GROWTH_TYPE_KEEP = {
+	 type = "value",},
+
+SKILL_GROWTH_TYPE_SIEGE = {
+	 type = "value",},
+
+SKILL_TYPE_ARMOR = {
+	 type = "value",},
+
+SKILL_TYPE_AVA = {
+	 type = "value",},
+
+SKILL_TYPE_CHAMPION = {
+	 type = "value",},
+
+SKILL_TYPE_CLASS = {
+	 type = "value",},
+
+SKILL_TYPE_GUILD = {
+	 type = "value",},
+
+SKILL_TYPE_NONE = {
+	 type = "value",},
+
+SKILL_TYPE_RACIAL = {
+	 type = "value",},
+
+SKILL_TYPE_TRADESKILL = {
+	 type = "value",},
+
+SKILL_TYPE_WEAPON = {
+	 type = "value",},
+
+SKILL_TYPE_WORLD = {
+	 type = "value",},
+
+SPAM_WARNING_TYPE_ACTION_SLOTS = {
+	 type = "value",},
+
+SPAM_WARNING_TYPE_CHAT_MESSAGE = {
+	 type = "value",},
+
+SPAM_WARNING_TYPE_GUILD_BANK_SELECTOR = {
+	 type = "value",},
+
+SPAM_WARNING_TYPE_GUILD_DESCRIPTION = {
+	 type = "value",},
+
+SPAM_WARNING_TYPE_GUILD_MOTD = {
+	 type = "value",},
+
+SPAM_WARNING_TYPE_GUILD_RANK_CHANGE = {
+	 type = "value",},
+
+SPAM_WARNING_TYPE_HOUSE_SAFE_LOC = {
+	 type = "value",},
+
+SPAM_WARNING_TYPE_NONE = {
+	 type = "value",},
+
+SPAM_WARNING_TYPE_TRADE_INVENTORY = {
+	 type = "value",},
+
+STAT_BONUS_OPTION_APPLY_BONUS = {
+	 type = "value",},
+
+STAT_BONUS_OPTION_DONT_APPLY_BONUS = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_BLEED = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_BLIND = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_CHARM = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_DAZED = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_DISEASE = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_ENVIRONMENT = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_FEAR = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_LEVITATE = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_MAGIC = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_MESMERIZE = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_NEARSIGHT = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_NONE = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_PACIFY = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_POISON = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_PUNCTURE = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_ROOT = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_SILENCE = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_SNARE = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_STUN = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_TRAUMA = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_WEAKNESS = {
+	 type = "value",},
+
+STATUS_EFFECT_TYPE_WOUND = {
+	 type = "value",},
+
+STORE_ENTRY_TYPE_COLLECTIBLE = {
+	 type = "value",},
+
+STORE_ENTRY_TYPE_HOUSE_WITH_TEMPLATE = {
+	 type = "value",},
+
+STORE_ENTRY_TYPE_INTERACTABLE = {
+	 type = "value",},
+
+STORE_ENTRY_TYPE_ITEM = {
+	 type = "value",},
+
+STORE_ENTRY_TYPE_MONSTER = {
+	 type = "value",},
+
+STORE_ENTRY_TYPE_QUEST_ITEM = {
+	 type = "value",},
+
+STORE_ENTRY_TYPE_SUBSTORE = {
+	 type = "value",},
+
+TOOLTIP_GAME_DATA_CHARGES = {
+	 type = "value",},
+
+TOOLTIP_GAME_DATA_CONDITION = {
+	 type = "value",},
+
+TOOLTIP_GAME_DATA_DIVIDER = {
+	 type = "value",},
+
+TOOLTIP_GAME_DATA_EQUIPPED_INFO = {
+	 type = "value",},
+
+TOOLTIP_GAME_DATA_ITEM_ICON = {
+	 type = "value",},
+
+TOOLTIP_GAME_DATA_NONE = {
+	 type = "value",},
+
+TOOLTIP_GAME_DATA_PROGRESSION = {
+	 type = "value",},
+
+TOOLTIP_GAME_DATA_SKILL_UPGRADE = {
+	 type = "value",},
+
+TOOLTIP_GAME_DATA_STOLEN = {
+	 type = "value",},
+
+CRAFTING_TYPE_ALCHEMY = {
+	 type = "value",},
+
+CRAFTING_TYPE_BLACKSMITHING = {
+	 type = "value",},
+
+CRAFTING_TYPE_CLOTHIER = {
+	 type = "value",},
+
+CRAFTING_TYPE_ENCHANTING = {
+	 type = "value",},
+
+CRAFTING_TYPE_INVALID = {
+	 type = "value",},
+
+CRAFTING_TYPE_PROVISIONING = {
+	 type = "value",},
+
+CRAFTING_TYPE_WOODWORKING = {
+	 type = "value",},
+
+TUTORIAL_SHOW_OPTIONS_ALL = {
+	 type = "value",},
+
+TUTORIAL_SHOW_OPTIONS_GAMEPAD = {
+	 type = "value",},
+
+TUTORIAL_SHOW_OPTIONS_KEYBOARD = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ABILITY_PURCHASED_TIMELY_ESCAPE = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ACCOUNT_BANK_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ACHIEVEMENTS_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ACQUIRED_COLLECTIBLE = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ALCHEMY_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ALCHEMY_STATION_OIL_SLOTTED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ATTEMPTED_TO_FISH_WITHOUT_BAIT = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_AVA_FAST_TRAVEL = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_BANK_FULL_NO_ESO_PLUS = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_BANK_OPENED_AS_SUBSCRIBER = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_BANK_OVERFULL = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_BATTLE_LEVEL_ZONE_ENTERED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_BATTLE_LEVEL_ZONE_ENTERED_VETERAN = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_BLACKSMITHING_CREATION_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_BLACKSMITHING_DECONSTRUCTION_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_BLACKSMITHING_IMPROVEMENT_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_BLACKSMITHING_REFINEMENT_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_BLACKSMITHING_RESEARCH_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_BOUNTY_ADDED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CADWELLS_ALMANAC_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CAMPAIGN_AVAILABLE_TO_ENTER = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CAMPAIGN_BROWSER_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CAMPAIGN_OVERVIEW_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CHAMPION_POINT_GAINED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CHAMPION_RANK_UP = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CHAMPION_SYSTEM_UNLOCKED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CHAMPION_UI_SHOWN = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CLOTHIER_CREATION_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CLOTHIER_DECONSTRUCTION_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CLOTHIER_IMPROVEMENT_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CLOTHIER_REFINEMENT_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CLOTHIER_RESEARCH_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_COLLECTIONS_DLC_OPENED_AS_SUBSCRIBER = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_COLLECTIONS_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_COMBAT_MONSTER_DIFFICULTY = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_COMBAT_ROOTED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_COMBAT_SKILLS_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_COMBAT_STATUS_EFFECT = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_COMBAT_STUNNED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CONTACTS_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CONTROLLING_SIEGE = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CRAFT_BAG_ITEM_GAINED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CRAFT_BAG_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CROWN_CONSUMABLE_PURCHASED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CROWN_CRATE_UI_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CROWN_GEMS_GAINED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_DAILY_QUEST_ADDED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_DAMAGED_EQUIPMENT_REDUCING_EFFECTIVENESS = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_DEATH_AVA = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_DEATH_PVE = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_DECONSTRUCTION_LEVEL_PENALTY = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_DEPRECATED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_DEPRECATED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_DISCOVERED_GROUP_DUNGEON = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_DISCOVERED_PUBLIC_DUNGEON = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_DISREPUTABLE_REACHED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_DYEING_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_DYEING_OPENED_AS_SUBSCRIBER = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_DYE_STAMP_CONFIRMATION_SEEN = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_EARNED_ALLIANCE_POINTS = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_EIDETIC_MEMORY = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_EMOTES_MENU_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ENCHANTING_CREATION_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ENCHANTING_EXTRACTION_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ENLIGHTENED_STATE_GAINED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ENLIGHTENED_STATE_LOST = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ENTERED_BATTLEGROUND_CAPTURE_THE_FLAG = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ENTERED_BATTLEGROUND_CRAZY_KING = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ENTERED_BATTLEGROUND_DEATHMATCH = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ENTERED_BATTLEGROUND_DOMINATION = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ENTERED_BATTLEGROUND_KING_OF_THE_HILL = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ENTERED_BATTLEGROUND_MURDERBALL = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ENTERED_EDITABLE_HOME = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ENTERED_OBJECTIVE_CAPTURE_AREA = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ENTERED_OWNED_HOUSE_AS_SUBSCRIBER = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_EQUIPMENT_DAMAGED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_EQUIPMENT_OUT_OF_CHARGES = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_EQUIPPED_ANY_ARMOR = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_EQUIPPED_ANY_WEAPON = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_FENCE_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_FUGITIVE_REACHED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_BATTLE_STANDARD_ITEM = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_BIND_ON_EQUIP_ITEM = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_CRAFTING_MATERIAL = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_DISGUISE = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_EMPTY_SOUL_GEM = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_FORWARD_CAMP_ITEM = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_SIEGE_BALLISTA_ITEM = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_SIEGE_CATAPULT_ITEM = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_SIEGE_MASONRY_KIT = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_SIEGE_MONSTER_ITEM = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_SIEGE_OIL_ITEM = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_SIEGE_RAM_ITEM = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_SIEGE_TREBUCHET_ITEM = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_SIEGE_WOODWORKING_KIT = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GAINED_SOUL_GEM = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GROUP_CHAT = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GROUP_TOOLS_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GUILDS_HERALDRY_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GUILDS_HOME_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GUILDS_ROSTER_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GUILD_BANK_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_GUILD_CHAT = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_HELP_CUSTOMER_SUPPORT_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_HELP_TUTORIALS_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_IMPORTANT_DIALOGUE = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_INCOMING_PLAYER_TO_PLAYER_NOTIFICATION = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_INVENTORY_FULL = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_INVENTORY_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_INVENTORY_OPENED_AND_QUICKSLOTS_AVAILABLE = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_INVENTORY_OPENED_AND_STOLEN_ITEMS_PRESENT = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_INVENTORY_OPENED_AND_WEAPON_SETS_AVAILABLE = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_JOURNAL_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_LAUNDER_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_LEADERBOARDS_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_LEVEL_UP = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_LIVESTOCK_TARGETED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_LOCKPICKING_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_LORE_LIBRARY_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_MAELSTROM_ARENA_ZONE_ENTERED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_MAIL_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_MAIL_OPENED_AND_FULL = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_MAP_OPENED_AVA = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_MAP_OPENED_BATTLEGROUND = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_MAP_OPENED_PVE = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_MARKET_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_MOUNTED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_MOUNT_SET = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_NONE = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_NON_SUBSCRIBER_LIMIT_REACHED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_NOTIFICATIONS_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_NOTORIOUS_REACHED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_OPENED_EDITOR = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_OWNED_LOCK_VIEWED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_PICKPOCKET_PROMPT_VIEWED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_POISON_EQUIPPED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_PROVISIONING_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_PURCHASED_ABILITY = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_PURCHASED_PASSIVE_ABILITY = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_PURCHASED_ULTIMATE_ABILITY = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_PVE_FAST_TRAVEL = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_RAID_TRIAL_COMPLETED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_RAID_TRIAL_FAILED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_RAID_TRIAL_STARTED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_RECEIVED_MAIL = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_RECEIVED_WHISPER = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_REFUGE_ENTERED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_RIDING_SKILL_MANAGEMENT_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_SCALEABLE_REGION_ENTERED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_SKYSHARDS_DISCOVERED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_STATS_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_STATS_OPENED_AND_ATTRIBUTE_POINTS_UNSPENT = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_STOLEN_ITEM_EQUIPPED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_STOLEN_ITEM_TARGETED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_STORE_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_TELVAR_STONES_GAINED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_TELVAR_THRESHOLD_CROSSED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_TELVAR_ZONE_ENTERED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_TRADESKILLS_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_TRADE_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_TRESPASS_SUBZONE_ENTERED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_TRESPASS_SUBZONE_EXITED_WITH_BOUNTY = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_TWO_FAST_TRAVEL_NODES = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_ULTIMATE_AVAILABLE = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_UNIVERSAL_STYLE_ITEM = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_VOICE_CHAT_OPEN_CHANNELS = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_VOICE_CHAT_OPEN_HISTORY = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_WEAPON_SWAPPING_UNLOCKED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_WOODWORKING_CREATION_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_WOODWORKING_DECONSTRUCTION_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_WOODWORKING_IMPROVEMENT_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_WOODWORKING_REFINEMENT_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_WOODWORKING_RESEARCH_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TRIGGER_YOUR_GROUP_OPENED = {
+	 type = "value",},
+
+TUTORIAL_TYPE_DEPRECATED_ = {
+	 type = "value",},
+
+TUTORIAL_TYPE_HUD_BRIEF = {
+	 type = "value",},
+
+TUTORIAL_TYPE_HUD_INFO_BOX = {
+	 type = "value",},
+
+TUTORIAL_TYPE_UI_INFO_BOX = {
+	 type = "value",},
+
+UI_ALERT_CATEGORY_ALERT = {
+	 type = "value",},
+
+UI_ALERT_CATEGORY_ERROR = {
+	 type = "value",},
+
+MAPTYPE_ALLIANCE = {
+	 type = "value",},
+
+MAPTYPE_COSMIC = {
+	 type = "value",},
+
+MAPTYPE_NONE = {
+	 type = "value",},
+
+MAPTYPE_SUBZONE = {
+	 type = "value",},
+
+MAPTYPE_WORLD = {
+	 type = "value",},
+
+MAPTYPE_ZONE = {
+	 type = "value",},
+
+MONSTER_DIFFICULTY_DEADLY = {
+	 type = "value",},
+
+MONSTER_DIFFICULTY_EASY = {
+	 type = "value",},
+
+MONSTER_DIFFICULTY_HARD = {
+	 type = "value",},
+
+MONSTER_DIFFICULTY_NONE = {
+	 type = "value",},
+
+MONSTER_DIFFICULTY_NORMAL = {
+	 type = "value",},
+
+UI_PLATFORM_PC = {
+	 type = "value",},
+
+UI_PLATFORM_PS = {
+	 type = "value",},
+
+UI_PLATFORM_XBOX = {
+	 type = "value",},
+
+UI_WORLD_EFFECT_ENEMY_TELEGRAPH = {
+	 type = "value",},
+
+UI_WORLD_EFFECT_FRIENDLY_TELEGRAPH = {
+	 type = "value",},
+
+ATTRIBUTE_VISUAL_AUTOMATIC = {
+	 type = "value",},
+
+ATTRIBUTE_VISUAL_DECREASED_MAX_POWER = {
+	 type = "value",},
+
+ATTRIBUTE_VISUAL_DECREASED_REGEN_POWER = {
+	 type = "value",},
+
+ATTRIBUTE_VISUAL_DECREASED_STAT = {
+	 type = "value",},
+
+ATTRIBUTE_VISUAL_INCREASED_MAX_POWER = {
+	 type = "value",},
+
+ATTRIBUTE_VISUAL_INCREASED_REGEN_POWER = {
+	 type = "value",},
+
+ATTRIBUTE_VISUAL_INCREASED_STAT = {
+	 type = "value",},
+
+ATTRIBUTE_VISUAL_NONE = {
+	 type = "value",},
+
+ATTRIBUTE_VISUAL_POSSESSION = {
+	 type = "value",},
+
+ATTRIBUTE_VISUAL_POWER_SHIELDING = {
+	 type = "value",},
+
+ATTRIBUTE_VISUAL_UNWAVERING_POWER = {
+	 type = "value",},
+
+END_CAST_REASON_COMPLETED = {
+	 type = "value",},
+
+END_CAST_REASON_FAILED = {
+	 type = "value",},
+
+END_CAST_REASON_INTERRUPTED = {
+	 type = "value",},
+
+END_CAST_REASON_PLAYER_CANCELLED = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ALLY_GROUP = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ALLY_GROUP_TARGET = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ALLY_NPC = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ALLY_NPC_TARGET = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ALLY_PLAYER = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ALLY_PLAYER_TARGET = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_DEAD = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_DEAD_TARGET = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_DEFAULT = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_DEFAULT_TARGET = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_NPC_FRIENDLY = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_NPC_FRIENDLY_TARGET = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_NPC_HOSTILE = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_NPC_HOSTILE_TARGET = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_NPC_IN_COMBAT_WITH_LOCAL_PLAYER = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_NPC_IN_COMBAT_WITH_LOCAL_PLAYER_JUSTICE_NEUTRAL = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_NPC_IN_COMBAT_WITH_LOCAL_PLAYER_JUSTICE_NEUTRAL_TARGET = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_NPC_IN_COMBAT_WITH_LOCAL_PLAYER_TARGET = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_NPC_JUSTICE_NEUTRAL = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_NPC_JUSTICE_NEUTRAL_IGNORE_COMBAT = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_NPC_JUSTICE_NEUTRAL_IGNORE_COMBAT_TARGET = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_NPC_JUSTICE_NEUTRAL_TARGET = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_NPC_NEUTRAL = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_NPC_NEUTRAL_TARGET = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_PLAYER_NO_PVP = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_PLAYER_NO_PVP_TARGET = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_PLAYER_PVP = {
+	 type = "value",},
+
+UNIT_NAMEPLATE_ENEMY_PLAYER_PVP_TARGET = {
+	 type = "value",},
+
+UNIT_REACTION_DEFAULT = {
+	 type = "value",},
+
+UNIT_REACTION_FRIENDLY = {
+	 type = "value",},
+
+UNIT_REACTION_HOSTILE = {
+	 type = "value",},
+
+UNIT_REACTION_NEUTRAL = {
+	 type = "value",},
+
+UNIT_REACTION_NPC_ALLY = {
+	 type = "value",},
+
+UNIT_REACTION_PLAYER_ALLY = {
+	 type = "value",},
+
+VIDEO_SKIP_MODE_ALLOW_SKIP = {
+	 type = "value",},
+
+VIDEO_SKIP_MODE_NO_SKIP = {
+	 type = "value",},
+
+VIDEO_SKIP_MODE_REQUIRE_CONFIRMATION_FOR_SKIP = {
+	 type = "value",},
+
+VOICE_CHANNEL_ALL = {
+	 type = "value",},
+
+VOICE_CHANNEL_AREA = {
+	 type = "value",},
+
+VOICE_CHANNEL_BATTLEGROUP = {
+	 type = "value",},
+
+VOICE_CHANNEL_GROUP = {
+	 type = "value",},
+
+VOICE_CHANNEL_GUILD = {
+	 type = "value",},
+
+VOICE_CHANNEL_NONE = {
+	 type = "value",},
+
+VOICE_CHAT_SPEAK_STATE_IDLE = {
+	 type = "value",},
+
+VOICE_CHAT_SPEAK_STATE_MUTED = {
+	 type = "value",},
+
+VOICE_CHAT_SPEAK_STATE_NONE = {
+	 type = "value",},
+
+VOICE_CHAT_SPEAK_STATE_SPEAKING = {
+	 type = "value",},
+
+ACTION_BAR_CLASS_BAR_SIZE = {
+	 type = "value",},
+
+ACTION_BAR_EMOTE_QUICK_SLOT_SIZE = {
+	 type = "value",},
+
+ACTION_BAR_FIRST_CLASS_BAR_SLOT = {
+	 type = "value",},
+
+ACTION_BAR_FIRST_EMOTE_QUICK_SLOT_INDEX = {
+	 type = "value",},
+
+ACTION_BAR_FIRST_LOCKED_SLOT = {
+	 type = "value",},
+
+ACTION_BAR_FIRST_NORMAL_SLOT_INDEX = {
+	 type = "value",},
+
+ACTION_BAR_FIRST_SIEGE_BAR_SLOT = {
+	 type = "value",},
+
+ACTION_BAR_FIRST_UTILITY_BAR_SLOT = {
+	 type = "value",},
+
+ACTION_BAR_FIRST_WEAPON_SLOT_INDEX = {
+	 type = "value",},
+
+ACTION_BAR_LAST_MAIN_BAR_SLOT = {
+	 type = "value",},
+
+ACTION_BAR_LAST_WEAPON_SLOT_INDEX = {
+	 type = "value",},
+
+ACTION_BAR_NUM_PAGES = {
+	 type = "value",},
+
+ACTION_BAR_NUM_SLOTS = {
+	 type = "value",},
+
+ACTION_BAR_QUICK_SLOT_INDEX = {
+	 type = "value",},
+
+ACTION_BAR_SIEGE_BAR_SIZE = {
+	 type = "value",},
+
+ACTION_BAR_SLOTS_PER_PAGE = {
+	 type = "value",},
+
+ACTION_BAR_ULTIMATE_SLOT_INDEX = {
+	 type = "value",},
+
+ACTION_BAR_UTILITY_BAR_SIZE = {
+	 type = "value",},
+
+DISPLAY_NAME_PREFIX_BYTE = {
+	 type = "value",},
+
+GROUP_SIZE_MAX = {
+	 type = "value",},
+
+INVALID_DYE_ID = {
+	 type = "value",},
+
+INVALID_EXPLORATION_INDEX = {
+	 type = "value",},
+
+MAIL_MAX_ATTACHED_ITEMS = {
+	 type = "value",},
+
+MAX_BOSSES = {
+	 type = "value",},
+
+MAXIMUM_CHAMPION_RANK = {
+	 type = "value",},
+
+MAX_PLAYER_CURRENCY = {
+	 type = "value",},
+
+MAX_GUILD_RANKS = {
+	 type = "value",},
+
+MAX_KEEP_UPGRADE_LEVELS = {
+	 type = "value",},
+
+MAX_CROWN_CRATE_REWARD_SLOTS = {
+	 type = "value",},
+
+NUM_POWER_POOLS = {
+	 type = "value",},
+
+MAX_STORE_WINDOW_STACK_QUANTITY = {
+	 type = "value",},
+
+MIN_REQUIRED_LEVEL_TO_CREATE_GUILD = {
+	 type = "value",},
+
+NO_POWER_INDEX = {
+	 type = "value",},
+
+NUM_ALLIANCES = {
+	 type = "value",},
+
+NUM_BACKPACK_SLOTS_PER_UPGRADE = {
+	 type = "value",},
+
+NUM_BANK_SLOTS_PER_UPGRADE = {
+	 type = "value",},
+
+NUM_COMBAT_RELATED_EQUIP_SLOTS = {
+	 type = "value",},
+
+NUM_LOCKPICK_CHAMBER_STATES = {
+	 type = "value",},
+
+NUM_LOCKPICK_CHAMBERS = {
+	 type = "value",},
+
+NUM_SKILL_LINE_COLUMNS_PER_LINE = {
+	 type = "value",},
+
+TRADE_NUM_SLOTS = {
+	 type = "value",},
+
+NUM_PARTIAL_SKILL_POINTS_FOR_FULL = {
+	 type = "value",},
+
+RAID_GROUP_SIZE_THRESHOLD = {
+	 type = "value",},
+
+SMALL_GROUP_SIZE_THRESHOLD = {
+	 type = "value",},
+
+TRADE_DELAY_TIME = {
+	 type = "value",},
+
+TUTORIAL_ENABLED_SETTING_ID = {
+	 type = "value",},
+
+VOICE_CHAT_REQUEST_DELAY = {
+	 type = "value",},
+
+ABILITY_TYPE_ACTIONLIST = {
+	 type = "value",},
+
+ABILITY_TYPE_AREAEFFECT = {
+	 type = "value",},
+
+ABILITY_TYPE_AREATELEPORT = {
+	 type = "value",},
+
+ABILITY_TYPE_ATTACKERINTERCEPT = {
+	 type = "value",},
+
+ABILITY_TYPE_ATTACKERREFLECT = {
+	 type = "value",},
+
+ABILITY_TYPE_AVOIDDEATH = {
+	 type = "value",},
+
+ABILITY_TYPE_BASIC = {
+	 type = "value",},
+
+ABILITY_TYPE_BLADETURN = {
+	 type = "value",},
+
+ABILITY_TYPE_BLINK = {
+	 type = "value",},
+
+ABILITY_TYPE_BLOCK = {
+	 type = "value",},
+
+ABILITY_TYPE_BONUS = {
+	 type = "value",},
+
+ABILITY_TYPE_CHANGEAPPEARANCE = {
+	 type = "value",},
+
+ABILITY_TYPE_CHARGE = {
+	 type = "value",},
+
+ABILITY_TYPE_CHARM = {
+	 type = "value",},
+
+ABILITY_TYPE_CLAIRVOYANCE = {
+	 type = "value",},
+
+ABILITY_TYPE_CLIENTFX = {
+	 type = "value",},
+
+ABILITY_TYPE_COMBATRESOURCE = {
+	 type = "value",},
+
+ABILITY_TYPE_CREATEINTERACTABLE = {
+	 type = "value",},
+
+ABILITY_TYPE_CREATEINVENTORYITEM = {
+	 type = "value",},
+
+ABILITY_TYPE_DAMAGE = {
+	 type = "value",},
+
+ABILITY_TYPE_DAMAGELIMIT = {
+	 type = "value",},
+
+ABILITY_TYPE_DAMAGESHIELD = {
+	 type = "value",},
+
+ABILITY_TYPE_DEFEND = {
+	 type = "value",},
+
+ABILITY_TYPE_DEPRECATED = {
+	 type = "value",},
+
+ABILITY_TYPE_DESPAWNOVERRIDE = {
+	 type = "value",},
+
+ABILITY_TYPE_DISARM = {
+	 type = "value",},
+
+ABILITY_TYPE_DISORIENT = {
+	 type = "value",},
+
+ABILITY_TYPE_DISPEL = {
+	 type = "value",},
+
+ABILITY_TYPE_DODGE = {
+	 type = "value",},
+
+ABILITY_TYPE_DOUBLEFIRE = {
+	 type = "value",},
+
+ABILITY_TYPE_EXHAUSTED = {
+	 type = "value",},
+
+ABILITY_TYPE_FEAR = {
+	 type = "value",},
+
+ABILITY_TYPE_FILLSOULGEM = {
+	 type = "value",},
+
+ABILITY_TYPE_FIREPROC = {
+	 type = "value",},
+
+ABILITY_TYPE_FLIGHT = {
+	 type = "value",},
+
+ABILITY_TYPE_FREECAST = {
+	 type = "value",},
+
+ABILITY_TYPE_FREEINTERACT = {
+	 type = "value",},
+
+ABILITY_TYPE_GRANTABILITY = {
+	 type = "value",},
+
+ABILITY_TYPE_HEAL = {
+	 type = "value",},
+
+ABILITY_TYPE_HIDE = {
+	 type = "value",},
+
+ABILITY_TYPE_IMMUNITY = {
+	 type = "value",},
+
+ABILITY_TYPE_INTERCEPT = {
+	 type = "value",},
+
+ABILITY_TYPE_INTERRUPT = {
+	 type = "value",},
+
+ABILITY_TYPE_JUMP = {
+	 type = "value",},
+
+ABILITY_TYPE_KNOCKBACK = {
+	 type = "value",},
+
+ABILITY_TYPE_LEAP = {
+	 type = "value",},
+
+ABILITY_TYPE_LEVITATE = {
+	 type = "value",},
+
+ABILITY_TYPE_MISDIRECT = {
+	 type = "value",},
+
+ABILITY_TYPE_MODIFYCOOLDOWN = {
+	 type = "value",},
+
+ABILITY_TYPE_MODIFYDURATION = {
+	 type = "value",},
+
+ABILITY_TYPE_MOUNT = {
+	 type = "value",},
+
+ABILITY_TYPE_MOVEPOSITION = {
+	 type = "value",},
+
+ABILITY_TYPE_NOAGGRO = {
+	 type = "value",},
+
+ABILITY_TYPE_NOKILL = {
+	 type = "value",},
+
+ABILITY_TYPE_NOLOCKPICK = {
+	 type = "value",},
+
+ABILITY_TYPE_NOSEETARGET = {
+	 type = "value",},
+
+ABILITY_TYPE_NONCOMBATBONUS = {
+	 type = "value",},
+
+ABILITY_TYPE_NONEXISTENT = {
+	 type = "value",},
+
+ABILITY_TYPE_NONE = {
+	 type = "value",},
+
+ABILITY_TYPE_OFFBALANCE = {
+	 type = "value",},
+
+ABILITY_TYPE_PACIFY = {
+	 type = "value",},
+
+ABILITY_TYPE_PARRY = {
+	 type = "value",},
+
+ABILITY_TYPE_PATHLINE = {
+	 type = "value",},
+
+ABILITY_TYPE_RECALL = {
+	 type = "value",},
+
+ABILITY_TYPE_REFLECTION = {
+	 type = "value",},
+
+ABILITY_TYPE_REGISTERTRIGGER = {
+	 type = "value",},
+
+ABILITY_TYPE_REMOVETYPE = {
+	 type = "value",},
+
+ABILITY_TYPE_RESURRECT = {
+	 type = "value",},
+
+ABILITY_TYPE_REVEAL = {
+	 type = "value",},
+
+ABILITY_TYPE_SEESTEALTH = {
+	 type = "value",},
+
+ABILITY_TYPE_SETCOOLDOWN = {
+	 type = "value",},
+
+ABILITY_TYPE_SETHOTBAR = {
+	 type = "value",},
+
+ABILITY_TYPE_SETPERSONALITY = {
+	 type = "value",},
+
+ABILITY_TYPE_SETTARGET = {
+	 type = "value",},
+
+ABILITY_TYPE_SHOWNON = {
+	 type = "value",},
+
+ABILITY_TYPE_SIEGEAREAEFFECT = {
+	 type = "value",},
+
+ABILITY_TYPE_SIEGECREATE = {
+	 type = "value",},
+
+ABILITY_TYPE_SIEGEPACKUP = {
+	 type = "value",},
+
+ABILITY_TYPE_SILENCE = {
+	 type = "value",},
+
+ABILITY_TYPE_SLOWFALL = {
+	 type = "value",},
+
+ABILITY_TYPE_SNARE = {
+	 type = "value",},
+
+ABILITY_TYPE_SOULGEMRESURRECT = {
+	 type = "value",},
+
+ABILITY_TYPE_SPELLSTEAL = {
+	 type = "value",},
+
+ABILITY_TYPE_STAGGER = {
+	 type = "value",},
+
+ABILITY_TYPE_STEALTH = {
+	 type = "value",},
+
+ABILITY_TYPE_STUN = {
+	 type = "value",},
+
+ABILITY_TYPE_SUMMON = {
+	 type = "value",},
+
+ABILITY_TYPE_THREAT = {
+	 type = "value",},
+
+ABILITY_TYPE_TRAUMA = {
+	 type = "value",},
+
+ABILITY_TYPE_UPDATEDEATHDIALOG = {
+	 type = "value",},
+
+ABILITY_TYPE_VAMPIRE = {
+	 type = "value",},
+
+ABILITY_TYPE_WIND = {
+	 type = "value",},
+
+ACTIVITY_FINDER_STATUS_COMPLETE = {
+	 type = "value",},
+
+ACTIVITY_FINDER_STATUS_FORMING_GROUP = {
+	 type = "value",},
+
+ACTIVITY_FINDER_STATUS_IN_PROGRESS = {
+	 type = "value",},
+
+ACTIVITY_FINDER_STATUS_NONE = {
+	 type = "value",},
+
+ACTIVITY_FINDER_STATUS_QUEUED = {
+	 type = "value",},
+
+ACTIVITY_FINDER_STATUS_READY_CHECK = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_CAMPAIGN_MISMATCH = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_CANNOT_QUEUE_IN_BATTLEGROUND = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_DESTINATION_NO_LONGER_VALID = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_DLC_LOCKED = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_GROUP_STRUCTURE_CHANGED = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_GROUP_TOO_LARGE = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_INCOMPATIBLE_GROUP = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_INCOMPATIBLE_REGION = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_INVALID_LEVEL = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_LOCATION_RESTRICTION = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_MEMBERS_OFFLINE = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_MEMBER_LOCATION_NOT_VALID = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_MEMEBER_CANCELED_READY_CHECK = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_NEW_SEARCH_INITIATED = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_NOT_GROUP_LEADER = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_NOT_IMPLEMENTED = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_NO_ACTIVITIES_SELECTED = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_NO_GROUP = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_NO_ROLES_SELECTED = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_ON_QUEUE_COOLDOWN = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_QUEUE_TTL_EXPIRED = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_SUCCESS = {
+	 type = "value",},
+
+ACTIVITY_QUEUE_RESULT_UNSPECIFIED_INTERNAL_ERROR = {
+	 type = "value",},
+
+LFG_ACTIVITY_AVA = {
+	 type = "value",},
+
+LFG_ACTIVITY_BATTLE_GROUND_CHAMPION = {
+	 type = "value",},
+
+LFG_ACTIVITY_BATTLE_GROUND_LOW_LEVEL = {
+	 type = "value",},
+
+LFG_ACTIVITY_BATTLE_GROUND_NON_CHAMPION = {
+	 type = "value",},
+
+LFG_ACTIVITY_DUNGEON = {
+	 type = "value",},
+
+LFG_ACTIVITY_HOME_SHOW = {
+	 type = "value",},
+
+LFG_ACTIVITY_INVALID = {
+	 type = "value",},
+
+LFG_ACTIVITY_MASTER_DUNGEON = {
+	 type = "value",},
+
+LFG_ACTIVITY_TRIAL = {
+	 type = "value",},
+
+LFG_COOLDOWN_ACTIVITY_STARTED = {
+	 type = "value",},
+
+LFG_COOLDOWN_BATTLEGROUND_DESERTED = {
+	 type = "value",},
+
+LFG_COOLDOWN_DUNGEON_LEFT = {
+	 type = "value",},
+
+LFG_COOLDOWN_INVALID = {
+	 type = "value",},
+
+LFG_COOLDOWN_QUEUE_LEFT = {
+	 type = "value",},
+
+LFG_COOLDOWN_REWARD_GRANTED = {
+	 type = "value",},
+
+LFG_COOLDOWN_TRIAL_LEFT = {
+	 type = "value",},
+
+LFG_GROUP_TYPE_LARGE = {
+	 type = "value",},
+
+LFG_GROUP_TYPE_MEDIUM = {
+	 type = "value",},
+
+LFG_GROUP_TYPE_NONE = {
+	 type = "value",},
+
+LFG_GROUP_TYPE_REGULAR = {
+	 type = "value",},
+
+LFG_ITEM_REWARD_TYPE_DAILY = {
+	 type = "value",},
+
+LFG_ITEM_REWARD_TYPE_NONE = {
+	 type = "value",},
+
+LFG_ITEM_REWARD_TYPE_STANDARD = {
+	 type = "value",},
+
+LFG_READY_CHECK_CANCEL_REASON_ACTIVITY_NO_LONGER_VALID = {
+	 type = "value",},
+
+LFG_READY_CHECK_CANCEL_REASON_GROUP_FORMED_SUCCESSFULLY = {
+	 type = "value",},
+
+LFG_READY_CHECK_CANCEL_REASON_GROUP_MEMBER_CANCELED = {
+	 type = "value",},
+
+LFG_READY_CHECK_CANCEL_REASON_GROUP_NOT_VIABLE = {
+	 type = "value",},
+
+LFG_READY_CHECK_CANCEL_REASON_GROUP_REPLACED_IN_QUEUE = {
+	 type = "value",},
+
+LFG_READY_CHECK_CANCEL_REASON_NOT_IN_READY_CHECK = {
+	 type = "value",},
+
+LFG_READY_CHECK_STATE_FORM_GROUP = {
+	 type = "value",},
+
+LFG_READY_CHECK_STATE_GROUP_TIMEOUT_CANCEL = {
+	 type = "value",},
+
+LFG_READY_CHECK_STATE_IN_READY_CHECK = {
+	 type = "value",},
+
+LFG_READY_CHECK_STATE_IN_READY_CHECK_BATTLEGROUND_TEST = {
+	 type = "value",},
+
+LFG_READY_CHECK_STATE_IN_TRANSIT_TO_BATTLEGROUND = {
+	 type = "value",},
+
+LFG_READY_CHECK_STATE_LAUNCHING_BATTLEGROUND_INSTANCE = {
+	 type = "value",},
+
+LFG_READY_CHECK_STATE_NOT_IN_READY_CHECK = {
+	 type = "value",},
+
+LFG_READY_CHECK_STATE_PLAYER_ACCEPTED = {
+	 type = "value",},
+
+LFG_READY_CHECK_STATE_PLAYER_DECLINED = {
+	 type = "value",},
+
+LFG_READY_CHECK_STATE_QUEUEDTEST_BATTLEGROUND_LAUNCH = {
+	 type = "value",},
+
+LFG_READY_CHECK_STATE_TRANSFER_TO_BATTLEGROUND_INSTANCE = {
+	 type = "value",},
+
+LFG_ROLE_DPS = {
+	 type = "value",},
+
+LFG_ROLE_HEAL = {
+	 type = "value",},
+
+LFG_ROLE_INVALID = {
+	 type = "value",},
+
+LFG_ROLE_TANK = {
+	 type = "value",},
+
+BGQUERY_ASSIGNED_AND_LOCAL = {
+	 type = "value",},
+
+BGQUERY_ASSIGNED_CAMPAIGN = {
+	 type = "value",},
+
+BGQUERY_LOCAL = {
+	 type = "value",},
+
+BGQUERY_UNKNOWN = {
+	 type = "value",},
+
+CAMPAIGNBUFF_DEFENSIVE_ARTIFACT = {
+	 type = "value",},
+
+CAMPAIGNBUFF_EMPEROR = {
+	 type = "value",},
+
+CAMPAIGNBUFF_KEEP = {
+	 type = "value",},
+
+CAMPAIGNBUFF_OFFENSIVE_ARTIFACT = {
+	 type = "value",},
+
+HOLDINGTYPE_DEFENSIVE_ARTIFACT = {
+	 type = "value",},
+
+HOLDINGTYPE_KEEP = {
+	 type = "value",},
+
+HOLDINGTYPE_OFFENSIVE_ARTIFACT = {
+	 type = "value",},
+
+HOLDINGTYPE_OUTPOST = {
+	 type = "value",},
+
+HOLDINGTYPE_RESOURCE = {
+	 type = "value",},
+
+CAMPAIGN_LEVEL_REQ_TYPE_CHAMPION_RANK = {
+	 type = "value",},
+
+CAMPAIGN_LEVEL_REQ_TYPE_NONE = {
+	 type = "value",},
+
+CAMPAIGN_LEVEL_REQ_TYPE_PLAYER_LEVEL = {
+	 type = "value",},
+
+CAMPAIGN_POP_FULL = {
+	 type = "value",},
+
+CAMPAIGN_POP_HIGH = {
+	 type = "value",},
+
+CAMPAIGN_POP_LOW = {
+	 type = "value",},
+
+CAMPAIGN_POP_MEDIUM = {
+	 type = "value",},
+
+CAMP_PREF_ASSIGNED = {
+	 type = "value",},
+
+CAMP_PREF_GUEST = {
+	 type = "value",},
+
+CAMPAIGN_REASSIGN_TYPE_GUEST = {
+	 type = "value",},
+
+CAMPAIGN_REASSIGN_TYPE_IMMEDIATE = {
+	 type = "value",},
+
+CAMPAIGN_REASSIGN_TYPE_ON_END = {
+	 type = "value",},
+
+CAMPAIGN_RULESET_TYPE_HARDCORE = {
+	 type = "value",},
+
+CAMPAIGN_RULESET_TYPE_NORMAL = {
+	 type = "value",},
+
+CAMPAIGN_RULESET_TYPE_SPECIAL = {
+	 type = "value",},
+
+CAMPAIGN_UNASSIGN_TYPE_GUEST = {
+	 type = "value",},
+
+CAMPAIGN_UNASSIGN_TYPE_HOME_USE_ALLIANCE_POINTS = {
+	 type = "value",},
+
+CAMPAIGN_UNASSIGN_TYPE_HOME_USE_GOLD = {
+	 type = "value",},
+
+HOOK_POINT_BOILING_OIL = {
+	 type = "value",},
+
+HOOK_POINT_GRAPPLE = {
+	 type = "value",},
+
+HOOK_POINT_NPC = {
+	 type = "value",},
+
+HOOK_POINT_SIEGE = {
+	 type = "value",},
+
+IMPERIAL_CITY_ACCESS_RULE_TYPE_EVERYONE = {
+	 type = "value",},
+
+IMPERIAL_CITY_ACCESS_RULE_TYPE_MAJORITY_KEEPS = {
+	 type = "value",},
+
+IMPERIAL_CITY_ACCESS_RULE_TYPE_NATIVE_KEEPS = {
+	 type = "value",},
+
+IMPERIAL_CITY_ACCESS_RULE_TYPE_NATIVE_KEEPS_PLUS_ONE = {
+	 type = "value",},
+
+RESOURCETYPE_FOOD = {
+	 type = "value",},
+
+RESOURCETYPE_NONE = {
+	 type = "value",},
+
+RESOURCETYPE_ORE = {
+	 type = "value",},
+
+RESOURCETYPE_WOOD = {
+	 type = "value",},
+
+KEEPTYPE_ARTIFACT_GATE = {
+	 type = "value",},
+
+KEEPTYPE_ARTIFACT_KEEP = {
+	 type = "value",},
+
+KEEPTYPE_BORDER_KEEP = {
+	 type = "value",},
+
+KEEPTYPE_IMPERIAL_CITY_DISTRICT = {
+	 type = "value",},
+
+KEEPTYPE_KEEP = {
+	 type = "value",},
+
+KEEPTYPE_OUTPOST = {
+	 type = "value",},
+
+KEEPTYPE_RESOURCE = {
+	 type = "value",},
+
+KEEPTYPE_TOWN = {
+	 type = "value",},
+
+UPGRADEPATH_DEFENSIVE = {
+	 type = "value",},
+
+UPGRADEPATH_NONE = {
+	 type = "value",},
+
+UPGRADEPATH_PRODUCTION = {
+	 type = "value",},
+
+SIEGE_TYPE_BALLISTA = {
+	 type = "value",},
+
+SIEGE_TYPE_BATTLE_STANDARD = {
+	 type = "value",},
+
+SIEGE_TYPE_CATAPULT = {
+	 type = "value",},
+
+SIEGE_TYPE_GRAVEYARD = {
+	 type = "value",},
+
+SIEGE_TYPE_MONSTER = {
+	 type = "value",},
+
+SIEGE_TYPE_NONE = {
+	 type = "value",},
+
+SIEGE_TYPE_OIL = {
+	 type = "value",},
+
+SIEGE_TYPE_RAM = {
+	 type = "value",},
+
+SIEGE_TYPE_TREBUCHET = {
+	 type = "value",},
+
+SIEGE_TYPE_UNIVERSAL = {
 	 type = "value",},
 
 CHROMA_BLEND_MODE_ADDITIVE = {
@@ -2517,15 +6597,6 @@ COLLECTIBLE_CATEGORY_TYPE_SKIN = {
 COLLECTIBLE_CATEGORY_TYPE_VANITY_PET = {
 	 type = "value",},
 
-COLLECTIBLE_ITEM_TYPE_FISH = {
-	 type = "value",},
-
-COLLECTIBLE_ITEM_TYPE_NONE = {
-	 type = "value",},
-
-COLLECTIBLE_ITEM_TYPE_TROPHY = {
-	 type = "value",},
-
 COLLECTIBLE_RESTRICTION_TYPE_ALLIANCE = {
 	 type = "value",},
 
@@ -2580,6 +6651,12 @@ COLLECTIBLE_USAGE_BLOCK_REASON_ON_COOLDOWN = {
 COLLECTIBLE_USAGE_BLOCK_REASON_PLACED_IN_HOUSE = {
 	 type = "value",},
 
+SPECIALIZED_COLLECTIBLE_TYPE_BUST = {
+	 type = "value",},
+
+SPECIALIZED_COLLECTIBLE_TYPE_NONE = {
+	 type = "value",},
+
 POWERTYPE_HEALTH = {
 	 type = "value",},
 
@@ -2604,87 +6681,6 @@ POWERTYPE_ULTIMATE = {
 POWERTYPE_WEREWOLF = {
 	 type = "value",},
 
-COMBAT_SETTING_CLAMP_GROUND_TARGET_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_MONSTER_TELLS_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_PREVENT_ATTACKING_INNOCENTS = {
-	 type = "value",},
-
-COMBAT_SETTING_QUICK_CAST_GROUND_ABILITIES = {
-	 type = "value",},
-
-COMBAT_SETTING_ROLL_DODGE_DOUBLE_TAP = {
-	 type = "value",},
-
-COMBAT_SETTING_ROLL_DODGE_WINDOW = {
-	 type = "value",},
-
-COMBAT_SETTING_SCROLLING_COMBAT_TEXT_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_INCOMING_DAMAGE_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_INCOMING_DOT_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_INCOMING_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_INCOMING_HEALING_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_INCOMING_HOT_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_INCOMING_PET_DAMAGE_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_INCOMING_PET_DOT_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_INCOMING_POINT_GAINS_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_INCOMING_STATUS_EFFECTS_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_OUTGOING_DAMAGE_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_OUTGOING_DOT_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_OUTGOING_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_OUTGOING_HEALING_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_OUTGOING_HOT_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_OUTGOING_PET_DAMAGE_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_OUTGOING_PET_DOT_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_OUTGOING_PET_HEALING_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_OUTGOING_PET_HOT_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_SCT_OUTGOING_STATUS_EFFECTS_ENABLED = {
-	 type = "value",},
-
-COMBAT_SETTING_USE_BATTLE_LEVEL = {
-	 type = "value",},
-
 COMBAT_UNIT_TYPE_GROUP = {
 	 type = "value",},
 
@@ -2703,19 +6699,91 @@ COMBAT_UNIT_TYPE_PLAYER_PET = {
 COMBAT_UNIT_TYPE_TARGET_DUMMY = {
 	 type = "value",},
 
-COMPASS_ACTIVE_QUESTS_CHOICE_FOCUSED = {
+DAMAGE_TYPE_COLD = {
 	 type = "value",},
 
-COMPASS_ACTIVE_QUESTS_CHOICE_OFF = {
+DAMAGE_TYPE_DISEASE = {
 	 type = "value",},
 
-COMPASS_ACTIVE_QUESTS_CHOICE_ON = {
+DAMAGE_TYPE_DROWN = {
 	 type = "value",},
 
-CONSOLE_SERVER_EUROPE = {
+DAMAGE_TYPE_EARTH = {
 	 type = "value",},
 
-CONSOLE_SERVER_NORTH_AMERICA = {
+DAMAGE_TYPE_FIRE = {
+	 type = "value",},
+
+DAMAGE_TYPE_GENERIC = {
+	 type = "value",},
+
+DAMAGE_TYPE_MAGIC = {
+	 type = "value",},
+
+DAMAGE_TYPE_NONE = {
+	 type = "value",},
+
+DAMAGE_TYPE_OBLIVION = {
+	 type = "value",},
+
+DAMAGE_TYPE_PHYSICAL = {
+	 type = "value",},
+
+DAMAGE_TYPE_POISON = {
+	 type = "value",},
+
+DAMAGE_TYPE_SHOCK = {
+	 type = "value",},
+
+DISGUISE_STATE_DANGER = {
+	 type = "value",},
+
+DISGUISE_STATE_DISCOVERED = {
+	 type = "value",},
+
+DISGUISE_STATE_DISGUISED = {
+	 type = "value",},
+
+DISGUISE_STATE_NONE = {
+	 type = "value",},
+
+DISGUISE_STATE_SUSPICIOUS = {
+	 type = "value",},
+
+SPECIAL_MOVE_INDEX_BLOCK = {
+	 type = "value",},
+
+SPECIAL_MOVE_INDEX_CROUCH = {
+	 type = "value",},
+
+SPECIAL_MOVE_INDEX_INTERRUPT = {
+	 type = "value",},
+
+SPECIAL_MOVE_INDEX_ROLL_DODGE = {
+	 type = "value",},
+
+SPECIAL_MOVE_INDEX_SPRINT = {
+	 type = "value",},
+
+STEALTH_STATE_DETECTED = {
+	 type = "value",},
+
+STEALTH_STATE_HIDDEN = {
+	 type = "value",},
+
+STEALTH_STATE_HIDDEN_ALMOST_DETECTED = {
+	 type = "value",},
+
+STEALTH_STATE_HIDING = {
+	 type = "value",},
+
+STEALTH_STATE_NONE = {
+	 type = "value",},
+
+STEALTH_STATE_STEALTH = {
+	 type = "value",},
+
+STEALTH_STATE_STEALTH_ALMOST_DETECTED = {
 	 type = "value",},
 
 CROWN_CRATE_NPC_ANIMATION_TYPE_ALL_CARDS_REVEALED_HAS_CRATES = {
@@ -2832,784 +6900,43 @@ CROWN_GEM_BALANCE_REASON_ITEMS_GEMMIFIED = {
 CROWN_GEM_BALANCE_REASON_NOTIFY = {
 	 type = "value",},
 
-CURRENCY_CHANGE_REASON_ABILITY_UPGRADE_PURCHASE = {
+GEMIFIABLE_FILTER_TYPE_ALL = {
 	 type = "value",},
 
-CURRENCY_CHANGE_REASON_ACHIEVEMENT = {
+LOOT_CRATE_OPEN_RESPONSE_FAIL_NO_INVENTORY_SPACE = {
 	 type = "value",},
 
-CURRENCY_CHANGE_REASON_ACTION = {
+LOOT_CRATE_OPEN_RESPONSE_INVALID_LOOT_CRATE = {
 	 type = "value",},
 
-CURRENCY_CHANGE_REASON_BAGSPACE = {
+LOOT_CRATE_OPEN_RESPONSE_INVALID_LOOT_CRATE_TIER = {
 	 type = "value",},
 
-CURRENCY_CHANGE_REASON_BANKSPACE = {
+LOOT_CRATE_OPEN_RESPONSE_INVALID_MARKET_PRODUCT = {
 	 type = "value",},
 
-CURRENCY_CHANGE_REASON_BANK_DEPOSIT = {
+LOOT_CRATE_OPEN_RESPONSE_NO_PRODUCT_SELECTED = {
 	 type = "value",},
 
-CURRENCY_CHANGE_REASON_BANK_FEE = {
+LOOT_CRATE_OPEN_RESPONSE_OUT_OF_ALL_LOOT_CRATES = {
 	 type = "value",},
 
-CURRENCY_CHANGE_REASON_BANK_WITHDRAWAL = {
+LOOT_CRATE_OPEN_RESPONSE_OUT_OF_LOOT_CRATE = {
 	 type = "value",},
 
-CURRENCY_CHANGE_REASON_BATTLEGROUND = {
+LOOT_CRATE_OPEN_RESPONSE_SUCCESS = {
 	 type = "value",},
 
-CURRENCY_CHANGE_REASON_BOUNTY_CONFISCATED = {
+LOOT_CRATE_OPEN_RESPONSE_SYSTEM_UNAVAILABLE = {
 	 type = "value",},
 
-CURRENCY_CHANGE_REASON_BOUNTY_PAID_FENCE = {
+LOOT_CRATES_SYSTEM_STATE_OFFLINE = {
 	 type = "value",},
 
-CURRENCY_CHANGE_REASON_BOUNTY_PAID_GUARD = {
+LOOT_CRATES_SYSTEM_STATE_ONLINE = {
 	 type = "value",},
 
-CURRENCY_CHANGE_REASON_BUYBACK = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_CASH_ON_DELIVERY = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_COMMAND = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_CONSUME_FOOD_DRINK = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_CONSUME_POTION = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_CONVERSATION = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_CRAFT = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_DEATH = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_DECONSTRUCT = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_EDIT_GUILD_HERALDRY = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_FEED_MOUNT = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_GUILD_BANK_DEPOSIT = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_GUILD_BANK_WITHDRAWAL = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_GUILD_FORWARD_CAMP = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_GUILD_STANDARD = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_GUILD_TABARD = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_HARVEST_REAGENT = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_HOOKPOINT_STORE = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_JUMP_FAILURE_REFUND = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_KEEP_REPAIR = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_KEEP_REWARD = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_KEEP_UPGRADE = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_KILL = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_LOOT = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_LOOT_STOLEN = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_MAIL = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_MEDAL = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_PICKPOCKET = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_PLAYER_INIT = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_PVP_KILL_TRANSFER = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_PVP_RESURRECT = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_QUESTREWARD = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_RECIPE = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_REFORGE = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_RESEARCH_TRAIT = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_RESPEC_ATTRIBUTES = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_RESPEC_CHAMPION = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_RESPEC_MORPHS = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_RESPEC_SKILLS = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_REWARD = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_SELL_STOLEN = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_SOULWEARY = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_SOUL_HEAL = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_STABLESPACE = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_STUCK = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_TRADE = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_TRADINGHOUSE_LISTING = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_TRADINGHOUSE_PURCHASE = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_TRADINGHOUSE_REFUND = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_TRAIT_REVEAL = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_TRAVEL_GRAVEYARD = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_VENDOR = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_VENDOR_LAUNDER = {
-	 type = "value",},
-
-CURRENCY_CHANGE_REASON_VENDOR_REPAIR = {
-	 type = "value",},
-
-CURRENCY_COLOR_ALLIANCE_POINTS = {
-	 type = "value",},
-
-CURRENCY_COLOR_GOLD = {
-	 type = "value",},
-
-CURRENCY_COLOR_INSPIRATION = {
-	 type = "value",},
-
-CURRENCY_COLOR_RANK_POINTS = {
-	 type = "value",},
-
-CURRENCY_COLOR_TELVAR_STONES = {
-	 type = "value",},
-
-CURRENCY_COLOR_WRIT_VOUCHERS = {
-	 type = "value",},
-
-CURT_ALLIANCE_POINTS = {
-	 type = "value",},
-
-CURT_MONEY = {
-	 type = "value",},
-
-CURT_NONE = {
-	 type = "value",},
-
-CURT_TELVAR_STONES = {
-	 type = "value",},
-
-CURT_WRIT_VOUCHERS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_ASK_FOR_HELP_CATEGORY_CHARACTER_ISSUE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_ASK_FOR_HELP_CATEGORY_NONE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_ASK_FOR_HELP_CATEGORY_REPORT_PLAYER = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_ASK_FOR_HELP_REPORT_PLAYER_SUBCATEGORY_CHEATING = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_ASK_FOR_HELP_REPORT_PLAYER_SUBCATEGORY_HARASSMENT = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_ASK_FOR_HELP_REPORT_PLAYER_SUBCATEGORY_INAPPROPRIATE_NAME = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_ASK_FOR_HELP_REPORT_PLAYER_SUBCATEGORY_NONE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_ASK_FOR_HELP_REPORT_PLAYER_SUBCATEGORY_OTHER = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_ITEM_ASSISTANCE_CATEGORY_CANT_ACQUIRE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_ITEM_ASSISTANCE_CATEGORY_DEPRECATED = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_ITEM_ASSISTANCE_CATEGORY_FROM_CROWN_STORE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_ITEM_ASSISTANCE_CATEGORY_LOST = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_ITEM_ASSISTANCE_CATEGORY_MISSING_CROWNS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_ITEM_ASSISTANCE_CATEGORY_NONE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_QUEST_ASSISTANCE_CATEGORY_ITEM_MISSING = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_QUEST_ASSISTANCE_CATEGORY_NONE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_QUEST_ASSISTANCE_CATEGORY_NPC_MOBS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_ALLIANCE_WAR = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_AUDIO = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_CHARACTERS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_COMBAT = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_GAME_SYSTEM = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_GRAPHICS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_ITEMS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_NONE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_QUESTS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_CATEGORY_TEXT = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_AWESOME = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_COSMETIC = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_CRASH = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_DELAYS_PROGRESS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_EXPLOIT = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_IMPAIR = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_NONE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_IMPACT_SURPRISE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ALLIANCE_WAR_GRAVEYARD = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ALLIANCE_WAR_OBJECTIVE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ALLIANCE_WAR_RANKING = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ALLIANCE_WAR_SIEGE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_AUDIO_MUSIC = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_AUDIO_OTHER = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_AUDIO_SFX = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_AUDIO_VOICEOVER = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_ABILITIES = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_ACHIEVEMENTS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_ART_ANIMATION = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_CAMERA = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_CREATION_LOGIN_SELECTION = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_DEATH_RESURRECTION = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_EMOTES = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_FRIENDS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_MAIL = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_MOVEMENT = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_SKILLS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_CHARACTERS_TARGETING = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_COMBAT_ABILITY = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_COMBAT_AI = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_COMBAT_ART = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_COMBAT_LOOT = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_COMBAT_NPC = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_CHAT = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_CRAFTING = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_FRAMERATE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_GROUPING = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_GUILDS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_INTERACTABLES_LOCKPICKING = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_LATENCY = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_MOUNTS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_TRADE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GAME_SYSTEM_VENDOR = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_ART_ANIMATION = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_CHARACTER = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_CHAT = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_COLLISION_FIXTURES = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_COLLISION_LANDSCAPE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_CURRENCY = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_INVENTORY = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_KEYBINDS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_MAPS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_SETTINGS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_TOOLTIPS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_GRAPHICS_WEATHER = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ITEMS_ARMOR = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ITEMS_ART = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ITEMS_CONSUMABLES = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ITEMS_GATHERING = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ITEMS_LOOT = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ITEMS_SOUL_GEMS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_ITEMS_WEAPONS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_NONE = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_QUESTS_DIALOG_GRAMMAR = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_QUESTS_DIALOG_VOICEOVER = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_QUESTS_NPC_MONSTERS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_QUESTS_OBJECTIVES = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_QUESTS_REWARDS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_TEXT_BOOKS = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_TEXT_DIALOG_VOICEOVER = {
-	 type = "value",},
-
-CUSTOMER_SERVICE_SUBMIT_FEEDBACK_SUBCATEGORY_TEXT_LOCALIZATION = {
-	 type = "value",},
-
-DAMAGE_TYPE_COLD = {
-	 type = "value",},
-
-DAMAGE_TYPE_DISEASE = {
-	 type = "value",},
-
-DAMAGE_TYPE_DROWN = {
-	 type = "value",},
-
-DAMAGE_TYPE_EARTH = {
-	 type = "value",},
-
-DAMAGE_TYPE_FIRE = {
-	 type = "value",},
-
-DAMAGE_TYPE_GENERIC = {
-	 type = "value",},
-
-DAMAGE_TYPE_MAGIC = {
-	 type = "value",},
-
-DAMAGE_TYPE_NONE = {
-	 type = "value",},
-
-DAMAGE_TYPE_OBLIVION = {
-	 type = "value",},
-
-DAMAGE_TYPE_PHYSICAL = {
-	 type = "value",},
-
-DAMAGE_TYPE_POISON = {
-	 type = "value",},
-
-DAMAGE_TYPE_SHOCK = {
-	 type = "value",},
-
-DEATH_INTERFACE_COLORS_RESPAWN_COOLDOWN_BAR = {
-	 type = "value",},
-
-DEATH_INTERFACE_COLORS_RESPAWN_COOLDOWN_FILL_GAMEPAD = {
-	 type = "value",},
-
-DEATH_INTERFACE_COLORS_RESPAWN_COOLDOWN_FILL_KEYBOARD = {
-	 type = "value",},
-
-DEATH_RECAP_HINT_IMPORTANCE_ALWAYS_INCLUDE = {
-	 type = "value",},
-
-DEATH_RECAP_HINT_IMPORTANCE_EXCLUSIVE = {
-	 type = "value",},
-
-DEATH_RECAP_HINT_IMPORTANCE_NORMAL = {
-	 type = "value",},
-
-DEFAULT_SOUL_GEM_CHOICE_CROWN = {
-	 type = "value",},
-
-DEFAULT_SOUL_GEM_CHOICE_GOLD = {
-	 type = "value",},
-
-STAT_ARMOR_RATING = {
-	 type = "value",},
-
-STAT_ATTACK_POWER = {
-	 type = "value",},
-
-STAT_BLOCK = {
-	 type = "value",},
-
-STAT_CRITICAL_RESISTANCE = {
-	 type = "value",},
-
-STAT_CRITICAL_STRIKE = {
-	 type = "value",},
-
-STAT_DAMAGE_RESIST_COLD = {
-	 type = "value",},
-
-STAT_DAMAGE_RESIST_DISEASE = {
-	 type = "value",},
-
-STAT_DAMAGE_RESIST_DROWN = {
-	 type = "value",},
-
-STAT_DAMAGE_RESIST_EARTH = {
-	 type = "value",},
-
-STAT_DAMAGE_RESIST_FIRE = {
-	 type = "value",},
-
-STAT_DAMAGE_RESIST_GENERIC = {
-	 type = "value",},
-
-STAT_DAMAGE_RESIST_MAGIC = {
-	 type = "value",},
-
-STAT_DAMAGE_RESIST_OBLIVION = {
-	 type = "value",},
-
-STAT_DAMAGE_RESIST_PHYSICAL = {
-	 type = "value",},
-
-STAT_DAMAGE_RESIST_POISON = {
-	 type = "value",},
-
-STAT_DAMAGE_RESIST_SHOCK = {
-	 type = "value",},
-
-STAT_DAMAGE_RESIST_START = {
-	 type = "value",},
-
-STAT_DODGE = {
-	 type = "value",},
-
-STAT_HEALING_DONE = {
-	 type = "value",},
-
-STAT_HEALING_TAKEN = {
-	 type = "value",},
-
-STAT_HEALTH_MAX = {
-	 type = "value",},
-
-STAT_HEALTH_REGEN_COMBAT = {
-	 type = "value",},
-
-STAT_HEALTH_REGEN_IDLE = {
-	 type = "value",},
-
-STAT_MAGICKA_MAX = {
-	 type = "value",},
-
-STAT_MAGICKA_REGEN_COMBAT = {
-	 type = "value",},
-
-STAT_MAGICKA_REGEN_IDLE = {
-	 type = "value",},
-
-STAT_MISS = {
-	 type = "value",},
-
-STAT_MITIGATION = {
-	 type = "value",},
-
-STAT_MOUNT_STAMINA_MAX = {
-	 type = "value",},
-
-STAT_MOUNT_STAMINA_REGEN_COMBAT = {
-	 type = "value",},
-
-STAT_MOUNT_STAMINA_REGEN_MOVING = {
-	 type = "value",},
-
-STAT_NONE = {
-	 type = "value",},
-
-STAT_PHYSICAL_PENETRATION = {
-	 type = "value",},
-
-STAT_PHYSICAL_RESIST = {
-	 type = "value",},
-
-STAT_POWER = {
-	 type = "value",},
-
-STAT_SPELL_CRITICAL = {
-	 type = "value",},
-
-STAT_SPELL_MITIGATION = {
-	 type = "value",},
-
-STAT_SPELL_PENETRATION = {
-	 type = "value",},
-
-STAT_SPELL_POWER = {
-	 type = "value",},
-
-STAT_SPELL_RESIST = {
-	 type = "value",},
-
-STAT_STAMINA_MAX = {
-	 type = "value",},
-
-STAT_STAMINA_REGEN_COMBAT = {
-	 type = "value",},
-
-STAT_STAMINA_REGEN_IDLE = {
-	 type = "value",},
-
-STAT_WEAPON_AND_SPELL_DAMAGE = {
-	 type = "value",},
-
-CON_APPROPRIATE = {
-	 type = "value",},
-
-CON_DIFFICULT = {
-	 type = "value",},
-
-CON_EASY = {
-	 type = "value",},
-
-CON_IMPOSSIBLE = {
-	 type = "value",},
-
-CON_TRIVIAL = {
-	 type = "value",},
-
-DISGUISE_STATE_DANGER = {
-	 type = "value",},
-
-DISGUISE_STATE_DISCOVERED = {
-	 type = "value",},
-
-DISGUISE_STATE_DISGUISED = {
-	 type = "value",},
-
-DISGUISE_STATE_NONE = {
-	 type = "value",},
-
-DISGUISE_STATE_SUSPICIOUS = {
-	 type = "value",},
-
-DUEL_RESULT_FORFEIT = {
-	 type = "value",},
-
-DUEL_RESULT_WON = {
-	 type = "value",},
-
-DUEL_STATE_DUELING = {
-	 type = "value",},
-
-DUEL_STATE_DUEL_PENDING = {
-	 type = "value",},
-
-DUEL_STATE_DUEL_TERMINATING = {
-	 type = "value",},
-
-DUEL_STATE_IDLE = {
-	 type = "value",},
-
-DUEL_STATE_INVITE_CONSIDERING = {
-	 type = "value",},
-
-DUEL_STATE_INVITE_REQUESTING = {
-	 type = "value",},
-
-DUNGEON_DIFFICULTY_NONE = {
-	 type = "value",},
-
-DUNGEON_DIFFICULTY_NORMAL = {
-	 type = "value",},
-
-DUNGEON_DIFFICULTY_VETERAN = {
+LOOT_CRATES_SYSTEM_STATE_OPEN_ONLY = {
 	 type = "value",},
 
 DYE_HUE_CATEGORY_BLUE = {
@@ -3711,67 +7038,1219 @@ DYEABLE_SLOT_SHOULDERS = {
 DYEABLE_SLOT_WAIST = {
 	 type = "value",},
 
-EULA_TYPE_ADDON_EULA = {
+GUILD_EVENT_ABOUT_US_EDITED = {
 	 type = "value",},
 
-EULA_TYPE_CODE_OF_CONDUCT = {
+GUILD_EVENT_BANKGOLD_ADDED = {
 	 type = "value",},
 
-EULA_TYPE_NON_DISCLOSURE_AGREEMENT = {
+GUILD_EVENT_BANKGOLD_GUILD_STORE_TAX = {
 	 type = "value",},
 
-EULA_TYPE_PREGAME_EULA = {
+GUILD_EVENT_BANKGOLD_KIOSK_BID = {
 	 type = "value",},
 
-EULA_TYPE_PRIVACY_POLICY = {
+GUILD_EVENT_BANKGOLD_KIOSK_BID_REFUND = {
 	 type = "value",},
 
-EULA_TYPE_TERMS_OF_SERVICE = {
+GUILD_EVENT_BANKGOLD_PURCHASE_HERALDRY = {
 	 type = "value",},
 
-EMOTE_CATEGORY_CEREMONIAL = {
+GUILD_EVENT_BANKGOLD_REMOVED = {
 	 type = "value",},
 
-EMOTE_CATEGORY_CHEERS_AND_JEERS = {
+GUILD_EVENT_BANKITEM_ADDED = {
 	 type = "value",},
 
-EMOTE_CATEGORY_COLLECTED = {
+GUILD_EVENT_BANKITEM_REMOVED = {
 	 type = "value",},
 
-EMOTE_CATEGORY_DEPRECATED = {
+GUILD_EVENT_BATTLE_STANDARD_PICKUP = {
 	 type = "value",},
 
-EMOTE_CATEGORY_EMOTION = {
+GUILD_EVENT_BATTLE_STANDARD_PUTDOWN = {
 	 type = "value",},
 
-EMOTE_CATEGORY_ENTERTAINMENT = {
+GUILD_EVENT_GUILD_BANK_LOCKED = {
 	 type = "value",},
 
-EMOTE_CATEGORY_FOOD_AND_DRINK = {
+GUILD_EVENT_GUILD_BANK_UNLOCKED = {
 	 type = "value",},
 
-EMOTE_CATEGORY_GIVE_DIRECTIONS = {
+GUILD_EVENT_GUILD_CREATE = {
 	 type = "value",},
 
-EMOTE_CATEGORY_INVALID = {
+GUILD_EVENT_GUILD_DELETE = {
 	 type = "value",},
 
-EMOTE_CATEGORY_PERPETUAL = {
+GUILD_EVENT_GUILD_DEMOTE = {
 	 type = "value",},
 
-EMOTE_CATEGORY_PERSONALITY_OVERRIDE = {
+GUILD_EVENT_GUILD_INVITE = {
 	 type = "value",},
 
-EMOTE_CATEGORY_PHYSICAL = {
+GUILD_EVENT_GUILD_INVITEDECLINED = {
 	 type = "value",},
 
-EMOTE_CATEGORY_POSES_AND_FIDGETS = {
+GUILD_EVENT_GUILD_INVITEPURGED = {
 	 type = "value",},
 
-EMOTE_CATEGORY_PROP = {
+GUILD_EVENT_GUILD_INVITEREVOKED = {
 	 type = "value",},
 
-EMOTE_CATEGORY_SOCIAL = {
+GUILD_EVENT_GUILD_JOIN = {
+	 type = "value",},
+
+GUILD_EVENT_GUILD_KICKED = {
+	 type = "value",},
+
+GUILD_EVENT_GUILD_KIOSK_LOCKED = {
+	 type = "value",},
+
+GUILD_EVENT_GUILD_KIOSK_PURCHASED = {
+	 type = "value",},
+
+GUILD_EVENT_GUILD_KIOSK_PURCHASE_REFUND = {
+	 type = "value",},
+
+GUILD_EVENT_GUILD_KIOSK_UNLOCKED = {
+	 type = "value",},
+
+GUILD_EVENT_GUILD_LEAVE = {
+	 type = "value",},
+
+GUILD_EVENT_GUILD_PROMOTE = {
+	 type = "value",},
+
+GUILD_EVENT_GUILD_REMOVE = {
+	 type = "value",},
+
+GUILD_EVENT_GUILD_STANDARD_LOCKED = {
+	 type = "value",},
+
+GUILD_EVENT_GUILD_STANDARD_UNLOCKED = {
+	 type = "value",},
+
+GUILD_EVENT_GUILD_STORE_LOCKED = {
+	 type = "value",},
+
+GUILD_EVENT_GUILD_STORE_UNLOCKED = {
+	 type = "value",},
+
+GUILD_EVENT_GUILD_TABARD_LOCKED = {
+	 type = "value",},
+
+GUILD_EVENT_GUILD_TABARD_UNLOCKED = {
+	 type = "value",},
+
+GUILD_EVENT_HERALDRY_EDITED = {
+	 type = "value",},
+
+GUILD_EVENT_ITEM_LISTED = {
+	 type = "value",},
+
+GUILD_EVENT_ITEM_SOLD = {
+	 type = "value",},
+
+GUILD_EVENT_KEEP_CLAIMED = {
+	 type = "value",},
+
+GUILD_EVENT_KEEP_LOST = {
+	 type = "value",},
+
+GUILD_EVENT_KEEP_RELEASED = {
+	 type = "value",},
+
+GUILD_EVENT_MOTD_EDITED = {
+	 type = "value",},
+
+GUILD_EVENT_NAME_CHANGED = {
+	 type = "value",},
+
+GUILD_HISTORY_ALLIANCE_WAR_OWNERSHIP = {
+	 type = "value",},
+
+GUILD_HISTORY_BANK_DEPOSITS = {
+	 type = "value",},
+
+GUILD_HISTORY_BANK_WITHDRAWALS = {
+	 type = "value",},
+
+GUILD_HISTORY_ALLIANCE_WAR = {
+	 type = "value",},
+
+GUILD_HISTORY_BANK = {
+	 type = "value",},
+
+GUILD_HISTORY_COMBAT = {
+	 type = "value",},
+
+GUILD_HISTORY_GENERAL = {
+	 type = "value",},
+
+GUILD_HISTORY_STORE = {
+	 type = "value",},
+
+GUILD_HISTORY_GENERAL_CUSTOMIZATION = {
+	 type = "value",},
+
+GUILD_HISTORY_GENERAL_ROSTER = {
+	 type = "value",},
+
+GUILD_HISTORY_GENERAL_UNLOCKS = {
+	 type = "value",},
+
+GUILD_HISTORY_STORE_HIRED_TRADER = {
+	 type = "value",},
+
+GUILD_HISTORY_STORE_PURCHASES = {
+	 type = "value",},
+
+GUILD_KIOSK_GUILD_INFO_RESULT_NO_GUILD = {
+	 type = "value",},
+
+GUILD_KIOSK_GUILD_INFO_RESULT_NO_INFO = {
+	 type = "value",},
+
+GUILD_KIOSK_GUILD_INFO_RESULT_NO_INFO_FOR_ANY_GUILD = {
+	 type = "value",},
+
+GUILD_KIOSK_GUILD_INFO_RESULT_NO_INFO_FOR_GUILD = {
+	 type = "value",},
+
+GUILD_KIOSK_GUILD_INFO_RESULT_SUCCESS = {
+	 type = "value",},
+
+GUILD_PERMISSION_BANK_DEPOSIT = {
+	 type = "value",},
+
+GUILD_PERMISSION_BANK_VIEW_DEPOSIT_HISTORY = {
+	 type = "value",},
+
+GUILD_PERMISSION_BANK_VIEW_GOLD = {
+	 type = "value",},
+
+GUILD_PERMISSION_BANK_VIEW_WITHDRAW_HISTORY = {
+	 type = "value",},
+
+GUILD_PERMISSION_BANK_WITHDRAW = {
+	 type = "value",},
+
+GUILD_PERMISSION_BANK_WITHDRAW_GOLD = {
+	 type = "value",},
+
+GUILD_PERMISSION_CHAT = {
+	 type = "value",},
+
+GUILD_PERMISSION_CLAIM_AVA_RESOURCE = {
+	 type = "value",},
+
+GUILD_PERMISSION_DEMOTE = {
+	 type = "value",},
+
+GUILD_PERMISSION_DESCRIPTION_EDIT = {
+	 type = "value",},
+
+GUILD_PERMISSION_EDIT_HERALDRY = {
+	 type = "value",},
+
+GUILD_PERMISSION_GUILD_KIOSK_BID = {
+	 type = "value",},
+
+GUILD_PERMISSION_INVITE = {
+	 type = "value",},
+
+GUILD_PERMISSION_NONE = {
+	 type = "value",},
+
+GUILD_PERMISSION_NOTE_EDIT = {
+	 type = "value",},
+
+GUILD_PERMISSION_NOTE_READ = {
+	 type = "value",},
+
+GUILD_PERMISSION_OFFICER_CHAT_READ = {
+	 type = "value",},
+
+GUILD_PERMISSION_OFFICER_CHAT_WRITE = {
+	 type = "value",},
+
+GUILD_PERMISSION_PERMISSION_EDIT = {
+	 type = "value",},
+
+GUILD_PERMISSION_PROMOTE = {
+	 type = "value",},
+
+GUILD_PERMISSION_RECRUITMENT_EDIT = {
+	 type = "value",},
+
+GUILD_PERMISSION_RELEASE_AVA_RESOURCE = {
+	 type = "value",},
+
+GUILD_PERMISSION_REMOVE = {
+	 type = "value",},
+
+GUILD_PERMISSION_SET_MOTD = {
+	 type = "value",},
+
+GUILD_PERMISSION_STORE_BUY = {
+	 type = "value",},
+
+GUILD_PERMISSION_STORE_SELL = {
+	 type = "value",},
+
+GUILD_PERMISSION_USE_GUILD_SIEGE = {
+	 type = "value",},
+
+GUILD_PRIVILEGE_BANK_DEPOSIT = {
+	 type = "value",},
+
+GUILD_PRIVILEGE_HERALDRY = {
+	 type = "value",},
+
+GUILD_PRIVILEGE_TRADING_HOUSE = {
+	 type = "value",},
+
+DEFAULT_GUILD_LEADER_RANK = {
+	 type = "value",},
+
+DEFAULT_INVITED_RANK = {
+	 type = "value",},
+
+DEFAULT_MEMBER_RANK = {
+	 type = "value",},
+
+DEFAULT_OFFICER_RANK = {
+	 type = "value",},
+
+DEFAULT_RECRUIT_RANK = {
+	 type = "value",},
+
+AXIS_TYPE_X = {
+	 type = "value",},
+
+AXIS_TYPE_Y = {
+	 type = "value",},
+
+AXIS_TYPE_Z = {
+	 type = "value",},
+
+FURNITURE_THEME_TYPE_ALL = {
+	 type = "value",},
+
+FURNITURE_THEME_TYPE_ARGONIAN = {
+	 type = "value",},
+
+FURNITURE_THEME_TYPE_BRETON = {
+	 type = "value",},
+
+FURNITURE_THEME_TYPE_DARK_ELF = {
+	 type = "value",},
+
+FURNITURE_THEME_TYPE_GENERIC = {
+	 type = "value",},
+
+FURNITURE_THEME_TYPE_HIGH_ELF = {
+	 type = "value",},
+
+FURNITURE_THEME_TYPE_IMPERIAL = {
+	 type = "value",},
+
+FURNITURE_THEME_TYPE_KHAJIIT = {
+	 type = "value",},
+
+FURNITURE_THEME_TYPE_NORD = {
+	 type = "value",},
+
+FURNITURE_THEME_TYPE_ORC = {
+	 type = "value",},
+
+FURNITURE_THEME_TYPE_REDGUARD = {
+	 type = "value",},
+
+FURNITURE_THEME_TYPE_WOOD_ELF = {
+	 type = "value",},
+
+HOUSE_CATEGORY_TYPE_CLASSIC = {
+	 type = "value",},
+
+HOUSE_CATEGORY_TYPE_NONE = {
+	 type = "value",},
+
+HOUSE_CATEGORY_TYPE_NOTABLE = {
+	 type = "value",},
+
+HOUSE_CATEGORY_TYPE_STAPLE = {
+	 type = "value",},
+
+HOUSE_PERMISSION_DEFAULT_ACCESS_SETTING_DECORATOR = {
+	 type = "value",},
+
+HOUSE_PERMISSION_DEFAULT_ACCESS_SETTING_NO_ACCESS = {
+	 type = "value",},
+
+HOUSE_PERMISSION_DEFAULT_ACCESS_SETTING_VISITOR = {
+	 type = "value",},
+
+HOUSE_PERMISSION_OPTIONS_CATEGORIES_BANLIST = {
+	 type = "value",},
+
+HOUSE_PERMISSION_OPTIONS_CATEGORIES_GENERAL = {
+	 type = "value",},
+
+HOUSE_PERMISSION_OPTIONS_CATEGORIES_GUILD_BANLIST = {
+	 type = "value",},
+
+HOUSE_PERMISSION_OPTIONS_CATEGORIES_GUILD_VISITORS = {
+	 type = "value",},
+
+HOUSE_PERMISSION_OPTIONS_CATEGORIES_SOCIAL_OPTIONS = {
+	 type = "value",},
+
+HOUSE_PERMISSION_OPTIONS_CATEGORIES_TEMPLATES = {
+	 type = "value",},
+
+HOUSE_PERMISSION_OPTIONS_CATEGORIES_VISITORS = {
+	 type = "value",},
+
+HOUSE_PERMISSION_PRESET_SETTING_DECORATOR = {
+	 type = "value",},
+
+HOUSE_PERMISSION_PRESET_SETTING_INVALID = {
+	 type = "value",},
+
+HOUSE_PERMISSION_PRESET_SETTING_VISITOR = {
+	 type = "value",},
+
+HOUSE_PERMISSION_RESULT_FAILED_TO_ADD = {
+	 type = "value",},
+
+HOUSE_PERMISSION_RESULT_FAILED_TO_MODIFY = {
+	 type = "value",},
+
+HOUSE_PERMISSION_RESULT_FAILED_TO_REMOVE = {
+	 type = "value",},
+
+HOUSE_PERMISSION_RESULT_INIT = {
+	 type = "value",},
+
+HOUSE_PERMISSION_RESULT_SUCCESS = {
+	 type = "value",},
+
+HOUSE_PERMISSION_SETTING_BOOL_SECTION_END = {
+	 type = "value",},
+
+HOUSE_PERMISSION_SETTING_MOVE_FURNITURE = {
+	 type = "value",},
+
+HOUSE_PERMISSION_SETTING_PLACE_TEMP_ITEMS = {
+	 type = "value",},
+
+HOUSE_PERMISSION_SETTING_USE_ASSISTANTS = {
+	 type = "value",},
+
+HOUSE_PERMISSION_SETTING_USE_CRAFTING_STATIONS = {
+	 type = "value",},
+
+HOUSE_PERMISSION_SETTING_USE_OBJECTS = {
+	 type = "value",},
+
+HOUSE_PERMISSION_USER_GROUP_GENERAL = {
+	 type = "value",},
+
+HOUSE_PERMISSION_USER_GROUP_GUILD = {
+	 type = "value",},
+
+HOUSE_PERMISSION_USER_GROUP_INDIVIDUAL = {
+	 type = "value",},
+
+HOUSING_EDITOR_MODE_BROWSE = {
+	 type = "value",},
+
+HOUSING_EDITOR_MODE_DISABLED = {
+	 type = "value",},
+
+HOUSING_EDITOR_MODE_PLACEMENT = {
+	 type = "value",},
+
+HOUSING_EDITOR_MODE_SELECTION = {
+	 type = "value",},
+
+HOUSING_FURNISHING_LIMIT_TYPE_HIGH_IMPACT_COLLECTIBLE = {
+	 type = "value",},
+
+HOUSING_FURNISHING_LIMIT_TYPE_HIGH_IMPACT_ITEM = {
+	 type = "value",},
+
+HOUSING_FURNISHING_LIMIT_TYPE_LOW_IMPACT_COLLECTIBLE = {
+	 type = "value",},
+
+HOUSING_FURNISHING_LIMIT_TYPE_LOW_IMPACT_ITEM = {
+	 type = "value",},
+
+HOUSING_LOAD_PERMISSIONS_RESULT_NO_CHANGE = {
+	 type = "value",},
+
+HOUSING_LOAD_PERMISSIONS_RESULT_SUCCESS = {
+	 type = "value",},
+
+HOUSING_VISITOR_ROLE_EDITOR = {
+	 type = "value",},
+
+HOUSING_VISITOR_ROLE_HOME_SHOW = {
+	 type = "value",},
+
+HOUSING_VISITOR_ROLE_PREVIEW = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_ABILITY_INFO = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_BODY = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_BRONZE_ABILITY = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_DEFAULT = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_FAILED_REQUIREMENT = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_GOLD_ABILITY = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_NAME = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_NEW_EFFECT = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_SILVER_ABILITY = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_SPECIAL_HEADER = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_UPGRADES = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_UPGRADE_TO_ABILITY = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_USE_INFO_TYPE = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_USE_INFO_TYPE = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_USE_INFO_TYPE = {
+	 type = "value",},
+
+ABILITY_TOOLTIP_TEXT_COLOR_VALID_REQUIREMENT = {
+	 type = "value",},
+
+ACTIVE_COMBAT_TIP_COLOR_FAILURE = {
+	 type = "value",},
+
+ACTIVE_COMBAT_TIP_COLOR_NORMAL = {
+	 type = "value",},
+
+ACTIVE_COMBAT_TIP_COLOR_SUCCESS = {
+	 type = "value",},
+
+ATTRIBUTE_TOOLTIP_COLOR_CURRENT_VALUE = {
+	 type = "value",},
+
+ATTRIBUTE_TOOLTIP_COLOR_EFFECT = {
+	 type = "value",},
+
+ATTRIBUTE_TOOLTIP_COLOR_NAME = {
+	 type = "value",},
+
+BUFF_TYPE_COLOR_BUFF = {
+	 type = "value",},
+
+BUFF_TYPE_COLOR_DEBUFF = {
+	 type = "value",},
+
+CURRENCY_COLOR_ALLIANCE_POINTS = {
+	 type = "value",},
+
+CURRENCY_COLOR_GOLD = {
+	 type = "value",},
+
+CURRENCY_COLOR_INSPIRATION = {
+	 type = "value",},
+
+CURRENCY_COLOR_RANK_POINTS = {
+	 type = "value",},
+
+CURRENCY_COLOR_TELVAR_STONES = {
+	 type = "value",},
+
+CURRENCY_COLOR_WRIT_VOUCHERS = {
+	 type = "value",},
+
+DEATH_INTERFACE_COLORS_RESPAWN_COOLDOWN_BAR = {
+	 type = "value",},
+
+DEATH_INTERFACE_COLORS_RESPAWN_COOLDOWN_FILL_GAMEPAD = {
+	 type = "value",},
+
+DEATH_INTERFACE_COLORS_RESPAWN_COOLDOWN_FILL_KEYBOARD = {
+	 type = "value",},
+
+GAMEPAD_TOOLTIP_COLOR_ABILITY_UPGRADE = {
+	 type = "value",},
+
+GAMEPAD_TOOLTIP_COLOR_ACTIVE = {
+	 type = "value",},
+
+GAMEPAD_TOOLTIP_COLOR_FAILED = {
+	 type = "value",},
+
+GAMEPAD_TOOLTIP_COLOR_GENERAL_COLOR_ = {
+	 type = "value",},
+
+GAMEPAD_TOOLTIP_COLOR_GENERAL_COLOR_ = {
+	 type = "value",},
+
+GAMEPAD_TOOLTIP_COLOR_GENERAL_COLOR_ = {
+	 type = "value",},
+
+GAMEPAD_TOOLTIP_COLOR_INACTIVE = {
+	 type = "value",},
+
+GAMEPAD_TOOLTIP_COLOR_SUCCEEDED = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_ABILITY_TOOLTIP = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_ACTIVE_COMBAT_TIP = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_ALLIANCE = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_ATTRIBUTE_TOOLTIP = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_ATTRIBUTE_UPGRADE_PROJECTED = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_BATTLEGROUND_ALLIANCE = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_BOOK_MEDIUM = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_BUFF_TYPE = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_CAST_BAR_END = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_CAST_BAR_START = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_CHAT_CHANNEL_CATEGORY_DEFAULTS = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_CON_COLORS = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_CURRENCY = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_DEATH_INTERFACE_COLORS = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_DEFAULT_COLOR = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_FINESSE = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_GAMEPAD_TOOLTIP = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_GENERAL = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_ITEM_QUALITY_COLORS = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_ITEM_TOOLTIP = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_KEEP_TOOLTIP = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_LEADERBOARD_COLORS = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_LEVEL_UP = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_LINK = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_LOADING_SCREEN = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_MAPPIN_TOOLTIP = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_MARKET_COLORS = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_NAME_PLATE = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_NAME_PLATE_HEALTH_END = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_NAME_PLATE_HEALTH_START = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_NAME_PLATE_HIT_INDICATOR = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_OBJECT_NOTIFICATION = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_POWER = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_POWER_END = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_POWER_FADE_IN = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_POWER_FADE_OUT = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_POWER_START = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_PROGRESSION = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_SHARED_TOOLTIP = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_SKILL_LINE_TOOLTIP = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_STATUS_EFFECT = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_STAT_VALUE = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_TEXT_COLORS = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_ULTIMATE_BAR = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_UNIT_CLASS = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_UNIT_HIGHLIGHT_OVERRIDE = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_UNIT_REACTION_COLOR = {
+	 type = "value",},
+
+INTERFACE_COLOR_TYPE_VOICE_CHAT_COLORS = {
+	 type = "value",},
+
+INTERFACE_GENERAL_COLOR_ALERT = {
+	 type = "value",},
+
+INTERFACE_GENERAL_COLOR_BLACK = {
+	 type = "value",},
+
+INTERFACE_GENERAL_COLOR_DISABLED = {
+	 type = "value",},
+
+INTERFACE_GENERAL_COLOR_ENABLED = {
+	 type = "value",},
+
+INTERFACE_GENERAL_COLOR_ERROR = {
+	 type = "value",},
+
+INTERFACE_GENERAL_COLOR_STATUS_BAR_END = {
+	 type = "value",},
+
+INTERFACE_GENERAL_COLOR_STATUS_BAR_START = {
+	 type = "value",},
+
+INTERFACE_GENERAL_COLOR_WARNING = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_BATTLEGROUND_WINNER = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_BLADE = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_BLADE_HIGHLIGHT = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_BODY = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_CHATTER_NPC = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_CHATTER_PLAYER_OPTION = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_CONTEXT_HIGHLIGHT = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_CONTRAST = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_CURRENCY_HIGHLIGHT = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_DEFAULT_TEXT = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_DISABLED = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_FAILED = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_GAMEPAD_CATEGORY_HEADER = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_GAMEPAD_TERTIARY = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_GAME_REPRESENTATIVE = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_HIGHLIGHT = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_HINT = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_NORMAL = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_PERSONALITY_EMOTES = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_SECOND_CONTRAST = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_SELECTED = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_SUBTLE = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_SUCCEEDED = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_TOOLTIP_DEFAULT = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_TOOLTIP_INSTRUCTIONAL = {
+	 type = "value",},
+
+INTERFACE_TEXT_COLOR_VALUE = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_ACCENT = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_CHARGE_BAR_GRADIENT_END = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_CHARGE_BAR_GRADIENT_START = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_CLICK_TO_UPGRADE = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_CONDITION_BAR_GRADIENT_END = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_CONDITION_BAR_GRADIENT_START = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_CREATOR = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_DECONSTRUCTABLE = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_EQUIPPED = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_FAIL_CHECK = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_FLAVOR_TEXT = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_GENERAL = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_INACTIVE_BONUS = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_ITEM_LEVEL = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_MISC = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_ON_EQUIP = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_ON_USE = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_PASS_CHECK = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_QUEST_ITEM_NAME = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_SELLS_FOR = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_SHOWING_EQUIPPED_ITEM = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_SOCKET_EMPTY = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_SOCKET_FULL = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_SOCKET_PASS_CHECK = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_STYLE = {
+	 type = "value",},
+
+ITEM_TOOLTIP_COLOR_TRADE_BOP = {
+	 type = "value",},
+
+KEEP_TOOLTIP_COLOR_ACCESSIBLE = {
+	 type = "value",},
+
+KEEP_TOOLTIP_COLOR_ATTACK_LINE = {
+	 type = "value",},
+
+KEEP_TOOLTIP_COLOR_AT_KEEP = {
+	 type = "value",},
+
+KEEP_TOOLTIP_COLOR_NAME = {
+	 type = "value",},
+
+KEEP_TOOLTIP_COLOR_NORMAL_LINE = {
+	 type = "value",},
+
+KEEP_TOOLTIP_COLOR_NOT_ACCESSIBLE = {
+	 type = "value",},
+
+KEEP_TOOLTIP_COLOR_OWNER = {
+	 type = "value",},
+
+KEEP_TOOLTIP_COLOR_UNCLAIMED = {
+	 type = "value",},
+
+LEADERBOARD_COLORS_NAME = {
+	 type = "value",},
+
+LEADERBOARD_COLORS_PLAYER_NAME = {
+	 type = "value",},
+
+LEADERBOARD_COLORS_TOP_ = {
+	 type = "value",},
+
+LEADERBOARD_COLORS_TOP_ = {
+	 type = "value",},
+
+LEADERBOARD_COLORS_TOP_ = {
+	 type = "value",},
+
+LEVEL_UP_COLOR_GAINED_TEXT = {
+	 type = "value",},
+
+LEVEL_UP_COLOR_GENERAL = {
+	 type = "value",},
+
+LEVEL_UP_COLOR_NEW_LEVEL = {
+	 type = "value",},
+
+LOADING_SCREEN_COLOR_BAR_END = {
+	 type = "value",},
+
+LOADING_SCREEN_COLOR_BAR_START = {
+	 type = "value",},
+
+MAP_PIN_TOOLTIP_COLOR_AVA_OBJECTIVE = {
+	 type = "value",},
+
+MAP_PIN_TOOLTIP_COLOR_INTERACTABLE = {
+	 type = "value",},
+
+MAP_PIN_TOOLTIP_COLOR_MAP_PING = {
+	 type = "value",},
+
+MAP_PIN_TOOLTIP_COLOR_POI = {
+	 type = "value",},
+
+MAP_PIN_TOOLTIP_COLOR_QUEST_ENDING = {
+	 type = "value",},
+
+MAP_PIN_TOOLTIP_COLOR_RALLY_POINT = {
+	 type = "value",},
+
+MARKET_COLORS_CALLOUT_BACKGROUND = {
+	 type = "value",},
+
+MARKET_COLORS_CALLOUT_BACKGROUND_DIMMED = {
+	 type = "value",},
+
+MARKET_COLORS_DIMMED = {
+	 type = "value",},
+
+MARKET_COLORS_INELIGIBLE = {
+	 type = "value",},
+
+MARKET_COLORS_INELIGIBLE_DIMMED = {
+	 type = "value",},
+
+MARKET_COLORS_NEW = {
+	 type = "value",},
+
+MARKET_COLORS_NEW_DIMMED = {
+	 type = "value",},
+
+MARKET_COLORS_ON_SALE = {
+	 type = "value",},
+
+MARKET_COLORS_ON_SALE_DIMMED = {
+	 type = "value",},
+
+MARKET_COLORS_PRODUCT_BACKGROUND_BRIGHTNESS = {
+	 type = "value",},
+
+MARKET_COLORS_PURCHASED = {
+	 type = "value",},
+
+MARKET_COLORS_PURCHASED_DIMMED = {
+	 type = "value",},
+
+MARKET_COLORS_SELECTED = {
+	 type = "value",},
+
+MARKET_COLORS_UNIVERSAL_ITEM = {
+	 type = "value",},
+
+MARKET_COLORS_UNIVERSAL_ITEM_SELECTED = {
+	 type = "value",},
+
+PROGRESSION_COLOR_AVA_RANK_END = {
+	 type = "value",},
+
+PROGRESSION_COLOR_AVA_RANK_START = {
+	 type = "value",},
+
+PROGRESSION_COLOR_CP_HEALTH_END = {
+	 type = "value",},
+
+PROGRESSION_COLOR_CP_HEALTH_START = {
+	 type = "value",},
+
+PROGRESSION_COLOR_CP_MAGICKA_END = {
+	 type = "value",},
+
+PROGRESSION_COLOR_CP_MAGICKA_START = {
+	 type = "value",},
+
+PROGRESSION_COLOR_CP_STAMINA_END = {
+	 type = "value",},
+
+PROGRESSION_COLOR_CP_STAMINA_START = {
+	 type = "value",},
+
+PROGRESSION_COLOR_EARNED = {
+	 type = "value",},
+
+PROGRESSION_COLOR_LOCKED = {
+	 type = "value",},
+
+PROGRESSION_COLOR_PURCHASED = {
+	 type = "value",},
+
+PROGRESSION_COLOR_PURCHASED_UNSELECTED = {
+	 type = "value",},
+
+PROGRESSION_COLOR_SKILL_XP_END = {
+	 type = "value",},
+
+PROGRESSION_COLOR_SKILL_XP_GLOW = {
+	 type = "value",},
+
+PROGRESSION_COLOR_SKILL_XP_START = {
+	 type = "value",},
+
+PROGRESSION_COLOR_UNEARNED = {
+	 type = "value",},
+
+PROGRESSION_COLOR_UNPURCHASED = {
+	 type = "value",},
+
+PROGRESSION_COLOR_VP_END = {
+	 type = "value",},
+
+PROGRESSION_COLOR_VP_GLOW = {
+	 type = "value",},
+
+PROGRESSION_COLOR_VP_START = {
+	 type = "value",},
+
+PROGRESSION_COLOR_XP_END = {
+	 type = "value",},
+
+PROGRESSION_COLOR_XP_FULL_END = {
+	 type = "value",},
+
+PROGRESSION_COLOR_XP_FULL_START = {
+	 type = "value",},
+
+PROGRESSION_COLOR_XP_GLOW = {
+	 type = "value",},
+
+PROGRESSION_COLOR_XP_MORPH_END = {
+	 type = "value",},
+
+PROGRESSION_COLOR_XP_MORPH_START = {
+	 type = "value",},
+
+PROGRESSION_COLOR_XP_START = {
+	 type = "value",},
+
+SKILL_TOOLTIP_TEXT_COLOR_BODY = {
+	 type = "value",},
+
+SKILL_TOOLTIP_TEXT_COLOR_NAME = {
+	 type = "value",},
+
+STAT_VALUE_COLOR_BATTLE_LEVELED = {
+	 type = "value",},
+
+STAT_VALUE_COLOR_HIGHER = {
+	 type = "value",},
+
+STAT_VALUE_COLOR_LOWER = {
+	 type = "value",},
+
+ULTIMATE_BAR_COLOR_BAR_END = {
+	 type = "value",},
+
+ULTIMATE_BAR_COLOR_BAR_START = {
+	 type = "value",},
+
+ULTIMATE_BAR_COLOR_FULL_BAR_END = {
+	 type = "value",},
+
+ULTIMATE_BAR_COLOR_FULL_BAR_START = {
+	 type = "value",},
+
+VOICE_CHAT_COLORS_AREA = {
+	 type = "value",},
+
+VOICE_CHAT_COLORS_GROUP = {
+	 type = "value",},
+
+VOICE_CHAT_COLORS_GUILD = {
+	 type = "value",},
+
+VOICE_CHAT_COLORS_MUTED = {
+	 type = "value",},
+
+ACTIVE_WEAPON_PAIR_BACKUP = {
+	 type = "value",},
+
+ACTIVE_WEAPON_PAIR_MAIN = {
+	 type = "value",},
+
+ACTIVE_WEAPON_PAIR_NONE = {
+	 type = "value",},
+
+ARMORTYPE_HEAVY = {
+	 type = "value",},
+
+ARMORTYPE_LIGHT = {
+	 type = "value",},
+
+ARMORTYPE_MEDIUM = {
+	 type = "value",},
+
+ARMORTYPE_NONE = {
+	 type = "value",},
+
+BAG_BACKPACK = {
+	 type = "value",},
+
+BAG_BANK = {
+	 type = "value",},
+
+BAG_BUYBACK = {
+	 type = "value",},
+
+BAG_GUILDBANK = {
+	 type = "value",},
+
+BAG_SUBSCRIBER_BANK = {
+	 type = "value",},
+
+BAG_VIRTUAL = {
+	 type = "value",},
+
+BAG_WORN = {
+	 type = "value",},
+
+BIND_TYPE_NONE = {
+	 type = "value",},
+
+BIND_TYPE_ON_EQUIP = {
+	 type = "value",},
+
+BIND_TYPE_ON_PICKUP = {
+	 type = "value",},
+
+BIND_TYPE_ON_PICKUP_BACKPACK = {
+	 type = "value",},
+
+BIND_TYPE_UNSET = {
+	 type = "value",},
+
+COLLECTIBLE_ITEM_TYPE_FISH = {
+	 type = "value",},
+
+COLLECTIBLE_ITEM_TYPE_NONE = {
+	 type = "value",},
+
+COLLECTIBLE_ITEM_TYPE_TROPHY = {
 	 type = "value",},
 
 ENCHANTING_RUNE_ASPECT = {
@@ -3784,18 +8263,6 @@ ENCHANTING_RUNE_NONE = {
 	 type = "value",},
 
 ENCHANTING_RUNE_POTENCY = {
-	 type = "value",},
-
-ENCHANTMENT_CATEGORY_ARMOR = {
-	 type = "value",},
-
-ENCHANTMENT_CATEGORY_JEWELRY = {
-	 type = "value",},
-
-ENCHANTMENT_CATEGORY_NONE = {
-	 type = "value",},
-
-ENCHANTMENT_CATEGORY_WEAPON = {
 	 type = "value",},
 
 ENCHANTMENT_SEARCH_CATEGORY_ABSORB_HEALTH = {
@@ -4053,153 +8520,6 @@ EQUIPMENT_BONUS_LOW = {
 EQUIPMENT_BONUS_SUPERIOR = {
 	 type = "value",},
 
-FAST_TRAVEL_LINK_ACTIVE = {
-	 type = "value",},
-
-FAST_TRAVEL_LINK_INACTIVE = {
-	 type = "value",},
-
-FAST_TRAVEL_LINK_IN_COMBAT = {
-	 type = "value",},
-
-FULLSCREEN_EFFECT_CHARACTER_FRAMING_BLUR = {
-	 type = "value",},
-
-FULLSCREEN_EFFECT_NONE = {
-	 type = "value",},
-
-FULLSCREEN_EFFECT_UNIFORM_BLUR = {
-	 type = "value",},
-
-FURNITURE_THEME_TYPE_ALL = {
-	 type = "value",},
-
-FURNITURE_THEME_TYPE_ARGONIAN = {
-	 type = "value",},
-
-FURNITURE_THEME_TYPE_BRETON = {
-	 type = "value",},
-
-FURNITURE_THEME_TYPE_DARK_ELF = {
-	 type = "value",},
-
-FURNITURE_THEME_TYPE_GENERIC = {
-	 type = "value",},
-
-FURNITURE_THEME_TYPE_HIGH_ELF = {
-	 type = "value",},
-
-FURNITURE_THEME_TYPE_IMPERIAL = {
-	 type = "value",},
-
-FURNITURE_THEME_TYPE_KHAJIIT = {
-	 type = "value",},
-
-FURNITURE_THEME_TYPE_NORD = {
-	 type = "value",},
-
-FURNITURE_THEME_TYPE_ORC = {
-	 type = "value",},
-
-FURNITURE_THEME_TYPE_REDGUARD = {
-	 type = "value",},
-
-FURNITURE_THEME_TYPE_WOOD_ELF = {
-	 type = "value",},
-
-ADDITIONAL_INTERACT_INFO_EMPTY = {
-	 type = "value",},
-
-ADDITIONAL_INTERACT_INFO_FISHING_NODE = {
-	 type = "value",},
-
-ADDITIONAL_INTERACT_INFO_INSTANCE_TYPE = {
-	 type = "value",},
-
-ADDITIONAL_INTERACT_INFO_IN_HIDEYHOLE = {
-	 type = "value",},
-
-ADDITIONAL_INTERACT_INFO_LOCKED = {
-	 type = "value",},
-
-ADDITIONAL_INTERACT_INFO_NONE = {
-	 type = "value",},
-
-ADDITIONAL_INTERACT_INFO_PICKPOCKET_CHANCE = {
-	 type = "value",},
-
-ADDITIONAL_INTERACT_INFO_REQUIRES_KEY = {
-	 type = "value",},
-
-ADDITIONAL_INTERACT_INFO_WEREWOLF_ACTIVE_WHILE_ATTEMPTING_TO_CRAFT = {
-	 type = "value",},
-
-FRAMING_SCREEN_AVA = {
-	 type = "value",},
-
-FRAMING_SCREEN_CHAMPION = {
-	 type = "value",},
-
-FRAMING_SCREEN_CROWN_CRATES = {
-	 type = "value",},
-
-FRAMING_SCREEN_CROWN_STORE = {
-	 type = "value",},
-
-FRAMING_SCREEN_DEFAULT = {
-	 type = "value",},
-
-FRAMING_SCREEN_INVENTORY = {
-	 type = "value",},
-
-FRAMING_SCREEN_JOURNAL = {
-	 type = "value",},
-
-FRAMING_SCREEN_LOOT = {
-	 type = "value",},
-
-FRAMING_SCREEN_MAP = {
-	 type = "value",},
-
-FRAMING_SCREEN_SKILLS = {
-	 type = "value",},
-
-FRAMING_SCREEN_SOCIAL = {
-	 type = "value",},
-
-FRAMING_SCREEN_SYSTEM = {
-	 type = "value",},
-
-GAME_CREDITS_ENTRY_TYPE_BACKGROUND_SWITCH = {
-	 type = "value",},
-
-GAME_CREDITS_ENTRY_TYPE_COMPANY_LOGO = {
-	 type = "value",},
-
-GAME_CREDITS_ENTRY_TYPE_DEPARTMENT_HEADER = {
-	 type = "value",},
-
-GAME_CREDITS_ENTRY_TYPE_PADDING_SECTION = {
-	 type = "value",},
-
-GAME_CREDITS_ENTRY_TYPE_SECTION_HEADER = {
-	 type = "value",},
-
-GAME_CREDITS_ENTRY_TYPE_SECTION_TEXT = {
-	 type = "value",},
-
-GAME_CREDITS_ENTRY_TYPE_SECTION_TEXT_BLOCK = {
-	 type = "value",},
-
-GAMEPAD_CHAT_TEXT_SIZE_SETTING_LARGE = {
-	 type = "value",},
-
-GAMEPAD_CHAT_TEXT_SIZE_SETTING_MEDIUM = {
-	 type = "value",},
-
-GAMEPAD_CHAT_TEXT_SIZE_SETTING_SMALL = {
-	 type = "value",},
-
 GAMEPAD_ITEM_CATEGORY_ALCHEMY = {
 	 type = "value",},
 
@@ -4317,102 +8637,6 @@ GAMEPAD_ITEM_CATEGORY_WEAPONS = {
 GAMEPAD_ITEM_CATEGORY_WOODWORKING = {
 	 type = "value",},
 
-GAMEPAD_SETTING_CAMERA_SENSITIVITY = {
-	 type = "value",},
-
-GAMEPAD_SETTING_GAMEPAD_PREFERRED = {
-	 type = "value",},
-
-GAMEPAD_SETTING_GAMEPAD_TEMPLATE = {
-	 type = "value",},
-
-GAMEPAD_SETTING_INVERT_X = {
-	 type = "value",},
-
-GAMEPAD_SETTING_INVERT_Y = {
-	 type = "value",},
-
-GAMEPAD_SETTING_VIBRATION = {
-	 type = "value",},
-
-GAMEPAD_TEMPLATE_ABILITY_MODIFIERS = {
-	 type = "value",},
-
-GAMEPAD_TEMPLATE_ALTERNATE_INTERACT = {
-	 type = "value",},
-
-GAMEPAD_TEMPLATE_DEFAULT = {
-	 type = "value",},
-
-GAMEPAD_TEMPLATE_MODIFIERS_VARIANT = {
-	 type = "value",},
-
-GAMEPAD_TEMPLATE_REUSE_ME = {
-	 type = "value",},
-
-GAMEPAD_TEMPLATE_REUSE_ME = {
-	 type = "value",},
-
-GAMEPAD_TEMPLATE_SOUTHPAW = {
-	 type = "value",},
-
-GAMEPAD_TEMPLATE_WEAPON_TRICKS = {
-	 type = "value",},
-
-GAMEPAD_TOOLTIP_COLOR_ABILITY_UPGRADE = {
-	 type = "value",},
-
-GAMEPAD_TOOLTIP_COLOR_ACTIVE = {
-	 type = "value",},
-
-GAMEPAD_TOOLTIP_COLOR_FAILED = {
-	 type = "value",},
-
-GAMEPAD_TOOLTIP_COLOR_GENERAL_COLOR_ = {
-	 type = "value",},
-
-GAMEPAD_TOOLTIP_COLOR_GENERAL_COLOR_ = {
-	 type = "value",},
-
-GAMEPAD_TOOLTIP_COLOR_GENERAL_COLOR_ = {
-	 type = "value",},
-
-GAMEPAD_TOOLTIP_COLOR_INACTIVE = {
-	 type = "value",},
-
-GAMEPAD_TOOLTIP_COLOR_SUCCEEDED = {
-	 type = "value",},
-
-GAMEPAD_TYPE_NONE = {
-	 type = "value",},
-
-GAMEPAD_TYPE_PS = {
-	 type = "value",},
-
-GAMEPAD_TYPE_XBOX = {
-	 type = "value",},
-
-GAMEPAD_VIBRATION_TRIGGER_DIED = {
-	 type = "value",},
-
-GAMEPAD_VIBRATION_TRIGGER_FALL_DAMAGE_HIGH = {
-	 type = "value",},
-
-GAMEPAD_VIBRATION_TRIGGER_FALL_DAMAGE_LOW = {
-	 type = "value",},
-
-GAMEPAD_VIBRATION_TRIGGER_KILLED = {
-	 type = "value",},
-
-GAMEPAD_VIBRATION_TRIGGER_KNOCKED_BACK = {
-	 type = "value",},
-
-GAMEPAD_VIBRATION_TRIGGER_STAGGERED = {
-	 type = "value",},
-
-GAMEPAD_VIBRATION_TRIGGER_STUNNED = {
-	 type = "value",},
-
 GAMEPAD_WEAPON_CATEGORY_DESTRUCTION_STAFF = {
 	 type = "value",},
 
@@ -4429,1080 +8653,6 @@ GAMEPAD_WEAPON_CATEGORY_TWO_HANDED_MELEE = {
 	 type = "value",},
 
 GAMEPAD_WEAPON_CATEGORY_UNCATEGORIZED = {
-	 type = "value",},
-
-GEMIFIABLE_FILTER_TYPE_ALL = {
-	 type = "value",},
-
-GROUP_DIFFICULTY_CHANGE_REASON_IN_DUNGEON = {
-	 type = "value",},
-
-GROUP_DIFFICULTY_CHANGE_REASON_IN_LFG_GROUP = {
-	 type = "value",},
-
-GROUP_DIFFICULTY_CHANGE_REASON_NOT_GROUP_LEADER = {
-	 type = "value",},
-
-GROUP_DIFFICULTY_CHANGE_REASON_NOT_UNLOCKED = {
-	 type = "value",},
-
-GROUP_DIFFICULTY_CHANGE_REASON_NO_UNIT = {
-	 type = "value",},
-
-GROUP_DIFFICULTY_CHANGE_REASON_SUCCESS = {
-	 type = "value",},
-
-GROUP_ELECTION_FAILURE_ALREADY_VOTED = {
-	 type = "value",},
-
-GROUP_ELECTION_FAILURE_ANOTHER_IN_PROGRESS = {
-	 type = "value",},
-
-GROUP_ELECTION_FAILURE_INITIATOR_CANNOT_VOTE = {
-	 type = "value",},
-
-GROUP_ELECTION_FAILURE_INITIATOR_NOT_FOUND = {
-	 type = "value",},
-
-GROUP_ELECTION_FAILURE_IN_BATTLEGROUND = {
-	 type = "value",},
-
-GROUP_ELECTION_FAILURE_NONE = {
-	 type = "value",},
-
-GROUP_ELECTION_FAILURE_NOT_GROUPED = {
-	 type = "value",},
-
-GROUP_ELECTION_FAILURE_NO_CURRENT_ELECTION = {
-	 type = "value",},
-
-GROUP_ELECTION_FAILURE_SAME_INITIATOR_AND_TARGET = {
-	 type = "value",},
-
-GROUP_ELECTION_FAILURE_SERVER_ERROR = {
-	 type = "value",},
-
-GROUP_ELECTION_FAILURE_TARGET_NOT_FOUND = {
-	 type = "value",},
-
-GROUP_ELECTION_FAILURE_TOO_FEW_MEMBERS = {
-	 type = "value",},
-
-GROUP_ELECTION_FAILURE_TOO_SOON = {
-	 type = "value",},
-
-GROUP_ELECTION_FAILURE_UNKNOWN_CHOICE = {
-	 type = "value",},
-
-GROUP_ELECTION_RESULT_ABANDONED = {
-	 type = "value",},
-
-GROUP_ELECTION_RESULT_ELECTION_LOST = {
-	 type = "value",},
-
-GROUP_ELECTION_RESULT_ELECTION_WON = {
-	 type = "value",},
-
-GROUP_ELECTION_RESULT_IN_PROGRESS = {
-	 type = "value",},
-
-GROUP_ELECTION_RESULT_NOT_APPLICABLE = {
-	 type = "value",},
-
-GROUP_ELECTION_RESULT_TIED = {
-	 type = "value",},
-
-GROUP_ELECTION_RESULT_TIMED_OUT = {
-	 type = "value",},
-
-GROUP_ELECTION_TYPE_GENERIC_SIMPLEMAJORITY = {
-	 type = "value",},
-
-GROUP_ELECTION_TYPE_GENERIC_SUPERMAJORITY = {
-	 type = "value",},
-
-GROUP_ELECTION_TYPE_GENERIC_UNANIMOUS = {
-	 type = "value",},
-
-GROUP_ELECTION_TYPE_KICK_MEMBER = {
-	 type = "value",},
-
-GROUP_ELECTION_TYPE_NEW_LEADER = {
-	 type = "value",},
-
-GROUP_LEAVE_REASON_DESTROYED = {
-	 type = "value",},
-
-GROUP_LEAVE_REASON_DISBAND = {
-	 type = "value",},
-
-GROUP_LEAVE_REASON_KICKED = {
-	 type = "value",},
-
-GROUP_LEAVE_REASON_LEFT_BATTLEGROUND = {
-	 type = "value",},
-
-GROUP_LEAVE_REASON_VOLUNTARY = {
-	 type = "value",},
-
-GROUP_MSG_CANT_KICK_YOURSELF = {
-	 type = "value",},
-
-GROUP_MSG_CANT_PROMOTE_YOURSELF = {
-	 type = "value",},
-
-GROUP_MSG_INVALID_MEMBER = {
-	 type = "value",},
-
-GROUP_MSG_YOU_ARE_NOT_IN_A_GROUP = {
-	 type = "value",},
-
-GROUP_MSG_YOU_ARE_NOT_THE_LEADER = {
-	 type = "value",},
-
-GROUP_VOTE_CHOICE_ABSTAIN = {
-	 type = "value",},
-
-GROUP_VOTE_CHOICE_AGAINST = {
-	 type = "value",},
-
-GROUP_VOTE_CHOICE_FOR = {
-	 type = "value",},
-
-GUILD_EVENT_ABOUT_US_EDITED = {
-	 type = "value",},
-
-GUILD_EVENT_BANKGOLD_ADDED = {
-	 type = "value",},
-
-GUILD_EVENT_BANKGOLD_GUILD_STORE_TAX = {
-	 type = "value",},
-
-GUILD_EVENT_BANKGOLD_KIOSK_BID = {
-	 type = "value",},
-
-GUILD_EVENT_BANKGOLD_KIOSK_BID_REFUND = {
-	 type = "value",},
-
-GUILD_EVENT_BANKGOLD_PURCHASE_HERALDRY = {
-	 type = "value",},
-
-GUILD_EVENT_BANKGOLD_REMOVED = {
-	 type = "value",},
-
-GUILD_EVENT_BANKITEM_ADDED = {
-	 type = "value",},
-
-GUILD_EVENT_BANKITEM_REMOVED = {
-	 type = "value",},
-
-GUILD_EVENT_BATTLE_STANDARD_PICKUP = {
-	 type = "value",},
-
-GUILD_EVENT_BATTLE_STANDARD_PUTDOWN = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_BANK_LOCKED = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_BANK_UNLOCKED = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_CREATE = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_DELETE = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_DEMOTE = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_INVITE = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_INVITEDECLINED = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_INVITEPURGED = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_INVITEREVOKED = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_JOIN = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_KICKED = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_KIOSK_LOCKED = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_KIOSK_PURCHASED = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_KIOSK_PURCHASE_REFUND = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_KIOSK_UNLOCKED = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_LEAVE = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_PROMOTE = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_REMOVE = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_STANDARD_LOCKED = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_STANDARD_UNLOCKED = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_STORE_LOCKED = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_STORE_UNLOCKED = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_TABARD_LOCKED = {
-	 type = "value",},
-
-GUILD_EVENT_GUILD_TABARD_UNLOCKED = {
-	 type = "value",},
-
-GUILD_EVENT_HERALDRY_EDITED = {
-	 type = "value",},
-
-GUILD_EVENT_ITEM_LISTED = {
-	 type = "value",},
-
-GUILD_EVENT_ITEM_SOLD = {
-	 type = "value",},
-
-GUILD_EVENT_KEEP_CLAIMED = {
-	 type = "value",},
-
-GUILD_EVENT_KEEP_LOST = {
-	 type = "value",},
-
-GUILD_EVENT_KEEP_RELEASED = {
-	 type = "value",},
-
-GUILD_EVENT_MOTD_EDITED = {
-	 type = "value",},
-
-GUILD_EVENT_NAME_CHANGED = {
-	 type = "value",},
-
-GUILD_HISTORY_ALLIANCE_WAR_OWNERSHIP = {
-	 type = "value",},
-
-GUILD_HISTORY_BANK_DEPOSITS = {
-	 type = "value",},
-
-GUILD_HISTORY_BANK_WITHDRAWALS = {
-	 type = "value",},
-
-GUILD_HISTORY_ALLIANCE_WAR = {
-	 type = "value",},
-
-GUILD_HISTORY_BANK = {
-	 type = "value",},
-
-GUILD_HISTORY_COMBAT = {
-	 type = "value",},
-
-GUILD_HISTORY_GENERAL = {
-	 type = "value",},
-
-GUILD_HISTORY_STORE = {
-	 type = "value",},
-
-GUILD_HISTORY_GENERAL_CUSTOMIZATION = {
-	 type = "value",},
-
-GUILD_HISTORY_GENERAL_ROSTER = {
-	 type = "value",},
-
-GUILD_HISTORY_GENERAL_UNLOCKS = {
-	 type = "value",},
-
-GUILD_HISTORY_STORE_HIRED_TRADER = {
-	 type = "value",},
-
-GUILD_HISTORY_STORE_PURCHASES = {
-	 type = "value",},
-
-GUILD_KIOSK_GUILD_INFO_RESULT_NO_GUILD = {
-	 type = "value",},
-
-GUILD_KIOSK_GUILD_INFO_RESULT_NO_INFO = {
-	 type = "value",},
-
-GUILD_KIOSK_GUILD_INFO_RESULT_NO_INFO_FOR_ANY_GUILD = {
-	 type = "value",},
-
-GUILD_KIOSK_GUILD_INFO_RESULT_NO_INFO_FOR_GUILD = {
-	 type = "value",},
-
-GUILD_KIOSK_GUILD_INFO_RESULT_SUCCESS = {
-	 type = "value",},
-
-GUILD_PERMISSION_BANK_DEPOSIT = {
-	 type = "value",},
-
-GUILD_PERMISSION_BANK_VIEW_DEPOSIT_HISTORY = {
-	 type = "value",},
-
-GUILD_PERMISSION_BANK_VIEW_GOLD = {
-	 type = "value",},
-
-GUILD_PERMISSION_BANK_VIEW_WITHDRAW_HISTORY = {
-	 type = "value",},
-
-GUILD_PERMISSION_BANK_WITHDRAW = {
-	 type = "value",},
-
-GUILD_PERMISSION_BANK_WITHDRAW_GOLD = {
-	 type = "value",},
-
-GUILD_PERMISSION_CHAT = {
-	 type = "value",},
-
-GUILD_PERMISSION_CLAIM_AVA_RESOURCE = {
-	 type = "value",},
-
-GUILD_PERMISSION_DEMOTE = {
-	 type = "value",},
-
-GUILD_PERMISSION_DESCRIPTION_EDIT = {
-	 type = "value",},
-
-GUILD_PERMISSION_EDIT_HERALDRY = {
-	 type = "value",},
-
-GUILD_PERMISSION_GUILD_KIOSK_BID = {
-	 type = "value",},
-
-GUILD_PERMISSION_INVITE = {
-	 type = "value",},
-
-GUILD_PERMISSION_NOTE_EDIT = {
-	 type = "value",},
-
-GUILD_PERMISSION_NOTE_READ = {
-	 type = "value",},
-
-GUILD_PERMISSION_OFFICER_CHAT_READ = {
-	 type = "value",},
-
-GUILD_PERMISSION_OFFICER_CHAT_WRITE = {
-	 type = "value",},
-
-GUILD_PERMISSION_PERMISSION_EDIT = {
-	 type = "value",},
-
-GUILD_PERMISSION_PROMOTE = {
-	 type = "value",},
-
-GUILD_PERMISSION_RECRUITMENT_EDIT = {
-	 type = "value",},
-
-GUILD_PERMISSION_RELEASE_AVA_RESOURCE = {
-	 type = "value",},
-
-GUILD_PERMISSION_REMOVE = {
-	 type = "value",},
-
-GUILD_PERMISSION_SET_MOTD = {
-	 type = "value",},
-
-GUILD_PERMISSION_STORE_BUY = {
-	 type = "value",},
-
-GUILD_PERMISSION_STORE_SELL = {
-	 type = "value",},
-
-GUILD_PERMISSION_USE_GUILD_SIEGE = {
-	 type = "value",},
-
-HEALTH_WARNING_FLASH_ = {
-	 type = "value",},
-
-HEALTH_WARNING_FLASH_ = {
-	 type = "value",},
-
-HEALTH_WARNING_NONE = {
-	 type = "value",},
-
-HEALTH_WARNING_STAGE_ = {
-	 type = "value",},
-
-HEALTH_WARNING_STAGE_ = {
-	 type = "value",},
-
-HEALTH_WARNING_STAGE_ = {
-	 type = "value",},
-
-HELP_SHOW_OPTIONS_ALL = {
-	 type = "value",},
-
-HELP_SHOW_OPTIONS_CONSOLE_AND_PC_GAMEPAD = {
-	 type = "value",},
-
-HELP_SHOW_OPTIONS_CONSOLE_GAMEPAD = {
-	 type = "value",},
-
-HELP_SHOW_OPTIONS_KEYBOARD = {
-	 type = "value",},
-
-HELP_SHOW_OPTIONS_KEYBOARD_AND_CONSOLE_GAMEPAD = {
-	 type = "value",},
-
-HELP_SHOW_OPTIONS_KEYBOARD_AND_PC_GAMEPAD = {
-	 type = "value",},
-
-HELP_SHOW_OPTIONS_PC_GAMEPAD = {
-	 type = "value",},
-
-HIDDEN_ITEM_HELM = {
-	 type = "value",},
-
-HIDDEN_ITEM_LOIN_CLOTH = {
-	 type = "value",},
-
-HIDDEN_ITEM_MOUNT_INVENTORY_UPGRADE = {
-	 type = "value",},
-
-HIDDEN_ITEM_MOUNT_SPEED_UPGRADE = {
-	 type = "value",},
-
-HIDDEN_ITEM_MOUNT_STAMINA_UPGRADE = {
-	 type = "value",},
-
-HIDDEN_ITEM_TASSETS = {
-	 type = "value",},
-
-HOOK_POINT_BOILING_OIL = {
-	 type = "value",},
-
-HOOK_POINT_GRAPPLE = {
-	 type = "value",},
-
-HOOK_POINT_NPC = {
-	 type = "value",},
-
-HOOK_POINT_SIEGE = {
-	 type = "value",},
-
-HOUSE_CATEGORY_TYPE_CLASSIC = {
-	 type = "value",},
-
-HOUSE_CATEGORY_TYPE_NONE = {
-	 type = "value",},
-
-HOUSE_CATEGORY_TYPE_NOTABLE = {
-	 type = "value",},
-
-HOUSE_CATEGORY_TYPE_STAPLE = {
-	 type = "value",},
-
-HOUSE_PERMISSION_DEFAULT_ACCESS_SETTING_DECORATOR = {
-	 type = "value",},
-
-HOUSE_PERMISSION_DEFAULT_ACCESS_SETTING_NO_ACCESS = {
-	 type = "value",},
-
-HOUSE_PERMISSION_DEFAULT_ACCESS_SETTING_VISITOR = {
-	 type = "value",},
-
-HOUSE_PERMISSION_OPTIONS_CATEGORIES_BANLIST = {
-	 type = "value",},
-
-HOUSE_PERMISSION_OPTIONS_CATEGORIES_GENERAL = {
-	 type = "value",},
-
-HOUSE_PERMISSION_OPTIONS_CATEGORIES_GUILD_BANLIST = {
-	 type = "value",},
-
-HOUSE_PERMISSION_OPTIONS_CATEGORIES_GUILD_VISITORS = {
-	 type = "value",},
-
-HOUSE_PERMISSION_OPTIONS_CATEGORIES_SOCIAL_OPTIONS = {
-	 type = "value",},
-
-HOUSE_PERMISSION_OPTIONS_CATEGORIES_TEMPLATES = {
-	 type = "value",},
-
-HOUSE_PERMISSION_OPTIONS_CATEGORIES_VISITORS = {
-	 type = "value",},
-
-HOUSE_PERMISSION_PRESET_SETTING_DECORATOR = {
-	 type = "value",},
-
-HOUSE_PERMISSION_PRESET_SETTING_INVALID = {
-	 type = "value",},
-
-HOUSE_PERMISSION_PRESET_SETTING_VISITOR = {
-	 type = "value",},
-
-HOUSE_PERMISSION_RESULT_FAILED_TO_ADD = {
-	 type = "value",},
-
-HOUSE_PERMISSION_RESULT_FAILED_TO_MODIFY = {
-	 type = "value",},
-
-HOUSE_PERMISSION_RESULT_FAILED_TO_REMOVE = {
-	 type = "value",},
-
-HOUSE_PERMISSION_RESULT_INIT = {
-	 type = "value",},
-
-HOUSE_PERMISSION_RESULT_SUCCESS = {
-	 type = "value",},
-
-HOUSE_PERMISSION_SETTING_BOOL_SECTION_END = {
-	 type = "value",},
-
-HOUSE_PERMISSION_SETTING_MOVE_FURNITURE = {
-	 type = "value",},
-
-HOUSE_PERMISSION_SETTING_PLACE_TEMP_ITEMS = {
-	 type = "value",},
-
-HOUSE_PERMISSION_SETTING_USE_ASSISTANTS = {
-	 type = "value",},
-
-HOUSE_PERMISSION_SETTING_USE_CRAFTING_STATIONS = {
-	 type = "value",},
-
-HOUSE_PERMISSION_SETTING_USE_OBJECTS = {
-	 type = "value",},
-
-HOUSE_PERMISSION_USER_GROUP_GENERAL = {
-	 type = "value",},
-
-HOUSE_PERMISSION_USER_GROUP_GUILD = {
-	 type = "value",},
-
-HOUSE_PERMISSION_USER_GROUP_INDIVIDUAL = {
-	 type = "value",},
-
-HOUSING_EDITOR_MODE_BROWSE = {
-	 type = "value",},
-
-HOUSING_EDITOR_MODE_DISABLED = {
-	 type = "value",},
-
-HOUSING_EDITOR_MODE_PLACEMENT = {
-	 type = "value",},
-
-HOUSING_EDITOR_MODE_SELECTION = {
-	 type = "value",},
-
-HOUSING_FURNISHING_LIMIT_TYPE_FURNISHING = {
-	 type = "value",},
-
-HOUSING_FURNISHING_LIMIT_TYPE_OTHER = {
-	 type = "value",},
-
-HOUSING_FURNISHING_LIMIT_TYPE_TROPHY = {
-	 type = "value",},
-
-HOUSING_LOAD_PERMISSIONS_RESULT_NO_CHANGE = {
-	 type = "value",},
-
-HOUSING_LOAD_PERMISSIONS_RESULT_SUCCESS = {
-	 type = "value",},
-
-HOUSING_VISITOR_ROLE_EDITOR = {
-	 type = "value",},
-
-HOUSING_VISITOR_ROLE_HOME_SHOW = {
-	 type = "value",},
-
-HOUSING_VISITOR_ROLE_PREVIEW = {
-	 type = "value",},
-
-IMPERIAL_CITY_ACCESS_RULE_TYPE_EVERYONE = {
-	 type = "value",},
-
-IMPERIAL_CITY_ACCESS_RULE_TYPE_MAJORITY_KEEPS = {
-	 type = "value",},
-
-IMPERIAL_CITY_ACCESS_RULE_TYPE_NATIVE_KEEPS = {
-	 type = "value",},
-
-IMPERIAL_CITY_ACCESS_RULE_TYPE_NATIVE_KEEPS_PLUS_ONE = {
-	 type = "value",},
-
-IN_WORLD_UI_SETTING_DEFAULT_SOUL_GEM = {
-	 type = "value",},
-
-IN_WORLD_UI_SETTING_FOOT_INVERSE_KINEMATICS = {
-	 type = "value",},
-
-IN_WORLD_UI_SETTING_GLOW_THICKNESS = {
-	 type = "value",},
-
-IN_WORLD_UI_SETTING_HIDE_HELM = {
-	 type = "value",},
-
-IN_WORLD_UI_SETTING_HIDE_LOIN_CLOTH = {
-	 type = "value",},
-
-IN_WORLD_UI_SETTING_HIDE_MOUNT_INVENTORY_UPGRADE = {
-	 type = "value",},
-
-IN_WORLD_UI_SETTING_HIDE_MOUNT_SPEED_UPGRADE = {
-	 type = "value",},
-
-IN_WORLD_UI_SETTING_HIDE_MOUNT_STAMINA_UPGRADE = {
-	 type = "value",},
-
-IN_WORLD_UI_SETTING_HIDE_TASSETS = {
-	 type = "value",},
-
-IN_WORLD_UI_SETTING_INTERACTABLE_GLOW_ENABLED = {
-	 type = "value",},
-
-IN_WORLD_UI_SETTING_INTERACTABLE_GLOW_INTENSITY = {
-	 type = "value",},
-
-IN_WORLD_UI_SETTING_TARGET_GLOW_ENABLED = {
-	 type = "value",},
-
-IN_WORLD_UI_SETTING_TARGET_GLOW_INTENSITY = {
-	 type = "value",},
-
-INFAMY_THRESHOLD_DISREPUTABLE = {
-	 type = "value",},
-
-INFAMY_THRESHOLD_FUGITIVE = {
-	 type = "value",},
-
-INFAMY_THRESHOLD_NOTORIOUS = {
-	 type = "value",},
-
-INFAMY_THRESHOLD_UPSTANDING = {
-	 type = "value",},
-
-INSTANCE_DISPLAY_TYPE_BATTLEGROUND = {
-	 type = "value",},
-
-INSTANCE_DISPLAY_TYPE_DELVE = {
-	 type = "value",},
-
-INSTANCE_DISPLAY_TYPE_DUNGEON = {
-	 type = "value",},
-
-INSTANCE_DISPLAY_TYPE_GROUP_AREA = {
-	 type = "value",},
-
-INSTANCE_DISPLAY_TYPE_GROUP_DELVE = {
-	 type = "value",},
-
-INSTANCE_DISPLAY_TYPE_HOUSING = {
-	 type = "value",},
-
-INSTANCE_DISPLAY_TYPE_NONE = {
-	 type = "value",},
-
-INSTANCE_DISPLAY_TYPE_PUBLIC_DUNGEON = {
-	 type = "value",},
-
-INSTANCE_DISPLAY_TYPE_RAID = {
-	 type = "value",},
-
-INSTANCE_DISPLAY_TYPE_SOLO = {
-	 type = "value",},
-
-INSTANCE_QUEUE_REQUEST_SIZE_GROUP = {
-	 type = "value",},
-
-INSTANCE_QUEUE_REQUEST_SIZE_SOLO = {
-	 type = "value",},
-
-INSTANCE_QUEUE_TYPE_BATTLEGROUND = {
-	 type = "value",},
-
-INSTANCE_QUEUE_TYPE_GROUP = {
-	 type = "value",},
-
-INSTANCE_QUEUE_TYPE_RAID = {
-	 type = "value",},
-
-INSTANCE_TYPE_BATTLEGROUND = {
-	 type = "value",},
-
-INSTANCE_TYPE_GRADUATION_MOMENT = {
-	 type = "value",},
-
-INSTANCE_TYPE_GROUP = {
-	 type = "value",},
-
-INSTANCE_TYPE_HOUSING = {
-	 type = "value",},
-
-INSTANCE_TYPE_NONE = {
-	 type = "value",},
-
-INSTANCE_TYPE_PUBLIC_DUNGEON = {
-	 type = "value",},
-
-INSTANCE_TYPE_RAID = {
-	 type = "value",},
-
-INSTANCE_TYPE_SOLO = {
-	 type = "value",},
-
-INTERACTION_AVA_HOOK_POINT = {
-	 type = "value",},
-
-INTERACTION_BANK = {
-	 type = "value",},
-
-INTERACTION_BOOK = {
-	 type = "value",},
-
-INTERACTION_BUY_BAG_SPACE = {
-	 type = "value",},
-
-INTERACTION_CONVERSATION = {
-	 type = "value",},
-
-INTERACTION_CRAFT = {
-	 type = "value",},
-
-INTERACTION_DYE_STATION = {
-	 type = "value",},
-
-INTERACTION_FAST_TRAVEL = {
-	 type = "value",},
-
-INTERACTION_FAST_TRAVEL_KEEP = {
-	 type = "value",},
-
-INTERACTION_FISH = {
-	 type = "value",},
-
-INTERACTION_FURNITURE = {
-	 type = "value",},
-
-INTERACTION_GUILDBANK = {
-	 type = "value",},
-
-INTERACTION_GUILDKIOSK_BID = {
-	 type = "value",},
-
-INTERACTION_GUILDKIOSK_PURCHASE = {
-	 type = "value",},
-
-INTERACTION_HARVEST = {
-	 type = "value",},
-
-INTERACTION_HIDEYHOLE = {
-	 type = "value",},
-
-INTERACTION_KEEP_GUILD_CLAIM = {
-	 type = "value",},
-
-INTERACTION_KEEP_GUILD_RELEASE = {
-	 type = "value",},
-
-INTERACTION_KEEP_INSPECT = {
-	 type = "value",},
-
-INTERACTION_KEEP_PIECE = {
-	 type = "value",},
-
-INTERACTION_LOCKPICK = {
-	 type = "value",},
-
-INTERACTION_LOOT = {
-	 type = "value",},
-
-INTERACTION_MAIL = {
-	 type = "value",},
-
-INTERACTION_NONE = {
-	 type = "value",},
-
-INTERACTION_PAY_BOUNTY = {
-	 type = "value",},
-
-INTERACTION_PICKPOCKET = {
-	 type = "value",},
-
-INTERACTION_QUEST = {
-	 type = "value",},
-
-INTERACTION_SIEGE = {
-	 type = "value",},
-
-INTERACTION_STABLE = {
-	 type = "value",},
-
-INTERACTION_STONE_MASON = {
-	 type = "value",},
-
-INTERACTION_STORE = {
-	 type = "value",},
-
-INTERACTION_TRADINGHOUSE = {
-	 type = "value",},
-
-INTERACTION_VENDOR = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_ABILITY_TOOLTIP = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_ACTIVE_COMBAT_TIP = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_ALLIANCE = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_ATTRIBUTE_TOOLTIP = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_ATTRIBUTE_UPGRADE_PROJECTED = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_BATTLEGROUND_ALLIANCE = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_BOOK_MEDIUM = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_BUFF_TYPE = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_CAST_BAR_END = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_CAST_BAR_START = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_CHAT_CHANNEL_CATEGORY_DEFAULTS = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_CON_COLORS = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_CURRENCY = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_DEATH_INTERFACE_COLORS = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_DEFAULT_COLOR = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_FINESSE = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_GAMEPAD_TOOLTIP = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_GENERAL = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_ITEM_QUALITY_COLORS = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_ITEM_TOOLTIP = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_KEEP_TOOLTIP = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_LEADERBOARD_COLORS = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_LEVEL_UP = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_LINK = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_LOADING_SCREEN = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_MAPPIN_TOOLTIP = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_MARKET_COLORS = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_NAME_PLATE = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_NAME_PLATE_HEALTH_END = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_NAME_PLATE_HEALTH_START = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_NAME_PLATE_HIT_INDICATOR = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_OBJECT_NOTIFICATION = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_POWER = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_POWER_END = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_POWER_FADE_IN = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_POWER_FADE_OUT = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_POWER_START = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_PROGRESSION = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_SHARED_TOOLTIP = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_SKILL_LINE_TOOLTIP = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_STATUS_EFFECT = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_STAT_VALUE = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_TEXT_COLORS = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_ULTIMATE_BAR = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_UNIT_CLASS = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_UNIT_HIGHLIGHT_OVERRIDE = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_UNIT_REACTION_COLOR = {
-	 type = "value",},
-
-INTERFACE_COLOR_TYPE_VOICE_CHAT_COLORS = {
-	 type = "value",},
-
-INTERFACE_GENERAL_COLOR_ALERT = {
-	 type = "value",},
-
-INTERFACE_GENERAL_COLOR_BLACK = {
-	 type = "value",},
-
-INTERFACE_GENERAL_COLOR_DISABLED = {
-	 type = "value",},
-
-INTERFACE_GENERAL_COLOR_ENABLED = {
-	 type = "value",},
-
-INTERFACE_GENERAL_COLOR_ERROR = {
-	 type = "value",},
-
-INTERFACE_GENERAL_COLOR_STATUS_BAR_END = {
-	 type = "value",},
-
-INTERFACE_GENERAL_COLOR_STATUS_BAR_START = {
-	 type = "value",},
-
-INTERFACE_GENERAL_COLOR_WARNING = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_BATTLEGROUND_WINNER = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_BLADE = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_BLADE_HIGHLIGHT = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_BODY = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_CHATTER_NPC = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_CHATTER_PLAYER_OPTION = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_CONTEXT_HIGHLIGHT = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_CONTRAST = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_CURRENCY_HIGHLIGHT = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_DEFAULT_TEXT = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_DISABLED = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_FAILED = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_GAMEPAD_CATEGORY_HEADER = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_GAMEPAD_TERTIARY = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_GAME_REPRESENTATIVE = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_HIGHLIGHT = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_HINT = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_NORMAL = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_PERSONALITY_EMOTES = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_SECOND_CONTRAST = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_SELECTED = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_SUBTLE = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_SUCCEEDED = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_TOOLTIP_DEFAULT = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_TOOLTIP_INSTRUCTIONAL = {
-	 type = "value",},
-
-INTERFACE_TEXT_COLOR_VALUE = {
 	 type = "value",},
 
 ITEMFILTERTYPE_ALCHEMY = {
@@ -5592,36 +8742,6 @@ ITEM_QUALITY_NORMAL = {
 ITEM_QUALITY_TRASH = {
 	 type = "value",},
 
-ITEMSTYLE_NONE = {
-	 type = "value",},
-
-ITEMSTYLE_RACIAL_ARGONIAN = {
-	 type = "value",},
-
-ITEMSTYLE_RACIAL_BRETON = {
-	 type = "value",},
-
-ITEMSTYLE_RACIAL_DARK_ELF = {
-	 type = "value",},
-
-ITEMSTYLE_RACIAL_HIGH_ELF = {
-	 type = "value",},
-
-ITEMSTYLE_RACIAL_KHAJIIT = {
-	 type = "value",},
-
-ITEMSTYLE_RACIAL_NORD = {
-	 type = "value",},
-
-ITEMSTYLE_RACIAL_ORC = {
-	 type = "value",},
-
-ITEMSTYLE_RACIAL_REDGUARD = {
-	 type = "value",},
-
-ITEMSTYLE_RACIAL_WOOD_ELF = {
-	 type = "value",},
-
 ITEM_STYLE_CHAPTER_ALL = {
 	 type = "value",},
 
@@ -5676,84 +8796,6 @@ TAG_CATEGORY_NONE = {
 TAG_CATEGORY_TREASURE_TYPE = {
 	 type = "value",},
 
-ITEM_TOOLTIP_COLOR_ACCENT = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_CHARGE_BAR_GRADIENT_END = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_CHARGE_BAR_GRADIENT_START = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_CLICK_TO_UPGRADE = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_CONDITION_BAR_GRADIENT_END = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_CONDITION_BAR_GRADIENT_START = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_CREATOR = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_DECONSTRUCTABLE = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_EQUIPPED = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_FAIL_CHECK = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_FLAVOR_TEXT = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_GENERAL = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_INACTIVE_BONUS = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_ITEM_LEVEL = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_MISC = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_ON_EQUIP = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_ON_USE = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_PASS_CHECK = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_QUEST_ITEM_NAME = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_SELLS_FOR = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_SHOWING_EQUIPPED_ITEM = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_SOCKET_EMPTY = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_SOCKET_FULL = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_SOCKET_PASS_CHECK = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_STYLE = {
-	 type = "value",},
-
-ITEM_TOOLTIP_COLOR_TRADE_BOP = {
-	 type = "value",},
-
 ITEM_TRAIT_TYPE_ARMOR_DIVINES = {
 	 type = "value",},
 
@@ -5787,6 +8829,9 @@ ITEM_TRAIT_TYPE_ARMOR_TRAINING = {
 ITEM_TRAIT_TYPE_ARMOR_WELL_FITTED = {
 	 type = "value",},
 
+ITEM_TRAIT_TYPE_DEPRECATED = {
+	 type = "value",},
+
 ITEM_TRAIT_TYPE_JEWELRY_ARCANE = {
 	 type = "value",},
 
@@ -5800,9 +8845,6 @@ ITEM_TRAIT_TYPE_JEWELRY_ROBUST = {
 	 type = "value",},
 
 ITEM_TRAIT_TYPE_NONE = {
-	 type = "value",},
-
-ITEM_TRAIT_TYPE_SPECIAL_STAT = {
 	 type = "value",},
 
 ITEM_TRAIT_TYPE_WEAPON_CHARGED = {
@@ -6210,2682 +9252,6 @@ ITEM_USE_TYPE_RECIPE = {
 ITEM_USE_TYPE_VANITY_PET = {
 	 type = "value",},
 
-ITEMVISUALDAMAGE_BROKEN = {
-	 type = "value",},
-
-ITEMVISUALDAMAGE_DAMAGED = {
-	 type = "value",},
-
-ITEMVISUALDAMAGE_NONE = {
-	 type = "value",},
-
-JUMP_TO_PLAYER_RESULT_CROSS_ALLIANCE_LOCKED = {
-	 type = "value",},
-
-JUMP_TO_PLAYER_RESULT_GENERIC_FAILURE = {
-	 type = "value",},
-
-JUMP_TO_PLAYER_RESULT_PLAYER_DIFFICULTY_LOCKED = {
-	 type = "value",},
-
-JUMP_TO_PLAYER_RESULT_PLAYER_OFFLINE = {
-	 type = "value",},
-
-JUMP_TO_PLAYER_RESULT_SOLO_ZONE = {
-	 type = "value",},
-
-JUMP_TO_PLAYER_RESULT_SUCCESS = {
-	 type = "value",},
-
-JUMP_TO_PLAYER_RESULT_ZONE_COLLECTIBLE_LOCKED = {
-	 type = "value",},
-
-JUSTICE_CRIMINAL = {
-	 type = "value",},
-
-JUSTICE_ENFORCER = {
-	 type = "value",},
-
-JUSTICE_NONE = {
-	 type = "value",},
-
-JUSTICE_SKILL_FENCE = {
-	 type = "value",},
-
-JUSTICE_SKILL_LOCKPICK = {
-	 type = "value",},
-
-JUSTICE_SKILL_NONE = {
-	 type = "value",},
-
-JUSTICE_SKILL_PICKPOCKET = {
-	 type = "value",},
-
-RESOURCE_PROVIDER_FARM = {
-	 type = "value",},
-
-RESOURCE_PROVIDER_LUMBERMILL = {
-	 type = "value",},
-
-RESOURCE_PROVIDER_MINE = {
-	 type = "value",},
-
-RESOURCE_PROVIDER_NONE = {
-	 type = "value",},
-
-RESOURCETYPE_FOOD = {
-	 type = "value",},
-
-RESOURCETYPE_NONE = {
-	 type = "value",},
-
-RESOURCETYPE_ORE = {
-	 type = "value",},
-
-RESOURCETYPE_WOOD = {
-	 type = "value",},
-
-KEEP_TOOLTIP_COLOR_ACCESSIBLE = {
-	 type = "value",},
-
-KEEP_TOOLTIP_COLOR_ATTACK_LINE = {
-	 type = "value",},
-
-KEEP_TOOLTIP_COLOR_AT_KEEP = {
-	 type = "value",},
-
-KEEP_TOOLTIP_COLOR_NAME = {
-	 type = "value",},
-
-KEEP_TOOLTIP_COLOR_NORMAL_LINE = {
-	 type = "value",},
-
-KEEP_TOOLTIP_COLOR_NOT_ACCESSIBLE = {
-	 type = "value",},
-
-KEEP_TOOLTIP_COLOR_OWNER = {
-	 type = "value",},
-
-KEEP_TOOLTIP_COLOR_UNCLAIMED = {
-	 type = "value",},
-
-KEEPTYPE_ARTIFACT_GATE = {
-	 type = "value",},
-
-KEEPTYPE_ARTIFACT_KEEP = {
-	 type = "value",},
-
-KEEPTYPE_BORDER_KEEP = {
-	 type = "value",},
-
-KEEPTYPE_IMPERIAL_CITY_DISTRICT = {
-	 type = "value",},
-
-KEEPTYPE_KEEP = {
-	 type = "value",},
-
-KEEPTYPE_OUTPOST = {
-	 type = "value",},
-
-KEEPTYPE_RESOURCE = {
-	 type = "value",},
-
-KEEPTYPE_TOWN = {
-	 type = "value",},
-
-UPGRADEPATH_DEFENSIVE = {
-	 type = "value",},
-
-UPGRADEPATH_NONE = {
-	 type = "value",},
-
-UPGRADEPATH_PRODUCTION = {
-	 type = "value",},
-
-LFG_ACTIVITY_AVA = {
-	 type = "value",},
-
-LFG_ACTIVITY_BATTLE_GROUND_CHAMPION = {
-	 type = "value",},
-
-LFG_ACTIVITY_BATTLE_GROUND_LOW_LEVEL = {
-	 type = "value",},
-
-LFG_ACTIVITY_BATTLE_GROUND_NON_CHAMPION = {
-	 type = "value",},
-
-LFG_ACTIVITY_DUNGEON = {
-	 type = "value",},
-
-LFG_ACTIVITY_HOME_SHOW = {
-	 type = "value",},
-
-LFG_ACTIVITY_INVALID = {
-	 type = "value",},
-
-LFG_ACTIVITY_MASTER_DUNGEON = {
-	 type = "value",},
-
-LFG_ACTIVITY_TRIAL = {
-	 type = "value",},
-
-LFG_COOLDOWN_ACTIVITY_STARTED = {
-	 type = "value",},
-
-LFG_COOLDOWN_BATTLEGROUND_DESERTED = {
-	 type = "value",},
-
-LFG_COOLDOWN_DUNGEON_LEFT = {
-	 type = "value",},
-
-LFG_COOLDOWN_INVALID = {
-	 type = "value",},
-
-LFG_COOLDOWN_QUEUE_LEFT = {
-	 type = "value",},
-
-LFG_COOLDOWN_REWARD_GRANTED = {
-	 type = "value",},
-
-LFG_COOLDOWN_TRIAL_LEFT = {
-	 type = "value",},
-
-LFG_GROUP_TYPE_LARGE = {
-	 type = "value",},
-
-LFG_GROUP_TYPE_MEDIUM = {
-	 type = "value",},
-
-LFG_GROUP_TYPE_NONE = {
-	 type = "value",},
-
-LFG_GROUP_TYPE_REGULAR = {
-	 type = "value",},
-
-LFG_ITEM_REWARD_TYPE_DAILY = {
-	 type = "value",},
-
-LFG_ITEM_REWARD_TYPE_NONE = {
-	 type = "value",},
-
-LFG_ITEM_REWARD_TYPE_STANDARD = {
-	 type = "value",},
-
-LFG_READY_CHECK_CANCEL_REASON_ACTIVITY_NO_LONGER_VALID = {
-	 type = "value",},
-
-LFG_READY_CHECK_CANCEL_REASON_GROUP_FORMED_SUCCESSFULLY = {
-	 type = "value",},
-
-LFG_READY_CHECK_CANCEL_REASON_GROUP_MEMBER_CANCELED = {
-	 type = "value",},
-
-LFG_READY_CHECK_CANCEL_REASON_GROUP_NOT_VIABLE = {
-	 type = "value",},
-
-LFG_READY_CHECK_CANCEL_REASON_GROUP_REPLACED_IN_QUEUE = {
-	 type = "value",},
-
-LFG_READY_CHECK_CANCEL_REASON_NOT_IN_READY_CHECK = {
-	 type = "value",},
-
-LFG_READY_CHECK_STATE_FORM_GROUP = {
-	 type = "value",},
-
-LFG_READY_CHECK_STATE_GROUP_TIMEOUT_CANCEL = {
-	 type = "value",},
-
-LFG_READY_CHECK_STATE_IN_READY_CHECK = {
-	 type = "value",},
-
-LFG_READY_CHECK_STATE_IN_READY_CHECK_BATTLEGROUND_TEST = {
-	 type = "value",},
-
-LFG_READY_CHECK_STATE_LAUNCHING_BATTLEGROUND_INSTANCE = {
-	 type = "value",},
-
-LFG_READY_CHECK_STATE_NOT_IN_READY_CHECK = {
-	 type = "value",},
-
-LFG_READY_CHECK_STATE_PLAYER_ACCEPTED = {
-	 type = "value",},
-
-LFG_READY_CHECK_STATE_PLAYER_DECLINED = {
-	 type = "value",},
-
-LFG_READY_CHECK_STATE_QUEUEDTEST_BATTLEGROUND_LAUNCH = {
-	 type = "value",},
-
-LFG_READY_CHECK_STATE_TRANSFER_TO_BATTLEGROUND_INSTANCE = {
-	 type = "value",},
-
-LFG_ROLE_DPS = {
-	 type = "value",},
-
-LFG_ROLE_HEAL = {
-	 type = "value",},
-
-LFG_ROLE_INVALID = {
-	 type = "value",},
-
-LFG_ROLE_TANK = {
-	 type = "value",},
-
-LANGUAGE_SETTING_USE_PROFANITY_FILTER = {
-	 type = "value",},
-
-LEADERBOARD_COLORS_NAME = {
-	 type = "value",},
-
-LEADERBOARD_COLORS_PLAYER_NAME = {
-	 type = "value",},
-
-LEADERBOARD_COLORS_TOP_ = {
-	 type = "value",},
-
-LEADERBOARD_COLORS_TOP_ = {
-	 type = "value",},
-
-LEADERBOARD_COLORS_TOP_ = {
-	 type = "value",},
-
-LEADERBOARD_TYPE_ALLIANCE = {
-	 type = "value",},
-
-LEADERBOARD_TYPE_BATTLEGROUND = {
-	 type = "value",},
-
-LEADERBOARD_TYPE_CLASS = {
-	 type = "value",},
-
-LEADERBOARD_TYPE_HOUSE = {
-	 type = "value",},
-
-LEADERBOARD_TYPE_OVERALL = {
-	 type = "value",},
-
-LEVEL_UP_COLOR_GAINED_TEXT = {
-	 type = "value",},
-
-LEVEL_UP_COLOR_GENERAL = {
-	 type = "value",},
-
-LEVEL_UP_COLOR_NEW_LEVEL = {
-	 type = "value",},
-
-LINK_STYLE_BRACKETS = {
-	 type = "value",},
-
-LINK_STYLE_DEFAULT = {
-	 type = "value",},
-
-LINK_TYPE_ACHIEVEMENT = {
-	 type = "value",},
-
-LINK_TYPE_BOOK = {
-	 type = "value",},
-
-LINK_TYPE_COLLECTIBLE = {
-	 type = "value",},
-
-LINK_TYPE_INVALID = {
-	 type = "value",},
-
-LINK_TYPE_ITEM = {
-	 type = "value",},
-
-LINK_TYPE_QUEST_ITEM = {
-	 type = "value",},
-
-LOADING_SCREEN_COLOR_BAR_END = {
-	 type = "value",},
-
-LOADING_SCREEN_COLOR_BAR_START = {
-	 type = "value",},
-
-REGION_AFRICA = {
-	 type = "value",},
-
-REGION_ASIA = {
-	 type = "value",},
-
-REGION_EUROPE = {
-	 type = "value",},
-
-REGION_NONE = {
-	 type = "value",},
-
-REGION_NORTH_AMERICA = {
-	 type = "value",},
-
-REGION_OCEANIA = {
-	 type = "value",},
-
-REGION_SOUTH_AMERICA = {
-	 type = "value",},
-
-LOCK_QUALITY_ADVANCED = {
-	 type = "value",},
-
-LOCK_QUALITY_IMPOSSIBLE = {
-	 type = "value",},
-
-LOCK_QUALITY_INTERMEDIATE = {
-	 type = "value",},
-
-LOCK_QUALITY_MASTER = {
-	 type = "value",},
-
-LOCK_QUALITY_NONE = {
-	 type = "value",},
-
-LOCK_QUALITY_PRACTICE = {
-	 type = "value",},
-
-LOCK_QUALITY_SIMPLE = {
-	 type = "value",},
-
-LOCK_QUALITY_TRIVIAL = {
-	 type = "value",},
-
-LOOT_CRATE_OPEN_RESPONSE_FAIL_NO_INVENTORY_SPACE = {
-	 type = "value",},
-
-LOOT_CRATE_OPEN_RESPONSE_INVALID_LOOT_CRATE = {
-	 type = "value",},
-
-LOOT_CRATE_OPEN_RESPONSE_INVALID_LOOT_CRATE_TIER = {
-	 type = "value",},
-
-LOOT_CRATE_OPEN_RESPONSE_INVALID_MARKET_PRODUCT = {
-	 type = "value",},
-
-LOOT_CRATE_OPEN_RESPONSE_NO_PRODUCT_SELECTED = {
-	 type = "value",},
-
-LOOT_CRATE_OPEN_RESPONSE_OUT_OF_ALL_LOOT_CRATES = {
-	 type = "value",},
-
-LOOT_CRATE_OPEN_RESPONSE_OUT_OF_LOOT_CRATE = {
-	 type = "value",},
-
-LOOT_CRATE_OPEN_RESPONSE_SUCCESS = {
-	 type = "value",},
-
-LOOT_CRATE_OPEN_RESPONSE_SYSTEM_UNAVAILABLE = {
-	 type = "value",},
-
-LOOT_CRATES_SYSTEM_STATE_OFFLINE = {
-	 type = "value",},
-
-LOOT_CRATES_SYSTEM_STATE_ONLINE = {
-	 type = "value",},
-
-LOOT_CRATES_SYSTEM_STATE_OPEN_ONLY = {
-	 type = "value",},
-
-LOOT_TYPE_ANY = {
-	 type = "value",},
-
-LOOT_TYPE_COLLECTIBLE = {
-	 type = "value",},
-
-LOOT_TYPE_ITEM = {
-	 type = "value",},
-
-LOOT_TYPE_MONEY = {
-	 type = "value",},
-
-LOOT_TYPE_QUEST_ITEM = {
-	 type = "value",},
-
-LOOT_TYPE_TELVAR_STONES = {
-	 type = "value",},
-
-LOOT_TYPE_WRIT_VOUCHERS = {
-	 type = "value",},
-
-LOOT_SETTING_AOE_LOOT = {
-	 type = "value",},
-
-LOOT_SETTING_AUTO_ADD_TO_CRAFT_BAG = {
-	 type = "value",},
-
-LOOT_SETTING_AUTO_LOOT = {
-	 type = "value",},
-
-LOOT_SETTING_AUTO_LOOT_STOLEN = {
-	 type = "value",},
-
-LOOT_SETTING_LOOT_HISTORY = {
-	 type = "value",},
-
-MAIL_ATTACHMENT_RESULT_ALREADY_ATTACHED = {
-	 type = "value",},
-
-MAIL_ATTACHMENT_RESULT_BOUND = {
-	 type = "value",},
-
-MAIL_ATTACHMENT_RESULT_ITEM_NOT_FOUND = {
-	 type = "value",},
-
-MAIL_ATTACHMENT_RESULT_LOCKED = {
-	 type = "value",},
-
-MAIL_ATTACHMENT_RESULT_PLAYER_LOCKED = {
-	 type = "value",},
-
-MAIL_ATTACHMENT_RESULT_STOLEN = {
-	 type = "value",},
-
-MAIL_ATTACHMENT_RESULT_SUCCESS = {
-	 type = "value",},
-
-MAP_CONTENT_AVA = {
-	 type = "value",},
-
-MAP_CONTENT_BATTLEGROUND = {
-	 type = "value",},
-
-MAP_CONTENT_DUNGEON = {
-	 type = "value",},
-
-MAP_CONTENT_NONE = {
-	 type = "value",},
-
-MAP_FILTER_AVA_GRAVEYARDS = {
-	 type = "value",},
-
-MAP_FILTER_AVA_GRAVEYARD_AREAS = {
-	 type = "value",},
-
-MAP_FILTER_AVA_OBJECTIVES = {
-	 type = "value",},
-
-MAP_FILTER_GROUP_MEMBERS = {
-	 type = "value",},
-
-MAP_FILTER_IMPERIAL_CITY_ENTRANCES = {
-	 type = "value",},
-
-MAP_FILTER_KILL_LOCATIONS = {
-	 type = "value",},
-
-MAP_FILTER_OBJECTIVES = {
-	 type = "value",},
-
-MAP_FILTER_QUESTS = {
-	 type = "value",},
-
-MAP_FILTER_RESOURCE_KEEPS = {
-	 type = "value",},
-
-MAP_FILTER_TRANSIT_LINES = {
-	 type = "value",},
-
-MAP_FILTER_TRANSIT_LINES_ALLIANCE = {
-	 type = "value",},
-
-MAP_FILTER_WAYSHRINES = {
-	 type = "value",},
-
-MAP_FILTER_TYPE_AVA_CYRODIIL = {
-	 type = "value",},
-
-MAP_FILTER_TYPE_AVA_IMPERIAL = {
-	 type = "value",},
-
-MAP_FILTER_TYPE_BATTLEGROUND = {
-	 type = "value",},
-
-MAP_FILTER_TYPE_STANDARD = {
-	 type = "value",},
-
-MAP_PIN_TOOLTIP_COLOR_AVA_OBJECTIVE = {
-	 type = "value",},
-
-MAP_PIN_TOOLTIP_COLOR_INTERACTABLE = {
-	 type = "value",},
-
-MAP_PIN_TOOLTIP_COLOR_MAP_PING = {
-	 type = "value",},
-
-MAP_PIN_TOOLTIP_COLOR_POI = {
-	 type = "value",},
-
-MAP_PIN_TOOLTIP_COLOR_QUEST_ENDING = {
-	 type = "value",},
-
-MAP_PIN_TOOLTIP_COLOR_RALLY_POINT = {
-	 type = "value",},
-
-PING_EVENT_ADDED = {
-	 type = "value",},
-
-PING_EVENT_REMOVED = {
-	 type = "value",},
-
-MAP_TRANSIT_LINE_ALLIANCE_ALL = {
-	 type = "value",},
-
-MAP_TRANSIT_LINE_ALLIANCE_MINE = {
-	 type = "value",},
-
-MARKET_COLORS_CALLOUT_BACKGROUND = {
-	 type = "value",},
-
-MARKET_COLORS_CALLOUT_BACKGROUND_DIMMED = {
-	 type = "value",},
-
-MARKET_COLORS_DIMMED = {
-	 type = "value",},
-
-MARKET_COLORS_INELIGIBLE = {
-	 type = "value",},
-
-MARKET_COLORS_INELIGIBLE_DIMMED = {
-	 type = "value",},
-
-MARKET_COLORS_NEW = {
-	 type = "value",},
-
-MARKET_COLORS_NEW_DIMMED = {
-	 type = "value",},
-
-MARKET_COLORS_ON_SALE = {
-	 type = "value",},
-
-MARKET_COLORS_ON_SALE_DIMMED = {
-	 type = "value",},
-
-MARKET_COLORS_PRODUCT_BACKGROUND_BRIGHTNESS = {
-	 type = "value",},
-
-MARKET_COLORS_PURCHASED = {
-	 type = "value",},
-
-MARKET_COLORS_PURCHASED_DIMMED = {
-	 type = "value",},
-
-MARKET_COLORS_SELECTED = {
-	 type = "value",},
-
-MARKET_COLORS_UNIVERSAL_ITEM = {
-	 type = "value",},
-
-MARKET_COLORS_UNIVERSAL_ITEM_SELECTED = {
-	 type = "value",},
-
-MKCT_CROWNS = {
-	 type = "value",},
-
-MKCT_CROWN_GEMS = {
-	 type = "value",},
-
-MKCT_NONE = {
-	 type = "value",},
-
-MARKET_DISPLAY_GROUP_CROWN_STORE = {
-	 type = "value",},
-
-MARKET_DISPLAY_GROUP_HOUSE_EDITOR = {
-	 type = "value",},
-
-MARKET_DISPLAY_GROUP_HOUSE_PREVIEW = {
-	 type = "value",},
-
-MARKET_FILTER_VIEW_ALL = {
-	 type = "value",},
-
-MARKET_FILTER_VIEW_NOT_PURCHASED = {
-	 type = "value",},
-
-MARKET_FILTER_VIEW_PURCHASED = {
-	 type = "value",},
-
-MARKET_INSTANT_UNLOCK_APPEARANCE_CHANGE_TOKEN = {
-	 type = "value",},
-
-MARKET_INSTANT_UNLOCK_BITE_CURE = {
-	 type = "value",},
-
-MARKET_INSTANT_UNLOCK_CHARACTER_SLOT = {
-	 type = "value",},
-
-MARKET_INSTANT_UNLOCK_ESO_PLUS = {
-	 type = "value",},
-
-MARKET_INSTANT_UNLOCK_NONE = {
-	 type = "value",},
-
-MARKET_INSTANT_UNLOCK_PLAYER_BACKPACK = {
-	 type = "value",},
-
-MARKET_INSTANT_UNLOCK_PLAYER_BANK = {
-	 type = "value",},
-
-MARKET_INSTANT_UNLOCK_RACE_CHANGE_TOKEN = {
-	 type = "value",},
-
-MARKET_INSTANT_UNLOCK_RENAME_TOKEN = {
-	 type = "value",},
-
-MARKET_INSTANT_UNLOCK_VAMPIRE_BITE = {
-	 type = "value",},
-
-MARKET_INSTANT_UNLOCK_WEREWOLF_BITE = {
-	 type = "value",},
-
-MARKET_PRODUCT_PURCHASE_STATE_INSTANT_UNLOCK_COMPLETE = {
-	 type = "value",},
-
-MARKET_PRODUCT_PURCHASE_STATE_INSTANT_UNLOCK_INELIGIBLE = {
-	 type = "value",},
-
-MARKET_PRODUCT_PURCHASE_STATE_NOT_PURCHASED = {
-	 type = "value",},
-
-MARKET_PRODUCT_PURCHASE_STATE_PURCHASED = {
-	 type = "value",},
-
-MARKET_PRODUCT_TYPE_BUNDLE = {
-	 type = "value",},
-
-MARKET_PRODUCT_TYPE_COLLECTIBLE = {
-	 type = "value",},
-
-MARKET_PRODUCT_TYPE_CROWN_CRATE = {
-	 type = "value",},
-
-MARKET_PRODUCT_TYPE_HOUSING = {
-	 type = "value",},
-
-MARKET_PRODUCT_TYPE_INSTANT_UNLOCK = {
-	 type = "value",},
-
-MARKET_PRODUCT_TYPE_ITEM = {
-	 type = "value",},
-
-MARKET_PRODUCT_TYPE_NONE = {
-	 type = "value",},
-
-MARKET_PRODUCT_TYPE_PROMO = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_ALREADY_COMPLETED_INSTANT_UNLOCK = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_COLLECTIBLE_ALREADY = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_COLLECTIONS_DISABLED = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_COMING_SOON = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_FAIL_INSTANT_UNLOCK_REQ_LIST = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_HOUSING_ALREADY_OWNED = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_INVALID_MARKET_COLLECTIBLE = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_INVALID_MARKET_HOUSING = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_INVALID_MARKET_ITEM = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_INVALID_STACK_SIZE = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_MARKET_LOCKED = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_NOT_ENOUGH_CROWN_GEMS = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_NOT_ENOUGH_ROOM = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_NOT_ENOUGH_VC = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_SUCCESS = {
-	 type = "value",},
-
-MARKET_PURCHASE_RESULT_UNIQUE_ITEM_ALREADY = {
-	 type = "value",},
-
-MARKET_STATE_LOCKED = {
-	 type = "value",},
-
-MARKET_STATE_OPEN = {
-	 type = "value",},
-
-MARKET_STATE_UNKNOWN = {
-	 type = "value",},
-
-MARKET_STATE_UPDATING = {
-	 type = "value",},
-
-MEGASERVER_EU = {
-	 type = "value",},
-
-MEGASERVER_NA = {
-	 type = "value",},
-
-MEGASERVER_NONE = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_ALCHEMIST = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_ARTISAN = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_ASSASSIN = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_BARD = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_BEGGAR = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_CHEF = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_CIVIL_SERVANT = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_CLOTHIER = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_COMMONER = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_CRAFTER = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_CULTIST = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_DRUNKARD = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_FARMER = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_FIGHTER = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_FISHER = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_GATHERER = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_GHOST = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_GUARD = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_HEALER = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_HUNTER = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_LABORER = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_MAGE = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_MERCHANT = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_NOBLE = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_NOT_APPLICABLE = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_NUDE = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_ORDINATOR = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_OUTLAW = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_PILGRIM = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_PRIEST = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_PRISONER = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_PROVISIONER = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_SAILOR = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_SCHOLAR = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_SERVANT = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_SKELETON = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_SLAVE = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_SMITH = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_SOLDIER = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_STUDENT = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_THIEF = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_UNDEFINED = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_VAMPIRE = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_WARRIOR = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_WATCHMEN = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_WEREWOLF = {
-	 type = "value",},
-
-MONSTER_SOCIAL_CLASS_WOODWORKER = {
-	 type = "value",},
-
-MOUSE_CONTENT_ACTION = {
-	 type = "value",},
-
-MOUSE_CONTENT_COLLECTIBLE = {
-	 type = "value",},
-
-MOUSE_CONTENT_EMPTY = {
-	 type = "value",},
-
-MOUSE_CONTENT_EQUIPPED_ITEM = {
-	 type = "value",},
-
-MOUSE_CONTENT_INVENTORY_ITEM = {
-	 type = "value",},
-
-MOUSE_CONTENT_QUEST_ITEM = {
-	 type = "value",},
-
-MOUSE_CONTENT_STORE_BUYBACK_ITEM = {
-	 type = "value",},
-
-MOUSE_CONTENT_STORE_ITEM = {
-	 type = "value",},
-
-MOUSE_CONTENT_TRADE_ITEM = {
-	 type = "value",},
-
-MOUSE_DESTROY_ITEM_FAIL_REASON_CRAFTING = {
-	 type = "value",},
-
-MOUSE_DESTROY_ITEM_FAIL_REASON_NONE = {
-	 type = "value",},
-
-MOUSE_DESTROY_ITEM_FAIL_REASON_PLAYER_LOCKED = {
-	 type = "value",},
-
-NAMEPLATE_CHOICE_ALL = {
-	 type = "value",},
-
-NAMEPLATE_CHOICE_ALLY = {
-	 type = "value",},
-
-NAMEPLATE_CHOICE_ALWAYS = {
-	 type = "value",},
-
-NAMEPLATE_CHOICE_CENTER = {
-	 type = "value",},
-
-NAMEPLATE_CHOICE_ENEMY = {
-	 type = "value",},
-
-NAMEPLATE_CHOICE_INJURED = {
-	 type = "value",},
-
-NAMEPLATE_CHOICE_INJURED_OR_TARGETED = {
-	 type = "value",},
-
-NAMEPLATE_CHOICE_INVALID = {
-	 type = "value",},
-
-NAMEPLATE_CHOICE_LEFT = {
-	 type = "value",},
-
-NAMEPLATE_CHOICE_NEVER = {
-	 type = "value",},
-
-NAMEPLATE_CHOICE_NONE = {
-	 type = "value",},
-
-NAMEPLATE_CHOICE_TARGETED = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_ALLIANCE_INDICATORS = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_ALL_HEALTHBARS = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_ALL_NAMEPLATES = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_DEFUNCT_DONT_REMOVE_ = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_DEFUNCT_DONT_REMOVE_ = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_ENEMY_NPC_HEALTHBARS = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_ENEMY_NPC_HEALTHBARS_HIGHLIGHT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_ENEMY_NPC_NAMEPLATES = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_ENEMY_NPC_NAMEPLATES_HIGHLIGHT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_ENEMY_PLAYER_HEALTHBARS = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_ENEMY_PLAYER_HEALTHBARS_HIGHLIGHT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_ENEMY_PLAYER_NAMEPLATES = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_ENEMY_PLAYER_NAMEPLATES_HIGHLIGHT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_FOLLOWER_INDICATORS = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_FRIENDLY_NPC_HEALTHBARS = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_FRIENDLY_NPC_HEALTHBARS_HIGHLIGHT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_FRIENDLY_NPC_NAMEPLATES = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_FRIENDLY_NPC_NAMEPLATES_HIGHLIGHT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_FRIENDLY_PLAYER_HEALTHBARS = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_FRIENDLY_PLAYER_HEALTHBARS_HIGHLIGHT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_FRIENDLY_PLAYER_NAMEPLATES = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_FRIENDLY_PLAYER_NAMEPLATES_HIGHLIGHT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_GROUP_INDICATORS = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_GROUP_MEMBER_HEALTHBARS = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_GROUP_MEMBER_HEALTHBARS_HIGHLIGHT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_GROUP_MEMBER_NAMEPLATES = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_GROUP_MEMBER_NAMEPLATES_HIGHLIGHT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_HEALTHBAR_ALIGNMENT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_HEALTHBAR_CHASE_BAR = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_HEALTHBAR_FRAME_BORDER = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_NEUTRAL_NPC_HEALTHBARS = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_NEUTRAL_NPC_HEALTHBARS_HIGHLIGHT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_NEUTRAL_NPC_NAMEPLATES = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_NEUTRAL_NPC_NAMEPLATES_HIGHLIGHT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_PLAYER_HEALTHBAR = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_PLAYER_HEALTHBAR_HIGHLIGHT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_PLAYER_NAMEPLATE = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_PLAYER_NAMEPLATE_HIGHLIGHT = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_RESURRECT_INDICATORS = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_SHOW_PLAYER_GUILDS = {
-	 type = "value",},
-
-NAMEPLATE_TYPE_SHOW_PLAYER_TITLES = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ALCHEMY_CREATE_EXTRA = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ALCHEMY_CREATE_PERCENT_DISCOUNT = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ALCHEMY_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ALCHEMY_NEGATIVE_DURATION = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ALCHEMY_POTION_DURATION = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ALCHEMY_SHOW_NODES = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ALCHEMY_THIRD_SLOT = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ARMOR_KNOWLEDGE = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ASSAULT_BOUNTY_REDUCTION = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_AVOID_BLADE_OF_WOE_WITNESS_CHANCE = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_BLACKSMITHING_BOOSTER_BONUS = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_BLACKSMITHING_CRAFT_PERCENT_DISCOUNT = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_BLACKSMITHING_EXTRACT_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_BLACKSMITHING_HIRELING_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_BLACKSMITHING_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_BLACKSMITHING_RESEARCH_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_BLACKSMITHING_SHOW_NODES = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_BOUNTY_DECAY = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_CLEMENCY = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_CLEMENCY_ARREST_IMMUNITY = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_CLOTHIER_BOOSTER_BONUS = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_CLOTHIER_CRAFT_PERCENT_DISCOUNT = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_CLOTHIER_EXTRACT_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_CLOTHIER_HIRELING_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_CLOTHIER_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_CLOTHIER_RESEARCH_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_CLOTHIER_SHOW_NODES = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ENCHANTING_CRAFT_PERCENT_DISCOUNT = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ENCHANTING_DECONSTRUCTION_UPGRADE = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ENCHANTING_HIRELING_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ENCHANTING_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ENCHANTING_RARITY_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ENCHANTING_SHOW_NODES = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ENCHANTING_SLOT_IMPROVEMENT = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_ENLIGHTENED = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_EXTRACTION = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_FENCE_SALESMAN = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_FORTUNE_SEEKER = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_GROOM = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_GUARD_KILL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_GUARD_PURSUIT_DISTANCE_REDUCTION = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_HAGGLING = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_HEAT_DECAY = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_IMPATIENCE = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_INVALID = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_MASTER_GATHERER = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_MOUNTED_AGGRO_RADIUS_REDUCTION = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_MURDER_BOUNTY_REDUCTION = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_PICKPOCKET_CHANCE = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_PROVISIONING_CREATE_EXTRA_DRINK = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_PROVISIONING_CREATE_EXTRA_FOOD = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_PROVISIONING_DRINK_DURATION = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_PROVISIONING_FOOD_DURATION = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_PROVISIONING_HIRELING_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_PROVISIONING_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_PROVISIONING_RARITY_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_PROVISIONING_SHOW_NODES = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_SECONDARY_WITNESS_RANGE_REDUCTION = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_SHADOWY_CONNECTIONS = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_SLY = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_SPELLCRAFTING_ABILITIES_LEARNED = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_SPELLCRAFTING_FOCUS_AREA = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_SPELLCRAFTING_FOCUS_CAST_TIME = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_SPELLCRAFTING_FOCUS_CHEAPER = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_SPELLCRAFTING_FOCUS_DURATION = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_SPELLCRAFTING_FOCUS_ULTIMATE = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_SPELLCRAFTING_TABLET_CREATION_TIME = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_SPELLCRAFTING_TABLET_QUALITY = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_TELVAR_MULTIPLIER = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_TIMELY_ESCAPE = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_TRAIT_IDENTIFIER = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_UNUSED = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_WITNESS_RANGE_REDUCTION = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_WOODWORKING_BOOSTER_BONUS = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_WOODWORKING_CRAFT_PERCENT_DISCOUNT = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_WOODWORKING_EXTRACT_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_WOODWORKING_HIRELING_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_WOODWORKING_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_WOODWORKING_RESEARCH_LEVEL = {
-	 type = "value",},
-
-NON_COMBAT_BONUS_WOODWORKING_SHOW_NODES = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_CAMPAIGN_QUEUE = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_COLLECTIONS = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_CRAFT_BAG_AUTO_TRANSFER = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_CUSTOMER_SERVICE = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_DUEL = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_ESO_PLUS_SUBSCRIPTION = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_FRIEND = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_GROUP = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_GROUP_ELECTION = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_GUILD = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_GUILD_MOTD = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_LEADERBOARD = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_LFG = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_PLEDGE_OF_MARA = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_POINTS_RESET = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_QUEST_SHARE = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_RESURRECT = {
-	 type = "value",},
-
-NOTIFICATION_TYPE_TRADE = {
-	 type = "value",},
-
-NUMBER_ABBREVIATION_PRECISION_HUNDREDTHS = {
-	 type = "value",},
-
-NUMBER_ABBREVIATION_PRECISION_LARGEST_UNIT = {
-	 type = "value",},
-
-NUMBER_ABBREVIATION_PRECISION_TENTHS = {
-	 type = "value",},
-
-OBJECTIVE_DESIGNATION_A = {
-	 type = "value",},
-
-OBJECTIVE_DESIGNATION_B = {
-	 type = "value",},
-
-OBJECTIVE_DESIGNATION_C = {
-	 type = "value",},
-
-OBJECTIVE_DESIGNATION_D = {
-	 type = "value",},
-
-OBJECTIVE_DESIGNATION_NONE = {
-	 type = "value",},
-
-OBJECTIVE_PIN_TIER_PRIMARY = {
-	 type = "value",},
-
-OBJECTIVE_PIN_TIER_RETURN = {
-	 type = "value",},
-
-OBJECTIVE_PIN_TIER_SPAWN = {
-	 type = "value",},
-
-OBJECTIVE_ARTIFACT_DEFENSIVE = {
-	 type = "value",},
-
-OBJECTIVE_ARTIFACT_OFFENSIVE = {
-	 type = "value",},
-
-OBJECTIVE_ARTIFACT_RETURN = {
-	 type = "value",},
-
-OBJECTIVE_ASSAULT = {
-	 type = "value",},
-
-OBJECTIVE_BALL = {
-	 type = "value",},
-
-OBJECTIVE_CAPTURE_AREA = {
-	 type = "value",},
-
-OBJECTIVE_CAPTURE_POINT = {
-	 type = "value",},
-
-OBJECTIVE_FLAG_CAPTURE = {
-	 type = "value",},
-
-OBJECTIVE_NONE = {
-	 type = "value",},
-
-OBJECTIVE_RETURN = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_CHAT_BUBBLE_EMOTE_ENABLED = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_CHAT_BUBBLE_GROUP_ENABLED = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_CHAT_BUBBLE_SAY_ENABLED = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_CHAT_BUBBLE_WHISPER_ENABLED = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_CHAT_BUBBLE_YELL_ENABLED = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_GAMEPAD_PREGAME_PLAY_CINEMATIC = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_GAMEPAD_PREGAME_SERVER_SELECT = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_GAMEPAD_PREGAME_VIEW_CREDITS = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_GAMMA_ADJUST = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_RESET_TUTORIALS = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SCREEN_ADJUST = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_EMOTE = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_GROUP = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_GUILD = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_GUILD = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_GUILD = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_GUILD = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_GUILD = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_NPC = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_OFFICER = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_OFFICER = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_OFFICER = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_OFFICER = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_OFFICER = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_SAY = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_SYSTEM = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_WHISPER_INC = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_WHISPER_OUT = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_YELL = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_ZONE = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_ZONE_ENG = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_ZONE_FRA = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_ZONE_GER = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_ZONE_JPN = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_TITLE_GUILD = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_TITLE_GUILD = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_TITLE_GUILD = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_TITLE_GUILD = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_TITLE_GUILD = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_GAMEPAD_TEXT_SIZE = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_MIN_ALPHA = {
-	 type = "value",},
-
-OPTIONS_CUSTOM_SETTING_SOCIAL_TEXT_SIZE = {
-	 type = "value",},
-
-OWNERSHIP_STATUS_ANY = {
-	 type = "value",},
-
-OWNERSHIP_STATUS_NOT_STOLEN = {
-	 type = "value",},
-
-OWNERSHIP_STATUS_STOLEN = {
-	 type = "value",},
-
-FEEDBACK_TYPE_INVALID = {
-	 type = "value",},
-
-FEEDBACK_TYPE_QUEST = {
-	 type = "value",},
-
-PICKPOCKET_DIFFICULTY_EASY = {
-	 type = "value",},
-
-PICKPOCKET_DIFFICULTY_HARD = {
-	 type = "value",},
-
-PICKPOCKET_DIFFICULTY_INVALID = {
-	 type = "value",},
-
-PICKPOCKET_DIFFICULTY_MEDIUM = {
-	 type = "value",},
-
-ACCOUNT_LABEL_PC = {
-	 type = "value",},
-
-ACCOUNT_LABEL_PS = {
-	 type = "value",},
-
-ACCOUNT_LABEL_XBOX = {
-	 type = "value",},
-
-PLATFORM_SERVICE_TYPE_DMM = {
-	 type = "value",},
-
-PLATFORM_SERVICE_TYPE_PSN = {
-	 type = "value",},
-
-PLATFORM_SERVICE_TYPE_STEAM = {
-	 type = "value",},
-
-PLATFORM_SERVICE_TYPE_XBL = {
-	 type = "value",},
-
-PLATFORM_SERVICE_TYPE_ZOS = {
-	 type = "value",},
-
-PLATFORM_STORE_LABEL_DMM = {
-	 type = "value",},
-
-PLATFORM_STORE_LABEL_PSN = {
-	 type = "value",},
-
-PLATFORM_STORE_LABEL_STEAM = {
-	 type = "value",},
-
-PLATFORM_STORE_LABEL_XBL = {
-	 type = "value",},
-
-PLATFORM_STORE_LABEL_ZOS = {
-	 type = "value",},
-
-PLAYER_EMOTE_PLAY_FAILURE_GENERIC = {
-	 type = "value",},
-
-PLAYER_EMOTE_PLAY_FAILURE_LOCKED = {
-	 type = "value",},
-
-PLAYER_STATUS_AWAY = {
-	 type = "value",},
-
-PLAYER_STATUS_DO_NOT_DISTURB = {
-	 type = "value",},
-
-PLAYER_STATUS_OFFLINE = {
-	 type = "value",},
-
-PLAYER_STATUS_ONLINE = {
-	 type = "value",},
-
-PLEDGE_OF_MARA_RESPONSE_ACCEPT = {
-	 type = "value",},
-
-PLEDGE_OF_MARA_RESPONSE_DECLINE = {
-	 type = "value",},
-
-POI_TYPE_ACHIEVEMENT = {
-	 type = "value",},
-
-POI_TYPE_ACHIEVEMENT_COMPONENT = {
-	 type = "value",},
-
-POI_TYPE_GROUP_DUNGEON = {
-	 type = "value",},
-
-POI_TYPE_HOUSE = {
-	 type = "value",},
-
-POI_TYPE_OBJECTIVE = {
-	 type = "value",},
-
-POI_TYPE_PUBLIC_DUNGEON = {
-	 type = "value",},
-
-POI_TYPE_STANDARD = {
-	 type = "value",},
-
-POI_TYPE_WAYSHRINE = {
-	 type = "value",},
-
-PRIMARY_PLAYER_NAME_SETTING_PREFER_CHARACTER = {
-	 type = "value",},
-
-PRIMARY_PLAYER_NAME_SETTING_PREFER_USERID = {
-	 type = "value",},
-
-PROGRESSION_COLOR_AVA_RANK_END = {
-	 type = "value",},
-
-PROGRESSION_COLOR_AVA_RANK_START = {
-	 type = "value",},
-
-PROGRESSION_COLOR_CP_HEALTH_END = {
-	 type = "value",},
-
-PROGRESSION_COLOR_CP_HEALTH_START = {
-	 type = "value",},
-
-PROGRESSION_COLOR_CP_MAGICKA_END = {
-	 type = "value",},
-
-PROGRESSION_COLOR_CP_MAGICKA_START = {
-	 type = "value",},
-
-PROGRESSION_COLOR_CP_STAMINA_END = {
-	 type = "value",},
-
-PROGRESSION_COLOR_CP_STAMINA_START = {
-	 type = "value",},
-
-PROGRESSION_COLOR_EARNED = {
-	 type = "value",},
-
-PROGRESSION_COLOR_LOCKED = {
-	 type = "value",},
-
-PROGRESSION_COLOR_PURCHASED = {
-	 type = "value",},
-
-PROGRESSION_COLOR_PURCHASED_UNSELECTED = {
-	 type = "value",},
-
-PROGRESSION_COLOR_SKILL_XP_END = {
-	 type = "value",},
-
-PROGRESSION_COLOR_SKILL_XP_GLOW = {
-	 type = "value",},
-
-PROGRESSION_COLOR_SKILL_XP_START = {
-	 type = "value",},
-
-PROGRESSION_COLOR_UNEARNED = {
-	 type = "value",},
-
-PROGRESSION_COLOR_UNPURCHASED = {
-	 type = "value",},
-
-PROGRESSION_COLOR_VP_END = {
-	 type = "value",},
-
-PROGRESSION_COLOR_VP_GLOW = {
-	 type = "value",},
-
-PROGRESSION_COLOR_VP_START = {
-	 type = "value",},
-
-PROGRESSION_COLOR_XP_END = {
-	 type = "value",},
-
-PROGRESSION_COLOR_XP_FULL_END = {
-	 type = "value",},
-
-PROGRESSION_COLOR_XP_FULL_START = {
-	 type = "value",},
-
-PROGRESSION_COLOR_XP_GLOW = {
-	 type = "value",},
-
-PROGRESSION_COLOR_XP_MORPH_END = {
-	 type = "value",},
-
-PROGRESSION_COLOR_XP_MORPH_START = {
-	 type = "value",},
-
-PROGRESSION_COLOR_XP_START = {
-	 type = "value",},
-
-PROSPECTIVE_PICKPOCKET_RESULT_CAN_ATTEMPT = {
-	 type = "value",},
-
-PROSPECTIVE_PICKPOCKET_RESULT_COOLDOWN = {
-	 type = "value",},
-
-PROSPECTIVE_PICKPOCKET_RESULT_INVENTORY_FULL = {
-	 type = "value",},
-
-PROSPECTIVE_PICKPOCKET_RESULT_OUT_OF_POSITION = {
-	 type = "value",},
-
-PROSPECTIVE_PICKPOCKET_RESULT_OUT_OF_RANGE = {
-	 type = "value",},
-
-PROVISIONER_SPECIAL_INGREDIENT_TYPE_FLAVORING = {
-	 type = "value",},
-
-PROVISIONER_SPECIAL_INGREDIENT_TYPE_FURNISHING = {
-	 type = "value",},
-
-PROVISIONER_SPECIAL_INGREDIENT_TYPE_NONE = {
-	 type = "value",},
-
-PROVISIONER_SPECIAL_INGREDIENT_TYPE_SPICES = {
-	 type = "value",},
-
-PVP_SYSTEM_CYRODIIL = {
-	 type = "value",},
-
-PVP_SYSTEM_INHERIT_FROM_KEEP = {
-	 type = "value",},
-
-PVP_SYSTEM_NONE = {
-	 type = "value",},
-
-QUEST_REMOVED_TYPE_ABANDONED = {
-	 type = "value",},
-
-QUEST_REMOVED_TYPE_COMPLETED = {
-	 type = "value",},
-
-QUEST_REPEAT_DAILY = {
-	 type = "value",},
-
-QUEST_REPEAT_NOT_REPEATABLE = {
-	 type = "value",},
-
-QUEST_REPEAT_REPEATABLE = {
-	 type = "value",},
-
-QUEST_STEP_TYPE_AND = {
-	 type = "value",},
-
-QUEST_STEP_TYPE_BRANCH = {
-	 type = "value",},
-
-QUEST_STEP_TYPE_END = {
-	 type = "value",},
-
-QUEST_STEP_TYPE_OR = {
-	 type = "value",},
-
-QUEST_STEP_VISIBILITY_HIDDEN = {
-	 type = "value",},
-
-QUEST_STEP_VISIBILITY_HINT = {
-	 type = "value",},
-
-QUEST_STEP_VISIBILITY_OPTIONAL = {
-	 type = "value",},
-
-QUEST_TYPE_AVA = {
-	 type = "value",},
-
-QUEST_TYPE_AVA_GRAND = {
-	 type = "value",},
-
-QUEST_TYPE_AVA_GROUP = {
-	 type = "value",},
-
-QUEST_TYPE_BATTLEGROUND = {
-	 type = "value",},
-
-QUEST_TYPE_CLASS = {
-	 type = "value",},
-
-QUEST_TYPE_CRAFTING = {
-	 type = "value",},
-
-QUEST_TYPE_DUNGEON = {
-	 type = "value",},
-
-QUEST_TYPE_GROUP = {
-	 type = "value",},
-
-QUEST_TYPE_GUILD = {
-	 type = "value",},
-
-QUEST_TYPE_HOLIDAY_EVENT = {
-	 type = "value",},
-
-QUEST_TYPE_MAIN_STORY = {
-	 type = "value",},
-
-QUEST_TYPE_NONE = {
-	 type = "value",},
-
-QUEST_TYPE_RAID = {
-	 type = "value",},
-
-QUICK_CAST_GROUND_ABILITIES_CHOICE_AUTOMATIC = {
-	 type = "value",},
-
-QUICK_CAST_GROUND_ABILITIES_CHOICE_OFF = {
-	 type = "value",},
-
-QUICK_CAST_GROUND_ABILITIES_CHOICE_ON = {
-	 type = "value",},
-
-RAID_CATEGORY_CHALLENGE = {
-	 type = "value",},
-
-RAID_CATEGORY_TRIAL = {
-	 type = "value",},
-
-RAID_LIFE_VISIBILITY_CHOICE_AUTOMATIC = {
-	 type = "value",},
-
-RAID_LIFE_VISIBILITY_CHOICE_OFF = {
-	 type = "value",},
-
-RAID_LIFE_VISIBILITY_CHOICE_ON = {
-	 type = "value",},
-
-RAID_POINT_REASON_BONUS_ACTIVITY_HIGH = {
-	 type = "value",},
-
-RAID_POINT_REASON_BONUS_ACTIVITY_LOW = {
-	 type = "value",},
-
-RAID_POINT_REASON_BONUS_ACTIVITY_MEDIUM = {
-	 type = "value",},
-
-RAID_POINT_REASON_BONUS_POINT_ONE = {
-	 type = "value",},
-
-RAID_POINT_REASON_BONUS_POINT_THREE = {
-	 type = "value",},
-
-RAID_POINT_REASON_BONUS_POINT_TWO = {
-	 type = "value",},
-
-RAID_POINT_REASON_KILL_BANNERMEN = {
-	 type = "value",},
-
-RAID_POINT_REASON_KILL_BOSS = {
-	 type = "value",},
-
-RAID_POINT_REASON_KILL_CHAMPION = {
-	 type = "value",},
-
-RAID_POINT_REASON_KILL_MINIBOSS = {
-	 type = "value",},
-
-RAID_POINT_REASON_KILL_NORMAL_MONSTER = {
-	 type = "value",},
-
-RAID_POINT_REASON_KILL_NOXP_MONSTER = {
-	 type = "value",},
-
-RAID_POINT_REASON_LIFE_REMAINING = {
-	 type = "value",},
-
-RAID_POINT_REASON_SOLO_ARENA_COMPLETE = {
-	 type = "value",},
-
-RAID_POINT_REASON_SOLO_ARENA_PICKUP_FOUR = {
-	 type = "value",},
-
-RAID_POINT_REASON_SOLO_ARENA_PICKUP_ONE = {
-	 type = "value",},
-
-RAID_POINT_REASON_SOLO_ARENA_PICKUP_THREE = {
-	 type = "value",},
-
-RAID_POINT_REASON_SOLO_ARENA_PICKUP_TWO = {
-	 type = "value",},
-
-RATINGS_BOARD_BR = {
-	 type = "value",},
-
-RATINGS_BOARD_ESRB = {
-	 type = "value",},
-
-RATINGS_BOARD_FPB = {
-	 type = "value",},
-
-RATINGS_BOARD_NONE = {
-	 type = "value",},
-
-RATINGS_BOARD_OFLC = {
-	 type = "value",},
-
-RATINGS_BOARD_PEGI = {
-	 type = "value",},
-
-RATINGS_BOARD_RR = {
-	 type = "value",},
-
-RATINGS_BOARD_USK = {
-	 type = "value",},
-
-REALM_SELECT_METHOD_DEFAULT_REALM = {
-	 type = "value",},
-
-REALM_SELECT_METHOD_LAST_REALM = {
-	 type = "value",},
-
-REALM_SELECT_METHOD_USER_SELECTS = {
-	 type = "value",},
-
-RECIPE_CRAFTING_SYSTEM_ALCHEMY_FORMULAE = {
-	 type = "value",},
-
-RECIPE_CRAFTING_SYSTEM_BLACKSMITHING_DIAGRAMS = {
-	 type = "value",},
-
-RECIPE_CRAFTING_SYSTEM_CLOTHIER_PATTERNS = {
-	 type = "value",},
-
-RECIPE_CRAFTING_SYSTEM_ENCHANTING_SCHEMATICS = {
-	 type = "value",},
-
-RECIPE_CRAFTING_SYSTEM_INVALID = {
-	 type = "value",},
-
-RECIPE_CRAFTING_SYSTEM_PROVISIONING_DESIGNS = {
-	 type = "value",},
-
-RECIPE_CRAFTING_SYSTEM_WOODWORKING_BLUEPRINTS = {
-	 type = "value",},
-
-REFLECTION_QUALITY_HIGH = {
-	 type = "value",},
-
-REFLECTION_QUALITY_LOW = {
-	 type = "value",},
-
-REFLECTION_QUALITY_MEDIUM = {
-	 type = "value",},
-
-REFLECTION_QUALITY_OFF = {
-	 type = "value",},
-
-REGISTER_FILTER_ABILITY_ID = {
-	 type = "value",},
-
-REGISTER_FILTER_BAG_ID = {
-	 type = "value",},
-
-REGISTER_FILTER_COMBAT_RESULT = {
-	 type = "value",},
-
-REGISTER_FILTER_INVALID = {
-	 type = "value",},
-
-REGISTER_FILTER_INVENTORY_UPDATE_REASON = {
-	 type = "value",},
-
-REGISTER_FILTER_IS_ERROR = {
-	 type = "value",},
-
-REGISTER_FILTER_IS_IN_GAMEPAD_PREFERRED_MODE = {
-	 type = "value",},
-
-REGISTER_FILTER_IS_NEW_ITEM = {
-	 type = "value",},
-
-REGISTER_FILTER_POWER_TYPE = {
-	 type = "value",},
-
-REGISTER_FILTER_SETTING_SYSTEM_TYPE = {
-	 type = "value",},
-
-REGISTER_FILTER_SOURCE_COMBAT_UNIT_TYPE = {
-	 type = "value",},
-
-REGISTER_FILTER_TARGET_COMBAT_UNIT_TYPE = {
-	 type = "value",},
-
-REGISTER_FILTER_UNIT_TAG = {
-	 type = "value",},
-
-REGISTER_FILTER_UNIT_TAG_PREFIX = {
-	 type = "value",},
-
-REGISTER_FILTER_VIBRATION_FILTER = {
-	 type = "value",},
-
-REMOTE_SCENE_STATE_CHANGE_ORIGIN_INGAME = {
-	 type = "value",},
-
-REMOTE_SCENE_STATE_CHANGE_ORIGIN_INTERNAL = {
-	 type = "value",},
-
-REMOTE_SCENE_STATE_CHANGE_ORIGIN_PREGAME = {
-	 type = "value",},
-
-REMOTE_SCENE_STATE_CHANGE_TYPE_HIDE = {
-	 type = "value",},
-
-REMOTE_SCENE_STATE_CHANGE_TYPE_POP = {
-	 type = "value",},
-
-REMOTE_SCENE_STATE_CHANGE_TYPE_PUSH = {
-	 type = "value",},
-
-REMOTE_SCENE_STATE_CHANGE_TYPE_SHOW = {
-	 type = "value",},
-
-REMOTE_SCENE_STATE_CHANGE_TYPE_SWAP = {
-	 type = "value",},
-
-REPORT_PLAYER_REASON_BEHAVIOR = {
-	 type = "value",},
-
-REPORT_PLAYER_REASON_BOTTING = {
-	 type = "value",},
-
-REPORT_PLAYER_REASON_CHAT_SPAM = {
-	 type = "value",},
-
-REPORT_PLAYER_REASON_FRIEND_REQUEST_SPAM = {
-	 type = "value",},
-
-REPORT_PLAYER_REASON_GUILD_REQUEST_SPAM = {
-	 type = "value",},
-
-REPORT_PLAYER_REASON_MAIL_SPAM = {
-	 type = "value",},
-
-REQUEST_READ_MAIL_RESULT_ALREADY_REQUESTED = {
-	 type = "value",},
-
-REQUEST_READ_MAIL_RESULT_NOT_IN_MAIL_INTERACTION = {
-	 type = "value",},
-
-REQUEST_READ_MAIL_RESULT_NO_SUCH_MAIL = {
-	 type = "value",},
-
-REQUEST_READ_MAIL_RESULT_SUCCESS_CACHED = {
-	 type = "value",},
-
-REQUEST_READ_MAIL_RESULT_SUCCESS_SERVER_REQUESTED = {
-	 type = "value",},
-
-RESOURCE_BARS_SETTING_CHOICE_ALWAYS_SHOW = {
-	 type = "value",},
-
-RESOURCE_BARS_SETTING_CHOICE_AUTOMATIC = {
-	 type = "value",},
-
-RESOURCE_BARS_SETTING_CHOICE_DONT_SHOW = {
-	 type = "value",},
-
-RESOURCE_NUMBERS_SETTING_NUMBER_AND_PERCENT = {
-	 type = "value",},
-
-RESOURCE_NUMBERS_SETTING_NUMBER_ONLY = {
-	 type = "value",},
-
-RESOURCE_NUMBERS_SETTING_OFF = {
-	 type = "value",},
-
-RESOURCE_NUMBERS_SETTING_PERCENT_ONLY = {
-	 type = "value",},
-
-REWARD_ITEM_TYPE_COLLECTIBLE = {
-	 type = "value",},
-
-REWARD_ITEM_TYPE_ITEM = {
-	 type = "value",},
-
-REWARD_TYPE_ALLIANCE_POINTS = {
-	 type = "value",},
-
-REWARD_TYPE_AUTO_ITEM = {
-	 type = "value",},
-
-REWARD_TYPE_INSPIRATION = {
-	 type = "value",},
-
-REWARD_TYPE_MONEY = {
-	 type = "value",},
-
-REWARD_TYPE_NONE = {
-	 type = "value",},
-
-REWARD_TYPE_PARTIAL_SKILL_POINTS = {
-	 type = "value",},
-
-REWARD_TYPE_SKILL_LINE = {
-	 type = "value",},
-
-REWARD_TYPE_TELVAR_STONES = {
-	 type = "value",},
-
-REWARD_TYPE_UNUSED = {
-	 type = "value",},
-
-REWARD_TYPE_WRIT_VOUCHERS = {
-	 type = "value",},
-
-RIDING_TRAIN_SOURCE_INITIALIZE = {
-	 type = "value",},
-
-RIDING_TRAIN_SOURCE_ITEM = {
-	 type = "value",},
-
-RIDING_TRAIN_SOURCE_STABLES = {
-	 type = "value",},
-
-RIDING_TRAIN_CARRYING_CAPACITY = {
-	 type = "value",},
-
-RIDING_TRAIN_INVALID = {
-	 type = "value",},
-
-RIDING_TRAIN_SPEED = {
-	 type = "value",},
-
-RIDING_TRAIN_STAMINA = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_ABSORBED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_ALLIANCE_POINTS = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_BLADETURN = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_BLOCKED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_BLOCKED_DAMAGE = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_DAMAGE = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_DAMAGE_CRIT = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_DAMAGE_IMMUNE = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_DAMAGE_SHIELDED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_DEBUG_MESSAGE = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_DEFENDED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_DISARMED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_DISORIENTED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_DODGED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_DOT_IMMUNE = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_DOT_TICK = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_DOT_TICK_CRIT = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_EXPERIENCE_POINTS = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_FALL_DAMAGE = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_FEARED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_HEAL = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_HEAL_CRIT = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_HOT_TICK = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_HOT_TICK_CRIT = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_IMMUNE = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_INTERCEPTED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_INTERRUPT = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_KNOCKBACK = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_LEVITATED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_MISS = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_NONE = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_OFFBALANCE = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_PACIFIED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_PARRIED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_PARTIAL_RESIST = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_REFLECTED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_RESIST = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_ROOTED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_SILENCED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_SNARED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_SPEED_BOOST = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_SST_COMBAT = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_SST_MOVEMENT = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_SST_STATE = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_STAGGERED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_STUNNED = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_WEAPONSWAP = {
-	 type = "value",},
-
-SCT_EVENT_TYPE_WRONG_WEAPON = {
-	 type = "value",},
-
-SLD_ANSWER_NO = {
-	 type = "value",},
-
-SLD_ANSWER_YES = {
-	 type = "value",},
-
-SLD_ERROR_ALLOW_OVERWRITE = {
-	 type = "value",},
-
-SLD_ERROR_FAILED_LOAD = {
-	 type = "value",},
-
-SLD_ERROR_FAILED_SAVE = {
-	 type = "value",},
-
-SLD_ERROR_FILE_CORRUPT = {
-	 type = "value",},
-
-SLD_ERROR_NO_SAVE_CREATED = {
-	 type = "value",},
-
-SLD_ERROR_NO_SAVE_DEVICE_SELECTED = {
-	 type = "value",},
-
-SLD_ERROR_OUT_OF_SPACE = {
-	 type = "value",},
-
-SLD_ERROR_SAVE_DEST_REMOVED = {
-	 type = "value",},
-
-SCALE_LEVEL_CONSTRAINT_CHAMPION_RANK_MIN_CHAMPION_RANK_MAX = {
-	 type = "value",},
-
-SCALE_LEVEL_CONSTRAINT_NORMAL_MIN_CHAMPION_RANK_MAX = {
-	 type = "value",},
-
-SCALE_LEVEL_CONSTRAINT_NORMAL_MIN_NORMAL_MAX = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_ASSISTS = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_CAPTURE_DEFENSE_POINTS = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_CAPTURE_KILLED_ATTACKER = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_CAPTURE_KILLED_DEFENDER = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_DAMAGED_FLAG_CARRIER = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_DAMAGE_DONE = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_DAMAGE_TAKEN = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_DEATH = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_FLAG_CAPTURED = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_HEALED_FLAG_CARRIER = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_HEALING_DEFENDERS = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_HEALING_DONE = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_KILL = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_KILLED_FLAG_CARRIER = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_KILL_STREAK = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_NONE = {
-	 type = "value",},
-
-SCORE_TRACKER_TYPE_SCORE = {
-	 type = "value",},
-
-SERVICE_TOKEN_APPEARANCE_CHANGE = {
-	 type = "value",},
-
-SERVICE_TOKEN_NAME_CHANGE = {
-	 type = "value",},
-
-SERVICE_TOKEN_NONE = {
-	 type = "value",},
-
-SERVICE_TOKEN_RACE_CHANGE = {
-	 type = "value",},
-
-SETTING_PANEL_AUDIO = {
-	 type = "value",},
-
-SETTING_PANEL_CAMERA = {
-	 type = "value",},
-
-SETTING_PANEL_CINEMATIC = {
-	 type = "value",},
-
-SETTING_PANEL_COMBAT = {
-	 type = "value",},
-
-SETTING_PANEL_DEBUG = {
-	 type = "value",},
-
-SETTING_PANEL_GAMEPLAY = {
-	 type = "value",},
-
-SETTING_PANEL_INTERFACE = {
-	 type = "value",},
-
-SETTING_PANEL_NAMEPLATES = {
-	 type = "value",},
-
-SETTING_PANEL_SOCIAL = {
-	 type = "value",},
-
-SETTING_PANEL_VIDEO = {
-	 type = "value",},
-
-SETTING_TYPE_ACTION_BARS = {
-	 type = "value",},
-
-SETTING_TYPE_ACTIVE_COMBAT_TIP = {
-	 type = "value",},
-
-SETTING_TYPE_AUDIO = {
-	 type = "value",},
-
-SETTING_TYPE_BUFFS = {
-	 type = "value",},
-
-SETTING_TYPE_CAMERA = {
-	 type = "value",},
-
-SETTING_TYPE_CHAT_BUBBLE = {
-	 type = "value",},
-
-SETTING_TYPE_CHAT_GLOBALS = {
-	 type = "value",},
-
-SETTING_TYPE_CHAT_TABS = {
-	 type = "value",},
-
-SETTING_TYPE_COMBAT = {
-	 type = "value",},
-
-SETTING_TYPE_DEVELOPER_DEBUG = {
-	 type = "value",},
-
-SETTING_TYPE_GAMEPAD = {
-	 type = "value",},
-
-SETTING_TYPE_GRAPHICS = {
-	 type = "value",},
-
-SETTING_TYPE_IN_WORLD = {
-	 type = "value",},
-
-SETTING_TYPE_LANGUAGE = {
-	 type = "value",},
-
-SETTING_TYPE_LOOT = {
-	 type = "value",},
-
-SETTING_TYPE_NAMEPLATES = {
-	 type = "value",},
-
-SETTING_TYPE_SUBTITLES = {
-	 type = "value",},
-
-SETTING_TYPE_TOOLTIPS = {
-	 type = "value",},
-
-SETTING_TYPE_TUTORIAL = {
-	 type = "value",},
-
-SETTING_TYPE_UI = {
-	 type = "value",},
-
-SETTING_TYPE_VOICE = {
-	 type = "value",},
-
-SHADOWS_CHOICE_HIGH = {
-	 type = "value",},
-
-SHADOWS_CHOICE_LOW = {
-	 type = "value",},
-
-SHADOWS_CHOICE_MEDIUM = {
-	 type = "value",},
-
-SHADOWS_CHOICE_OFF = {
-	 type = "value",},
-
-SHADOWS_CHOICE_PS = {
-	 type = "value",},
-
-SHADOWS_CHOICE_ULTRA = {
-	 type = "value",},
-
-SHADOWS_CHOICE_XB = {
-	 type = "value",},
-
-SIEGE_CAMERA_CHOICE_CONSTRAINED = {
-	 type = "value",},
-
-SIEGE_CAMERA_CHOICE_FREE = {
-	 type = "value",},
-
-SIEGE_TYPE_BALLISTA = {
-	 type = "value",},
-
-SIEGE_TYPE_BATTLE_STANDARD = {
-	 type = "value",},
-
-SIEGE_TYPE_CATAPULT = {
-	 type = "value",},
-
-SIEGE_TYPE_GRAVEYARD = {
-	 type = "value",},
-
-SIEGE_TYPE_MONSTER = {
-	 type = "value",},
-
-SIEGE_TYPE_NONE = {
-	 type = "value",},
-
-SIEGE_TYPE_OIL = {
-	 type = "value",},
-
-SIEGE_TYPE_RAM = {
-	 type = "value",},
-
-SIEGE_TYPE_TREBUCHET = {
-	 type = "value",},
-
-SIEGE_TYPE_UNIVERSAL = {
-	 type = "value",},
-
-SKILL_GROWTH_TYPE_AP = {
-	 type = "value",},
-
-SKILL_GROWTH_TYPE_EXP = {
-	 type = "value",},
-
-SKILL_GROWTH_TYPE_INSPIRATION = {
-	 type = "value",},
-
-SKILL_GROWTH_TYPE_JUSTICE_THIEF = {
-	 type = "value",},
-
-SKILL_GROWTH_TYPE_KEEP = {
-	 type = "value",},
-
-SKILL_GROWTH_TYPE_SIEGE = {
-	 type = "value",},
-
-SKILL_TOOLTIP_TEXT_COLOR_BODY = {
-	 type = "value",},
-
-SKILL_TOOLTIP_TEXT_COLOR_NAME = {
-	 type = "value",},
-
-SKILL_TYPE_ARMOR = {
-	 type = "value",},
-
-SKILL_TYPE_AVA = {
-	 type = "value",},
-
-SKILL_TYPE_CHAMPION = {
-	 type = "value",},
-
-SKILL_TYPE_CLASS = {
-	 type = "value",},
-
-SKILL_TYPE_GUILD = {
-	 type = "value",},
-
-SKILL_TYPE_NONE = {
-	 type = "value",},
-
-SKILL_TYPE_RACIAL = {
-	 type = "value",},
-
-SKILL_TYPE_TRADESKILL = {
-	 type = "value",},
-
-SKILL_TYPE_WEAPON = {
-	 type = "value",},
-
-SKILL_TYPE_WORLD = {
-	 type = "value",},
-
 SOCKET_TYPE_AMMO = {
 	 type = "value",},
 
@@ -8908,60 +9274,6 @@ SOUL_GEM_TYPE_EMPTY = {
 	 type = "value",},
 
 SOUL_GEM_TYPE_FILLED = {
-	 type = "value",},
-
-SPAM_WARNING_TYPE_ACTION_SLOTS = {
-	 type = "value",},
-
-SPAM_WARNING_TYPE_CHAT_MESSAGE = {
-	 type = "value",},
-
-SPAM_WARNING_TYPE_GUILD_BANK_SELECTOR = {
-	 type = "value",},
-
-SPAM_WARNING_TYPE_GUILD_DESCRIPTION = {
-	 type = "value",},
-
-SPAM_WARNING_TYPE_GUILD_MOTD = {
-	 type = "value",},
-
-SPAM_WARNING_TYPE_GUILD_RANK_CHANGE = {
-	 type = "value",},
-
-SPAM_WARNING_TYPE_HOUSE_SAFE_LOC = {
-	 type = "value",},
-
-SPAM_WARNING_TYPE_NONE = {
-	 type = "value",},
-
-SPAM_WARNING_TYPE_TRADE_INVENTORY = {
-	 type = "value",},
-
-SPECIAL_MOVE_INDEX_BLOCK = {
-	 type = "value",},
-
-SPECIAL_MOVE_INDEX_CROUCH = {
-	 type = "value",},
-
-SPECIAL_MOVE_INDEX_INTERRUPT = {
-	 type = "value",},
-
-SPECIAL_MOVE_INDEX_ROLL_DODGE = {
-	 type = "value",},
-
-SPECIAL_MOVE_INDEX_SPRINT = {
-	 type = "value",},
-
-SPECIAL_STAT_TYPE_DISABLE_XP = {
-	 type = "value",},
-
-SPECIAL_STAT_TYPE_NONE = {
-	 type = "value",},
-
-SPECIALIZED_COLLECTIBLE_TYPE_BUST = {
-	 type = "value",},
-
-SPECIALIZED_COLLECTIBLE_TYPE_NONE = {
 	 type = "value",},
 
 SPECIALIZED_ITEMTYPE_ADDITIVE = {
@@ -9004,6 +9316,9 @@ SPECIALIZED_ITEMTYPE_COLLECTIBLE_RARE_FISH = {
 	 type = "value",},
 
 SPECIALIZED_ITEMTYPE_CONTAINER = {
+	 type = "value",},
+
+SPECIALIZED_ITEMTYPE_CONTAINER_EVENT = {
 	 type = "value",},
 
 SPECIALIZED_ITEMTYPE_COSTUME = {
@@ -9103,6 +9418,9 @@ SPECIALIZED_ITEMTYPE_FURNISHING_MATERIAL_CLOTHIER = {
 	 type = "value",},
 
 SPECIALIZED_ITEMTYPE_FURNISHING_MATERIAL_ENCHANTING = {
+	 type = "value",},
+
+SPECIALIZED_ITEMTYPE_FURNISHING_MATERIAL_PROVISIONING = {
 	 type = "value",},
 
 SPECIALIZED_ITEMTYPE_FURNISHING_MATERIAL_WOODWORKING = {
@@ -9321,127 +9639,1087 @@ SPECIALIZED_ITEMTYPE_WOODWORKING_MATERIAL = {
 SPECIALIZED_ITEMTYPE_WOODWORKING_RAW_MATERIAL = {
 	 type = "value",},
 
-STAT_BONUS_OPTION_APPLY_BONUS = {
+VISUAL_LAYER_COSTUME = {
 	 type = "value",},
 
-STAT_BONUS_OPTION_DONT_APPLY_BONUS = {
+VISUAL_LAYER_DISGUISE = {
 	 type = "value",},
 
-STAT_VALUE_COLOR_BATTLE_LEVELED = {
+VISUAL_LAYER_EQUIPMENT = {
 	 type = "value",},
 
-STAT_VALUE_COLOR_HIGHER = {
+VISUAL_LAYER_HEADWEAR = {
 	 type = "value",},
 
-STAT_VALUE_COLOR_LOWER = {
+VISUAL_LAYER_HIDE_HELM_OPTION = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_BLEED = {
+VISUAL_LAYER_NONE = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_BLIND = {
+VISUAL_LAYER_POLYMORPH = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_CHARM = {
+VISUAL_LAYER_SKIN = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_DAZED = {
+VISUAL_LAYER_WEREWOLF = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_DISEASE = {
+VISUAL_SLOT_CHEST = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_ENVIRONMENT = {
+VISUAL_SLOT_COSTUME = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_FEAR = {
+VISUAL_SLOT_FEET = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_LEVITATE = {
+VISUAL_SLOT_HAND = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_MAGIC = {
+VISUAL_SLOT_HEAD_ADORNMENTS = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_MESMERIZE = {
+VISUAL_SLOT_HELM = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_NEARSIGHT = {
+VISUAL_SLOT_LEGS = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_NONE = {
+VISUAL_SLOT_NONE = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_PACIFY = {
+VISUAL_SLOT_SHOULDERS = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_POISON = {
+VISUAL_SLOT_SKIN = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_PUNCTURE = {
+VISUAL_SLOT_WAIST = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_ROOT = {
+VISUAL_SLOT_WEAPON = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_SILENCE = {
+VISUAL_SLOT_WRIST = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_SNARE = {
+WEAPON_CONFIG_TYPE_BOW = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_STUN = {
+WEAPON_CONFIG_TYPE_DESTRO_STAFF = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_TRAUMA = {
+WEAPON_CONFIG_TYPE_DUAL_WIELD = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_WEAKNESS = {
+WEAPON_CONFIG_TYPE_FIRE_STAFF = {
 	 type = "value",},
 
-STATUS_EFFECT_TYPE_WOUND = {
+WEAPON_CONFIG_TYPE_FROST_STAFF = {
 	 type = "value",},
 
-STEALTH_STATE_DETECTED = {
+WEAPON_CONFIG_TYPE_LIGHTNING_STAFF = {
 	 type = "value",},
 
-STEALTH_STATE_HIDDEN = {
+WEAPON_CONFIG_TYPE_NONE = {
 	 type = "value",},
 
-STEALTH_STATE_HIDDEN_ALMOST_DETECTED = {
+WEAPON_CONFIG_TYPE_ONE_HANDED = {
 	 type = "value",},
 
-STEALTH_STATE_HIDING = {
+WEAPON_CONFIG_TYPE_ONE_HAND_AND_SHIELD = {
 	 type = "value",},
 
-STEALTH_STATE_NONE = {
+WEAPON_CONFIG_TYPE_RESTO_STAFF = {
 	 type = "value",},
 
-STEALTH_STATE_STEALTH = {
+WEAPON_CONFIG_TYPE_TWO_HANDED = {
 	 type = "value",},
 
-STEALTH_STATE_STEALTH_ALMOST_DETECTED = {
+WEAPON_CONFIG_TYPE_UNARMED = {
 	 type = "value",},
 
-STORE_ENTRY_TYPE_COLLECTIBLE = {
+WEAPONTYPE_AXE = {
 	 type = "value",},
 
-STORE_ENTRY_TYPE_HOUSE_WITH_TEMPLATE = {
+WEAPONTYPE_BOW = {
 	 type = "value",},
 
-STORE_ENTRY_TYPE_INTERACTABLE = {
+WEAPONTYPE_DAGGER = {
 	 type = "value",},
 
-STORE_ENTRY_TYPE_ITEM = {
+WEAPONTYPE_FIRE_STAFF = {
 	 type = "value",},
 
-STORE_ENTRY_TYPE_MONSTER = {
+WEAPONTYPE_FROST_STAFF = {
 	 type = "value",},
 
-STORE_ENTRY_TYPE_QUEST_ITEM = {
+WEAPONTYPE_HAMMER = {
 	 type = "value",},
 
-STORE_ENTRY_TYPE_SUBSTORE = {
+WEAPONTYPE_HEALING_STAFF = {
+	 type = "value",},
+
+WEAPONTYPE_LIGHTNING_STAFF = {
+	 type = "value",},
+
+WEAPONTYPE_NONE = {
+	 type = "value",},
+
+WEAPONTYPE_RUNE = {
+	 type = "value",},
+
+WEAPONTYPE_SHIELD = {
+	 type = "value",},
+
+WEAPONTYPE_SWORD = {
+	 type = "value",},
+
+WEAPONTYPE_TWO_HANDED_AXE = {
+	 type = "value",},
+
+WEAPONTYPE_TWO_HANDED_HAMMER = {
+	 type = "value",},
+
+WEAPONTYPE_TWO_HANDED_SWORD = {
+	 type = "value",},
+
+QUEST_REMOVED_TYPE_ABANDONED = {
+	 type = "value",},
+
+QUEST_REMOVED_TYPE_COMPLETED = {
+	 type = "value",},
+
+QUEST_REPEAT_DAILY = {
+	 type = "value",},
+
+QUEST_REPEAT_NOT_REPEATABLE = {
+	 type = "value",},
+
+QUEST_REPEAT_REPEATABLE = {
+	 type = "value",},
+
+QUEST_STEP_TYPE_AND = {
+	 type = "value",},
+
+QUEST_STEP_TYPE_BRANCH = {
+	 type = "value",},
+
+QUEST_STEP_TYPE_END = {
+	 type = "value",},
+
+QUEST_STEP_TYPE_OR = {
+	 type = "value",},
+
+QUEST_STEP_VISIBILITY_HIDDEN = {
+	 type = "value",},
+
+QUEST_STEP_VISIBILITY_HINT = {
+	 type = "value",},
+
+QUEST_STEP_VISIBILITY_OPTIONAL = {
+	 type = "value",},
+
+QUEST_TYPE_AVA = {
+	 type = "value",},
+
+QUEST_TYPE_AVA_GRAND = {
+	 type = "value",},
+
+QUEST_TYPE_AVA_GROUP = {
+	 type = "value",},
+
+QUEST_TYPE_BATTLEGROUND = {
+	 type = "value",},
+
+QUEST_TYPE_CLASS = {
+	 type = "value",},
+
+QUEST_TYPE_CRAFTING = {
+	 type = "value",},
+
+QUEST_TYPE_DUNGEON = {
+	 type = "value",},
+
+QUEST_TYPE_GROUP = {
+	 type = "value",},
+
+QUEST_TYPE_GUILD = {
+	 type = "value",},
+
+QUEST_TYPE_HOLIDAY_EVENT = {
+	 type = "value",},
+
+QUEST_TYPE_MAIN_STORY = {
+	 type = "value",},
+
+QUEST_TYPE_NONE = {
+	 type = "value",},
+
+QUEST_TYPE_RAID = {
+	 type = "value",},
+
+TRACK_TYPE_INVALID = {
+	 type = "value",},
+
+TRACK_TYPE_QUEST = {
+	 type = "value",},
+
+INVALID_TRACKER_INDEX = {
+	 type = "value",},
+
+MAX_JOURNAL_QUESTS = {
+	 type = "value",},
+
+TRACKER_MAX_TRACKED = {
+	 type = "value",},
+
+ACTION_BAR_SETTING_LOCK_ACTION_BARS = {
+	 type = "value",},
+
+ACTION_BAR_SETTING_CHOICE_AUTOMATIC = {
+	 type = "value",},
+
+ACTION_BAR_SETTING_CHOICE_OFF = {
+	 type = "value",},
+
+ACTION_BAR_SETTING_CHOICE_ON = {
+	 type = "value",},
+
+AUDIO_SETTING_AMBIENT_ENABLED = {
+	 type = "value",},
+
+AUDIO_SETTING_AMBIENT_VOLUME = {
+	 type = "value",},
+
+AUDIO_SETTING_AUDIO_ENABLED = {
+	 type = "value",},
+
+AUDIO_SETTING_AUDIO_VOLUME = {
+	 type = "value",},
+
+AUDIO_SETTING_BACKGROUND_AUDIO = {
+	 type = "value",},
+
+AUDIO_SETTING_FOOTSTEPS_ENABLED = {
+	 type = "value",},
+
+AUDIO_SETTING_FOOTSTEPS_VOLUME = {
+	 type = "value",},
+
+AUDIO_SETTING_MUSIC_ENABLED = {
+	 type = "value",},
+
+AUDIO_SETTING_MUSIC_VOLUME = {
+	 type = "value",},
+
+AUDIO_SETTING_SFX_ENABLED = {
+	 type = "value",},
+
+AUDIO_SETTING_SFX_VOLUME = {
+	 type = "value",},
+
+AUDIO_SETTING_SOUND_ENABLED = {
+	 type = "value",},
+
+AUDIO_SETTING_SPEAKER_SETUP = {
+	 type = "value",},
+
+AUDIO_SETTING_UI_ENABLED = {
+	 type = "value",},
+
+AUDIO_SETTING_UI_VOLUME = {
+	 type = "value",},
+
+AUDIO_SETTING_VOICE_CHAT_VOLUME = {
+	 type = "value",},
+
+AUDIO_SETTING_VO_ENABLED = {
+	 type = "value",},
+
+AUDIO_SETTING_VO_VOLUME = {
+	 type = "value",},
+
+BUFF_DEBUFF_ENABLED_CHOICE_ALWAYS_SHOW = {
+	 type = "value",},
+
+BUFF_DEBUFF_ENABLED_CHOICE_AUTOMATIC = {
+	 type = "value",},
+
+BUFF_DEBUFF_ENABLED_CHOICE_DONT_SHOW = {
+	 type = "value",},
+
+BUFFS_SETTING_ALL_ENABLED = {
+	 type = "value",},
+
+BUFFS_SETTING_BUFFS_ENABLED = {
+	 type = "value",},
+
+BUFFS_SETTING_BUFFS_ENABLED_FOR_SELF = {
+	 type = "value",},
+
+BUFFS_SETTING_BUFFS_ENABLED_FOR_TARGET = {
+	 type = "value",},
+
+BUFFS_SETTING_DEBUFFS_ENABLED = {
+	 type = "value",},
+
+BUFFS_SETTING_DEBUFFS_ENABLED_FOR_SELF = {
+	 type = "value",},
+
+BUFFS_SETTING_DEBUFFS_ENABLED_FOR_TARGET = {
+	 type = "value",},
+
+BUFFS_SETTING_DEBUFFS_ENABLED_FOR_TARGET_FROM_OTHERS = {
+	 type = "value",},
+
+BUFFS_SETTING_LONG_EFFECTS = {
+	 type = "value",},
+
+BUFFS_SETTING_PERMANENT_EFFECTS = {
+	 type = "value",},
+
+CAMERA_OPTIONS_PREVIEW_FORCE_FIRST_PERSON = {
+	 type = "value",},
+
+CAMERA_OPTIONS_PREVIEW_FORCE_THIRD_PERSON = {
+	 type = "value",},
+
+CAMERA_OPTIONS_PREVIEW_NONE = {
+	 type = "value",},
+
+CAMERA_SETTING_ASSASSINATION_CAMERA = {
+	 type = "value",},
+
+CAMERA_SETTING_DISTANCE = {
+	 type = "value",},
+
+CAMERA_SETTING_DISTANCE_SYNCED = {
+	 type = "value",},
+
+CAMERA_SETTING_DISTANCE_UNSHEATHED = {
+	 type = "value",},
+
+CAMERA_SETTING_FIRST_PERSON_FIELD_OF_VIEW = {
+	 type = "value",},
+
+CAMERA_SETTING_FIRST_PERSON_HEAD_BOB = {
+	 type = "value",},
+
+CAMERA_SETTING_FOV_CHANGES_ALLOWED = {
+	 type = "value",},
+
+CAMERA_SETTING_INVERT_Y = {
+	 type = "value",},
+
+CAMERA_SETTING_SENSITIVITY_FIRST_PERSON = {
+	 type = "value",},
+
+CAMERA_SETTING_SENSITIVITY_THIRD_PERSON = {
+	 type = "value",},
+
+CAMERA_SETTING_SMOOTHING = {
+	 type = "value",},
+
+CAMERA_SETTING_THIRD_PERSON_FIELD_OF_VIEW = {
+	 type = "value",},
+
+CAMERA_SETTING_THIRD_PERSON_HORIZONTAL_OFFSET = {
+	 type = "value",},
+
+CAMERA_SETTING_THIRD_PERSON_HORIZONTAL_POSITION_MULTIPLIER = {
+	 type = "value",},
+
+CAMERA_SETTING_THIRD_PERSON_SIEGE_WEAPONRY = {
+	 type = "value",},
+
+CAMERA_SETTING_THIRD_PERSON_VERTICAL_OFFSET = {
+	 type = "value",},
+
+CHAT_BUBBLE_SETTING_ENABLED = {
+	 type = "value",},
+
+CHAT_BUBBLE_SETTING_ENABLED_FOR_LOCAL_PLAYER = {
+	 type = "value",},
+
+CHAT_BUBBLE_SETTING_ENABLED_ONLY_FROM_CONTACTS = {
+	 type = "value",},
+
+CHAT_BUBBLE_SETTING_SPEED_MODIFIER = {
+	 type = "value",},
+
+COMBAT_SETTING_CLAMP_GROUND_TARGET_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_MONSTER_TELLS_COLOR_SWAP_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_MONSTER_TELLS_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_MONSTER_TELLS_ENEMY_BRIGHTNESS = {
+	 type = "value",},
+
+COMBAT_SETTING_MONSTER_TELLS_ENEMY_COLOR = {
+	 type = "value",},
+
+COMBAT_SETTING_MONSTER_TELLS_FRIENDLY_BRIGHTNESS = {
+	 type = "value",},
+
+COMBAT_SETTING_MONSTER_TELLS_FRIENDLY_COLOR = {
+	 type = "value",},
+
+COMBAT_SETTING_PREVENT_ATTACKING_INNOCENTS = {
+	 type = "value",},
+
+COMBAT_SETTING_QUICK_CAST_GROUND_ABILITIES = {
+	 type = "value",},
+
+COMBAT_SETTING_ROLL_DODGE_DOUBLE_TAP = {
+	 type = "value",},
+
+COMBAT_SETTING_ROLL_DODGE_WINDOW = {
+	 type = "value",},
+
+COMBAT_SETTING_SCROLLING_COMBAT_TEXT_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_INCOMING_DAMAGE_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_INCOMING_DOT_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_INCOMING_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_INCOMING_HEALING_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_INCOMING_HOT_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_INCOMING_PET_DAMAGE_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_INCOMING_PET_DOT_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_INCOMING_POINT_GAINS_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_INCOMING_STATUS_EFFECTS_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_OUTGOING_DAMAGE_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_OUTGOING_DOT_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_OUTGOING_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_OUTGOING_HEALING_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_OUTGOING_HOT_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_OUTGOING_PET_DAMAGE_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_OUTGOING_PET_DOT_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_OUTGOING_PET_HEALING_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_OUTGOING_PET_HOT_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_SCT_OUTGOING_STATUS_EFFECTS_ENABLED = {
+	 type = "value",},
+
+COMBAT_SETTING_USE_BATTLE_LEVEL = {
+	 type = "value",},
+
+COMPASS_ACTIVE_QUESTS_CHOICE_FOCUSED = {
+	 type = "value",},
+
+COMPASS_ACTIVE_QUESTS_CHOICE_OFF = {
+	 type = "value",},
+
+COMPASS_ACTIVE_QUESTS_CHOICE_ON = {
+	 type = "value",},
+
+DEFAULT_SOUL_GEM_CHOICE_CROWN = {
+	 type = "value",},
+
+DEFAULT_SOUL_GEM_CHOICE_GOLD = {
+	 type = "value",},
+
+GAMEPAD_CHAT_TEXT_SIZE_SETTING_LARGE = {
+	 type = "value",},
+
+GAMEPAD_CHAT_TEXT_SIZE_SETTING_MEDIUM = {
+	 type = "value",},
+
+GAMEPAD_CHAT_TEXT_SIZE_SETTING_SMALL = {
+	 type = "value",},
+
+GAMEPAD_SETTING_CAMERA_SENSITIVITY = {
+	 type = "value",},
+
+GAMEPAD_SETTING_GAMEPAD_PREFERRED = {
+	 type = "value",},
+
+GAMEPAD_SETTING_GAMEPAD_TEMPLATE = {
+	 type = "value",},
+
+GAMEPAD_SETTING_INVERT_X = {
+	 type = "value",},
+
+GAMEPAD_SETTING_INVERT_Y = {
+	 type = "value",},
+
+GAMEPAD_SETTING_VIBRATION = {
+	 type = "value",},
+
+IN_WORLD_UI_SETTING_DEFAULT_SOUL_GEM = {
+	 type = "value",},
+
+IN_WORLD_UI_SETTING_FOOT_INVERSE_KINEMATICS = {
+	 type = "value",},
+
+IN_WORLD_UI_SETTING_GLOW_THICKNESS = {
+	 type = "value",},
+
+IN_WORLD_UI_SETTING_HIDE_HELM = {
+	 type = "value",},
+
+IN_WORLD_UI_SETTING_HIDE_LOIN_CLOTH = {
+	 type = "value",},
+
+IN_WORLD_UI_SETTING_HIDE_MOUNT_INVENTORY_UPGRADE = {
+	 type = "value",},
+
+IN_WORLD_UI_SETTING_HIDE_MOUNT_SPEED_UPGRADE = {
+	 type = "value",},
+
+IN_WORLD_UI_SETTING_HIDE_MOUNT_STAMINA_UPGRADE = {
+	 type = "value",},
+
+IN_WORLD_UI_SETTING_HIDE_TASSETS = {
+	 type = "value",},
+
+IN_WORLD_UI_SETTING_INTERACTABLE_GLOW_ENABLED = {
+	 type = "value",},
+
+IN_WORLD_UI_SETTING_INTERACTABLE_GLOW_INTENSITY = {
+	 type = "value",},
+
+IN_WORLD_UI_SETTING_TARGET_GLOW_ENABLED = {
+	 type = "value",},
+
+IN_WORLD_UI_SETTING_TARGET_GLOW_INTENSITY = {
+	 type = "value",},
+
+LANGUAGE_SETTING_USE_PROFANITY_FILTER = {
+	 type = "value",},
+
+LOOT_SETTING_AOE_LOOT = {
+	 type = "value",},
+
+LOOT_SETTING_AUTO_ADD_TO_CRAFT_BAG = {
+	 type = "value",},
+
+LOOT_SETTING_AUTO_LOOT = {
+	 type = "value",},
+
+LOOT_SETTING_AUTO_LOOT_STOLEN = {
+	 type = "value",},
+
+LOOT_SETTING_LOOT_HISTORY = {
+	 type = "value",},
+
+NAMEPLATE_CHOICE_ALL = {
+	 type = "value",},
+
+NAMEPLATE_CHOICE_ALLY = {
+	 type = "value",},
+
+NAMEPLATE_CHOICE_ALWAYS = {
+	 type = "value",},
+
+NAMEPLATE_CHOICE_CENTER = {
+	 type = "value",},
+
+NAMEPLATE_CHOICE_ENEMY = {
+	 type = "value",},
+
+NAMEPLATE_CHOICE_INJURED = {
+	 type = "value",},
+
+NAMEPLATE_CHOICE_INJURED_OR_TARGETED = {
+	 type = "value",},
+
+NAMEPLATE_CHOICE_INVALID = {
+	 type = "value",},
+
+NAMEPLATE_CHOICE_LEFT = {
+	 type = "value",},
+
+NAMEPLATE_CHOICE_NEVER = {
+	 type = "value",},
+
+NAMEPLATE_CHOICE_NONE = {
+	 type = "value",},
+
+NAMEPLATE_CHOICE_TARGETED = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_ALLIANCE_INDICATORS = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_ALL_HEALTHBARS = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_ALL_NAMEPLATES = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_DEFUNCT_DONT_REMOVE_ = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_DEFUNCT_DONT_REMOVE_ = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_ENEMY_NPC_HEALTHBARS = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_ENEMY_NPC_HEALTHBARS_HIGHLIGHT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_ENEMY_NPC_NAMEPLATES = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_ENEMY_NPC_NAMEPLATES_HIGHLIGHT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_ENEMY_PLAYER_HEALTHBARS = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_ENEMY_PLAYER_HEALTHBARS_HIGHLIGHT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_ENEMY_PLAYER_NAMEPLATES = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_ENEMY_PLAYER_NAMEPLATES_HIGHLIGHT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_FOLLOWER_INDICATORS = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_FRIENDLY_NPC_HEALTHBARS = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_FRIENDLY_NPC_HEALTHBARS_HIGHLIGHT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_FRIENDLY_NPC_NAMEPLATES = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_FRIENDLY_NPC_NAMEPLATES_HIGHLIGHT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_FRIENDLY_PLAYER_HEALTHBARS = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_FRIENDLY_PLAYER_HEALTHBARS_HIGHLIGHT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_FRIENDLY_PLAYER_NAMEPLATES = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_FRIENDLY_PLAYER_NAMEPLATES_HIGHLIGHT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_GROUP_INDICATORS = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_GROUP_MEMBER_HEALTHBARS = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_GROUP_MEMBER_HEALTHBARS_HIGHLIGHT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_GROUP_MEMBER_NAMEPLATES = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_GROUP_MEMBER_NAMEPLATES_HIGHLIGHT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_HEALTHBAR_ALIGNMENT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_HEALTHBAR_CHASE_BAR = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_HEALTHBAR_FRAME_BORDER = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_NEUTRAL_NPC_HEALTHBARS = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_NEUTRAL_NPC_HEALTHBARS_HIGHLIGHT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_NEUTRAL_NPC_NAMEPLATES = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_NEUTRAL_NPC_NAMEPLATES_HIGHLIGHT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_PLAYER_HEALTHBAR = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_PLAYER_HEALTHBAR_HIGHLIGHT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_PLAYER_NAMEPLATE = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_PLAYER_NAMEPLATE_HIGHLIGHT = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_RESURRECT_INDICATORS = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_SHOW_PLAYER_GUILDS = {
+	 type = "value",},
+
+NAMEPLATE_TYPE_SHOW_PLAYER_TITLES = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_CHAT_BUBBLE_EMOTE_ENABLED = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_CHAT_BUBBLE_GROUP_ENABLED = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_CHAT_BUBBLE_SAY_ENABLED = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_CHAT_BUBBLE_WHISPER_ENABLED = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_CHAT_BUBBLE_YELL_ENABLED = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_GAMEPAD_PREGAME_PLAY_CINEMATIC = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_GAMEPAD_PREGAME_SERVER_SELECT = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_GAMEPAD_PREGAME_VIEW_CREDITS = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_GAMMA_ADJUST = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_MONSTER_TELLS_ENEMY_TEST = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_MONSTER_TELLS_FRIENDLY_TEST = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_RESET_TUTORIALS = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SCREEN_ADJUST = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_EMOTE = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_GROUP = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_GUILD = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_GUILD = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_GUILD = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_GUILD = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_GUILD = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_NPC = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_OFFICER = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_OFFICER = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_OFFICER = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_OFFICER = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_OFFICER = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_SAY = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_SYSTEM = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_WHISPER_INC = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_WHISPER_OUT = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_YELL = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_ZONE = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_ZONE_ENG = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_ZONE_FRA = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_ZONE_GER = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_COLOR_ZONE_JPN = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_TITLE_GUILD = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_TITLE_GUILD = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_TITLE_GUILD = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_TITLE_GUILD = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_CHAT_TITLE_GUILD = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_GAMEPAD_TEXT_SIZE = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_MIN_ALPHA = {
+	 type = "value",},
+
+OPTIONS_CUSTOM_SETTING_SOCIAL_TEXT_SIZE = {
+	 type = "value",},
+
+PRIMARY_PLAYER_NAME_SETTING_PREFER_CHARACTER = {
+	 type = "value",},
+
+PRIMARY_PLAYER_NAME_SETTING_PREFER_USERID = {
+	 type = "value",},
+
+QUICK_CAST_GROUND_ABILITIES_CHOICE_AUTOMATIC = {
+	 type = "value",},
+
+QUICK_CAST_GROUND_ABILITIES_CHOICE_OFF = {
+	 type = "value",},
+
+QUICK_CAST_GROUND_ABILITIES_CHOICE_ON = {
+	 type = "value",},
+
+RAID_LIFE_VISIBILITY_CHOICE_AUTOMATIC = {
+	 type = "value",},
+
+RAID_LIFE_VISIBILITY_CHOICE_OFF = {
+	 type = "value",},
+
+RAID_LIFE_VISIBILITY_CHOICE_ON = {
+	 type = "value",},
+
+REALM_SELECT_METHOD_DEFAULT_REALM = {
+	 type = "value",},
+
+REALM_SELECT_METHOD_LAST_REALM = {
+	 type = "value",},
+
+REALM_SELECT_METHOD_USER_SELECTS = {
+	 type = "value",},
+
+REFLECTION_QUALITY_HIGH = {
+	 type = "value",},
+
+REFLECTION_QUALITY_LOW = {
+	 type = "value",},
+
+REFLECTION_QUALITY_MEDIUM = {
+	 type = "value",},
+
+REFLECTION_QUALITY_OFF = {
+	 type = "value",},
+
+RESOURCE_BARS_SETTING_CHOICE_ALWAYS_SHOW = {
+	 type = "value",},
+
+RESOURCE_BARS_SETTING_CHOICE_AUTOMATIC = {
+	 type = "value",},
+
+RESOURCE_BARS_SETTING_CHOICE_DONT_SHOW = {
+	 type = "value",},
+
+RESOURCE_NUMBERS_SETTING_NUMBER_AND_PERCENT = {
+	 type = "value",},
+
+RESOURCE_NUMBERS_SETTING_NUMBER_ONLY = {
+	 type = "value",},
+
+RESOURCE_NUMBERS_SETTING_OFF = {
+	 type = "value",},
+
+RESOURCE_NUMBERS_SETTING_PERCENT_ONLY = {
+	 type = "value",},
+
+SETTING_PANEL_AUDIO = {
+	 type = "value",},
+
+SETTING_PANEL_CAMERA = {
+	 type = "value",},
+
+SETTING_PANEL_CINEMATIC = {
+	 type = "value",},
+
+SETTING_PANEL_COMBAT = {
+	 type = "value",},
+
+SETTING_PANEL_DEBUG = {
+	 type = "value",},
+
+SETTING_PANEL_GAMEPLAY = {
+	 type = "value",},
+
+SETTING_PANEL_INTERFACE = {
+	 type = "value",},
+
+SETTING_PANEL_NAMEPLATES = {
+	 type = "value",},
+
+SETTING_PANEL_SOCIAL = {
+	 type = "value",},
+
+SETTING_PANEL_VIDEO = {
+	 type = "value",},
+
+SETTING_TYPE_ACTION_BARS = {
+	 type = "value",},
+
+SETTING_TYPE_ACTIVE_COMBAT_TIP = {
+	 type = "value",},
+
+SETTING_TYPE_AUDIO = {
+	 type = "value",},
+
+SETTING_TYPE_BUFFS = {
+	 type = "value",},
+
+SETTING_TYPE_CAMERA = {
+	 type = "value",},
+
+SETTING_TYPE_CHAT_BUBBLE = {
+	 type = "value",},
+
+SETTING_TYPE_CHAT_GLOBALS = {
+	 type = "value",},
+
+SETTING_TYPE_CHAT_TABS = {
+	 type = "value",},
+
+SETTING_TYPE_COMBAT = {
+	 type = "value",},
+
+SETTING_TYPE_DEPRECATED_ = {
+	 type = "value",},
+
+SETTING_TYPE_DEVELOPER_DEBUG = {
+	 type = "value",},
+
+SETTING_TYPE_GAMEPAD = {
+	 type = "value",},
+
+SETTING_TYPE_GRAPHICS = {
+	 type = "value",},
+
+SETTING_TYPE_IN_WORLD = {
+	 type = "value",},
+
+SETTING_TYPE_LANGUAGE = {
+	 type = "value",},
+
+SETTING_TYPE_LOOT = {
+	 type = "value",},
+
+SETTING_TYPE_NAMEPLATES = {
+	 type = "value",},
+
+SETTING_TYPE_SUBTITLES = {
+	 type = "value",},
+
+SETTING_TYPE_TUTORIAL = {
+	 type = "value",},
+
+SETTING_TYPE_UI = {
+	 type = "value",},
+
+SETTING_TYPE_VOICE = {
+	 type = "value",},
+
+SHADOWS_CHOICE_HIGH = {
+	 type = "value",},
+
+SHADOWS_CHOICE_LOW = {
+	 type = "value",},
+
+SHADOWS_CHOICE_MEDIUM = {
+	 type = "value",},
+
+SHADOWS_CHOICE_OFF = {
+	 type = "value",},
+
+SHADOWS_CHOICE_PS = {
+	 type = "value",},
+
+SHADOWS_CHOICE_ULTRA = {
+	 type = "value",},
+
+SHADOWS_CHOICE_XB = {
+	 type = "value",},
+
+SIEGE_CAMERA_CHOICE_CONSTRAINED = {
+	 type = "value",},
+
+SIEGE_CAMERA_CHOICE_FREE = {
 	 type = "value",},
 
 SUBTITLE_SETTING_ENABLED = {
@@ -9454,783 +10732,6 @@ TEX_RES_CHOICE_LOW = {
 	 type = "value",},
 
 TEX_RES_CHOICE_MEDIUM = {
-	 type = "value",},
-
-TIME_FORMAT_DIRECTION_ASCENDING = {
-	 type = "value",},
-
-TIME_FORMAT_DIRECTION_DESCENDING = {
-	 type = "value",},
-
-TIME_FORMAT_DIRECTION_NONE = {
-	 type = "value",},
-
-TIME_FORMAT_PRECISION_MILLISECONDS = {
-	 type = "value",},
-
-TIME_FORMAT_PRECISION_MILLISECONDS_NO_HOURS_OR_DAYS = {
-	 type = "value",},
-
-TIME_FORMAT_PRECISION_SECONDS = {
-	 type = "value",},
-
-TIME_FORMAT_PRECISION_TENTHS = {
-	 type = "value",},
-
-TIME_FORMAT_PRECISION_TENTHS_RELEVANT = {
-	 type = "value",},
-
-TIME_FORMAT_PRECISION_TWELVE_HOUR = {
-	 type = "value",},
-
-TIME_FORMAT_PRECISION_TWENTY_FOUR_HOUR = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_CAST_TIME = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_CHANNEL_TIME = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_CLOCK_TIME = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_COLONS = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_COOLDOWN_TIME = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_DESCRIPTIVE = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_DESCRIPTIVE_MINIMAL = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_DESCRIPTIVE_MINIMAL_HIDE_ZEROES = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_DESCRIPTIVE_MINIMAL_SHOW_TENTHS_SECS = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_DESCRIPTIVE_SHORT = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_DESCRIPTIVE_SHORT_SHOW_ZERO_SECS = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_DURATION = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_RELATIVE_TIMESTAMP = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_SHOW_LARGEST_TWO_UNITS = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_SHOW_LARGEST_UNIT = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_SHOW_LARGEST_UNIT_DESCRIPTIVE = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_SHOW_LARGEST_UNIT_DESCRIPTIVE_COLOR = {
-	 type = "value",},
-
-TIME_FORMAT_STYLE_SHOW_LARGEST_UNIT_DESCRIPTIVE_SHORT = {
-	 type = "value",},
-
-TOOLTIP_GAME_DATA_CHARGES = {
-	 type = "value",},
-
-TOOLTIP_GAME_DATA_CONDITION = {
-	 type = "value",},
-
-TOOLTIP_GAME_DATA_DIVIDER = {
-	 type = "value",},
-
-TOOLTIP_GAME_DATA_EQUIPPED_INFO = {
-	 type = "value",},
-
-TOOLTIP_GAME_DATA_ITEM_ICON = {
-	 type = "value",},
-
-TOOLTIP_GAME_DATA_NONE = {
-	 type = "value",},
-
-TOOLTIP_GAME_DATA_PROGRESSION = {
-	 type = "value",},
-
-TOOLTIP_GAME_DATA_SKILL_UPGRADE = {
-	 type = "value",},
-
-TOOLTIP_GAME_DATA_STOLEN = {
-	 type = "value",},
-
-TOOLTIP_SETTING_QUEST_PANEL_CATEGORY = {
-	 type = "value",},
-
-TOOLTIP_SETTING_UNIT_FRAMES_CATEGORY = {
-	 type = "value",},
-
-TRACK_TYPE_INVALID = {
-	 type = "value",},
-
-TRACK_TYPE_QUEST = {
-	 type = "value",},
-
-TRADE_CONFIRM_ACCEPT = {
-	 type = "value",},
-
-TRADE_CONFIRM_EDIT = {
-	 type = "value",},
-
-TRADE_ME = {
-	 type = "value",},
-
-TRADE_THEM = {
-	 type = "value",},
-
-TRADE_STATE_IDLE = {
-	 type = "value",},
-
-TRADE_STATE_INVITE_CONSIDERING = {
-	 type = "value",},
-
-TRADE_STATE_INVITE_WAITING = {
-	 type = "value",},
-
-TRADE_STATE_TRADING = {
-	 type = "value",},
-
-CRAFTING_TYPE_ALCHEMY = {
-	 type = "value",},
-
-CRAFTING_TYPE_BLACKSMITHING = {
-	 type = "value",},
-
-CRAFTING_TYPE_CLOTHIER = {
-	 type = "value",},
-
-CRAFTING_TYPE_ENCHANTING = {
-	 type = "value",},
-
-CRAFTING_TYPE_INVALID = {
-	 type = "value",},
-
-CRAFTING_TYPE_PROVISIONING = {
-	 type = "value",},
-
-CRAFTING_TYPE_WOODWORKING = {
-	 type = "value",},
-
-TUTORIAL_SHOW_OPTIONS_ALL = {
-	 type = "value",},
-
-TUTORIAL_SHOW_OPTIONS_GAMEPAD = {
-	 type = "value",},
-
-TUTORIAL_SHOW_OPTIONS_KEYBOARD = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ABILITY_PURCHASED_TIMELY_ESCAPE = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ACCOUNT_BANK_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ACHIEVEMENTS_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ACQUIRED_COLLECTIBLE = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ALCHEMY_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ALCHEMY_STATION_OIL_SLOTTED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ATTEMPTED_TO_FISH_WITHOUT_BAIT = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_AVA_FAST_TRAVEL = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_BANK_FULL_NO_ESO_PLUS = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_BANK_OVERFULL = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_BATTLE_LEVEL_ZONE_ENTERED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_BATTLE_LEVEL_ZONE_ENTERED_VETERAN = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_BLACKSMITHING_CREATION_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_BLACKSMITHING_DECONSTRUCTION_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_BLACKSMITHING_IMPROVEMENT_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_BLACKSMITHING_REFINEMENT_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_BLACKSMITHING_RESEARCH_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_BOUNTY_ADDED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CADWELLS_ALMANAC_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CAMPAIGN_AVAILABLE_TO_ENTER = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CAMPAIGN_BROWSER_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CAMPAIGN_OVERVIEW_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CHAMPION_POINT_GAINED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CHAMPION_RANK_UP = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CHAMPION_SYSTEM_UNLOCKED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CHAMPION_UI_SHOWN = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CLOTHIER_CREATION_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CLOTHIER_DECONSTRUCTION_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CLOTHIER_IMPROVEMENT_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CLOTHIER_REFINEMENT_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CLOTHIER_RESEARCH_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_COLLECTIONS_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_COMBAT_MONSTER_DIFFICULTY = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_COMBAT_ROOTED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_COMBAT_SKILLS_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_COMBAT_STATUS_EFFECT = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_COMBAT_STUNNED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CONTACTS_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CONTROLLING_SIEGE = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CRAFT_BAG_ITEM_GAINED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CRAFT_BAG_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CROWN_CONSUMABLE_PURCHASED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CROWN_CRATE_UI_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CROWN_GEMS_GAINED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_CROWN_STORE_PRODUCT_PURCHASED_ = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_DAILY_QUEST_ADDED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_DAMAGED_EQUIPMENT_REDUCING_EFFECTIVENESS = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_DEATH_AVA = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_DEATH_PVE = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_DECONSTRUCTION_LEVEL_PENALTY = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_DEPRECATED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_DEPRECATED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_DISCOVERED_GROUP_DUNGEON = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_DISCOVERED_PUBLIC_DUNGEON = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_DISREPUTABLE_REACHED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_DYEING_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_DYE_STAMP_CONFIRMATION_SEEN = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_EARNED_ALLIANCE_POINTS = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_EIDETIC_MEMORY = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_EMOTES_MENU_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ENCHANTING_CREATION_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ENCHANTING_EXTRACTION_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ENLIGHTENED_STATE_GAINED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ENLIGHTENED_STATE_LOST = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ENTERED_BATTLEGROUND_CAPTURE_THE_FLAG = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ENTERED_BATTLEGROUND_CRAZY_KING = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ENTERED_BATTLEGROUND_DEATHMATCH = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ENTERED_BATTLEGROUND_DOMINATION = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ENTERED_BATTLEGROUND_KING_OF_THE_HILL = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ENTERED_BATTLEGROUND_MURDERBALL = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ENTERED_EDITABLE_HOME = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ENTERED_OBJECTIVE_CAPTURE_AREA = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_EQUIPMENT_DAMAGED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_EQUIPMENT_OUT_OF_CHARGES = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_EQUIPPED_ANY_ARMOR = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_EQUIPPED_ANY_WEAPON = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_FENCE_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_FUGITIVE_REACHED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_BATTLE_STANDARD_ITEM = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_BIND_ON_EQUIP_ITEM = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_CRAFTING_MATERIAL = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_DISGUISE = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_EMPTY_SOUL_GEM = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_FORWARD_CAMP_ITEM = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_SIEGE_BALLISTA_ITEM = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_SIEGE_CATAPULT_ITEM = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_SIEGE_MASONRY_KIT = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_SIEGE_MONSTER_ITEM = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_SIEGE_OIL_ITEM = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_SIEGE_RAM_ITEM = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_SIEGE_TREBUCHET_ITEM = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_SIEGE_WOODWORKING_KIT = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GAINED_SOUL_GEM = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GROUP_CHAT = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GROUP_TOOLS_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GUILDS_HERALDRY_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GUILDS_HOME_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GUILDS_ROSTER_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GUILD_BANK_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_GUILD_CHAT = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_HELP_CUSTOMER_SUPPORT_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_HELP_TUTORIALS_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_IMPORTANT_DIALOGUE = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_INCOMING_PLAYER_TO_PLAYER_NOTIFICATION = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_INVENTORY_FULL = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_INVENTORY_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_INVENTORY_OPENED_AND_QUICKSLOTS_AVAILABLE = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_INVENTORY_OPENED_AND_STOLEN_ITEMS_PRESENT = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_INVENTORY_OPENED_AND_WEAPON_SETS_AVAILABLE = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_JOURNAL_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_LAUNDER_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_LEADERBOARDS_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_LEVEL_UP = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_LIVESTOCK_TARGETED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_LOCKPICKING_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_LORE_LIBRARY_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_MAELSTROM_ARENA_ZONE_ENTERED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_MAIL_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_MAIL_OPENED_AND_FULL = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_MAP_OPENED_AVA = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_MAP_OPENED_BATTLEGROUND = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_MAP_OPENED_PVE = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_MARKET_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_MOUNTED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_MOUNT_SET = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_NONE = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_NON_SUBSCRIBER_LIMIT_REACHED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_NOTIFICATIONS_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_NOTORIOUS_REACHED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_OPENED_EDITOR = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_OWNED_LOCK_VIEWED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_PICKPOCKET_PROMPT_VIEWED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_POISON_EQUIPPED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_PROVISIONING_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_PURCHASED_ABILITY = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_PURCHASED_PASSIVE_ABILITY = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_PURCHASED_ULTIMATE_ABILITY = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_PVE_FAST_TRAVEL = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_RAID_TRIAL_COMPLETED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_RAID_TRIAL_FAILED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_RAID_TRIAL_STARTED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_RECEIVED_MAIL = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_RECEIVED_WHISPER = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_REFUGE_ENTERED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_RIDING_SKILL_MANAGEMENT_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_SCALEABLE_REGION_ENTERED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_SKYSHARDS_DISCOVERED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_STATS_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_STATS_OPENED_AND_ATTRIBUTE_POINTS_UNSPENT = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_STOLEN_ITEM_EQUIPPED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_STOLEN_ITEM_TARGETED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_STORE_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_TELVAR_STONES_GAINED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_TELVAR_THRESHOLD_CROSSED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_TELVAR_ZONE_ENTERED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_TRADESKILLS_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_TRADE_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_TRESPASS_SUBZONE_ENTERED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_TRESPASS_SUBZONE_EXITED_WITH_BOUNTY = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_TWO_FAST_TRAVEL_NODES = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_ULTIMATE_AVAILABLE = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_UNIVERSAL_STYLE_ITEM = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_VOICE_CHAT_OPEN_CHANNELS = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_VOICE_CHAT_OPEN_HISTORY = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_WEAPON_SWAPPING_UNLOCKED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_WOODWORKING_CREATION_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_WOODWORKING_DECONSTRUCTION_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_WOODWORKING_IMPROVEMENT_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_WOODWORKING_REFINEMENT_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_WOODWORKING_RESEARCH_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TRIGGER_YOUR_GROUP_OPENED = {
-	 type = "value",},
-
-TUTORIAL_TYPE_DEPRECATED_ = {
-	 type = "value",},
-
-TUTORIAL_TYPE_HUD_BRIEF = {
-	 type = "value",},
-
-TUTORIAL_TYPE_HUD_INFO_BOX = {
-	 type = "value",},
-
-TUTORIAL_TYPE_UI_INFO_BOX = {
-	 type = "value",},
-
-UI_ALERT_CATEGORY_ALERT = {
-	 type = "value",},
-
-UI_ALERT_CATEGORY_ERROR = {
-	 type = "value",},
-
-MAPTYPE_ALLIANCE = {
-	 type = "value",},
-
-MAPTYPE_COSMIC = {
-	 type = "value",},
-
-MAPTYPE_NONE = {
-	 type = "value",},
-
-MAPTYPE_SUBZONE = {
-	 type = "value",},
-
-MAPTYPE_WORLD = {
-	 type = "value",},
-
-MAPTYPE_ZONE = {
-	 type = "value",},
-
-MONSTER_DIFFICULTY_DEADLY = {
-	 type = "value",},
-
-MONSTER_DIFFICULTY_EASY = {
-	 type = "value",},
-
-MONSTER_DIFFICULTY_HARD = {
-	 type = "value",},
-
-MONSTER_DIFFICULTY_NONE = {
-	 type = "value",},
-
-MONSTER_DIFFICULTY_NORMAL = {
-	 type = "value",},
-
-UI_PLATFORM_PC = {
-	 type = "value",},
-
-UI_PLATFORM_PS = {
-	 type = "value",},
-
-UI_PLATFORM_XBOX = {
 	 type = "value",},
 
 UI_SETTING_ALWAYS_SHOW_STATUS_TEXT = {
@@ -10332,532 +10833,112 @@ UI_SETTING_ULTIMATE_NUMBER = {
 UI_SETTING_USE_CUSTOM_SCALE = {
 	 type = "value",},
 
-ULTIMATE_BAR_COLOR_BAR_END = {
+TIME_FORMAT_DIRECTION_ASCENDING = {
 	 type = "value",},
 
-ULTIMATE_BAR_COLOR_BAR_START = {
+TIME_FORMAT_DIRECTION_DESCENDING = {
 	 type = "value",},
 
-ULTIMATE_BAR_COLOR_FULL_BAR_END = {
+TIME_FORMAT_DIRECTION_NONE = {
 	 type = "value",},
 
-ULTIMATE_BAR_COLOR_FULL_BAR_START = {
+TIME_FORMAT_PRECISION_MILLISECONDS = {
 	 type = "value",},
 
-ATTRIBUTE_VISUAL_AUTOMATIC = {
+TIME_FORMAT_PRECISION_MILLISECONDS_NO_HOURS_OR_DAYS = {
 	 type = "value",},
 
-ATTRIBUTE_VISUAL_DECREASED_MAX_POWER = {
+TIME_FORMAT_PRECISION_SECONDS = {
 	 type = "value",},
 
-ATTRIBUTE_VISUAL_DECREASED_REGEN_POWER = {
+TIME_FORMAT_PRECISION_TENTHS = {
 	 type = "value",},
 
-ATTRIBUTE_VISUAL_DECREASED_STAT = {
+TIME_FORMAT_PRECISION_TENTHS_RELEVANT = {
 	 type = "value",},
 
-ATTRIBUTE_VISUAL_INCREASED_MAX_POWER = {
+TIME_FORMAT_PRECISION_TWELVE_HOUR = {
 	 type = "value",},
 
-ATTRIBUTE_VISUAL_INCREASED_REGEN_POWER = {
+TIME_FORMAT_PRECISION_TWENTY_FOUR_HOUR = {
 	 type = "value",},
 
-ATTRIBUTE_VISUAL_INCREASED_STAT = {
+TIME_FORMAT_STYLE_CAST_TIME = {
 	 type = "value",},
 
-ATTRIBUTE_VISUAL_NONE = {
+TIME_FORMAT_STYLE_CHANNEL_TIME = {
 	 type = "value",},
 
-ATTRIBUTE_VISUAL_POSSESSION = {
+TIME_FORMAT_STYLE_CLOCK_TIME = {
 	 type = "value",},
 
-ATTRIBUTE_VISUAL_POWER_SHIELDING = {
+TIME_FORMAT_STYLE_COLONS = {
 	 type = "value",},
 
-ATTRIBUTE_VISUAL_UNWAVERING_POWER = {
+TIME_FORMAT_STYLE_COOLDOWN_TIME = {
 	 type = "value",},
 
-END_CAST_REASON_COMPLETED = {
+TIME_FORMAT_STYLE_DESCRIPTIVE = {
 	 type = "value",},
 
-END_CAST_REASON_FAILED = {
+TIME_FORMAT_STYLE_DESCRIPTIVE_MINIMAL = {
 	 type = "value",},
 
-END_CAST_REASON_INTERRUPTED = {
+TIME_FORMAT_STYLE_DESCRIPTIVE_MINIMAL_HIDE_ZEROES = {
 	 type = "value",},
 
-END_CAST_REASON_PLAYER_CANCELLED = {
+TIME_FORMAT_STYLE_DESCRIPTIVE_MINIMAL_SHOW_TENTHS_SECS = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_ALLY_GROUP = {
+TIME_FORMAT_STYLE_DESCRIPTIVE_SHORT = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_ALLY_GROUP_TARGET = {
+TIME_FORMAT_STYLE_DESCRIPTIVE_SHORT_SHOW_ZERO_SECS = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_ALLY_NPC = {
+TIME_FORMAT_STYLE_DURATION = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_ALLY_NPC_TARGET = {
+TIME_FORMAT_STYLE_RELATIVE_TIMESTAMP = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_ALLY_PLAYER = {
+TIME_FORMAT_STYLE_SHOW_LARGEST_TWO_UNITS = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_ALLY_PLAYER_TARGET = {
+TIME_FORMAT_STYLE_SHOW_LARGEST_UNIT = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_DEAD = {
+TIME_FORMAT_STYLE_SHOW_LARGEST_UNIT_DESCRIPTIVE = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_DEAD_TARGET = {
+TIME_FORMAT_STYLE_SHOW_LARGEST_UNIT_DESCRIPTIVE_COLOR = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_DEFAULT = {
+TIME_FORMAT_STYLE_SHOW_LARGEST_UNIT_DESCRIPTIVE_SHORT = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_DEFAULT_TARGET = {
+TRADE_CONFIRM_ACCEPT = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_ENEMY_NPC_FRIENDLY = {
+TRADE_CONFIRM_EDIT = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_ENEMY_NPC_FRIENDLY_TARGET = {
+TRADE_ME = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_ENEMY_NPC_HOSTILE = {
+TRADE_THEM = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_ENEMY_NPC_HOSTILE_TARGET = {
+TRADE_STATE_IDLE = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_ENEMY_NPC_IN_COMBAT_WITH_LOCAL_PLAYER = {
+TRADE_STATE_INVITE_CONSIDERING = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_ENEMY_NPC_IN_COMBAT_WITH_LOCAL_PLAYER_JUSTICE_NEUTRAL = {
+TRADE_STATE_INVITE_WAITING = {
 	 type = "value",},
 
-UNIT_NAMEPLATE_ENEMY_NPC_IN_COMBAT_WITH_LOCAL_PLAYER_JUSTICE_NEUTRAL_TARGET = {
-	 type = "value",},
-
-UNIT_NAMEPLATE_ENEMY_NPC_IN_COMBAT_WITH_LOCAL_PLAYER_TARGET = {
-	 type = "value",},
-
-UNIT_NAMEPLATE_ENEMY_NPC_JUSTICE_NEUTRAL = {
-	 type = "value",},
-
-UNIT_NAMEPLATE_ENEMY_NPC_JUSTICE_NEUTRAL_IGNORE_COMBAT = {
-	 type = "value",},
-
-UNIT_NAMEPLATE_ENEMY_NPC_JUSTICE_NEUTRAL_IGNORE_COMBAT_TARGET = {
-	 type = "value",},
-
-UNIT_NAMEPLATE_ENEMY_NPC_JUSTICE_NEUTRAL_TARGET = {
-	 type = "value",},
-
-UNIT_NAMEPLATE_ENEMY_NPC_NEUTRAL = {
-	 type = "value",},
-
-UNIT_NAMEPLATE_ENEMY_NPC_NEUTRAL_TARGET = {
-	 type = "value",},
-
-UNIT_NAMEPLATE_ENEMY_PLAYER_NO_PVP = {
-	 type = "value",},
-
-UNIT_NAMEPLATE_ENEMY_PLAYER_NO_PVP_TARGET = {
-	 type = "value",},
-
-UNIT_NAMEPLATE_ENEMY_PLAYER_PVP = {
-	 type = "value",},
-
-UNIT_NAMEPLATE_ENEMY_PLAYER_PVP_TARGET = {
-	 type = "value",},
-
-UNIT_REACTION_DEFAULT = {
-	 type = "value",},
-
-UNIT_REACTION_FRIENDLY = {
-	 type = "value",},
-
-UNIT_REACTION_HOSTILE = {
-	 type = "value",},
-
-UNIT_REACTION_NEUTRAL = {
-	 type = "value",},
-
-UNIT_REACTION_NPC_ALLY = {
-	 type = "value",},
-
-UNIT_REACTION_PLAYER_ALLY = {
-	 type = "value",},
-
-VIDEO_SKIP_MODE_ALLOW_SKIP = {
-	 type = "value",},
-
-VIDEO_SKIP_MODE_NO_SKIP = {
-	 type = "value",},
-
-VIDEO_SKIP_MODE_REQUIRE_CONFIRMATION_FOR_SKIP = {
-	 type = "value",},
-
-VISUAL_LAYER_COSTUME = {
-	 type = "value",},
-
-VISUAL_LAYER_DISGUISE = {
-	 type = "value",},
-
-VISUAL_LAYER_EQUIPMENT = {
-	 type = "value",},
-
-VISUAL_LAYER_HEADWEAR = {
-	 type = "value",},
-
-VISUAL_LAYER_HIDE_HELM_OPTION = {
-	 type = "value",},
-
-VISUAL_LAYER_NONE = {
-	 type = "value",},
-
-VISUAL_LAYER_POLYMORPH = {
-	 type = "value",},
-
-VISUAL_LAYER_SKIN = {
-	 type = "value",},
-
-VISUAL_LAYER_WEREWOLF = {
-	 type = "value",},
-
-VISUAL_SLOT_CHEST = {
-	 type = "value",},
-
-VISUAL_SLOT_COSTUME = {
-	 type = "value",},
-
-VISUAL_SLOT_FEET = {
-	 type = "value",},
-
-VISUAL_SLOT_HAND = {
-	 type = "value",},
-
-VISUAL_SLOT_HEAD_ADORNMENTS = {
-	 type = "value",},
-
-VISUAL_SLOT_HELM = {
-	 type = "value",},
-
-VISUAL_SLOT_LEGS = {
-	 type = "value",},
-
-VISUAL_SLOT_NONE = {
-	 type = "value",},
-
-VISUAL_SLOT_SHOULDERS = {
-	 type = "value",},
-
-VISUAL_SLOT_SKIN = {
-	 type = "value",},
-
-VISUAL_SLOT_WAIST = {
-	 type = "value",},
-
-VISUAL_SLOT_WEAPON = {
-	 type = "value",},
-
-VISUAL_SLOT_WRIST = {
-	 type = "value",},
-
-VOICE_CHANNEL_ALL = {
-	 type = "value",},
-
-VOICE_CHANNEL_AREA = {
-	 type = "value",},
-
-VOICE_CHANNEL_GROUP = {
-	 type = "value",},
-
-VOICE_CHANNEL_GUILD = {
-	 type = "value",},
-
-VOICE_CHANNEL_NONE = {
-	 type = "value",},
-
-VOICE_CHAT_COLORS_AREA = {
-	 type = "value",},
-
-VOICE_CHAT_COLORS_GROUP = {
-	 type = "value",},
-
-VOICE_CHAT_COLORS_GUILD = {
-	 type = "value",},
-
-VOICE_CHAT_COLORS_MUTED = {
-	 type = "value",},
-
-VOICE_CHAT_SPEAK_STATE_IDLE = {
-	 type = "value",},
-
-VOICE_CHAT_SPEAK_STATE_MUTED = {
-	 type = "value",},
-
-VOICE_CHAT_SPEAK_STATE_NONE = {
-	 type = "value",},
-
-VOICE_CHAT_SPEAK_STATE_SPEAKING = {
-	 type = "value",},
-
-WEAPON_CONFIG_TYPE_BOW = {
-	 type = "value",},
-
-WEAPON_CONFIG_TYPE_DESTRO_STAFF = {
-	 type = "value",},
-
-WEAPON_CONFIG_TYPE_DUAL_WIELD = {
-	 type = "value",},
-
-WEAPON_CONFIG_TYPE_FIRE_STAFF = {
-	 type = "value",},
-
-WEAPON_CONFIG_TYPE_FROST_STAFF = {
-	 type = "value",},
-
-WEAPON_CONFIG_TYPE_LIGHTNING_STAFF = {
-	 type = "value",},
-
-WEAPON_CONFIG_TYPE_NONE = {
-	 type = "value",},
-
-WEAPON_CONFIG_TYPE_ONE_HANDED = {
-	 type = "value",},
-
-WEAPON_CONFIG_TYPE_ONE_HAND_AND_SHIELD = {
-	 type = "value",},
-
-WEAPON_CONFIG_TYPE_RESTO_STAFF = {
-	 type = "value",},
-
-WEAPON_CONFIG_TYPE_TWO_HANDED = {
-	 type = "value",},
-
-WEAPON_CONFIG_TYPE_UNARMED = {
-	 type = "value",},
-
-WEAPONTYPE_AXE = {
-	 type = "value",},
-
-WEAPONTYPE_BOW = {
-	 type = "value",},
-
-WEAPONTYPE_DAGGER = {
-	 type = "value",},
-
-WEAPONTYPE_FIRE_STAFF = {
-	 type = "value",},
-
-WEAPONTYPE_FROST_STAFF = {
-	 type = "value",},
-
-WEAPONTYPE_HAMMER = {
-	 type = "value",},
-
-WEAPONTYPE_HEALING_STAFF = {
-	 type = "value",},
-
-WEAPONTYPE_LIGHTNING_STAFF = {
-	 type = "value",},
-
-WEAPONTYPE_NONE = {
-	 type = "value",},
-
-WEAPONTYPE_RUNE = {
-	 type = "value",},
-
-WEAPONTYPE_SHIELD = {
-	 type = "value",},
-
-WEAPONTYPE_SWORD = {
-	 type = "value",},
-
-WEAPONTYPE_TWO_HANDED_AXE = {
-	 type = "value",},
-
-WEAPONTYPE_TWO_HANDED_HAMMER = {
-	 type = "value",},
-
-WEAPONTYPE_TWO_HANDED_SWORD = {
-	 type = "value",},
-
-ABILITY_MORPH_RANK = {
-	 type = "value",},
-
-ACTION_BAR_CLASS_BAR_SIZE = {
-	 type = "value",},
-
-ACTION_BAR_EMOTE_QUICK_SLOT_SIZE = {
-	 type = "value",},
-
-ACTION_BAR_FIRST_CLASS_BAR_SLOT = {
-	 type = "value",},
-
-ACTION_BAR_FIRST_EMOTE_QUICK_SLOT_INDEX = {
-	 type = "value",},
-
-ACTION_BAR_FIRST_LOCKED_SLOT = {
-	 type = "value",},
-
-ACTION_BAR_FIRST_NORMAL_SLOT_INDEX = {
-	 type = "value",},
-
-ACTION_BAR_FIRST_SIEGE_BAR_SLOT = {
-	 type = "value",},
-
-ACTION_BAR_FIRST_UTILITY_BAR_SLOT = {
-	 type = "value",},
-
-ACTION_BAR_FIRST_WEAPON_SLOT_INDEX = {
-	 type = "value",},
-
-ACTION_BAR_LAST_MAIN_BAR_SLOT = {
-	 type = "value",},
-
-ACTION_BAR_LAST_WEAPON_SLOT_INDEX = {
-	 type = "value",},
-
-ACTION_BAR_NUM_PAGES = {
-	 type = "value",},
-
-ACTION_BAR_NUM_SLOTS = {
-	 type = "value",},
-
-ACTION_BAR_QUICK_SLOT_INDEX = {
-	 type = "value",},
-
-ACTION_BAR_SIEGE_BAR_SIZE = {
-	 type = "value",},
-
-ACTION_BAR_SLOTS_PER_PAGE = {
-	 type = "value",},
-
-ACTION_BAR_ULTIMATE_SLOT_INDEX = {
-	 type = "value",},
-
-ACTION_BAR_UTILITY_BAR_SIZE = {
-	 type = "value",},
-
-ACTIVE_COMBAT_TIP_AUTOMATIC_VISIBILITY_SETTING_ID = {
-	 type = "value",},
-
-ACTIVE_COMBAT_TIP_ENABLED_SETTING_ID = {
-	 type = "value",},
-
-DISPLAY_NAME_PREFIX_BYTE = {
-	 type = "value",},
-
-GROUP_SIZE_MAX = {
-	 type = "value",},
-
-GROUP_SIZE_MAX_WITHOUT_PLAYER = {
-	 type = "value",},
-
-INVALID_DYE_ID = {
-	 type = "value",},
-
-INVALID_EXPLORATION_INDEX = {
-	 type = "value",},
-
-INVALID_TRACKER_INDEX = {
-	 type = "value",},
-
-MAIL_MAX_ATTACHED_ITEMS = {
-	 type = "value",},
-
-MAX_BOSSES = {
-	 type = "value",},
-
-MAXIMUM_CHAMPION_RANK = {
-	 type = "value",},
-
-MAX_GUILD_RANKS = {
-	 type = "value",},
-
-MAX_JOURNAL_QUESTS = {
-	 type = "value",},
-
-MAX_KEEP_UPGRADE_LEVELS = {
-	 type = "value",},
-
-MAX_CROWN_CRATE_REWARD_SLOTS = {
-	 type = "value",},
-
-MAX_PLAYER_MONEY = {
-	 type = "value",},
-
-NUM_POWER_POOLS = {
-	 type = "value",},
-
-MAX_READY_QUEUES = {
-	 type = "value",},
-
-MAX_STORE_WINDOW_STACK_QUANTITY = {
-	 type = "value",},
-
-TRACKER_MAX_TRACKED = {
-	 type = "value",},
-
-MIN_REQUIRED_LEVEL_TO_CREATE_GUILD = {
-	 type = "value",},
-
-NO_POWER_INDEX = {
-	 type = "value",},
-
-NO_PRIMARY_POWER_INDEX = {
-	 type = "value",},
-
-NUM_ALLIANCES = {
-	 type = "value",},
-
-NUM_BACKPACK_SLOTS_PER_UPGRADE = {
-	 type = "value",},
-
-NUM_BANK_SLOTS_PER_UPGRADE = {
-	 type = "value",},
-
-NUM_COMBAT_RELATED_EQUIP_SLOTS = {
-	 type = "value",},
-
-NUM_CRAFTING_ADDITIVES = {
-	 type = "value",},
-
-NUM_CRAFTING_INGREDIENTS = {
-	 type = "value",},
-
-NUM_LOCKPICK_CHAMBER_STATES = {
-	 type = "value",},
-
-NUM_LOCKPICK_CHAMBERS = {
-	 type = "value",},
-
-NUM_SKILL_LINE_COLUMNS_PER_LINE = {
-	 type = "value",},
-
-TRADE_NUM_SLOTS = {
-	 type = "value",},
-
-NUM_PARTIAL_SKILL_POINTS_FOR_FULL = {
-	 type = "value",},
-
-RAID_GROUP_SIZE_THRESHOLD = {
-	 type = "value",},
-
-SMALL_GROUP_SIZE_THRESHOLD = {
-	 type = "value",},
-
-TRADE_DELAY_TIME = {
-	 type = "value",},
-
-TUTORIAL_ENABLED_SETTING_ID = {
-	 type = "value",},
-
-VOICE_CHAT_REQUEST_DELAY = {
+TRADE_STATE_TRADING = {
 	 type = "value",},
 
 ABILITY_PROGRESSION_RESULT_ABILITY_NOT_KNOWN = {
@@ -11676,30 +11757,6 @@ GUILD_KIOSK_PURCHASE_SUCCESSFUL = {
 GUILD_KIOSK_UNAVAILABLE = {
 	 type = "value",},
 
-GUILD_PRIVILEGE_BANK_DEPOSIT = {
-	 type = "value",},
-
-GUILD_PRIVILEGE_HERALDRY = {
-	 type = "value",},
-
-GUILD_PRIVILEGE_TRADING_HOUSE = {
-	 type = "value",},
-
-DEFAULT_GUILD_LEADER_RANK = {
-	 type = "value",},
-
-DEFAULT_INVITED_RANK = {
-	 type = "value",},
-
-DEFAULT_MEMBER_RANK = {
-	 type = "value",},
-
-DEFAULT_OFFICER_RANK = {
-	 type = "value",},
-
-DEFAULT_RECRUIT_RANK = {
-	 type = "value",},
-
 HOT_BAR_RESULT_ABILITY_NOT_ACTIVE = {
 	 type = "value",},
 
@@ -11739,13 +11796,13 @@ HOUSING_REQUEST_RESULT_ALREADY_BEING_MOVED = {
 HOUSING_REQUEST_RESULT_ALREADY_SET_TO_MODE = {
 	 type = "value",},
 
-HOUSING_REQUEST_RESULT_CHEAP_COLLECTIBLE_PLACE_LIMIT = {
-	 type = "value",},
-
-HOUSING_REQUEST_RESULT_EXPENSIVE_COLLECTIBLE_PLACE_LIMIT = {
-	 type = "value",},
-
 HOUSING_REQUEST_RESULT_FURNITURE_ALREADY_SELECTED = {
+	 type = "value",},
+
+HOUSING_REQUEST_RESULT_HIGH_IMPACT_COLLECTIBLE_PLACE_LIMIT = {
+	 type = "value",},
+
+HOUSING_REQUEST_RESULT_HIGH_IMPACT_ITEM_PLACE_LIMIT = {
 	 type = "value",},
 
 HOUSING_REQUEST_RESULT_HOME_SHOW_NOT_ENOUGH_PLACED = {
@@ -11769,9 +11826,6 @@ HOUSING_REQUEST_RESULT_IN_SAFE_ZONE = {
 HOUSING_REQUEST_RESULT_IS_DEAD = {
 	 type = "value",},
 
-HOUSING_REQUEST_RESULT_ITEM_PLACE_LIMIT = {
-	 type = "value",},
-
 HOUSING_REQUEST_RESULT_ITEM_REMOVE_FAILED = {
 	 type = "value",},
 
@@ -11782,6 +11836,12 @@ HOUSING_REQUEST_RESULT_ITEM_STOLEN = {
 	 type = "value",},
 
 HOUSING_REQUEST_RESULT_LISTED = {
+	 type = "value",},
+
+HOUSING_REQUEST_RESULT_LOW_IMPACT_COLLECTIBLE_PLACE_LIMIT = {
+	 type = "value",},
+
+HOUSING_REQUEST_RESULT_LOW_IMPACT_ITEM_PLACE_LIMIT = {
 	 type = "value",},
 
 HOUSING_REQUEST_RESULT_MOVE_FAILED = {
@@ -12360,6 +12420,9 @@ CHATTER_END_GUILDKIOSK_PURCHASE = {
 CHATTER_END_HARVEST = {
 	 type = "value",},
 
+CHATTER_END_HIDDEN_THING = {
+	 type = "value",},
+
 CHATTER_END_HIDEYHOLE = {
 	 type = "value",},
 
@@ -12597,6 +12660,9 @@ CHATTER_START_GUILDKIOSK_PURCHASE = {
 CHATTER_START_HARVEST = {
 	 type = "value",},
 
+CHATTER_START_HIDDEN_THING = {
+	 type = "value",},
+
 CHATTER_START_HIDEYHOLE = {
 	 type = "value",},
 
@@ -12763,6 +12829,9 @@ OBJECTIVE_CONTROL_EVENT_FLAG_RETURNED = {
 	 type = "value",},
 
 OBJECTIVE_CONTROL_EVENT_FLAG_RETURNED_BY_TIMER = {
+	 type = "value",},
+
+OBJECTIVE_CONTROL_EVENT_FLAG_SPAWNED = {
 	 type = "value",},
 
 OBJECTIVE_CONTROL_EVENT_FLAG_TAKEN = {
@@ -12979,6 +13048,9 @@ QUEUE_FOR_CAMPAIGN_RESULT_CAMPAIGN_FULL = {
 	 type = "value",},
 
 QUEUE_FOR_CAMPAIGN_RESULT_CANNOT_QUEUE_FROM_BATTLEGROUND = {
+	 type = "value",},
+
+QUEUE_FOR_CAMPAIGN_RESULT_CANNOT_QUEUE_FROM_LOCATION = {
 	 type = "value",},
 
 QUEUE_FOR_CAMPAIGN_RESULT_DESTINATION_NOT_UP = {
@@ -13395,6 +13467,9 @@ STORE_FAILURE_ITEM_BUY_UNIQUE = {
 STORE_FAILURE_NOT_ENOUGH_ALLIANCE_POINTS = {
 	 type = "value",},
 
+STORE_FAILURE_NOT_ENOUGH_HIDDEN_THING = {
+	 type = "value",},
+
 STORE_FAILURE_NOT_ENOUGH_ITEM = {
 	 type = "value",},
 
@@ -13519,18 +13594,6 @@ TRADE_ACTION_RESULT_YOU_ARE_MISSING_MONEY = {
 	 type = "value",},
 
 TRADE_ACTION_RESULT_YOU_HAVE_TOO_MUCH_MONEY = {
-	 type = "value",},
-
-CRAFTING_ADVANCE_MODE_DELEVEL = {
-	 type = "value",},
-
-CRAFTING_ADVANCE_MODE_FREEZE = {
-	 type = "value",},
-
-CRAFTING_ADVANCE_MODE_LEVEL = {
-	 type = "value",},
-
-CRAFTING_ADVANCE_MODE_LOCKED = {
 	 type = "value",},
 
 CRAFTING_RESULT_ALREADY_RESEARCHING = {
@@ -13912,9 +13975,6 @@ COLLECTIBLE_NAME_MIN_LENGTH = {
 	 type = "value",},
 
 MAX_DEVICE_ID_LENGTH = {
-	 type = "value",},
-
-SCRIPTED_WORLD_EVENT_TIMEOUT_MS = {
 	 type = "value",},
 
 MAX_GUILD_MEMBERS = {
@@ -15081,10 +15141,19 @@ MAP_PIN_TYPE_BGPIN_MULTI_CAPTURE_AREA_D_PIT_DAEMONS = {
 MAP_PIN_TYPE_BGPIN_MULTI_CAPTURE_AREA_D_STORM_LORDS = {
 	 type = "value",},
 
-MAP_PIN_TYPE_BGPIN_MURDERBALL = {
+MAP_PIN_TYPE_BGPIN_MURDERBALL_FIRE_DRAKES = {
 	 type = "value",},
 
-MAP_PIN_TYPE_BGPIN_MURDERBALL_AURA = {
+MAP_PIN_TYPE_BGPIN_MURDERBALL_NEUTRAL = {
+	 type = "value",},
+
+MAP_PIN_TYPE_BGPIN_MURDERBALL_PIT_DAEMONS = {
+	 type = "value",},
+
+MAP_PIN_TYPE_BGPIN_MURDERBALL_SPAWN_NEUTRAL = {
+	 type = "value",},
+
+MAP_PIN_TYPE_BGPIN_MURDERBALL_STORM_LORDS = {
 	 type = "value",},
 
 MAP_PIN_TYPE_BORDER_KEEP_ALDMERI_DOMINION = {
@@ -15702,14 +15771,6 @@ args = "(*integer* _system_, *integer* _settingId_)",
 returns = "(bool:value,)",
 valuetype = "bool,",},
 
-SetSetting = {type = "function",
-description = "",
-args = "(*integer* _system_, *integer* _settingId_, *string* _value_, *integer* _setOptions_)",},
-
-ApplySettings = {type = "function",
-description = "",
-args = "()",},
-
 ResetSettingToDefault = {type = "function",
 description = "",
 args = "(*integer* _system_, *integer* _settingId_)",},
@@ -15717,10 +15778,6 @@ args = "(*integer* _system_, *integer* _settingId_)",},
 ResetToDefaultSettings = {type = "function",
 description = "",
 args = "(*integer* _system_)",},
-
-RefreshSettings = {type = "function",
-description = "",
-args = "()",},
 
 GetString = {type = "function",
 description = "",
@@ -16050,12 +16107,6 @@ args = "(*luaindex* _index_)",
 returns = "(integer:guildId,)",
 valuetype = "integer,",},
 
-GetNumGuildPermissions = {type = "function",
-description = "",
-args = "()",
-returns = "(integer:numPermissions,)",
-valuetype = "integer,",},
-
 GetNumGuildHistoryCategories = {type = "function",
 description = "",
 args = "()",
@@ -16169,6 +16220,22 @@ description = "",
 args = "()",
 returns = "(bool:usesHDR,)",
 valuetype = "bool,",},
+
+TakeScreenshot = {type = "function",
+description = "",
+args = "()",},
+
+SetSetting = {type = "function",
+description = "",
+args = "(*[SettingSystemType|#SettingSystemType]* _system_, *integer* _settingId_, *string* _value_, *[SetOptions|#SetOptions]* _setOptions_)",},
+
+ApplySettings = {type = "function",
+description = "",
+args = "()",},
+
+RefreshSettings = {type = "function",
+description = "",
+args = "()",},
 
 GetEULADetails = {type = "function",
 description = "",
@@ -16488,7 +16555,7 @@ valuetype = "bool,",},
 
 CanEditGuildRankPermission = {type = "function",
 description = "",
-args = "(*integer* _rankId_, *integer* _permission_)",
+args = "(*integer* _rankId_, *[GuildPermission|#GuildPermission]* _permission_)",
 returns = "(bool:hasPermission,)",
 valuetype = "bool,",},
 
@@ -16692,6 +16759,12 @@ GetGuildOwnedKioskInfo = {type = "function",
 description = "",
 args = "(*integer* _guildId_)",},
 
+GetGuildKioskCycleTimes = {type = "function",
+description = "",
+args = "()",
+returns = "(integer:respawnTimestampS,integer:bidEndTimestampS,integer:despawnTimestampS,)",
+valuetype = "integer,integer,integer,",},
+
 GetNumGuildSpecificItems = {type = "function",
 description = "",
 args = "()",
@@ -16713,6 +16786,26 @@ description = "",
 args = "(*luaindex* _index_, *[LinkStyle|#LinkStyle]* _linkStyle_)",
 returns = "(string:link,)",
 valuetype = "string,",},
+
+GetNumGuildPermissionDependencies = {type = "function",
+description = "",
+args = "(*[GuildPermission|#GuildPermission]* _permission_)",
+returns = "(integer:numDependencies,)",
+valuetype = "integer,",},
+
+GetGuildPermissionDependency = {type = "function",
+description = "",
+args = "(*[GuildPermission|#GuildPermission]* _permission_, *luaindex* _index_)",},
+
+GetNumGuildPermissionRequisites = {type = "function",
+description = "",
+args = "(*[GuildPermission|#GuildPermission]* _permission_)",
+returns = "(integer:numDependencies,)",
+valuetype = "integer,",},
+
+GetGuildPermissionRequisite = {type = "function",
+description = "",
+args = "(*[GuildPermission|#GuildPermission]* _permission_, *luaindex* _index_)",},
 
 SetGamepadVibration = {type = "function",
 description = "",
@@ -17291,10 +17384,6 @@ description = "",
 args = "(*number* _statValue_)",
 returns = "(number:chance,)",
 valuetype = "number,",},
-
-TakeScreenshot = {type = "function",
-description = "",
-args = "()",},
 
 SetFullscreenEffect = {type = "function",
 description = "",
@@ -17912,12 +18001,6 @@ args = "(*luaindex* _slotIndex_)",
 returns = "(integer:mechanicType,integer:abilityCost,)",
 valuetype = "integer,integer,",},
 
-GetSlotBoundId = {type = "function",
-description = "",
-args = "(*luaindex* _slotIndex_)",
-returns = "(integer:id,)",
-valuetype = "integer,",},
-
 GetSlotTexture = {type = "function",
 description = "",
 args = "(*luaindex* _slotIndex_)",
@@ -18454,7 +18537,7 @@ valuetype = "integer,integer,",},
 
 GetEquippedItemInfo = {type = "function",
 description = "",
-args = "(*integer* _equipSlot_)",
+args = "(*[EquipSlot|#EquipSlot]* _equipSlot_)",
 returns = "(bool:locked,bool:isHeldNow,bool:isHeldSlot,integer:sellPrice,bool:slotHasItem,string:icon,)",
 valuetype = "bool,bool,bool,integer,bool,string,",},
 
@@ -18489,7 +18572,7 @@ valuetype = "integer,bool,",},
 GetItemLinkInfo = {type = "function",
 description = "",
 args = "(*string* _itemLink_)",
-returns = "(integer:itemStyle,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,string:icon,)",
+returns = "(integer:itemStyleId,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,string:icon,)",
 valuetype = "integer,integer,bool,integer,string,",},
 
 IsBankUpgradeAvailable = {type = "function",
@@ -18522,7 +18605,7 @@ valuetype = "integer,",},
 
 IsLockedWeaponSlot = {type = "function",
 description = "",
-args = "(*integer* _equipSlot_)",
+args = "(*[EquipSlot|#EquipSlot]* _equipSlot_)",
 returns = "(bool:locked,)",
 valuetype = "bool,",},
 
@@ -19930,6 +20013,12 @@ args = "(*luaindex* _slotIndex_)",
 returns = "(string:itemLink,)",
 valuetype = "string,",},
 
+GetSlotBoundId = {type = "function",
+description = "",
+args = "(*luaindex* _slotIndex_)",
+returns = "(integer:id,)",
+valuetype = "integer,",},
+
 GetCurrentQuickslot = {type = "function",
 description = "",
 args = "()",
@@ -20557,10 +20646,6 @@ args = "(*string* _userName_, *bool* _isIgnoredThisSession_)",},
 ClearSessionIgnores = {type = "function",
 description = "",
 args = "()",},
-
-SubmitSpamReport = {type = "function",
-description = "",
-args = "(*string* _userName_, *[ReportPlayerReason|#ReportPlayerReason]* _reason_)",},
 
 SetChatLogEnabled = {type = "function",
 description = "",
@@ -21330,6 +21415,18 @@ args = "()",
 returns = "(bool:isWorldGroupOwnable,)",
 valuetype = "bool,",},
 
+GuiRender3DPositionToWorldPosition = {type = "function",
+description = "",
+args = "(*number* _renderX_, *number* _renderY_, *number* _renderZ_)",
+returns = "(integer:worldZ,integer:worldY,integer:worldX,)",
+valuetype = "integer,integer,integer,",},
+
+WorldPositionToGuiRender3DPosition = {type = "function",
+description = "",
+args = "(*integer* _worldX_, *integer* _worldY_, *integer* _worldZ_)",
+returns = "(number:renderZ,number:renderY,number:renderX,)",
+valuetype = "number,number,number,",},
+
 CanJumpToPlayerInZone = {type = "function",
 description = "",
 args = "(*integer* _zoneId_)",
@@ -21542,6 +21639,18 @@ args = "(*[Alliance|#Alliance]* _alliance_, *[ObjectiveType|#ObjectiveType]* _ar
 returns = "(string:description,textureName:icon,string:name,)",
 valuetype = "string,textureName,string,",},
 
+IsObjectiveObjectVisible = {type = "function",
+description = "",
+args = "(*integer* _keepId_, *integer* _objectiveId_, *[BattlegroundQueryContextType|#BattlegroundQueryContextType]* _battlegroundContext_)",
+returns = "(bool:isVisible,)",
+valuetype = "bool,",},
+
+IsObjectiveEnabled = {type = "function",
+description = "",
+args = "(*integer* _keepId_, *integer* _objectiveId_, *[BattlegroundQueryContextType|#BattlegroundQueryContextType]* _battlegroundContext_)",
+returns = "(bool:isEnabled,)",
+valuetype = "bool,",},
+
 GetKeepArtifactObjectiveId = {type = "function",
 description = "",
 args = "(*integer* _keepId_)",
@@ -21631,6 +21740,10 @@ returns = "(integer:scoreReward,)",
 valuetype = "integer,",},
 
 LeaveBattleground = {type = "function",
+description = "",
+args = "()",},
+
+GetCurrentBattlegroundShutdownTimer = {type = "function",
 description = "",
 args = "()",},
 
@@ -22781,8 +22894,8 @@ args = "(*luaindex* _tradeIndex_)",},
 GetTradeItemInfo = {type = "function",
 description = "",
 args = "(*[TradeParticipant|#TradeParticipant]* _who_, *luaindex* _tradeIndex_)",
-returns = "(bool:meetsUsageRequirement,integer:sellPrice,string:creatorName,integer:quality,integer:stack,textureName:icon,string:name,)",
-valuetype = "bool,integer,string,integer,integer,textureName,string,",},
+returns = "(integer:itemStyleId,bool:meetsUsageRequirement,integer:sellPrice,string:creatorName,integer:quality,integer:stack,textureName:icon,string:name,)",
+valuetype = "integer,bool,integer,string,integer,integer,textureName,string,",},
 
 IsTradeItemBoPAndTradeable = {type = "function",
 description = "",
@@ -22921,6 +23034,18 @@ description = "",
 args = "(*luaindex* _progressionIndex_)",
 returns = "(luaindex:abilityIndex,luaindex:skillIndex,)",
 valuetype = "luaindex,luaindex,",},
+
+GetSkillLineIndicesFromSkillId = {type = "function",
+description = "",
+args = "(*integer* _skillId_)",
+returns = "(luaindex:skillIndex,)",
+valuetype = "luaindex,",},
+
+GetSkillLineIndicesFromSkillLineId = {type = "function",
+description = "",
+args = "(*integer* _skillLineId_)",
+returns = "(luaindex:skillIndex,)",
+valuetype = "luaindex,",},
 
 IsWerewolfSkillLine = {type = "function",
 description = "",
@@ -23073,7 +23198,7 @@ valuetype = "string,",},
 GetAttachedItemInfo = {type = "function",
 description = "",
 args = "(*id64* _mailId_, *luaindex* _attachIndex_)",
-returns = "(integer:quality,integer:itemStyle,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,string:creatorName,integer:stack,textureName:icon,)",
+returns = "(integer:quality,integer:itemStyleId,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,string:creatorName,integer:stack,textureName:icon,)",
 valuetype = "integer,integer,integer,bool,integer,string,integer,textureName,",},
 
 TakeMailAttachedItems = {type = "function",
@@ -23446,6 +23571,10 @@ args = "()",
 returns = "(bool:name,)",
 valuetype = "bool,",},
 
+GetGameCameraTargetHoverTutorial = {type = "function",
+description = "",
+args = "()",},
+
 GetPledgeOfMaraOfferInfo = {type = "function",
 description = "",
 args = "()",
@@ -23655,7 +23784,7 @@ valuetype = "integer,",},
 GetLastCraftingResultLearnedTranslationInfo = {type = "function",
 description = "",
 args = "(*luaindex* _resultIndex_)",
-returns = "(integer:quality,integer:itemStyle,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,textureName:icon,string:itemName,string:translationName,)",
+returns = "(integer:quality,integer:itemStyleId,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,textureName:icon,string:itemName,string:translationName,)",
 valuetype = "integer,integer,integer,bool,integer,textureName,string,string,",},
 
 GetNumLastCraftingResultLearnedTraits = {type = "function",
@@ -23667,7 +23796,7 @@ valuetype = "integer,",},
 GetLastCraftingResultLearnedTraitInfo = {type = "function",
 description = "",
 args = "(*luaindex* _resultIndex_)",
-returns = "(integer:quality,integer:itemStyle,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,textureName:icon,string:itemName,string:traitName,)",
+returns = "(integer:quality,integer:itemStyleId,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,textureName:icon,string:itemName,string:traitName,)",
 valuetype = "integer,integer,integer,bool,integer,textureName,string,string,",},
 
 GetNumLastCraftingResultItemsAndPenalty = {type = "function",
@@ -23679,7 +23808,7 @@ valuetype = "bool,integer,",},
 GetLastCraftingResultItemInfo = {type = "function",
 description = "",
 args = "(*luaindex* _resultIndex_)",
-returns = "(integer:itemInstanceId,integer:quality,integer:itemStyle,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,integer:stack,textureName:icon,string:name,)",
+returns = "(integer:itemInstanceId,integer:quality,integer:itemStyleId,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,integer:stack,textureName:icon,string:name,)",
 valuetype = "integer,integer,integer,integer,bool,integer,integer,textureName,string,",},
 
 GetLastCraftingResultItemLink = {type = "function",
@@ -23719,7 +23848,7 @@ args = "(*integer* _solventBagId_, *integer* _solventSlotIndex_, *integer* _reag
 GetAlchemyResultingItemInfo = {type = "function",
 description = "",
 args = "(*integer* _solventBagId_, *integer* _solventSlotIndex_, *integer* _reagent1BagId_, *integer* _reagent1SlotIndex_, *integer* _reagent2BagId_, *integer* _reagent2SlotIndex_, *integer:nilable* _reagent3BagId_, *integer:nilable* _reagent3SlotIndex_)",
-returns = "(integer:quality,integer:itemStyle,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,integer:stack,textureName:icon,string:name,)",
+returns = "(integer:quality,integer:itemStyleId,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,integer:stack,textureName:icon,string:name,)",
 valuetype = "integer,integer,integer,bool,integer,integer,textureName,string,",},
 
 GetAlchemyResultingItemLink = {type = "function",
@@ -23864,17 +23993,17 @@ valuetype = "string,",},
 
 GetCostToCraftSmithingItem = {type = "function",
 description = "",
-args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_, *integer* _materialQuantity_, *luaindex* _styleIndex_, *luaindex* _traitIndex_)",
+args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_, *integer* _materialQuantity_, *integer* _itemStyleId_, *luaindex* _traitIndex_)",
 returns = "(integer:cost,)",
 valuetype = "integer,",},
 
 CraftSmithingItem = {type = "function",
 description = "",
-args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_, *integer* _materialQuantity_, *luaindex* _styleIndex_, *luaindex* _traitIndex_, *bool* _useUniversalStyleItem_)",},
+args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_, *integer* _materialQuantity_, *integer* _itemStyleId_, *luaindex* _traitIndex_, *bool* _useUniversalStyleItem_)",},
 
 GetSmithingPatternResultLink = {type = "function",
 description = "",
-args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_, *integer* _materialQuantity_, *luaindex* _styleIndex_, *luaindex* _traitIndex_, *[LinkStyle|#LinkStyle]* _linkStyle_)",
+args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_, *integer* _materialQuantity_, *integer* _itemStyleId_, *luaindex* _traitIndex_, *[LinkStyle|#LinkStyle]* _linkStyle_)",
 returns = "(string:link,)",
 valuetype = "string,",},
 
@@ -23904,14 +24033,14 @@ valuetype = "integer,",},
 
 GetSmithingPatternInfo = {type = "function",
 description = "",
-args = "(*luaindex* _patternIndex_, *luaindex:nilable* _materialIndexOverride_, *integer:nilable* _materialQuanityOverride_, *[ItemStyle|#ItemStyle]:nilable* _styleOverride_, *[ItemTraitType|#ItemTraitType]:nilable* _traitTypeOverride_)",
+args = "(*luaindex* _patternIndex_, *luaindex:nilable* _materialIndexOverride_, *integer:nilable* _materialQuanityOverride_, *integer:nilable* _styleOverride_, *[ItemTraitType|#ItemTraitType]:nilable* _traitTypeOverride_)",
 returns = "(integer:numTraitsKnown,integer:numTraitsRequired,integer:numMaterials,textureName:icon,string:baseName,string:patternName,)",
 valuetype = "integer,integer,integer,textureName,string,string,",},
 
 GetSmithingPatternMaterialItemInfo = {type = "function",
 description = "",
 args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_)",
-returns = "(integer:skillRequirement,integer:itemInstanceId,integer:quality,integer:itemStyle,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,integer:stack,textureName:icon,string:itemName,)",
+returns = "(integer:skillRequirement,integer:itemInstanceId,integer:quality,integer:itemStyleId,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,integer:stack,textureName:icon,string:itemName,)",
 valuetype = "integer,integer,integer,integer,integer,bool,integer,integer,textureName,string,",},
 
 GetSmithingPatternNextMaterialQuantity = {type = "function",
@@ -23936,45 +24065,43 @@ args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_)",
 returns = "(integer:count,)",
 valuetype = "integer,",},
 
-GetNumSmithingStyleItems = {type = "function",
+GetHighestItemStyleId = {type = "function",
 description = "",
 args = "()",
-returns = "(integer:numStyleItems,)",
+returns = "(integer:highestItemStyleDefId,)",
 valuetype = "integer,",},
 
-GetSmithingStyleItemInfo = {type = "function",
+GetItemStyleInfo = {type = "function",
 description = "",
-args = "(*luaindex* _styleItemIndex_)",
-returns = "(bool:alwaysHideIfLocked,integer:quality,integer:itemStyle,bool:meetsUsageRequirement,integer:sellPrice,textureName:icon,string:itemName,)",
-valuetype = "bool,integer,integer,bool,integer,textureName,string,",},
+args = "(*integer* _itemStyleId_)",
+returns = "(bool:alwaysHideIfLocked,)",
+valuetype = "bool,",},
 
-GetSmithingStyleItemLink = {type = "function",
+GetItemStyleMaterialLink = {type = "function",
 description = "",
-args = "(*luaindex* _styleItemIndex_, *[LinkStyle|#LinkStyle]* _linkStyle_)",
+args = "(*integer* _itemStyleId_, *[LinkStyle|#LinkStyle]* _linkStyle_)",
 returns = "(string:link,)",
 valuetype = "string,",},
 
 GetCurrentSmithingStyleItemCount = {type = "function",
 description = "",
-args = "(*luaindex* _styleItemIndex_)",
+args = "(*integer* _itemStyleId_)",
 returns = "(integer:count,)",
 valuetype = "integer,",},
 
 IsSmithingStyleKnown = {type = "function",
 description = "",
-args = "(*luaindex* _styleItemIndex_, *luaindex* _patternIndex_)",
+args = "(*integer* _itemStyleId_, *luaindex* _patternIndex_)",
 returns = "(bool:known,)",
 valuetype = "bool,",},
 
-GetFirstKnownStyleIndex = {type = "function",
+GetFirstKnownItemStyleId = {type = "function",
 description = "",
-args = "(*luaindex* _patternIndex_)",
-returns = "(luaindex:styleItemIndex,)",
-valuetype = "luaindex,",},
+args = "(*luaindex* _patternIndex_)",},
 
 CanSmithingStyleBeUsedOnPattern = {type = "function",
 description = "",
-args = "(*luaindex* _styleIndex_, *luaindex* _patternIndex_, *luaindex* _materialIndex_, *integer* _materialQuantity_)",
+args = "(*integer* _itemStyleId_, *luaindex* _patternIndex_, *luaindex* _materialIndex_, *integer* _materialQuantity_)",
 returns = "(integer:championPointsRequirement,integer:levelRequirement,bool:canBeUsed,)",
 valuetype = "integer,integer,bool,",},
 
@@ -23987,7 +24114,7 @@ valuetype = "integer,",},
 GetSmithingTraitItemInfo = {type = "function",
 description = "",
 args = "(*luaindex* _traitItemIndex_)",
-returns = "(integer:quality,integer:itemStyle,bool:meetsUsageRequirement,integer:sellPrice,textureName:icon,string:itemName,)",
+returns = "(integer:quality,integer:itemStyleId,bool:meetsUsageRequirement,integer:sellPrice,textureName:icon,string:itemName,)",
 valuetype = "integer,integer,bool,integer,textureName,string,",},
 
 GetSmithingTraitItemLink = {type = "function",
@@ -24010,7 +24137,7 @@ valuetype = "bool,",},
 
 IsSmithingTraitKnownForResult = {type = "function",
 description = "",
-args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_, *integer* _materialQuantity_, *luaindex* _styleIndex_, *luaindex* _traitIndex_)",
+args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_, *integer* _materialQuantity_, *integer* _itemStyleId_, *luaindex* _traitIndex_)",
 returns = "(bool:known,)",
 valuetype = "bool,",},
 
@@ -24051,6 +24178,10 @@ valuetype = "bool,",},
 ResearchSmithingTrait = {type = "function",
 description = "",
 args = "(*integer* _bagId_, *integer* _slotIndex_)",},
+
+CancelSmithingTraitResearch = {type = "function",
+description = "",
+args = "(*[TradeskillType|#TradeskillType]* _tradeskillType_, *luaindex* _researchLineIndex_, *luaindex* _traitIndex_)",},
 
 CanItemBeSmithingExtractedOrRefined = {type = "function",
 description = "",
@@ -24101,7 +24232,7 @@ valuetype = "integer,",},
 GetSmithingImprovementItemInfo = {type = "function",
 description = "",
 args = "(*[TradeskillType|#TradeskillType]* _craftingSkillType_, *luaindex* _improvementItemIndex_)",
-returns = "(integer:quality,integer:itemStyle,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,integer:currentStack,textureName:icon,string:itemName,)",
+returns = "(integer:quality,integer:itemStyleId,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,integer:currentStack,textureName:icon,string:itemName,)",
 valuetype = "integer,integer,integer,bool,integer,integer,textureName,string,",},
 
 GetSmithingImprovementItemLink = {type = "function",
@@ -24113,7 +24244,7 @@ valuetype = "string,",},
 GetSmithingImprovedItemInfo = {type = "function",
 description = "",
 args = "(*integer* _itemToImproveBagId_, *integer* _itemToImproveSlotIndex_, *[TradeskillType|#TradeskillType]* _craftingSkillType_)",
-returns = "(integer:quality,integer:itemStyle,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,textureName:icon,string:itemName,)",
+returns = "(integer:quality,integer:itemStyleId,integer:equipType,bool:meetsUsageRequirement,integer:sellPrice,textureName:icon,string:itemName,)",
 valuetype = "integer,integer,integer,bool,integer,textureName,string,",},
 
 GetSmithingImprovedItemLink = {type = "function",
@@ -24125,6 +24256,30 @@ valuetype = "string,",},
 ImproveSmithingItem = {type = "function",
 description = "",
 args = "(*integer* _itemToImproveBagId_, *integer* _itemToImproveSlotIndex_, *integer* _numBoostersToUse_)",},
+
+GetImperialStyleId = {type = "function",
+description = "",
+args = "()",
+returns = "(integer:imperialStyleId,)",
+valuetype = "integer,",},
+
+GetMoragTongStyleId = {type = "function",
+description = "",
+args = "()",
+returns = "(integer:moragTongStyleId,)",
+valuetype = "integer,",},
+
+GetNumValidItemStyles = {type = "function",
+description = "",
+args = "()",
+returns = "(integer:numValidItemStyles,)",
+valuetype = "integer,",},
+
+GetValidItemStyleId = {type = "function",
+description = "",
+args = "(*luaindex* _index_)",
+returns = "(integer:validItemStyle,)",
+valuetype = "integer,",},
 
 GetNonCombatBonus = {type = "function",
 description = "",
@@ -24527,8 +24682,8 @@ valuetype = "integer,",},
 GetKillingAttackInfo = {type = "function",
 description = "",
 args = "(*luaindex* _index_)",
-returns = "(integer:durationMS,integer:castTimeAgoMS,bool:wasKillingBlow,textureName:attackIcon,integer:attackDamage,string:attackName,)",
-valuetype = "integer,integer,bool,textureName,integer,string,",},
+returns = "(integer:numAttackHits,integer:durationMS,integer:castTimeAgoMS,bool:wasKillingBlow,textureName:attackIcon,integer:attackDamage,string:attackName,)",
+valuetype = "integer,integer,integer,bool,textureName,integer,string,",},
 
 DoesKillingAttackHaveAttacker = {type = "function",
 description = "",
@@ -25052,6 +25207,12 @@ PlayDefaultQuickChat = {type = "function",
 description = "",
 args = "(*luaindex* _index_)",},
 
+ZoUTF8StringLength = {type = "function",
+description = "",
+args = "(*string* _string_)",
+returns = "(integer:length,)",
+valuetype = "integer,",},
+
 SetSCTAnimationOffsetX = {type = "function",
 description = "",
 args = "(*object* _timeline_, *number* _offsetX_)",},
@@ -25059,12 +25220,6 @@ args = "(*object* _timeline_, *number* _offsetX_)",},
 SetSCTAnimationOffsetY = {type = "function",
 description = "",
 args = "(*object* _timeline_, *number* _offsetY_)",},
-
-ZoUTF8StringLength = {type = "function",
-description = "",
-args = "(*string* _string_)",
-returns = "(integer:length,)",
-valuetype = "integer,",},
 
 ResetSCTDataToDefaults = {type = "function",
 description = "",
@@ -25410,6 +25565,10 @@ DeleteWorldParticleEffect = {type = "function",
 description = "",
 args = "(*integer* _particleEffectId_)",},
 
+StartWorldEffectOnPlayer = {type = "function",
+description = "",
+args = "(*[UIWorldEffect|#UIWorldEffect]* _UIWorldEffect_)",},
+
 GetActiveUserEmailAddress = {type = "function",
 description = "",
 args = "()",
@@ -25525,8 +25684,8 @@ valuetype = "integer,",},
 GetFurnitureCategoryInfo = {type = "function",
 description = "",
 args = "(*integer* _furnitureCategoryId_)",
-returns = "(bool:availableInTradingHouse,string:displayName,)",
-valuetype = "bool,string,",},
+returns = "(integer:categoryOrder,bool:availableInTradingHouse,string:displayName,)",
+valuetype = "integer,bool,string,",},
 
 GetFurnitureCategoryKeyboardIcons = {type = "function",
 description = "",
@@ -25882,13 +26041,13 @@ RequestEndCutscene = {type = "function",
 description = "",
 args = "()",},
 
-HasEsoPlusSubscriptionNotification = {type = "function",
+HasEsoPlusFreeTrialNotification = {type = "function",
 description = "",
 args = "()",
-returns = "(bool:hasSubscriptionNotification,)",
+returns = "(bool:hasFreeTrialNotification,)",
 valuetype = "bool,",},
 
-ClearEsoPlusSubscriptionNotification = {type = "function",
+ClearEsoPlusFreeTrialNotification = {type = "function",
 description = "",
 args = "()",},
 
@@ -25914,12 +26073,6 @@ args = "()",
 returns = "(integer:money,)",
 valuetype = "integer,",},
 
-GetAlliancePoints = {type = "function",
-description = "",
-args = "()",
-returns = "(integer:alliancePoints,)",
-valuetype = "integer,",},
-
 GetCarriedCurrencyAmount = {type = "function",
 description = "",
 args = "(*[CurrencyType|#CurrencyType]* _type_)",
@@ -25930,12 +26083,6 @@ GetMaxCarriedCurrencyAmount = {type = "function",
 description = "",
 args = "(*[CurrencyType|#CurrencyType]* _type_)",
 returns = "(integer:currencyAmount,)",
-valuetype = "integer,",},
-
-GetBankedMoney = {type = "function",
-description = "",
-args = "()",
-returns = "(integer:money,)",
 valuetype = "integer,",},
 
 GetBankedCurrencyAmount = {type = "function",
@@ -25963,28 +26110,6 @@ description = "",
 args = "(*[CurrencyType|#CurrencyType]* _type_)",
 returns = "(integer:maxDeposit,)",
 valuetype = "integer,",},
-
-DepositMoneyIntoBank = {type = "function",
-description = "",
-args = "(*integer* _money_)",},
-
-WithdrawMoneyFromBank = {type = "function",
-description = "",
-args = "(*integer* _money_)",},
-
-GetBankedTelvarStones = {type = "function",
-description = "",
-args = "()",
-returns = "(integer:telvarStones,)",
-valuetype = "integer,",},
-
-DepositTelvarStonesIntoBank = {type = "function",
-description = "",
-args = "(*integer* _telvarStones_)",},
-
-WithdrawTelvarStonesFromBank = {type = "function",
-description = "",
-args = "(*integer* _telvarStones_)",},
 
 GetMaxBankCurrencyAmount = {type = "function",
 description = "",
@@ -26036,18 +26161,6 @@ GetMaxGuildBankCurrencyAmount = {type = "function",
 description = "",
 args = "(*[CurrencyType|#CurrencyType]* _type_)",
 returns = "(integer:currencyAmount,)",
-valuetype = "integer,",},
-
-GetTelvarStoneBankingFee = {type = "function",
-description = "",
-args = "()",
-returns = "(integer:bankingFee,)",
-valuetype = "integer,",},
-
-GetTelvarStoneMinimumDeposit = {type = "function",
-description = "",
-args = "()",
-returns = "(integer:minDeposit,)",
 valuetype = "integer,",},
 
 GetTelvarStonePercentLossOnPvpDeath = {type = "function",
@@ -26190,13 +26303,13 @@ args = "(*integer* _itemToEnchantBagId_, *integer* _itemToEnchantSlotIndex_, *in
 
 CanConvertItemStyle = {type = "function",
 description = "",
-args = "(*integer* _itemToBagId_, *integer* _itemToSlotIndex_, *[ItemStyle|#ItemStyle]* _newStyle_)",
+args = "(*integer* _itemToBagId_, *integer* _itemToSlotIndex_, *integer* _newStyle_)",
 returns = "(bool:canConvert,)",
 valuetype = "bool,",},
 
 ConvertItemStyle = {type = "function",
 description = "",
-args = "(*integer* _itemToBagId_, *integer* _itemToSlotIndex_, *[ItemStyle|#ItemStyle]* _newStyle_)",},
+args = "(*integer* _itemToBagId_, *integer* _itemToSlotIndex_, *integer* _newStyle_)",},
 
 IsItemChargeable = {type = "function",
 description = "",
@@ -26327,7 +26440,7 @@ valuetype = "string,",},
 GetItemInfo = {type = "function",
 description = "",
 args = "(*integer* _bagId_, *integer* _slotIndex_)",
-returns = "(integer:quality,integer:itemStyle,integer:equipType,bool:locked,bool:meetsUsageRequirement,integer:sellPrice,integer:stack,textureName:icon,)",
+returns = "(integer:quality,integer:itemStyleId,integer:equipType,bool:locked,bool:meetsUsageRequirement,integer:sellPrice,integer:stack,textureName:icon,)",
 valuetype = "integer,integer,integer,bool,bool,integer,integer,textureName,",},
 
 GetItemId = {type = "function",
@@ -26651,14 +26764,14 @@ valuetype = "bool,integer,integer,bool,integer,string,bool,",},
 GetItemLinkTraitInfo = {type = "function",
 description = "",
 args = "(*string* _itemLink_)",
-returns = "(string:traitSubtypeDescription,string:traitSubtypeName,integer:traitSubtype,string:traitDescription,)",
-valuetype = "string,string,integer,string,",},
+returns = "(string:traitDescription,)",
+valuetype = "string,",},
 
 GetItemLinkSetInfo = {type = "function",
 description = "",
 args = "(*string* _itemLink_, *bool* _equipped_)",
-returns = "(integer:maxEquipped,integer:numEquipped,integer:numBonuses,string:setName,bool:hasSet,)",
-valuetype = "integer,integer,integer,string,bool,",},
+returns = "(integer:setId,integer:maxEquipped,integer:numEquipped,integer:numBonuses,string:setName,bool:hasSet,)",
+valuetype = "integer,integer,integer,integer,string,bool,",},
 
 GetItemLinkSetBonusInfo = {type = "function",
 description = "",
@@ -26850,7 +26963,9 @@ args = "(*string* _itemLink_, *luaindex* _index_)",},
 
 GetItemLinkItemStyle = {type = "function",
 description = "",
-args = "(*string* _itemLink_)",},
+args = "(*string* _itemLink_)",
+returns = "(integer:style,)",
+valuetype = "integer,",},
 
 GetItemLinkRefinedMaterialItemLink = {type = "function",
 description = "",
@@ -27035,6 +27150,10 @@ description = "",
 args = "(*integer* _bagId_, *integer* _slotIndex_)",
 returns = "(bool:isFromCrownCrate,)",
 valuetype = "bool,",},
+
+GetItemBindType = {type = "function",
+description = "",
+args = "(*integer* _bagId_, *integer* _slotIndex_)",},
 
 GetNumTutorials = {type = "function",
 description = "",
@@ -27462,6 +27581,18 @@ args = "(*[MarketDisplayGroup|#MarketDisplayGroup]* _displayGroup_, *luaindex* _
 returns = "(bool:isDisabled,)",
 valuetype = "bool,",},
 
+MarketProductCategoryContainsNewMarketProducts = {type = "function",
+description = "",
+args = "(*[MarketDisplayGroup|#MarketDisplayGroup]* _displayGroup_, *luaindex* _topLevelIndex_, *luaindex:nilable* _categoryIndex_)",
+returns = "(bool:containsNewProducts,)",
+valuetype = "bool,",},
+
+MarketProductCategoryOrSubCategoriesContainsNewMarketProducts = {type = "function",
+description = "",
+args = "(*[MarketDisplayGroup|#MarketDisplayGroup]* _displayGroup_, *luaindex* _topLevelIndex_, *luaindex:nilable* _categoryIndex_)",
+returns = "(bool:containsNewProducts,)",
+valuetype = "bool,",},
+
 GetMarketProductInfo = {type = "function",
 description = "",
 args = "(*integer* _marketProductId_)",
@@ -27580,6 +27711,16 @@ GetMarketProductQuality = {type = "function",
 description = "",
 args = "(*integer* _marketProductId_)",},
 
+GetMarketProductOpenMarketBehavior = {type = "function",
+description = "",
+args = "(*integer* _marketProductId_)",},
+
+GetMarketProductOpenMarketBehaviorNavigateToOtherProductId = {type = "function",
+description = "",
+args = "(*integer* _marketProductId_)",
+returns = "(integer:openToMarketProductId,)",
+valuetype = "integer,",},
+
 GetMarketProductNumCollectibles = {type = "function",
 description = "",
 args = "(*integer* _marketProductId_)",
@@ -27628,6 +27769,12 @@ args = "(*integer* _marketProductId_)",
 returns = "(number:timeLeftSeconds,)",
 valuetype = "number,",},
 
+GetMarketProductEndTimeString = {type = "function",
+description = "",
+args = "(*integer* _marketProductId_)",
+returns = "(string:endTimeString,)",
+valuetype = "string,",},
+
 OpenMarket = {type = "function",
 description = "",
 args = "(*[MarketDisplayGroup|#MarketDisplayGroup]* _displayGroup_)",},
@@ -27652,43 +27799,15 @@ OnMarketClose = {type = "function",
 description = "",
 args = "()",},
 
-CanPreviewMarketProduct = {type = "function",
-description = "",
-args = "(*integer* _marketProductId_)",
-returns = "(bool:isPreviewable,)",
-valuetype = "bool,",},
-
-GetNumMarketProductPreviewVariations = {type = "function",
-description = "",
-args = "(*integer* _marketProductId_)",
-returns = "(integer:numVariations,)",
-valuetype = "integer,",},
-
-GetMarketProductPreviewVariationDisplayName = {type = "function",
-description = "",
-args = "(*integer* _marketProductId_, *luaindex* _variation_)",
-returns = "(string:variationDisplayName,)",
-valuetype = "string,",},
-
-PreviewMarketProduct = {type = "function",
-description = "",
-args = "(*integer* _marketProductId_, *luaindex* _variation_)",},
-
-PreviewFurnitureMarketProduct = {type = "function",
-description = "",
-args = "(*integer* _marketProductId_, *luaindex* _variation_)",},
-
-IsPreviewingMarketProduct = {type = "function",
-description = "",
-args = "(*integer* _marketProductId_)",
-returns = "(bool:isBeingPreviewed,)",
-valuetype = "bool,",},
-
 OnMarketPurchaseMoreCrowns = {type = "function",
 description = "",
 args = "()",},
 
-GetEsoPlusSubscriptionInfoHelpIndices = {type = "function",
+GetEsoPlusSubscriptionBenefitsInfoHelpIndices = {type = "function",
+description = "",
+args = "()",},
+
+GetEsoPlusSubscriptionLapsedBenefitsInfoHelpIndices = {type = "function",
 description = "",
 args = "()",},
 
@@ -28066,46 +28185,6 @@ args = "()",
 returns = "(bool:canSpin,)",
 valuetype = "bool,",},
 
-PreviewDyeStamp = {type = "function",
-description = "",
-args = "(*integer* _dyeStampId_, *[ItemUseType|#ItemUseType]* _itemType_)",},
-
-PreviewCraftItem = {type = "function",
-description = "",
-args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_, *integer* _materialQuantity_, *luaindex* _styleIndex_, *luaindex* _traitIndex_, *bool* _useUniversalStyleItem_, *integer* _dyeBrushId_)",},
-
-PreviewCollectible = {type = "function",
-description = "",
-args = "(*integer* _collectibleDefId_, *luaindex* _variation_, *integer* _dyeBrushId_)",},
-
-PreviewCollectibleAsFurniture = {type = "function",
-description = "",
-args = "(*integer* _collectibleDefId_)",},
-
-PreviewInventoryItemAsFurniture = {type = "function",
-description = "",
-args = "(*[Bag|#Bag]* _bagId_, *integer* _slotIndex_)",},
-
-PreviewProvisionerItemAsFurniture = {type = "function",
-description = "",
-args = "(*luaindex* _recipeListIndex_, *luaindex* _recipeIndex_)",},
-
-PreviewPlacedFurniture = {type = "function",
-description = "",
-args = "(*id64* _furnitureId_)",},
-
-PreviewArmorByItemLink = {type = "function",
-description = "",
-args = "(*string* _itemLink_, *integer* _dyeBrushId_)",},
-
-PreviewDyeStampByItemLink = {type = "function",
-description = "",
-args = "(*string* _itemLink_)",},
-
-SetPreviewDyeMode = {type = "function",
-description = "",
-args = "(*[DyeMode|#DyeMode]* _dyeMode_)",},
-
 SetShowHiddenGear = {type = "function",
 description = "",
 args = "(*bool* _showHiddenGear_)",},
@@ -28131,6 +28210,98 @@ args = "()",},
 SetPreviewDynamicFramingOpening = {type = "function",
 description = "",
 args = "(*number* _openingWidthUI_, *number* _openingHeightUI_, *number* _cameraAngleRadians_)",},
+
+PreviewDyeStamp = {type = "function",
+description = "",
+args = "(*integer* _dyeStampId_, *[ItemUseType|#ItemUseType]* _itemType_)",},
+
+PreviewDyeStampByItemLink = {type = "function",
+description = "",
+args = "(*string* _itemLink_)",},
+
+SetPreviewDyeMode = {type = "function",
+description = "",
+args = "(*[DyeMode|#DyeMode]* _dyeMode_)",},
+
+PreviewCraftItem = {type = "function",
+description = "",
+args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_, *integer* _materialQuantity_, *luaindex* _styleIndex_, *luaindex* _traitIndex_, *bool* _useUniversalStyleItem_, *integer* _dyeBrushId_)",},
+
+PreviewCollectible = {type = "function",
+description = "",
+args = "(*integer* _collectibleDefId_, *luaindex* _variation_, *integer* _dyeBrushId_)",},
+
+PreviewCollectibleAsFurniture = {type = "function",
+description = "",
+args = "(*integer* _collectibleDefId_)",},
+
+PreviewInventoryItem = {type = "function",
+description = "",
+args = "(*[Bag|#Bag]* _bagId_, *integer* _slotIndex_, *integer* _dyeBrushId_)",},
+
+PreviewInventoryItemAsFurniture = {type = "function",
+description = "",
+args = "(*[Bag|#Bag]* _bagId_, *integer* _slotIndex_)",},
+
+PreviewStoreEntry = {type = "function",
+description = "",
+args = "(*luaindex* _entryIndex_, *luaindex* _variation_, *integer* _dyeBrushId_)",},
+
+PreviewStoreEntryAsFurniture = {type = "function",
+description = "",
+args = "(*luaindex* _entryIndex_)",},
+
+PreviewTradingHouseSearchResultItem = {type = "function",
+description = "",
+args = "(*luaindex* _index_, *integer* _dyeBrushId_)",},
+
+PreviewTradingHouseSearchResultItemAsFurniture = {type = "function",
+description = "",
+args = "(*luaindex* _index_)",},
+
+PreviewArmorByItemLink = {type = "function",
+description = "",
+args = "(*string* _itemLink_, *integer* _dyeBrushId_)",},
+
+PreviewProvisionerItemAsFurniture = {type = "function",
+description = "",
+args = "(*luaindex* _recipeListIndex_, *luaindex* _recipeIndex_)",},
+
+PreviewPlacedFurniture = {type = "function",
+description = "",
+args = "(*id64* _furnitureId_)",},
+
+PreviewMarketProduct = {type = "function",
+description = "",
+args = "(*integer* _marketProductId_, *luaindex* _variation_)",},
+
+PreviewFurnitureMarketProduct = {type = "function",
+description = "",
+args = "(*integer* _marketProductId_, *luaindex* _variation_)",},
+
+IsPreviewingMarketProduct = {type = "function",
+description = "",
+args = "(*integer* _marketProductId_)",
+returns = "(bool:isBeingPreviewed,)",
+valuetype = "bool,",},
+
+CanPreviewMarketProduct = {type = "function",
+description = "",
+args = "(*integer* _marketProductId_)",
+returns = "(bool:isPreviewable,)",
+valuetype = "bool,",},
+
+GetNumMarketProductPreviewVariations = {type = "function",
+description = "",
+args = "(*integer* _marketProductId_)",
+returns = "(integer:numVariations,)",
+valuetype = "integer,",},
+
+GetMarketProductPreviewVariationDisplayName = {type = "function",
+description = "",
+args = "(*integer* _marketProductId_, *luaindex* _variation_)",
+returns = "(string:variationDisplayName,)",
+valuetype = "string,",},
 
 RequestJumpToHouse = {type = "function",
 description = "",
@@ -28159,8 +28330,14 @@ valuetype = "integer,",},
 GetSkillLineInfo = {type = "function",
 description = "",
 args = "(*[SkillType|#SkillType]* _skillType_, *luaindex* _skillIndex_)",
-returns = "(bool:discovered,luaindex:rank,string:name,)",
-valuetype = "bool,luaindex,string,",},
+returns = "(integer:skillLineId,bool:discovered,luaindex:rank,string:name,)",
+valuetype = "integer,bool,luaindex,string,",},
+
+GetSkillLineAnnouncementIcon = {type = "function",
+description = "",
+args = "(*[SkillType|#SkillType]* _skillType_, *luaindex* _skillIndex_)",
+returns = "(textureName:announcementIcon,)",
+valuetype = "textureName,",},
 
 GetCraftingSkillLineIndices = {type = "function",
 description = "",
@@ -28197,6 +28374,18 @@ description = "",
 args = "()",
 returns = "(bool:enabled,)",
 valuetype = "bool,",},
+
+GetUniversalStyleId = {type = "function",
+description = "",
+args = "()",
+returns = "(integer:universalStyleId,)",
+valuetype = "integer,",},
+
+GetItemStyleName = {type = "function",
+description = "",
+args = "(*integer* _styleId_)",
+returns = "(string:styleName,)",
+valuetype = "string,",},
 
 
 
@@ -29246,6 +29435,12 @@ args = "()",
 returns = "(number:blue,number:green,number:red,)",
 valuetype = "number,number,number,",},
 
+GetThumbNormalizedPosition = {type = "function",
+description = "",
+args = "()",
+returns = "(number:normalizedY,number:normalizedX,)",
+valuetype = "number,number,",},
+
 GetValue = {type = "function",
 description = "",
 args = "()",
@@ -29263,6 +29458,10 @@ args = "(*number* _red_, *number* _green_, *number* _blue_)",},
 SetColorWheelThumbTextureControl = {type = "function",
 description = "",
 args = "(*object* _textureControl_)",},
+
+SetThumbNormalizedPosition = {type = "function",
+description = "",
+args = "(*number* _normalizedX_, *number* _normalizedY_)",},
 
 SetValue = {type = "function",
 description = "",
@@ -29734,7 +29933,7 @@ args = "(*number* _pitchRadians_, *number* _yawRadians_, *number* _rollRadians_)
 
 Set3DRenderSpaceOrigin = {type = "function",
 description = "",
-args = "(*number* _x_, *number* _y_, *number* _z_)",},
+args = "(*number* _xM_, *number* _yM_, *number* _zM_)",},
 
 Set3DRenderSpaceRight = {type = "function",
 description = "",
@@ -30181,6 +30380,10 @@ args = "(*string* _fontDescriptor_)",},
 AnchorToBaseline = {type = "function",
 description = "",
 args = "(*object* _toLabel_, *number* _offsetX_, *[AnchorPosition|#AnchorPosition]* _anchorSide_)",},
+
+Clean = {type = "function",
+description = "",
+args = "()",},
 
 ClearAnchorToBaseline = {type = "function",
 description = "",
@@ -31046,7 +31249,7 @@ args = "(*string* _text_, *string* _font_, *integer* _headerRow_, *[TooltipHeade
 
 AddLine = {type = "function",
 description = "",
-args = "(*string* _text_, *string* _font_, *number* _r_, *number* _g_, *number* _b_, *[AnchorPosition|#AnchorPosition]* _lineAnchor_, *[ModifyTextType|#ModifyTextType]* _modifyTextType_, *[TextAlignment|#TextAlignment]* _textAlignment_, *bool* _setToFullSize_)",},
+args = "(*string* _text_, *string* _font_, *number* _r_, *number* _g_, *number* _b_, *[AnchorPosition|#AnchorPosition]* _lineAnchor_, *[ModifyTextType|#ModifyTextType]* _modifyTextType_, *[TextAlignment|#TextAlignment]* _textAlignment_, *bool* _setToFullSize_, *number* _minWidth_)",},
 
 AddVerticalPadding = {type = "function",
 description = "",
@@ -31212,7 +31415,7 @@ args = "(*integer* _potencyRuneBagId_, *integer* _potencyRuneSlotIndex_, *intege
 
 SetPendingSmithingItem = {type = "function",
 description = "",
-args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_, *integer* _materialQuantity_, *luaindex* _styleIndex_, *luaindex* _traitIndex_)",},
+args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_, *integer* _materialQuantity_, *integer* _itemStyleId_, *luaindex* _traitIndex_)",},
 
 SetPlacedFurniture = {type = "function",
 description = "",
@@ -31272,7 +31475,7 @@ args = "(*luaindex* _patternIndex_, *luaindex* _materialIndex_)",},
 
 SetSmithingStyleItem = {type = "function",
 description = "",
-args = "(*luaindex* _styleItemIndex_)",},
+args = "(*integer* _itemStyleId_)",},
 
 SetSmithingTraitItem = {type = "function",
 description = "",
@@ -31293,6 +31496,10 @@ args = "(*luaindex* _tradingHouseIndex_)",},
 SetTradingHouseListing = {type = "function",
 description = "",
 args = "(*luaindex* _tradingHouseIndex_)",},
+
+SetVerticalPadding = {type = "function",
+description = "",
+args = "(*number* _paddingY_)",},
 
 SetWornItem = {type = "function",
 description = "",
@@ -31495,7 +31702,7 @@ EVENT_AGENT_CHAT_TERMINATED = {
 	 type = "value", valuetype = "event",},
 
 EVENT_ALLIANCE_POINT_UPDATE = {
-	 type = "value", valuetype = "event", description = "(*integer* _alliancePoints_, *bool* _playSound_, *integer* _difference_)"},
+	 type = "value", valuetype = "event", description = "(*integer* _alliancePoints_, *bool* _playSound_, *integer* _difference_, *integer* _reason_)"},
 
 EVENT_ANIMATION_NOTE = {
 	 type = "value", valuetype = "event", description = "(*string* _animNote_)"},
@@ -31524,11 +31731,11 @@ EVENT_ATTRIBUTE_UPGRADE_UPDATED = {
 EVENT_AVENGE_KILL = {
 	 type = "value", valuetype = "event", description = "(*string* _avengedCharacterName_, *string* _killedCharacterName_, *string* _avengedDisplayName_, *string* _killedDisplayName_)"},
 
-EVENT_BANKED_MONEY_UPDATE = {
-	 type = "value", valuetype = "event", description = "(*integer* _newBankedMoney_, *integer* _oldBankedMoney_)"},
+EVENT_BANKED_CURRENCY_UPDATE = {
+	 type = "value", valuetype = "event", description = "(*integer* _currency_, *integer* _newValue_, *integer* _oldValue_)"},
 
-EVENT_BANKED_TELVAR_STONES_UPDATE = {
-	 type = "value", valuetype = "event", description = "(*integer* _newBankedTelvarStones_, *integer* _oldBankedTelvarStones_)"},
+EVENT_BANKED_MONEY_UPDATE = {
+	 type = "value", valuetype = "event", description = "(*integer* _newValue_, *integer* _oldValue_)"},
 
 EVENT_BANK_IS_FULL = {
 	 type = "value", valuetype = "event",},
@@ -31547,6 +31754,9 @@ EVENT_BATTLEGROUND_RULESET_CHANGED = {
 
 EVENT_BATTLEGROUND_SCOREBOARD_UPDATED = {
 	 type = "value", valuetype = "event",},
+
+EVENT_BATTLEGROUND_SHUTDOWN_TIMER = {
+	 type = "value", valuetype = "event", description = "(*bool* _enabled_)"},
 
 EVENT_BATTLEGROUND_STATE_CHANGED = {
 	 type = "value", valuetype = "event", description = "(*integer* _previousState_, *integer* _currentState_)"},
@@ -31640,6 +31850,9 @@ EVENT_CAPTURE_AREA_STATUS = {
 
 EVENT_CAPTURE_FLAG_STATE_CHANGED = {
 	 type = "value", valuetype = "event", description = "(*integer* _objectiveKeepId_, *integer* _objectiveObjectiveId_, *integer* _battlegroundContext_, *string* _objectiveName_, *integer* _objectiveControlEvent_, *integer* _objectiveControlState_, *integer* _originalOwnerAlliance_, *integer* _holderAlliance_, *integer* _lastHolderAlliance_, *integer* _pinType_)"},
+
+EVENT_CARRIED_CURRENCY_UPDATE = {
+	 type = "value", valuetype = "event", description = "(*integer* _currency_, *integer* _newValue_, *integer* _oldValue_, *integer* _reason_)"},
 
 EVENT_CHAMPION_LEVEL_ACHIEVED = {
 	 type = "value", valuetype = "event", description = "(*bool* _wasChampionSystemUnlocked_)"},
@@ -31742,6 +31955,9 @@ EVENT_CRAFT_BAG_AUTO_TRANSFER_NOTIFICATION_CLEARED = {
 
 EVENT_CRAFT_COMPLETED = {
 	 type = "value", valuetype = "event", description = "(*integer* _craftSkill_)"},
+
+EVENT_CRAFT_FAILED = {
+	 type = "value", valuetype = "event", description = "(*integer* _tradeskillResult_)"},
 
 EVENT_CRAFT_STARTED = {
 	 type = "value", valuetype = "event", description = "(*integer* _craftSkill_)"},
@@ -31899,7 +32115,7 @@ EVENT_ENLIGHTENED_STATE_LOST = {
 EVENT_ENTER_GROUND_TARGET_MODE = {
 	 type = "value", valuetype = "event",},
 
-EVENT_ESO_PLUS_SUBSCRIPTION_NOTIFICATION_CLEARED = {
+EVENT_ESO_PLUS_FREE_TRIAL_NOTIFICATION_CLEARED = {
 	 type = "value", valuetype = "event",},
 
 EVENT_EXPERIENCE_GAIN = {
@@ -32338,7 +32554,7 @@ EVENT_LOOT_ITEM_FAILED = {
 	 type = "value", valuetype = "event", description = "(*integer* _reason_, *string* _itemName_)"},
 
 EVENT_LOOT_RECEIVED = {
-	 type = "value", valuetype = "event", description = "(*string* _receivedBy_, *string* _itemName_, *integer* _quantity_, *integer* _itemSound_, *integer* _lootType_, *bool* _self_, *bool* _isPickpocketLoot_, *string* _questItemIcon_, *integer* _itemId_)"},
+	 type = "value", valuetype = "event", description = "(*string* _receivedBy_, *string* _itemName_, *integer* _quantity_, *integer* _itemSound_, *integer* _lootType_, *bool* _self_, *bool* _isPickpocketLoot_, *string* _questItemIcon_, *integer* _itemId_, *bool* _isStolen_)"},
 
 EVENT_LOOT_UPDATED = {
 	 type = "value", valuetype = "event",},
@@ -32616,12 +32832,6 @@ EVENT_QUEST_TOOL_UPDATED = {
 EVENT_QUEUE_FOR_CAMPAIGN_RESPONSE = {
 	 type = "value", valuetype = "event", description = "(*integer* _response_)"},
 
-EVENT_QUICK_REPORT_ALREADY_REPORTED = {
-	 type = "value", valuetype = "event",},
-
-EVENT_QUICK_REPORT_TICKET_SENT = {
-	 type = "value", valuetype = "event",},
-
 EVENT_RAID_LEADERBOARD_DATA_CHANGED = {
 	 type = "value", valuetype = "event",},
 
@@ -32778,6 +32988,9 @@ EVENT_SKILL_XP_UPDATE = {
 EVENT_SLOT_IS_LOCKED_FAILURE = {
 	 type = "value", valuetype = "event", description = "(*integer* _bagId_, *integer* _slotId_)"},
 
+EVENT_SMITHING_TRAIT_RESEARCH_CANCELED = {
+	 type = "value", valuetype = "event", description = "(*integer* _craftingSkillType_, *luaindex* _researchLineIndex_, *luaindex* _traitIndex_)"},
+
 EVENT_SMITHING_TRAIT_RESEARCH_COMPLETED = {
 	 type = "value", valuetype = "event", description = "(*integer* _craftingSkillType_, *luaindex* _researchLineIndex_, *luaindex* _traitIndex_)"},
 
@@ -32848,7 +33061,7 @@ EVENT_STUCK_ERROR_ON_COOLDOWN = {
 	 type = "value", valuetype = "event",},
 
 EVENT_STYLE_LEARNED = {
-	 type = "value", valuetype = "event", description = "(*luaindex* _styleIndex_, *integer* _chapterIndex_, *bool* _isDefaultRacialStyle_)"},
+	 type = "value", valuetype = "event", description = "(*integer* _itemStyleId_, *integer* _chapterIndex_, *bool* _isDefaultRacialStyle_)"},
 
 EVENT_SYNERGY_ABILITY_CHANGED = {
 	 type = "value", valuetype = "event",},
@@ -33027,8 +33240,8 @@ EVENT_ZONE_SCORING_CHANGED = {
 EVENT_ZONE_UPDATE = {
 	 type = "value", valuetype = "event", description = "(*string* _unitTag_, *string* _newZoneName_)"},
 
-EVENT_ESO_PLUS_SUBSCRIPTION_STATUS_CHANGED = {
-	 type = "value", valuetype = "event", description = "(*bool* _hasSubscription_)"},
+EVENT_ESO_PLUS_FREE_TRIAL_STATUS_CHANGED = {
+	 type = "value", valuetype = "event", description = "(*bool* _hasFreeTrial_)"},
 
 EVENT_ITEM_PREVIEW_READY = {
 	 type = "value", valuetype = "event",},
@@ -33108,11 +33321,12 @@ EVENT_SECURE_ = {
 EVENT_SECURE_RENDER_MODE_CHANGED = {
 	 type = "value", valuetype = "event", description = "(*bool* _enabled_)"},
 
-EVENT_SHOW_GUI = {
-	 type = "value", valuetype = "event", description = "(*string* _guiName_, *string* _desiredStateName_)"},
+EVENT_SHOW_PREGAME_GUI_IN_STATE = {
+	 type = "value", valuetype = "event", description = "(*string* _desiredStateName_)"},
 
 EVENT_UPDATE_GUI_LOADING_PROGRESS = {
 	 type = "value", valuetype = "event", description = "(*string* _guiName_, *integer* _assetsLoaded_, *integer* _assetsTotal_)"},
+
 
 
 
@@ -33385,8 +33599,8 @@ sentinel = {type = "keyword",},
 local spec = {
   exts = {"xml"},
   lexer = wxstc.wxSTC_LEX_XML,
-  apitype = "ESOxml",
-  --stylingbits = 7,
+  apitype = "lua",
+  stylingbits = 7,
 
   lexerstyleconvert = {
     text = {wxstc.wxSTC_H_DEFAULT, },
@@ -33394,7 +33608,7 @@ local spec = {
     ---[[
 		stringeol = {wxstc.wxSTC_HJ_STRINGEOL,
 				 wxstc.wxSTC_H_TAGUNKNOWN,
-				 wxstc.wxSTC_H_ATTRIBUTEUNKNOWN
+				 --wxstc.wxSTC_H_ATTRIBUTEUNKNOWN
 				 },--]]
     number = {wxstc.wxSTC_H_NUMBER,},
     stringtxt = {
@@ -33406,9 +33620,9 @@ local spec = {
       wxstc.wxSTC_H_ENTITY,
       wxstc.wxSTC_H_VALUE,
     },
-    keywords0 = {wxstc.wxSTC_H_TAG,}, -- wxstc.wxSTC_H_TAG
-	keywords1 = {wxstc.wxSTC_HJ_WORD,}, -- wxstc.wxSTC_H_SCRIPT
-    --[[
+    keywords0 = {wxstc.wxSTC_H_ATTRIBUTE, wxstc.wxSTC_H_TAG, wxstc.wxSTC_HP_WORD, wxstc.wxSTC_HB_WORD, wxstc.wxSTC_HJ_WORD, }, -- wxstc.wxSTC_H_TAG
+	keywords1 = {wxstc.wxSTC_H_SCRIPT,}, -- wxstc.wxSTC_H_SCRIPT, wxstc.wxSTC_HJ_WORD
+    ---[[
     keywords2 = {wxstc.wxSTC_H_ATTRIBUTE,}, -- wxstc.wxSTC_H_ATTRIBUTE
     keywords3 = {wxstc.wxSTC_LUA_WORD,	}, -- wxstc.wxSTC_LUA_WORD
     keywords4 = {wxstc.wxSTC_LUA_WORD1,}, -- wxstc.wxSTC_LUA_WORD1
@@ -33420,8 +33634,9 @@ local spec = {
   },
 
   keywords = {
-},
 
+
+},
 }
 local name = "ESOAPI"
 return {
@@ -33444,7 +33659,7 @@ return {
 	ide:AddAPI("lua", name, api)
     local keywords = self:GetConfig().keywords or [[AlphaAnimation Anchor AnchorFill AnchorToBaseline AnimationBase AnimationTimeline Animations Backdrop BackgroundBottom BackgroundMiddle BackgroundTop Browser Button ButtonState Callback Callbacks Center ClampedToScreenInsets ClearAnchors ColorAnimation ColorSelect Compass CompassPinType Control Controls Cooldown CustomAnimation DebugText DimensionConstraints Dimensions EasingFunction Edge EditBox FadeGradient Font FontColors GuiXml HitInsets Insets Label LeadingEdge LeadingEdgeTextureCoords Limits Line LineFade LocalDimensions3D MapDisplay MapGutter MapPinType MouseButton NormalOffset OnAddGameData OnBackspace OnChar OnCleared OnClicked OnColorSelected OnDownArrow OnDragStart OnDurationChanged OnEffectivelyHidden OnEffectivelyShown OnEnabledStateChanged OnEnter OnEscape OnFocusGained OnFocusLost OnHide OnIMEBeginComposition OnIMEEndComposition OnInitialized OnInsertAnimationTimelineCallback OnKeyDown OnKeyUp OnLinkClicked OnLinkMouseUp OnLoadFinished OnLoadStart OnMinMaxValueChanged OnMouseDoubleClick OnMouseDown OnMouseEnter OnMouseExit OnMouseUp OnMouseWheel OnMoveStart OnMoveStop OnPageDown OnPageUp OnPlay OnPlay OnReceiveDrag OnRequestClose OnResizeStart OnResizeStop OnResizedToFit OnScrollExtentsChanged OnScrollOffsetChanged OnSetAnimationEaseFunction OnSetAnimationEventHandler OnSetAnimationTimelineEventHandler OnSetControlEventHandler OnSetUpdateFunction OnShow OnSliderReleased OnSpace OnStop OnStop OnTab OnTextChanged OnTextureLoaded OnUpArrow OnUpdate OnUserAreaCreated OnValueChanged OnVisibleRadiusChanged PressedOffset RadialCooldownGradient ResizeToFitPadding Rotate3DAnimation ScaleAnimation Scroll ScrollingOverlay SizeAnimation Slider StatusBar String Surface TextBuffer Texture TextureAnimation TextureComposite TextureCoords TextureRotateAnimation Textures ThumbTexture Tooltip TopLevelControl Translate3DAnimation TranslateAnimation UpdateFunction sentinel]]
     local keywords2 = self:GetConfig().keywords or [[addressMode allowBringToTop alpha anchorIndex autoAdjustTextureCoords barAlignment blendMode cellsHigh cellsWide centerColor clampedToScreen clickSound color delay deltaX deltaXFromEnd deltaY deltaYFromEnd deltaZ deltaZFromEnd disabled disabledColor disabledPressed disabledPressedColor dragFromThumb drawLastEntryIfOutOfRoom duration edgeColor editEnabled enableFadeOut endAlpha endCapWidth endColor endHeight endPitch endRoll endRotation endScale endWidth endX endY endYaw endZ excludeFromResizeToFitExtents fadeOutGainColor fadeOutLossColor fadeOutTextureFile fillColor font framerate headerRowSpacing headerVerticalOffset hidden horizontalAlignment id inheritAlpha inheritScale inherits integralWrapping keyboardEnabled layer leadingEdgeTexture level lineSpacing linkEnabled loopCount maxHistoryLines maxInputCharacters maxLineCount mirrorAlongX mirrorAlongY modifyTextType mouseEnabled mouseOver mouseOverBlendMode mouseOverColor movable multiLine newLineEnabled newLineIndent normal normalColor orientation pinFont pixelRoundingEnabled playbackType pressed pressedColor pressedMouseOver radialCooldownClockwise radialCooldownOriginAngle resizeHandleSize resizeToFitDescendents resizeToFitFile scale selectionColor shape splitLongMessages startAlpha startColor startHeight startPitch startRoll startRotation startScale startWidth startX startY startYaw startZ step styleColor text textType textureCoordsRotation textureFile textureFileReleaseOption thickness tier topmost verticalAlignment wrapMode]]
-	ide:GetConfig().keywords = keywords2
+	ide:GetConfig().keywords = keywords .. " " .. keywords2
 	spec.keywords[1] = keywords
 	spec.keywords[2] = keywords2
     ide:AddSpec("ESOxml", spec)
