@@ -28,3 +28,4 @@ Still really helpful to have this Feature!
 
 Happy Developing!
 
+# License GNU GPL v3.0
