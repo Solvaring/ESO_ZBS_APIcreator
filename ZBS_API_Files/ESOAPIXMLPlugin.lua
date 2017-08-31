@@ -33326,10 +33326,10 @@ EVENT_SHOW_PREGAME_GUI_IN_STATE = {
 
 EVENT_UPDATE_GUI_LOADING_PROGRESS = {
 	 type = "value", valuetype = "event", description = "(*string* _guiName_, *integer* _assetsLoaded_, *integer* _assetsTotal_)"},
+}
 
-
-
-
+esoxmlapi = {
+---[[
 addressMode = {type = "keyword"},
 allowBringToTop = {type = "keyword"},
 alpha = {type = "keyword"},
@@ -33594,12 +33594,12 @@ TranslateAnimation = {type = "keyword",},
 UpdateFunction = {type = "keyword",},
 sentinel = {type = "keyword",},
 
-
+--]]
 }
-local spec = {
+local esoxmlspec = {
   exts = {"xml"},
   lexer = wxstc.wxSTC_LEX_XML,
-  apitype = "lua",
+  apitype = "xml",
   stylingbits = 7,
 
   lexerstyleconvert = {
@@ -33642,7 +33642,7 @@ local name = "ESOAPI"
 return {
   name = "ESOAPIXMLPlugin",
   description = "Elder Scrolls Autocomplete Plugin",
-  author = "@Farangkao with update script for api and keywords by @Solvaring",
+  author = "@Solvaring with some code from @Farangkao",
   --api = {"ESOAPI"}, -- "ESOAddonDev","baselib"
   version = 1.0,
   onEditorLoad = function(self, editor)
@@ -33656,17 +33656,20 @@ return {
 
   onRegister = function(self)
     table.insert(ide:GetConfig().api, name)
+	table.insert(ide:GetConfig().api, "esoxmlkeywords")
 	ide:AddAPI("lua", name, api)
+	ide:AddAPI("xml", "esoxmlkeywords", esoxmlapi)
     local keywords = self:GetConfig().keywords or [[AlphaAnimation Anchor AnchorFill AnchorToBaseline AnimationBase AnimationTimeline Animations Backdrop BackgroundBottom BackgroundMiddle BackgroundTop Browser Button ButtonState Callback Callbacks Center ClampedToScreenInsets ClearAnchors ColorAnimation ColorSelect Compass CompassPinType Control Controls Cooldown CustomAnimation DebugText DimensionConstraints Dimensions EasingFunction Edge EditBox FadeGradient Font FontColors GuiXml HitInsets Insets Label LeadingEdge LeadingEdgeTextureCoords Limits Line LineFade LocalDimensions3D MapDisplay MapGutter MapPinType MouseButton NormalOffset OnAddGameData OnBackspace OnChar OnCleared OnClicked OnColorSelected OnDownArrow OnDragStart OnDurationChanged OnEffectivelyHidden OnEffectivelyShown OnEnabledStateChanged OnEnter OnEscape OnFocusGained OnFocusLost OnHide OnIMEBeginComposition OnIMEEndComposition OnInitialized OnInsertAnimationTimelineCallback OnKeyDown OnKeyUp OnLinkClicked OnLinkMouseUp OnLoadFinished OnLoadStart OnMinMaxValueChanged OnMouseDoubleClick OnMouseDown OnMouseEnter OnMouseExit OnMouseUp OnMouseWheel OnMoveStart OnMoveStop OnPageDown OnPageUp OnPlay OnPlay OnReceiveDrag OnRequestClose OnResizeStart OnResizeStop OnResizedToFit OnScrollExtentsChanged OnScrollOffsetChanged OnSetAnimationEaseFunction OnSetAnimationEventHandler OnSetAnimationTimelineEventHandler OnSetControlEventHandler OnSetUpdateFunction OnShow OnSliderReleased OnSpace OnStop OnStop OnTab OnTextChanged OnTextureLoaded OnUpArrow OnUpdate OnUserAreaCreated OnValueChanged OnVisibleRadiusChanged PressedOffset RadialCooldownGradient ResizeToFitPadding Rotate3DAnimation ScaleAnimation Scroll ScrollingOverlay SizeAnimation Slider StatusBar String Surface TextBuffer Texture TextureAnimation TextureComposite TextureCoords TextureRotateAnimation Textures ThumbTexture Tooltip TopLevelControl Translate3DAnimation TranslateAnimation UpdateFunction sentinel]]
-    local keywords2 = self:GetConfig().keywords or [[addressMode allowBringToTop alpha anchorIndex autoAdjustTextureCoords barAlignment blendMode cellsHigh cellsWide centerColor clampedToScreen clickSound color delay deltaX deltaXFromEnd deltaY deltaYFromEnd deltaZ deltaZFromEnd disabled disabledColor disabledPressed disabledPressedColor dragFromThumb drawLastEntryIfOutOfRoom duration edgeColor editEnabled enableFadeOut endAlpha endCapWidth endColor endHeight endPitch endRoll endRotation endScale endWidth endX endY endYaw endZ excludeFromResizeToFitExtents fadeOutGainColor fadeOutLossColor fadeOutTextureFile fillColor font framerate headerRowSpacing headerVerticalOffset hidden horizontalAlignment id inheritAlpha inheritScale inherits integralWrapping keyboardEnabled layer leadingEdgeTexture level lineSpacing linkEnabled loopCount maxHistoryLines maxInputCharacters maxLineCount mirrorAlongX mirrorAlongY modifyTextType mouseEnabled mouseOver mouseOverBlendMode mouseOverColor movable multiLine newLineEnabled newLineIndent normal normalColor orientation pinFont pixelRoundingEnabled playbackType pressed pressedColor pressedMouseOver radialCooldownClockwise radialCooldownOriginAngle resizeHandleSize resizeToFitDescendents resizeToFitFile scale selectionColor shape splitLongMessages startAlpha startColor startHeight startPitch startRoll startRotation startScale startWidth startX startY startYaw startZ step styleColor text textType textureCoordsRotation textureFile textureFileReleaseOption thickness tier topmost verticalAlignment wrapMode]]
+    local keywords2 = [[addressMode allowBringToTop alpha anchorIndex autoAdjustTextureCoords barAlignment blendMode cellsHigh cellsWide centerColor clampedToScreen clickSound color delay deltaX deltaXFromEnd deltaY deltaYFromEnd deltaZ deltaZFromEnd disabled disabledColor disabledPressed disabledPressedColor dragFromThumb drawLastEntryIfOutOfRoom duration edgeColor editEnabled enableFadeOut endAlpha endCapWidth endColor endHeight endPitch endRoll endRotation endScale endWidth endX endY endYaw endZ excludeFromResizeToFitExtents fadeOutGainColor fadeOutLossColor fadeOutTextureFile fillColor font framerate headerRowSpacing headerVerticalOffset hidden horizontalAlignment id inheritAlpha inheritScale inherits integralWrapping keyboardEnabled layer leadingEdgeTexture level lineSpacing linkEnabled loopCount maxHistoryLines maxInputCharacters maxLineCount mirrorAlongX mirrorAlongY modifyTextType mouseEnabled mouseOver mouseOverBlendMode mouseOverColor movable multiLine newLineEnabled newLineIndent normal normalColor orientation pinFont pixelRoundingEnabled playbackType pressed pressedColor pressedMouseOver radialCooldownClockwise radialCooldownOriginAngle resizeHandleSize resizeToFitDescendents resizeToFitFile scale selectionColor shape splitLongMessages startAlpha startColor startHeight startPitch startRoll startRotation startScale startWidth startX startY startYaw startZ step styleColor text textType textureCoordsRotation textureFile textureFileReleaseOption thickness tier topmost verticalAlignment wrapMode]]
 	ide:GetConfig().keywords = keywords .. " " .. keywords2
-	spec.keywords[1] = keywords
-	spec.keywords[2] = keywords2
-    ide:AddSpec("ESOxml", spec)
+	esoxmlspec.keywords[1] = keywords
+	esoxmlspec.keywords[2] = keywords2
+    ide:AddSpec("ESOxml", esoxmlspec)
   end,
 
   onUnRegister = function(self)
 	ide:RemoveAPI("lua", name)
+	ide:RemoveAPI("xml", "esoxmlkeywords")
 	ide:RemoveSpec("ESOxml")
     end,
 }
