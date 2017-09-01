@@ -1,6 +1,6 @@
 # Elder Scrolls Online Auto-complete plugin for Zerobrane Studio
 
-This is a plugin to add autocomplete to ZBS for ESO API Version 100019
+This is a plugin to add autocomplete to ZBS for ESO API Version 100020
 
 Simply drop ESOAPIXMLPlugin.lua into your packages/ directory of ZBS
 
