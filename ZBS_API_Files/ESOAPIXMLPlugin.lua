@@ -33660,7 +33660,7 @@ return {
 		--editor:SetKeyWords(2, esoxmlspec.keywords[2])
 	end,
 
-  onRegister = function(self, editor)
+  onRegister = function(self)
     table.insert(ide:GetConfig().api, name)
 	table.insert(ide:GetConfig().api, "esoxmlkeywords")
 	ide:AddAPI("lua", name, api)
