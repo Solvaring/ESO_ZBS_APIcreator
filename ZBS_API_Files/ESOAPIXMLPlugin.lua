@@ -33620,7 +33620,7 @@ local esoxmlspec = {
       wxstc.wxSTC_H_ENTITY,
       wxstc.wxSTC_H_VALUE,
     },
-    keywords0 = {wxstc.wxSTC_H_ATTRIBUTE, wxstc.wxSTC_H_TAG, wxstc.wxSTC_HP_WORD, wxstc.wxSTC_HB_WORD, wxstc.wxSTC_HJ_WORD, }, -- wxstc.wxSTC_H_TAG
+    keywords0 = {wxstc.wxSTC_H_TAG}, -- wxstc.wxSTC_H_TAG
 	keywords1 = {wxstc.wxSTC_H_SCRIPT,}, -- wxstc.wxSTC_H_SCRIPT, wxstc.wxSTC_HJ_WORD
     ---[[
     keywords2 = {wxstc.wxSTC_H_ATTRIBUTE,}, -- wxstc.wxSTC_H_ATTRIBUTE
@@ -33634,7 +33634,9 @@ local esoxmlspec = {
   },
 
   keywords = {
+[[AlphaAnimation Anchor AnchorFill AnchorToBaseline AnimationBase AnimationTimeline Animations Backdrop BackgroundBottom BackgroundMiddle BackgroundTop Browser Button ButtonState Callback Callbacks Center ClampedToScreenInsets ClearAnchors ColorAnimation ColorSelect Compass CompassPinType Control Controls Cooldown CustomAnimation DebugText DimensionConstraints Dimensions EasingFunction Edge EditBox FadeGradient Font FontColors GuiXml HitInsets Insets Label LeadingEdge LeadingEdgeTextureCoords Limits Line LineFade LocalDimensions3D MapDisplay MapGutter MapPinType MouseButton NormalOffset OnAddGameData OnBackspace OnChar OnCleared OnClicked OnColorSelected OnDownArrow OnDragStart OnDurationChanged OnEffectivelyHidden OnEffectivelyShown OnEnabledStateChanged OnEnter OnEscape OnFocusGained OnFocusLost OnHide OnIMEBeginComposition OnIMEEndComposition OnInitialized OnInsertAnimationTimelineCallback OnKeyDown OnKeyUp OnLinkClicked OnLinkMouseUp OnLoadFinished OnLoadStart OnMinMaxValueChanged OnMouseDoubleClick OnMouseDown OnMouseEnter OnMouseExit OnMouseUp OnMouseWheel OnMoveStart OnMoveStop OnPageDown OnPageUp OnPlay OnPlay OnReceiveDrag OnRequestClose OnResizeStart OnResizeStop OnResizedToFit OnScrollExtentsChanged OnScrollOffsetChanged OnSetAnimationEaseFunction OnSetAnimationEventHandler OnSetAnimationTimelineEventHandler OnSetControlEventHandler OnSetUpdateFunction OnShow OnSliderReleased OnSpace OnStop OnStop OnTab OnTextChanged OnTextureLoaded OnUpArrow OnUpdate OnUserAreaCreated OnValueChanged OnVisibleRadiusChanged PressedOffset RadialCooldownGradient ResizeToFitPadding Rotate3DAnimation ScaleAnimation Scroll ScrollingOverlay SizeAnimation Slider StatusBar String Surface TextBuffer Texture TextureAnimation TextureComposite TextureCoords TextureRotateAnimation Textures ThumbTexture Tooltip TopLevelControl Translate3DAnimation TranslateAnimation UpdateFunction sentinel]],
 
+[[addressMode allowBringToTop alpha anchorIndex autoAdjustTextureCoords barAlignment blendMode cellsHigh cellsWide centerColor clampedToScreen clickSound color delay deltaX deltaXFromEnd deltaY deltaYFromEnd deltaZ deltaZFromEnd disabled disabledColor disabledPressed disabledPressedColor dragFromThumb drawLastEntryIfOutOfRoom duration edgeColor editEnabled enableFadeOut endAlpha endCapWidth endColor endHeight endPitch endRoll endRotation endScale endWidth endX endY endYaw endZ excludeFromResizeToFitExtents fadeOutGainColor fadeOutLossColor fadeOutTextureFile fillColor font framerate headerRowSpacing headerVerticalOffset hidden horizontalAlignment id inheritAlpha inheritScale inherits integralWrapping keyboardEnabled layer leadingEdgeTexture level lineSpacing linkEnabled loopCount maxHistoryLines maxInputCharacters maxLineCount mirrorAlongX mirrorAlongY modifyTextType mouseEnabled mouseOver mouseOverBlendMode mouseOverColor movable multiLine newLineEnabled newLineIndent normal normalColor orientation pinFont pixelRoundingEnabled playbackType pressed pressedColor pressedMouseOver radialCooldownClockwise radialCooldownOriginAngle resizeHandleSize resizeToFitDescendents resizeToFitFile scale selectionColor shape splitLongMessages startAlpha startColor startHeight startPitch startRoll startRotation startScale startWidth startX startY startYaw startZ step styleColor text textType textureCoordsRotation textureFile textureFileReleaseOption thickness tier topmost verticalAlignment wrapMode]]
 
 },
 }
@@ -33648,20 +33650,24 @@ return {
   onEditorLoad = function(self, editor)
 		editor:SetProperty("html.tags.case.sensitive", "1")
 		editor:SetProperty("html.attributes.case.sensitive", "1")
+		--editor:SetKeyWords(0, esoxmlspec.keywords[1])
+		--editor:SetKeyWords(2, esoxmlspec.keywords[2])
 	end,
   onEditorNew = function(self, editor)
 		editor:SetProperty("html.tags.case.sensitive", "1")
 		editor:SetProperty("html.attributes.case.sensitive", "1")
+		--editor:SetKeyWords(0, esoxmlspec.keywords[1])
+		--editor:SetKeyWords(2, esoxmlspec.keywords[2])
 	end,
 
-  onRegister = function(self)
+  onRegister = function(self, editor)
     table.insert(ide:GetConfig().api, name)
 	table.insert(ide:GetConfig().api, "esoxmlkeywords")
 	ide:AddAPI("lua", name, api)
 	ide:AddAPI("xml", "esoxmlkeywords", esoxmlapi)
     local keywords = self:GetConfig().keywords or [[AlphaAnimation Anchor AnchorFill AnchorToBaseline AnimationBase AnimationTimeline Animations Backdrop BackgroundBottom BackgroundMiddle BackgroundTop Browser Button ButtonState Callback Callbacks Center ClampedToScreenInsets ClearAnchors ColorAnimation ColorSelect Compass CompassPinType Control Controls Cooldown CustomAnimation DebugText DimensionConstraints Dimensions EasingFunction Edge EditBox FadeGradient Font FontColors GuiXml HitInsets Insets Label LeadingEdge LeadingEdgeTextureCoords Limits Line LineFade LocalDimensions3D MapDisplay MapGutter MapPinType MouseButton NormalOffset OnAddGameData OnBackspace OnChar OnCleared OnClicked OnColorSelected OnDownArrow OnDragStart OnDurationChanged OnEffectivelyHidden OnEffectivelyShown OnEnabledStateChanged OnEnter OnEscape OnFocusGained OnFocusLost OnHide OnIMEBeginComposition OnIMEEndComposition OnInitialized OnInsertAnimationTimelineCallback OnKeyDown OnKeyUp OnLinkClicked OnLinkMouseUp OnLoadFinished OnLoadStart OnMinMaxValueChanged OnMouseDoubleClick OnMouseDown OnMouseEnter OnMouseExit OnMouseUp OnMouseWheel OnMoveStart OnMoveStop OnPageDown OnPageUp OnPlay OnPlay OnReceiveDrag OnRequestClose OnResizeStart OnResizeStop OnResizedToFit OnScrollExtentsChanged OnScrollOffsetChanged OnSetAnimationEaseFunction OnSetAnimationEventHandler OnSetAnimationTimelineEventHandler OnSetControlEventHandler OnSetUpdateFunction OnShow OnSliderReleased OnSpace OnStop OnStop OnTab OnTextChanged OnTextureLoaded OnUpArrow OnUpdate OnUserAreaCreated OnValueChanged OnVisibleRadiusChanged PressedOffset RadialCooldownGradient ResizeToFitPadding Rotate3DAnimation ScaleAnimation Scroll ScrollingOverlay SizeAnimation Slider StatusBar String Surface TextBuffer Texture TextureAnimation TextureComposite TextureCoords TextureRotateAnimation Textures ThumbTexture Tooltip TopLevelControl Translate3DAnimation TranslateAnimation UpdateFunction sentinel]]
     local keywords2 = [[addressMode allowBringToTop alpha anchorIndex autoAdjustTextureCoords barAlignment blendMode cellsHigh cellsWide centerColor clampedToScreen clickSound color delay deltaX deltaXFromEnd deltaY deltaYFromEnd deltaZ deltaZFromEnd disabled disabledColor disabledPressed disabledPressedColor dragFromThumb drawLastEntryIfOutOfRoom duration edgeColor editEnabled enableFadeOut endAlpha endCapWidth endColor endHeight endPitch endRoll endRotation endScale endWidth endX endY endYaw endZ excludeFromResizeToFitExtents fadeOutGainColor fadeOutLossColor fadeOutTextureFile fillColor font framerate headerRowSpacing headerVerticalOffset hidden horizontalAlignment id inheritAlpha inheritScale inherits integralWrapping keyboardEnabled layer leadingEdgeTexture level lineSpacing linkEnabled loopCount maxHistoryLines maxInputCharacters maxLineCount mirrorAlongX mirrorAlongY modifyTextType mouseEnabled mouseOver mouseOverBlendMode mouseOverColor movable multiLine newLineEnabled newLineIndent normal normalColor orientation pinFont pixelRoundingEnabled playbackType pressed pressedColor pressedMouseOver radialCooldownClockwise radialCooldownOriginAngle resizeHandleSize resizeToFitDescendents resizeToFitFile scale selectionColor shape splitLongMessages startAlpha startColor startHeight startPitch startRoll startRotation startScale startWidth startX startY startYaw startZ step styleColor text textType textureCoordsRotation textureFile textureFileReleaseOption thickness tier topmost verticalAlignment wrapMode]]
-	ide:GetConfig().keywords = keywords .. " " .. keywords2
+	--ide:GetConfig().keywords = keywords .. " " .. keywords2
 	esoxmlspec.keywords[1] = keywords
 	esoxmlspec.keywords[2] = keywords2
     ide:AddSpec("ESOxml", esoxmlspec)
