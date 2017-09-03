@@ -33597,7 +33597,7 @@ sentinel = {type = "keyword",},
 --]]
 }
 local esoxmlspec = {
-  exts = {"xml"},
+  exts = {"xml", "html"},
   lexer = wxstc.wxSTC_LEX_XML,
   apitype = "xml",
   stylingbits = 7,
@@ -33621,7 +33621,7 @@ local esoxmlspec = {
       wxstc.wxSTC_H_VALUE,
     },
     keywords0 = {wxstc.wxSTC_H_TAG}, -- wxstc.wxSTC_H_TAG
-	keywords1 = {wxstc.wxSTC_H_SCRIPT,}, -- wxstc.wxSTC_H_SCRIPT, wxstc.wxSTC_HJ_WORD
+	keywords1 = {wxstc.wxSTC_H_ATTRIBUTE,}, -- wxstc.wxSTC_H_SCRIPT, wxstc.wxSTC_HJ_WORD
     ---[[
     keywords2 = {wxstc.wxSTC_H_ATTRIBUTE,}, -- wxstc.wxSTC_H_ATTRIBUTE
     keywords3 = {wxstc.wxSTC_LUA_WORD,	}, -- wxstc.wxSTC_LUA_WORD
